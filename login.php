@@ -199,7 +199,7 @@ else
                         </div>
                     </div>
                     <div class="social-auth-links text-center mb-3">
-                        <button type="submit" class="btn btn-primary btn-block" name="submit" style="background-color: #432210;border-color: #432210;">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block" name="submit" style="background-color: #88A8D4;border-color: #88A8D4;">Login</button>
                     </div>
                 </form>
             </div>

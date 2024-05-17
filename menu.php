@@ -28,20 +28,12 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
             <!-- Sidebar user (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="assets/dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">
+                    <img src="assets/dist/img/user.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><?php echo $user; ?></a>
+                    <a href="#" class="d-block"><?php echo strtoupper($user); ?></a>
                 </div>
             </div>
-            
-            <!-- Sidebar user (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="info">
-                    <a href="#" class="d-block" style="color: white;"><?php echo strtoupper($user); ?></a>  
-                </div>
-            </div>
-
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">

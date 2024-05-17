@@ -5,9 +5,9 @@ ini_set('display_startup_errors', 1);
 date_default_timezone_set('Asia/Jakarta');
 error_reporting(E_ALL);
 $my_server	= "localhost";
-$my_user 	= "u769538112_lederhaus";
-$my_password= "|b@S!wL2";
-$my_db		= "u769538112_lederhaus"; 	
+$my_user 	= "u256116329_katedral";
+$my_password= "4PPYUD2Zk!";
+$my_db		= "u256116329_katedral"; 	
 $domain		= $_SERVER['HTTP_HOST']; 	
 $now        = date('Y-m-d H:i:s');
 if($domain=='localhost')

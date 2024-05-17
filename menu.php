@@ -64,7 +64,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                                     $act_menu    = "";
                                 }
                                 ?>
-                                <a href="index.php?p=<?php echo $file_menu ?>" class="nav-link <?php echo $act_menu ?>">
+                                <a href="index.php?p=<?php echo $file_menu ?>" class="nav-link <?php echo $act_menu ?>" style="background-color: unset;box-shadow: unset;">
                                     <p> <?php echo $name_menu ?> </p>
                                 </a>
                             </li>
@@ -113,7 +113,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                                                         $act_bgclr   = "";
                                                     }
                                                     ?>
-                                                    <a href="index.php?p=<?php echo $file_submenu ?> " class="nav-link <?php echo $act_submenu ?>" <?php echo $act_bgclr ?>>
+                                                    <a href="index.php?p=<?php echo $file_submenu ?> " class="nav-link <?php echo $act_submenu ?>" <?php echo $act_bgclr ?> style="background-color: unset;box-shadow: unset;">
                                                     <i class="far fa-circle nav-icon"></i>
                                                     <p><?php echo $name_submenu ?></p>
                                                     </a>

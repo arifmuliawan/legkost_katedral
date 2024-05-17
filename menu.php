@@ -16,7 +16,11 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
         <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#88A8D4">
             <!-- Brand Logo -->
             <a href="index.php" class="brand-link">
-                <center><span class="brand-text font-weight-light">ADMINISTRATOR</span></center>
+                <center>
+                    <span class="brand-text font-weight-light">
+                        <img src="assets/dist/img/Logo_Katedral_Jakarta.png" width="100px">
+                    </span>
+                </center>
             </a>
 
             <!-- Sidebar -->

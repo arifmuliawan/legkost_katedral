@@ -61,7 +61,7 @@ if(isset($action))
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table class="table">
-                                    <thead>
+                                    <thead style="background-color: #88A8D4;color: #ffffff;">
                                         <tr>
                                             <th style="width: 10px">#</th>
                                             <th>Username</th>

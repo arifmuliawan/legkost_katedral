@@ -23,7 +23,7 @@ if(isset($action))
 }
 ?>
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">

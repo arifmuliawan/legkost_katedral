@@ -168,10 +168,10 @@ else
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition login-page" style="background-image: url('assets/dist/img/bg-lh.png');background-size:cover">
+<body class="hold-transition login-page" style="background-color:88A8D4;background-size:cover">
     <div class="login-box">
         <div class="login-logo">
-            <img src="assets/dist/img/logo-lh.svg" width="300px">
+            <img src="assets/dist/img/Logo_Katedral_Jakarta.png" width="300px">
         </div>
         <!-- /.login-logo -->
         <div class="card">

@@ -20,7 +20,7 @@ else
 }
 $base_url			= 'https://'.$domain_url.'/';
 $base_assets	    = 'https://'.$domain_url.'/assets/';
-//$base_cacheapi      = 'https://lederhaus-website.vercel.app/api/revalidate';
+//$base_cacheapi    = 'https://lederhaus-website.vercel.app/api/revalidate';
 $base_secret        = 'cms-api-secret';
 $con 		        = new mysqli($my_server,$my_user,$my_password,$my_db);
 // Check connection

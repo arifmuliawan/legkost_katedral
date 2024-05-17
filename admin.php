@@ -100,8 +100,16 @@ if(isset($action))
                                                     $check_visible  = 'checked';
                                                     $value_visible  = 'Y';
                                                 }
+                                                if ($no % 2 == 0)
+                                                {
+                                                    $clr_row = "background-color: #D9D9D9B2;";
+                                                }
+                                                else
+                                                {
+                                                    $clr_row = "background-color: #ffffff;";
+                                                }
                                         ?>
-                                                <tr>
+                                                <tr style="<?php echo $clr_row ?>">
                                                     <td><?php echo $username ?></td>
                                                     <td><?php echo $password ?></td>
                                                     <td><?php echo $last_login ?></td>

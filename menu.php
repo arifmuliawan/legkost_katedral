@@ -27,11 +27,11 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
             <div class="sidebar">
             <!-- Sidebar user (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="info">
                 <center>
-                    <a href="#" class="d-block" style="color: white;"><?php echo strtoupper($user); ?></a>
-                </center>    
+                <div class="info">
+                    <a href="#" class="d-block" style="color: white;"><?php echo strtoupper($user); ?></a>  
                 </div>
+                </center>
             </div>
 
             <!-- Sidebar Menu -->

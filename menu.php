@@ -57,14 +57,16 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                                 <?php
                                 if(preg_match("/$file_menu/i", $page))
                                 {
-                                    $act_menu    = "font-weight: bold;";
+                                    $act_menu    = "active";
+                                    $act_bold    = "font-weight: bold;";
                                 }
                                 else
                                 {
                                     $act_menu    = "";
+                                    $act_bold    = "";
                                 }
                                 ?>
-                                <a href="index.php?p=<?php echo $file_menu ?>" class="nav-link" style="background-color: unset;box-shadow: unset;<?php echo $act_menu ?>">
+                                <a href="index.php?p=<?php echo $file_menu ?>" class="nav-link <?php echo $act_menu ?>" style="background-color: unset;box-shadow: unset;<?php echo $act_bold ?>">
                                     <p> <?php echo $name_menu ?> </p>
                                 </a>
                             </li>

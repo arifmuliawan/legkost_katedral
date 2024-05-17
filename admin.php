@@ -46,12 +46,12 @@ if(isset($action))
                                         <div class="col-md-10">
                                             
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-2" style="text-align: end;">
                                             <?php
                                             if(in_array(2,$arr_usracc))
                                             {
                                             ?>    
-                                                <a href="index.php?p=admin_form&a=2"><button type="button" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> New Data</button></a>
+                                                <a href="index.php?p=admin_form&a=2"><button type="button" class="btn" style="background-color: #88A8D4;color: #ffffff;"><i class="fa fa-plus"></i> New Data</button></a>
                                             <?php
                                             }
                                             ?>    

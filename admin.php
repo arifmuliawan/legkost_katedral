@@ -63,12 +63,10 @@ if(isset($action))
                                     <table class="table">
                                     <thead style="background-color: #88A8D4;color: #ffffff;">
                                         <tr>
-                                            <th style="width: 10px">#</th>
                                             <th>Username</th>
                                             <th>Password</th>
                                             <th>Last Login</th>
                                             <th>Last Logout</th>
-                                            <th>Activate</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -104,12 +102,32 @@ if(isset($action))
                                                 }
                                         ?>
                                                 <tr>
-                                                    <td><?php echo $no ?></td>
                                                     <td><?php echo $username ?></td>
                                                     <td><?php echo $password ?></td>
                                                     <td><?php echo $last_login ?></td>
                                                     <td><?php echo $last_logout ?></td>
-                                                    <td>
+                                                    <td style="min-width: 130px;">
+                                                        <?php
+                                                        if(in_array(3,$arr_usracc))
+                                                        {
+                                                        ?>    
+                                                            <a href="index.php?p=admin_form&a=3&id=<?php echo $id ?>">
+                                                                <button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                                                            </a>
+                                                        <?php
+                                                        }
+                                                        ?>    
+                                                        &nbsp&nbsp&nbsp
+                                                        <?php
+                                                        if(in_array(4,$arr_usracc))
+                                                        {
+                                                        ?>
+                                                            <a href="index.php?p=admin&a=4&id=<?php echo $id ?>" onclick="return confirm('Are you sure you want to delete this item?');">
+                                                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                            </a>
+                                                        <?php
+                                                        }
+                                                        ?>  
                                                         <!--<button type="button" class="btn btn-sm btn-<?php echo $color_visible ?>" style="pointer-events: none;"><i class="<?php echo $icon_visible ?>"></i> <?php echo $text_visible ?> </button>-->
                                                         <?php
                                                         if(in_array(3,$arr_usracc))
@@ -143,30 +161,7 @@ if(isset($action))
                                                                 });
                                                                 return false;
                                                             }   
-                                                        </script>                                                     
-                                                    </td>
-                                                    <td style="min-width: 130px;">
-                                                        <?php
-                                                        if(in_array(3,$arr_usracc))
-                                                        {
-                                                        ?>    
-                                                            <a href="index.php?p=admin_form&a=3&id=<?php echo $id ?>">
-                                                                <button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
-                                                            </a>
-                                                        <?php
-                                                        }
-                                                        ?>    
-                                                        &nbsp&nbsp&nbsp
-                                                        <?php
-                                                        if(in_array(4,$arr_usracc))
-                                                        {
-                                                        ?>
-                                                            <a href="index.php?p=admin&a=4&id=<?php echo $id ?>" onclick="return confirm('Are you sure you want to delete this item?');">
-                                                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                                            </a>
-                                                        <?php
-                                                        }
-                                                        ?>    
+                                                        </script>   
                                                     </td>
                                                 </tr>
                                         <?php

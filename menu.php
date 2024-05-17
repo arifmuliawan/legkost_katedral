@@ -130,7 +130,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                     }    
                     ?>
                     <li class="nav-item">
-                        <a href="index.php?p=logout" class="nav-link">
+                        <a href="index.php?p=logout" class="nav-link" style="color:white">
                             <p> Logout </p>
                         </a>
                     </li>

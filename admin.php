@@ -41,7 +41,7 @@ if(isset($action))
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card" style="box-shadow: unset;">
-                                <div class="card-header">
+                                <div class="card-header" style="border-bottom: unset;">
                                     <div class="row">
                                         <div class="col-md-10">
                                             

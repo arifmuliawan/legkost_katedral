@@ -482,16 +482,20 @@ if($action=='3')
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer" style="background-color: unset;">
-                                <table border=0 width="100%">
-                                    <tr>
-                                        <td>
-                                            <a href='index.php?p=admin'><button type="button" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back </button></a>
-                                        </td>    
-                                        <td style="text-align: right;">
-                                            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                                        </td>    
-                                    </tr>
-                                </table>        
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <table border=0 width="100%">
+                                            <tr>
+                                                <td>
+                                                    <a href='index.php?p=admin'><button type="button" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back </button></a>
+                                                </td>    
+                                                <td style="text-align: right;">
+                                                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                                                </td>    
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>        
                             </div>   
                         </form>
                         </div>

@@ -424,7 +424,7 @@ if($action=='3')
                                                     }
                                             ?>
                                                     <tr style="height: 50px;<?php echo $clr_row ?>">
-                                                        <td> &nbsp <?php echo $name_menu_act ?> </td>
+                                                        <td style="font-size: large;"> &nbsp <?php echo $name_menu_act ?> </td>
                                                         <td style="text-align: right;"> <input type="checkbox" name="menu[]" style="margin-right: 20px;" value="<?php echo $id_menu_act ?>" <?php if(in_array($id_menu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                     </tr>    
                                             <?php
@@ -438,7 +438,7 @@ if($action=='3')
                                                             $name_submenu_act      = $data_submenu_act['menu'];
                                             ?>
                                                             <tr style="height: 50px;<?php echo $clr_row ?>">
-                                                                <td> &nbsp&nbsp&nbsp - <?php echo $name_submenu_act ?> </td>
+                                                                <td style="font-size: large;"> &nbsp&nbsp&nbsp - <?php echo $name_submenu_act ?> </td>
                                                                 <td style="text-align: right;"> <input type="checkbox" name="menu[]" style="margin-right: 20px;" value="<?php echo $id_submenu_act ?>" <?php if(in_array($id_submenu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                             </tr>
                                             <?php  

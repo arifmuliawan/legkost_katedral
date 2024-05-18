@@ -20,7 +20,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo $base_assets ?>dist/css/adminlte.min.css">
     <script type="text/javascript" src="<?php echo $base_assets ?>ckeditor/ckeditor.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <?php
     if(isset($form))
     {

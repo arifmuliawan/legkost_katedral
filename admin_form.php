@@ -338,9 +338,9 @@ if($action=='3')
                                             <label class="form-label">Access</label>
                                             <!-- checkbox -->
                                             <div class="form-group clearfix">
-                                              <div class="icheck-primary d-inline">
-                                                <input type="checkbox" id="checkboxPrimary1" name="access[]" value="2" <?php if(in_array('2', $arr_access)){ echo "checked"; } ?> <?php echo $form_status_access ?>>
-                                                <label for="checkboxPrimary3">
+                                              <div class="icheck-danger d-inline">
+                                                <input type="checkbox" id="checkboxDanger1" name="access[]" value="2" <?php if(in_array('2', $arr_access)){ echo "checked"; } ?> <?php echo $form_status_access ?>>
+                                                <label for="checkboxDanger3">
                                                   &nbsp ADD
                                                 </label>
                                               </div>

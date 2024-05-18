@@ -417,7 +417,7 @@ if($action=='3')
                                             ?>
                                                     <tr>
                                                         <td> &nbsp <?php echo $name_menu_act ?> </td>
-                                                        <td align="center"> <input type="checkbox" name="menu[]" value="<?php echo $id_menu_act ?>" <?php if(in_array($id_menu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
+                                                        <td tyle="text-align: right;"> <input type="checkbox" name="menu[]" value="<?php echo $id_menu_act ?>" <?php if(in_array($id_menu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                     </tr>    
                                             <?php
                                                     $query_submenu_act  = mysqli_query($con,"SELECT * from menu WHERE parentid='$id_menu_act' AND visible='Y' $access_code $access_code order by sortid ASC")or die (mysqli_error($con));
@@ -431,7 +431,7 @@ if($action=='3')
                                             ?>
                                                             <tr>
                                                                 <td> &nbsp&nbsp&nbsp - <?php echo $name_submenu_act ?> </td>
-                                                                <td align="center"> <input type="checkbox" name="menu[]" value="<?php echo $id_submenu_act ?>" <?php if(in_array($id_submenu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
+                                                                <td tyle="text-align: right;"> <input type="checkbox" name="menu[]" value="<?php echo $id_submenu_act ?>" <?php if(in_array($id_submenu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                             </tr>
                                             <?php  
                                                         }

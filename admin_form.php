@@ -409,12 +409,21 @@ if($action=='3')
                                             $sum_menu_act   = mysqli_num_rows($query_menu_act);
                                             if($sum_menu_act>0)
                                             {
+                                                $no=1;
                                                 while($data_menu_act=mysqli_fetch_array($query_menu_act))
                                                 {
                                                     $id_menu_act        = $data_menu_act['id'];
                                                     $name_menu_act      = $data_menu_act['menu'];
+                                                    if ($no % 2 == 0)
+                                                    {
+                                                        $clr_row = "background-color: #ffffff;";
+                                                    }
+                                                    else
+                                                    {
+                                                        $clr_row = "background-color: #D9D9D9B2;";
+                                                    }
                                             ?>
-                                                    <tr style="height: 50px;">
+                                                    <tr style="height: 50px;<?php echo $clr_row ?>">
                                                         <td> &nbsp <?php echo $name_menu_act ?> </td>
                                                         <td style="text-align: right;"> <input type="checkbox" name="menu[]" value="<?php echo $id_menu_act ?>" <?php if(in_array($id_menu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                     </tr>    
@@ -428,7 +437,7 @@ if($action=='3')
                                                             $id_submenu_act        = $data_submenu_act['id'];
                                                             $name_submenu_act      = $data_submenu_act['menu'];
                                             ?>
-                                                            <tr style="height: 50px;">
+                                                            <tr style="height: 50px;<?php echo $clr_row ?>">
                                                                 <td> &nbsp&nbsp&nbsp - <?php echo $name_submenu_act ?> </td>
                                                                 <td style="text-align: right;"> <input type="checkbox" name="menu[]" value="<?php echo $id_submenu_act ?>" <?php if(in_array($id_submenu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                             </tr>

@@ -231,7 +231,7 @@ if($action=='3')
                     <!-- left column -->
                     <div class="col-md-12">
                         <!-- jquery validation -->
-                        <div class="card card-<?php echo $card_form ?>">
+                        <div class="card" style="box-shadow: unset;">
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form action="" method="post">

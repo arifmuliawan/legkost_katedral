@@ -419,6 +419,10 @@ if($action=='3')
                                                         <td> &nbsp <?php echo $name_menu_act ?> </td>
                                                         <td tyle="text-align: right;"> 
                                                             <input type="checkbox" name="menu[]" value="<?php echo $id_menu_act ?>" <?php if(in_array($id_menu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>>
+                                                            <label class="checkbox">Satu
+                                                                <input type="checkbox" checked="checked">
+                                                                <span class="check"></span>
+                                                            </label>
                                                         </td>
                                                     </tr>    
                                             <?php

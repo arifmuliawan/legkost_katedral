@@ -240,7 +240,7 @@ if($action=='3')
                                     <div class="col-md-5" id='f1'>
                                         <div class="form-group">
                                             <label class="form-label">Username</label>
-                                            <input type="text" name="username" class="form-control" placeholder="Enter Username" value="<?php echo $username ?>" <?php echo $form_status_username ?>>
+                                            <input type="text" name="username" class="form-control" placeholder="Type something here...." value="<?php echo $username ?>" <?php echo $form_status_username ?>>
                                             <?php
                                             if(isset($msg_username))
                                             {
@@ -341,21 +341,21 @@ if($action=='3')
                                               <div class="icheck-primary d-inline">
                                                 <input type="checkbox" id="checkboxPrimary1" name="access[]" value="2" <?php if(in_array('2', $arr_access)){ echo "checked"; } ?> <?php echo $form_status_access ?>>
                                                 <label for="checkboxPrimary3">
-                                                  &nbsp <i class="fa fa-plus"></i> Add
+                                                  &nbsp ADD
                                                 </label>
                                               </div>
                                               &nbsp&nbsp&nbsp
                                               <div class="icheck-primary d-inline">
                                                 <input type="checkbox" id="checkboxPrimary2" name="access[]" value="3" <?php if(in_array('3', $arr_access)){ echo "checked"; } ?> <?php echo $form_status_access ?>>
                                                 <label for="checkboxPrimary3">
-                                                  &nbsp <i class="fa fa-pen"></i> Edit
+                                                  &nbsp EDIT
                                                 </label>
                                               </div>
                                               &nbsp&nbsp&nbsp
                                               <div class="icheck-primary d-inline">
                                                 <input type="checkbox" id="checkboxPrimary3" name="access[]" value="4" <?php if(in_array('4', $arr_access)){ echo "checked"; } ?> <?php echo $form_status_access ?>>
                                                 <label for="checkboxPrimary3">
-                                                  &nbsp <i class="fa fa-trash"></i> Delete
+                                                  &nbsp DELETE
                                                 </label>
                                               </div>
                                             </div>

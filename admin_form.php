@@ -392,7 +392,7 @@ if($action=='3')
                                     <div class="col-md-11" id='f4'>
                                         <div class="form-group">
                                             <table border=0 width="100%">
-                                            <tr>
+                                            <tr style="height: 50px;">
                                                 <th> Menu </th>
                                                 <th style="text-align: right;">Select All Menu <input type="checkbox" onchange="checkAll(this)" name="menuall[]" <?php echo $form_status_menu ?>></th>
                                             </tr>
@@ -414,7 +414,7 @@ if($action=='3')
                                                     $id_menu_act        = $data_menu_act['id'];
                                                     $name_menu_act      = $data_menu_act['menu'];
                                             ?>
-                                                    <tr>
+                                                    <tr style="height: 50px;">
                                                         <td> &nbsp <?php echo $name_menu_act ?> </td>
                                                         <td style="text-align: right;"> <input type="checkbox" name="menu[]" value="<?php echo $id_menu_act ?>" <?php if(in_array($id_menu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                     </tr>    
@@ -428,7 +428,7 @@ if($action=='3')
                                                             $id_submenu_act        = $data_submenu_act['id'];
                                                             $name_submenu_act      = $data_submenu_act['menu'];
                                             ?>
-                                                            <tr>
+                                                            <tr style="height: 50px;">
                                                                 <td> &nbsp&nbsp&nbsp - <?php echo $name_submenu_act ?> </td>
                                                                 <td style="text-align: right;"> <input type="checkbox" name="menu[]" value="<?php echo $id_submenu_act ?>" <?php if(in_array($id_submenu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                             </tr>

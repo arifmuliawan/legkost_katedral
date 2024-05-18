@@ -393,8 +393,8 @@ if($action=='3')
                                         <div class="form-group">
                                             <table border=0 width="100%">
                                             <tr style="height: 50px;">
-                                                <th> Menu </th>
-                                                <th style="text-align: right;">Select All Menu <input type="checkbox" onchange="checkAll(this)" name="menuall[]" <?php echo $form_status_menu ?>></th>
+                                                <th> MENU </th>
+                                                <th style="text-align: right;"><input type="checkbox" onchange="checkAll(this)" name="menuall[]" <?php echo $form_status_menu ?>></th>
                                             </tr>
                                             <?php
                                             if($username=='developer')

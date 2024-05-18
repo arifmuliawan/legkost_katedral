@@ -395,7 +395,7 @@ if($action=='3')
                                             <table border=0 width="100%">
                                             <tr>
                                                 <th> Menu </th>
-                                                <th style="text-align: right;"><input type="checkbox" onchange="checkAll(this)" name="menuall[]" <?php echo $form_status_menu ?>></th>
+                                                <th style="text-align: right;">Select All Menu <input type="checkbox" onchange="checkAll(this)" name="menuall[]" <?php echo $form_status_menu ?>></th>
                                             </tr>
                                             <?php
                                             if($username=='developer')

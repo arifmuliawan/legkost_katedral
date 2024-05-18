@@ -219,7 +219,7 @@ if($action=='3')
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Admin Management</h1>
+                            <h1>USER MANAGEMENT</h1>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -232,9 +232,6 @@ if($action=='3')
                     <div class="col-md-12">
                         <!-- jquery validation -->
                         <div class="card card-<?php echo $card_form ?>">
-                        <div class="card-header" style="background-color: #432210;">
-                            <h3 class="card-title"> <i class="fa <?php echo $icon_form ?>"></i> <?php echo $title_form ?></h3>
-                        </div>
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form action="" method="post">

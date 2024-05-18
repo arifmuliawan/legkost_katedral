@@ -392,10 +392,10 @@ if($action=='3')
                                     <div class="col-md-11" id='f4'>
                                         <div class="form-group">
                                             <label class="form-label">Menu</label>
-                                            <table border=1 width="100%">
+                                            <table border=0 width="100%">
                                             <tr>
-                                                <th style="text-align: center;"> Menu </th>
-                                                <th style="text-align: center;"><input type="checkbox" onchange="checkAll(this)" name="menuall[]" <?php echo $form_status_menu ?>></th>
+                                                <th> Menu </th>
+                                                <th style="text-align: right;"><input type="checkbox" onchange="checkAll(this)" name="menuall[]" <?php echo $form_status_menu ?>></th>
                                             </tr>
                                             <?php
                                             if($username=='developer')

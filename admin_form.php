@@ -394,7 +394,7 @@ if($action=='3')
                                             <table border=0 width="100%">
                                             <tr style="height: 50px;">
                                                 <th> MENU </th>
-                                                <th style="text-align: right;"><input type="checkbox" onchange="checkAll(this)" name="menuall[]" <?php echo $form_status_menu ?>></th>
+                                                <th style="text-align: right;"><input type="checkbox" onchange="checkAll(this)" name="menuall[]" <?php echo $form_status_menu ?> style="margin-right: 20px;"></th>
                                             </tr>
                                             <?php
                                             if($username=='developer')
@@ -425,7 +425,7 @@ if($action=='3')
                                             ?>
                                                     <tr style="height: 50px;<?php echo $clr_row ?>">
                                                         <td> &nbsp <?php echo $name_menu_act ?> </td>
-                                                        <td style="text-align: right;"> <input type="checkbox" name="menu[]" value="<?php echo $id_menu_act ?>" <?php if(in_array($id_menu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
+                                                        <td style="text-align: right;"> <input type="checkbox" name="menu[]" style="margin-right: 20px;" value="<?php echo $id_menu_act ?>" <?php if(in_array($id_menu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                     </tr>    
                                             <?php
                                                     $query_submenu_act  = mysqli_query($con,"SELECT * from menu WHERE parentid='$id_menu_act' AND visible='Y' $access_code $access_code order by sortid ASC")or die (mysqli_error($con));
@@ -439,7 +439,7 @@ if($action=='3')
                                             ?>
                                                             <tr style="height: 50px;<?php echo $clr_row ?>">
                                                                 <td> &nbsp&nbsp&nbsp - <?php echo $name_submenu_act ?> </td>
-                                                                <td style="text-align: right;"> <input type="checkbox" name="menu[]" value="<?php echo $id_submenu_act ?>" <?php if(in_array($id_submenu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
+                                                                <td style="text-align: right;"> <input type="checkbox" name="menu[]" style="margin-right: 20px;" value="<?php echo $id_submenu_act ?>" <?php if(in_array($id_submenu_act, $arr_menu)){ echo "checked"; } ?> <?php echo $form_status_menu ?>> </td>
                                                             </tr>
                                             <?php  
                                                         }

@@ -490,7 +490,7 @@ if($action=='3')
                                                     <a href='index.php?p=admin'><button type="button" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back </button></a>
                                                 </td>    
                                                 <td style="text-align: right;">
-                                                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                                                    <button type="submit" class="btn" name="submit" style="background-color:#88A8D4;">Submit</button>
                                                 </td>    
                                             </tr>
                                         </table>

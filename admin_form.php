@@ -391,7 +391,6 @@ if($action=='3')
                                     <div class="col-md-6"></div>
                                     <div class="col-md-11" id='f4'>
                                         <div class="form-group">
-                                            <label class="form-label">Menu</label>
                                             <table border=0 width="100%">
                                             <tr>
                                                 <th> Menu </th>

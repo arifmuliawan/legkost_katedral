@@ -481,24 +481,18 @@ if($action=='3')
                                 </div>   
                             </div>
                             <!-- /.card-body -->
-                            <?php
-                            if($action=='2')
-                            {
-                            ?>    
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                                </div>
-                            <?php
-                            }
-                            else
-                            {
-                            ?>    
-                                <div class="card-footer">
-                                    <a href='index.php?p=admin'><button type="button" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back </button></a>
-                                </div>
-                            <?php
-                            }
-                            ?>    
+                            <div class="card-footer" style="background-color: unset;">
+                                <table border=0 width="100%">
+                                    <tr>
+                                        <td>
+                                            <a href='index.php?p=admin'><button type="button" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back </button></a>
+                                        </td>    
+                                        <td style="text-align: right;">
+                                            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                                        </td>    
+                                    </tr>
+                                </table>        
+                            </div>   
                         </form>
                         </div>
                         <!-- /.card -->

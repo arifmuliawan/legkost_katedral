@@ -388,7 +388,7 @@ if($action=='3')
                                                 if($action==3)
                                                 {
                                                 ?>    
-                                                    <td>
+                                                    <td style="text-align: right;">
                                                         <a href='index.php?p=admin'><button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;"> Edit </button></a>
                                                     </td>
                                                 <?php    

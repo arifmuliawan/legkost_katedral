@@ -384,9 +384,24 @@ if($action=='3')
                                                 <td>
                                                     <a href='index.php?p=admin'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> Back </button></a>
                                                 </td>    
-                                                <td style="text-align: right;">
-                                                    <button type="submit" class="btn" name="submit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">Submit</button>
-                                                </td>    
+                                                <?php
+                                                if($action==3)
+                                                {
+                                                ?>    
+                                                    <td>
+                                                        <a href='index.php?p=admin'><button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;"> Edit </button></a>
+                                                    </td>
+                                                <?php    
+                                                }
+                                                else
+                                                {
+                                                ?>
+                                                    <td style="text-align: right;">
+                                                        <button type="submit" class="btn" name="submit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">Submit</button>
+                                                    </td> 
+                                                <?php
+                                                }
+                                                ?>       
                                             </tr>
                                         </table>
                                     </div>

@@ -114,7 +114,7 @@ if(isset($action))
                                                     <td><?php echo $password ?></td>
                                                     <td><?php echo $last_login ?></td>
                                                     <td><?php echo $last_logout ?></td>
-                                                    <td style="min-width: 130px;">
+                                                    <td style="min-width: 130px;display: flex;align-items: center;justify-content: center;">
                                                         <?php
                                                         if(in_array(3,$arr_usracc))
                                                         {

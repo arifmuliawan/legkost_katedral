@@ -251,33 +251,7 @@ if($action=='3')
                                             ?>
                                         </div>
                                     </div>
-                                    <div class="col-md-1">
-                                    <?php
-                                    if($action=='3')
-                                    {
-                                    ?>    
-                                        <div class="form-group">
-                                            <label class="form-label">&nbsp</label>
-                                            <?php
-                                            if($form=='1')
-                                            {
-                                            ?>
-                                                <br>    
-                                                <button type="submit" class="btn btn-primary btn-block" name="submit"><i class="fa fa-save"></i></button>
-                                            <?php
-                                            }
-                                            else
-                                            {
-                                            ?>        
-                                                <a href='index.php?p=admin_form&a=<?php echo $action ?>&id=<?php echo $id ?>&f=1'><button type="button" class="btn btn-warning btn-block" title="Edit"><i class="fa fa-pen"></i></button></a> 
-                                            <?php
-                                            }
-                                            ?>
-                                        </div>
-                                    <?php
-                                    }
-                                    ?> 
-                                    </div>       
+                                    <div class="col-md-1"></div>       
                                     <div class="col-md-5" id='f2'>
                                         <div class="form-group">
                                             <label class="form-label">Password</label>
@@ -305,34 +279,7 @@ if($action=='3')
                                             ?>
                                         </div>
                                     </div>
-                                    <div class="col-md-1">
-                                    <?php
-                                    if($action=='3')
-                                    {
-                                    ?>    
-                                        <div class="form-group">
-                                            <label class="form-label">&nbsp</label>
-                                            <?php
-                                                if($form=='2')
-                                                {
-                                                ?>   
-                                                    <br> 
-                                                    <a href='index.php?p=admin_form&a=<?php echo $action ?>&id=<?php echo $id ?>&f=2'><button type="button" class="btn btn-success" title="Reset"><i class="fa fa-undo"></i></button></a>
-                                                    <button type="submit" class="btn btn-primary" name="submit" title="save"><i class="fa fa-save"></i></button>
-                                                <?php
-                                                }
-                                                else
-                                                {
-                                                ?>        
-                                                    <a href='index.php?p=admin_form&a=<?php echo $action ?>&id=<?php echo $id ?>&f=2'><button type="button" class="btn btn-success btn-block" title="Reset"><i class="fa fa-undo"></i></button></a> 
-                                                <?php
-                                                }
-                                            ?>
-                                        </div>
-                                    <?php
-                                    }
-                                    ?>
-                                    </div>
+                                    <div class="col-md-1"></div>
                                     <div class="col-md-5" id='f3'>
                                         <div class="form-group">
                                             <label class="form-label">Access</label>
@@ -361,33 +308,7 @@ if($action=='3')
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-1">
-                                    <?php
-                                    if($action=='3')
-                                    {
-                                    ?>    
-                                        <div class="form-group">
-                                            <label class="form-label">&nbsp</label>
-                                            <?php
-                                            if($form=='3')
-                                            {
-                                            ?>
-                                                <br>    
-                                                <button type="submit" class="btn btn-primary btn-block" name="submit"><i class="fa fa-save"></i></button>
-                                            <?php
-                                            }
-                                            else
-                                            {
-                                            ?>        
-                                                <a href='index.php?p=admin_form&a=<?php echo $action ?>&id=<?php echo $id ?>&f=3'><button type="button" class="btn btn-warning btn-block" title="Edit"><i class="fa fa-pen"></i></button></a> 
-                                            <?php
-                                            }
-                                            ?>
-                                        </div>
-                                    <?php
-                                    }
-                                    ?> 
-                                    </div>
+                                    <div class="col-md-1"></div>
                                     <div class="col-md-6"></div>
                                     <div class="col-md-11" id='f4'>
                                         <div class="form-group">
@@ -451,33 +372,7 @@ if($action=='3')
                                             </table>   
                                         </div>
                                     </div>
-                                    <div class="col-md-1">
-                                    <?php
-                                    if($action=='3')
-                                    {
-                                    ?>    
-                                        <div class="form-group">
-                                            <label class="form-label">&nbsp</label>
-                                            <?php
-                                            if($form=='4')
-                                            {
-                                            ?>
-                                                <br>    
-                                                <button type="submit" class="btn btn-primary btn-block" name="submit"><i class="fa fa-save"></i></button>
-                                            <?php
-                                            }
-                                            else
-                                            {
-                                            ?>        
-                                                <a href='index.php?p=admin_form&a=<?php echo $action ?>&id=<?php echo $id ?>&f=4'><button type="button" class="btn btn-warning btn-block" title="Edit"><i class="fa fa-pen"></i></button></a> 
-                                            <?php
-                                            }
-                                            ?>
-                                        </div>
-                                    <?php
-                                    }
-                                    ?> 
-                                    </div> 
+                                    <div class="col-md-1"></div> 
                                 </div>   
                             </div>
                             <!-- /.card-body -->

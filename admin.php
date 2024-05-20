@@ -147,7 +147,7 @@ if(isset($action))
                                                             $stt_form   ='disabled';   
                                                         }    
                                                         ?>
-                                                        <form id="checkgo" method="post">
+                                                        <form id="checkgo" method="post" style="margin-left: 12px;">
                                                             <input type="hidden" name="id" value="<?php echo $id ?>" id="id<?php echo $id ?>">
                                                             <input type="hidden" name="tbname" value="admin" id="tbname<?php echo $id ?>">
                                                             <div class="button r" id="button-1">

@@ -185,6 +185,60 @@ if(isset($action))
                                         ?>            
                                     </tbody>
                                     </table>
+                                    <form method="post">
+                                    <table id="sortableTable" cellspacing="0" cellpadding="3" border="1">
+                                        <thead>
+                                        <tr>
+                                            <td width="5%">ID</td>
+                                            <td width="25%">Title</td>
+                                            <td width="60%">Description</td>
+                                            <td width="10%">Sort Order</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Project Title</td>
+                                            <td>Lorem ipsum stuff.</td>
+                                            <td><span>1</span></td>
+                                            <input class="sortID" type="hidden" name="sortID[]" value="" />
+                                            <input class="projectID" type="hidden" name="projectID[]" value="1" />
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Project Title</td>
+                                            <td>Lorem ipsum stuff.</td>
+                                            <td><span>2</span></td>
+                                            <input class="sortID" type="hidden" name="sortID[]" value="" />
+                                            <input class="projectID" type="hidden" name="projectID[]" value="2" />
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Project Title</td>
+                                            <td>Lorem ipsum stuff.</td>
+                                            <td><span>3</span></td>
+                                            <input class="sortID" type="hidden" name="sortID[]" value="" />
+                                            <input class="projectID" type="hidden" name="projectID[]" value="3" />
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Project Title</td>
+                                            <td>Lorem ipsum stuff.</td>
+                                            <td><span>4</span></td>
+                                            <input class="sortID" type="hidden" name="sortID[]" value="" />
+                                            <input class="projectID" type="hidden" name="projectID[]" value="4" />
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Project Title</td>
+                                            <td>Lorem ipsum stuff.</td>
+                                            <td><span>5</span></td>
+                                            <input class="sortID" type="hidden" name="sortID[]" value="" />
+                                            <input class="projectID" type="hidden" name="projectID[]" value="5" />
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    </form>
                                 </div>
                                 <!-- /.card-body -->
                             </div>

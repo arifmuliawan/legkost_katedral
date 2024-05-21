@@ -84,13 +84,14 @@
         evt.clone // the clone element
         evt.pullMode;  // when item is in another sortable: `"clone"` if cloning, `true` if moving
           // same properties as onEnd
-          //updateOrder(selectedData);
+          //
           console.table('Sortable',evt.to,evt.from,evt.oldIndex,evt.newIndex,itemEl)
           var target    = $(`.tableid:eq(${potstart})`).attr("data-id")
           var ordersec  = $(`.tableid:eq(${potstart})`).attr("data-sec")
           var target2   = $(`.tableid:eq(${potend})`).attr("data-id")
           var ordersec2 = $(`.tableid:eq(${potend})`).attr("data-sec")
           console.table('Updated',target,ordersec,target2,ordersec2)
+          updateOrder({target,ordersec,target2,ordersec2});
         },
 
     });

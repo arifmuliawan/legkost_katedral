@@ -1,5 +1,5 @@
 <?php
-$query      = mysqli_query($con,"SELECT * from admin WHERE visible!='D'")or die (mysqli_error($con));
+$query      = mysqli_query($con,"SELECT * from admin WHERE visible!='D' order by sortid ASC")or die (mysqli_error($con));
 $sum_query  = mysqli_num_rows($query);
 if(isset($action))
 {
@@ -78,6 +78,7 @@ if(isset($action))
                                             while($data_query=mysqli_fetch_array($query))
                                             {
                                                 $id         = $data_query['id'];
+                                                $sortid     = $data_query['sortid'];
                                                 $username   = $data_query['username'];
                                                 $password   = "**********";
                                                 $access     = $data_query['access'];
@@ -109,7 +110,7 @@ if(isset($action))
                                                     $clr_row = "background-color: #ffffff;";
                                                 }
                                         ?>
-                                                <tr style="<?php echo $clr_row ?>" id="<?php echo $id ?>">
+                                                <tr style="<?php echo $clr_row ?>" id="<?php echo $sortid ?>">
                                                     <td><?php echo $username ?></td>
                                                     <td><?php echo $password ?></td>
                                                     <td><?php echo $last_login ?></td>

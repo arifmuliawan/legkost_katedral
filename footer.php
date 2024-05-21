@@ -71,6 +71,15 @@
 </script>
 
 <script type="text/javascript">
+    var el = document.getElementById('items');
+    var sortable = Sortable.create(el,{
+      onUpdate: function (/**Event*/evt) {
+        console.log('Sortable',evt)
+		  // same properties as onEnd
+      //updateOrder(selectedData);
+	  },
+    });
+    /*
     $( ".row_position" ).sortable({
         delay: 150,
         stop: function() {
@@ -80,7 +89,7 @@
             });
             updateOrder(selectedData);
         }
-    });
+    });*/
 
 
     function updateOrder(data) {

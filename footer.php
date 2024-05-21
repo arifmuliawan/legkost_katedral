@@ -75,17 +75,11 @@
     var sortable = Sortable.create(el,{
       onUpdate: function (/**Event*/evt) {
         var itemEl = evt.item;  // dragged HTMLElement
-        evt.to;    // target list
-        evt.from;  // previous list
         var potstart = evt.oldIndex;  // element's old index within old parent
         var potend = evt.newIndex;  // element's new index within new parent
-        evt.oldDraggableIndex; // element's old index within old parent, only counting draggable elements
-        evt.newDraggableIndex; // element's new index within new parent, only counting draggable elements
-        evt.clone // the clone element
-        evt.pullMode;  // when item is in another sortable: `"clone"` if cloning, `true` if moving
           // same properties as onEnd
           //
-          console.table('Sortable',evt.to,evt.from,evt.oldIndex,evt.newIndex,itemEl)
+          //console.table('Sortable',evt.to,evt.from,evt.oldIndex,evt.newIndex,itemEl)
           var target    = $(`.tableid:eq(${potstart})`).attr("data-id")
           var ordersec  = $(`.tableid:eq(${potstart})`).attr("data-sec")
           var target2   = $(`.tableid:eq(${potend})`).attr("data-id")

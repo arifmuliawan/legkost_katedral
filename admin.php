@@ -203,14 +203,14 @@ if(isset($action))
                                             $no=1;
                                             while($data_query2=mysqli_fetch_array($query2))
                                             {
-                                                $id         = $data_query['id'];
-                                                $sortid     = $data_query['sortid'];
-                                                $username   = $data_query['username'];
+                                                $id         = $data_query2['id'];
+                                                $sortid     = $data_query2['sortid'];
+                                                $username   = $data_query2['username'];
                                                 $password   = "**********";
-                                                $access     = $data_query['access'];
-                                                $last_login = $data_query['last_login'];
-                                                $last_logout= $data_query['last_logout'];
-                                                $visible    = $data_query['visible'];
+                                                $access     = $data_query2['access'];
+                                                $last_login = $data_query2['last_login'];
+                                                $last_logout= $data_query2['last_logout'];
+                                                $visible    = $data_query2['visible'];
                                                 if($visible=='Y')
                                                 {
                                                     $icon_visible   = 'fa fa-unlock';

@@ -154,6 +154,34 @@
         .switch label input[type="checkbox"]:checked + .lever {
             background-color: #DFDFDF;
             }
+
+        
+            
+        #sortableTable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            
+            thead {
+                background-color: #444;
+                color: #FFF;
+                text-align: center;
+            }
+            
+            tbody tr {
+                margin: 0 3px 3px 3px;
+                padding: 0.4em;
+                padding-left: 1.5em;
+                font-size: 1.1em;
+                height: 18px;
+                cursor: pointer;
+            }
+            
+            .ui-sortable-placeholder {
+                background-color: #C00;
+            }
+        }    
     </style>
 
     <script type="text/javascript">

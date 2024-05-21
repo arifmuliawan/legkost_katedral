@@ -90,8 +90,8 @@
           var ordersec  = $(`.tableid:eq(${potstart})`).attr("data-sec")
           var target2   = $(`.tableid:eq(${potend})`).attr("data-id")
           var ordersec2 = $(`.tableid:eq(${potend})`).attr("data-sec")
-          console.table('Updated',target,ordersec,target2,ordersec2)
-          updateOrder({target,ordersec,target2,ordersec2});
+          console.table('Updated',target,ordersec2,target2,ordersec)
+          updateOrder({target,ordersec2,target2,ordersec});
         },
 
     });

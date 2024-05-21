@@ -85,8 +85,8 @@
         evt.pullMode;  // when item is in another sortable: `"clone"` if cloning, `true` if moving
           // same properties as onEnd
           //updateOrder(selectedData);
+          console.log('Sortable',itemEl)
         },
-        console.log('Sortable',itemEl)
     });
     /*
     $( ".row_position" ).sortable({

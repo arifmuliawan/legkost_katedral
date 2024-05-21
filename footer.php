@@ -77,8 +77,8 @@
         var itemEl = evt.item;  // dragged HTMLElement
         evt.to;    // target list
         evt.from;  // previous list
-        evt.oldIndex;  // element's old index within old parent
-        evt.newIndex;  // element's new index within new parent
+        var potstart = evt.oldIndex;  // element's old index within old parent
+        var potend = evt.newIndex;  // element's new index within new parent
         evt.oldDraggableIndex; // element's old index within old parent, only counting draggable elements
         evt.newDraggableIndex; // element's new index within new parent, only counting draggable elements
         evt.clone // the clone element
@@ -86,7 +86,13 @@
           // same properties as onEnd
           //updateOrder(selectedData);
           console.table('Sortable',evt.to,evt.from,evt.oldIndex,evt.newIndex,itemEl)
+          var target    = $(`.tableid:eq(${potstart})`).attr("data-id")
+          var ordersec  = $(`.tableid:eq(${potstart})`).attr("data-sec")
+          var target2   = $(`.tableid:eq(${potend})`).attr("data-id")
+          var ordersec2 = $(`.tableid:eq(${potend})`).attr("data-sec")
+          console.table('Updated',target,ordersec,target2,ordersec2)
         },
+
     });
     /*
     $( ".row_position" ).sortable({

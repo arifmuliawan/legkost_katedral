@@ -1,6 +1,8 @@
 <?php
 $query      = mysqli_query($con,"SELECT * from admin WHERE visible!='D'")or die (mysqli_error($con));
 $sum_query  = mysqli_num_rows($query);
+$query2     = mysqli_query($con,"SELECT * from admin WHERE visible!='D'")or die (mysqli_error($con));
+$sum_query2 = mysqli_num_rows($query2);
 if(isset($action))
 {
     if($action=='4')
@@ -196,10 +198,10 @@ if(isset($action))
                                     </tr>
                                     <tbody class="row_position">
                                     <?php
-                                        if($sum_query>0)
+                                        if($sum_query2>0)
                                         {
                                             $no=1;
-                                            while($data_query=mysqli_fetch_array($query))
+                                            while($data_query2=mysqli_fetch_array($query2))
                                             {
                                                 $id         = $data_query['id'];
                                                 $sortid     = $data_query['sortid'];

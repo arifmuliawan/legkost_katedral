@@ -109,6 +109,7 @@
             data:{position:data},
             success:function(){
                 alert('your change successfully saved');
+                location.reload();
             }
         })
     }

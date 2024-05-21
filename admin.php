@@ -110,7 +110,7 @@ if(isset($action))
                                                     $clr_row = "background-color: #ffffff;";
                                                 }
                                         ?>
-                                                <tr style="<?php echo $clr_row ?>" id="<?php echo $sortid ?>">
+                                                <tr style="<?php echo $clr_row ?>" class="tableid" id="<?php echo $sortid ?>">
                                                     <td><?php echo $username ?></td>
                                                     <td><?php echo $password ?></td>
                                                     <td><?php echo $last_login ?></td>

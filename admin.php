@@ -166,6 +166,12 @@ if(isset($action))
                                                                 type : "POST",
                                                                 url : "change_visible.php",
                                                                 data : info,
+                                                                success: function(){
+                                                                    document.getElementById("wegep<?php echo $id ?>").value = wegeb == 'Y'?'N':'Y'  
+                                                                },
+                                                                error: function(){
+                                                                     document.getElementById("wegep<?php echo $id ?>").value = wegeb
+                                                                }
                                                                 });
                                                                 return false;
                                                             }   

@@ -70,7 +70,7 @@ if(isset($action))
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="row_position">
                                         <?php
                                         if($sum_query>0)
                                         {

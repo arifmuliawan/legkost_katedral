@@ -1,8 +1,6 @@
 <?php
 $query      = mysqli_query($con,"SELECT * from admin WHERE visible!='D'")or die (mysqli_error($con));
 $sum_query  = mysqli_num_rows($query);
-$query2     = mysqli_query($con,"SELECT * from admin WHERE visible!='D'")or die (mysqli_error($con));
-$sum_query2 = mysqli_num_rows($query2);
 if(isset($action))
 {
     if($action=='4')

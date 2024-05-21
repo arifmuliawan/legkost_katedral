@@ -68,6 +68,57 @@
       "responsive": true,
     });
   });
+
+  
+
+  var sortArray = []; //Create variable to store sorting array
+
+  //Sortable rows, helps maintain column widths a little better
+  var fixHelperModified = function(e, tr) {
+    var $originals = tr.children();
+    var $helper = tr.clone();
+    $helper.children().each(function(index)
+                            {
+                              $(this).width($originals.eq(index).width());
+                            });
+    return $helper;
+  };
+
+  function updateSort(table) {
+    $(table + ' tbody tr').each(function(){
+      var row_index = $(this).index() + 1; //Start with 1, not zero
+      var projectID = $(this).find('.projectID').val();
+      $(this).find('span').text( row_index );
+      $(this).find('.sortID').val( row_index );
+
+      sortArray[projectID] = $(this).find('.sortID').val();
+    });
+    return sortArray;
+  }
+
+  $(function(){
+    
+    //Initiate jQuery UI `sortable` widget on parent of sortable elements
+    $("#sortableTable tbody").sortable({
+      helper: fixHelperModified, //Add helper that maintains nicer column widths
+      update: function( event, ui ) { //Triggers once sorting has finished and DOM position has changed
+        updateSort('#sortableTable');
+        
+        //ajax POST here (https://api.jquery.com/jQuery.post/)
+        $.post(
+          "script.php", //PHP script to POST array to
+          { project: sortArray }
+        )
+        .always(function(){        
+          //Display successful save message
+          $(".successfully-saved").css("display", "block").delay(2000).fadeOut(400);
+        });
+        
+      }
+    })
+    .disableSelection(); //Necessary to keep table row content from being selectable
+
+  });
 </script>
 </body>
 </html>

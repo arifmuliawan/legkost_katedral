@@ -71,7 +71,7 @@
 </script>
 
 <script type="text/javascript">
-    var el = document.getElementById('items');
+    var el = document.querySelector('.row_position');
     var sortable = Sortable.create(el,{
       onUpdate: function (/**Event*/evt) {
         console.log('Sortable',evt)

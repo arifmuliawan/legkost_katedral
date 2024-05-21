@@ -69,5 +69,30 @@
     });
   });
 </script>
+
+<script type="text/javascript">
+    $( ".row_position" ).sortable({
+        delay: 150,
+        stop: function() {
+            var selectedData = new Array();
+            $('.row_position>tr').each(function() {
+                selectedData.push($(this).attr("id"));
+            });
+            updateOrder(selectedData);
+        }
+    });
+
+
+    function updateOrder(data) {
+        $.ajax({
+            url:"ajaxPro.php",
+            type:'post',
+            data:{position:data},
+            success:function(){
+                alert('your change successfully saved');
+            }
+        })
+    }
+</script>
 </body>
 </html>

@@ -9,10 +9,9 @@ try {
     // A set of queries; if one fails, an exception should be thrown
     foreach($position as $pos)
     {
-        $sql = "Update admin set sortid=? WHERE id=?";
-        $con->prepare($sql);
-        $con->bind_param("ii",$pos['sortid'],$pos['id']);
-        $con->execute();
+        $sql= $con->prepare("Update admin set sortid=? WHERE id=?");
+        $sql->bind_param("ii",$pos['sortid'],$pos['id']);
+        $sql->execute();
     }
     // If we arrive here, it means that no exception was thrown
     // i.e. no query has failed, and we can commit the transaction

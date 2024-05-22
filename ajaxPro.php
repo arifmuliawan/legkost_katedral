@@ -1,7 +1,7 @@
 <?php 
 include("config.php");
 $position = $_POST['position'];
-//print_r($position);
+print_r($position);
 $sql="";  
 try {
     // First of all, let's begin a transaction

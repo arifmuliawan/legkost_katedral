@@ -74,18 +74,11 @@
     var el = document.querySelector('.row_position');
     var sortable = Sortable.create(el,{
       onUpdate: function (/**Event*/evt) {
-        var itemEl = evt.item;  // dragged HTMLElement
-        var potstart = evt.oldIndex;  // element's old index within old parent
-        var potend = evt.newIndex;  // element's new index within new parent
-          // same properties as onEnd
-          //
-          //console.table('Sortable',evt.to,evt.from,evt.oldIndex,evt.newIndex,itemEl)
-          var target    = $(`.tableid:eq(${potstart})`).attr("data-id")
-          var ordersec  = $(`.tableid:eq(${potstart})`).attr("data-sec")
-          var target2   = $(`.tableid:eq(${potend})`).attr("data-id")
-          var ordersec2 = $(`.tableid:eq(${potend})`).attr("data-sec")
-          console.table('Updated',target,ordersec2,target2,ordersec,potstart,potend)
-          updateOrder({target,ordersec2,target2,ordersec,potstart,potend});
+        arr = [];index=0
+        $('.tableid').each(function(item){
+        arr.push({id:$(this).attr('data-id'),sort:index++})
+        })
+            updateOrder(arr);
         },
 
     });
@@ -99,7 +92,20 @@
             });
             updateOrder(selectedData);
         }
-    });*/
+    });
+    
+    var itemEl = evt.item;  // dragged HTMLElement
+        var potstart = evt.oldIndex;  // element's old index within old parent
+        var potend = evt.newIndex;  // element's new index within new parent
+          // same properties as onEnd
+          //
+          //console.table('Sortable',evt.to,evt.from,evt.oldIndex,evt.newIndex,itemEl)
+          var target    = $(`.tableid:eq(${potstart})`).attr("data-id")
+          var ordersec  = $(`.tableid:eq(${potstart})`).attr("data-sec")
+          var target2   = $(`.tableid:eq(${potend})`).attr("data-id")
+          var ordersec2 = $(`.tableid:eq(${potend})`).attr("data-sec")
+          console.table('Updated',target,ordersec2,target2,ordersec,potstart,potend)
+    */
 
 
     function updateOrder(data) {

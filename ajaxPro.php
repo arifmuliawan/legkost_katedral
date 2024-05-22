@@ -5,7 +5,7 @@ $position = $_POST['position'];
 $sql="";  
 try {
     // First of all, let's begin a transaction
-    $con->beginTransaction();
+    $con->begin_transaction();
     // A set of queries; if one fails, an exception should be thrown
     foreach($position as $pos)
     {

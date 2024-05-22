@@ -9,7 +9,7 @@ try {
     // A set of queries; if one fails, an exception should be thrown
     foreach($position as $pos)
     {
-        $sql= $con->prepare("Update admin set sortid=? WHERE id=?");
+        $sql= $con->prepare("UPDATE `admin` SET sortid=? WHERE id=?");
         $sql->bind_param("ii",$pos['sortid'],$pos['id']);
         $sql->execute();
     }

@@ -20,5 +20,6 @@ try {
     // An exception has been thrown
     // We must rollback the transaction
     $con->rollback();
+    throw $e;
 }
 ?>

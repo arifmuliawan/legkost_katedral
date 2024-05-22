@@ -11,7 +11,7 @@ try {
     {
         $sql = "Update admin set sortid=? WHERE id=?";
         $con->prepare($sql);
-        $con->bind_param("ss",$pos['sortid'],$pos['id']);
+        $con->bind_param("ii",$pos['sortid'],$pos['id']);
         $con->execute();
     }
     // If we arrive here, it means that no exception was thrown

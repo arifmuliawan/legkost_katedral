@@ -9,7 +9,7 @@ try {
     // A set of queries; if one fails, an exception should be thrown
     foreach($position as $pos)
     {
-        $sql = mysqli_query($con,"UPDATE `admin` SET sortid=$pos[sortid] WHERE id=$pos[id]");
+        $sql = mysqli_query($con,"UPDATE `admin` SET sortid=$pos[sort] WHERE id=$pos[id]");
         //$sql= $con->prepare("UPDATE `admin` SET sortid=? WHERE id=?");
         //$sql->bind_param("ii",$pos['sortid'],$pos['id']);
         //$sql->execute();

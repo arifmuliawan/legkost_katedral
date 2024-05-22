@@ -108,8 +108,8 @@
             type:'post',
             data:{position:data},
             success:function(){
-                alert('your change successfully saved');
-                location.reload();
+                //alert('your change successfully saved');
+                //location.reload();
             }
         })
     }

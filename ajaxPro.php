@@ -9,10 +9,10 @@ try {
     // A set of queries; if one fails, an exception should be thrown
     foreach($position as $pos)
     {
-        $sql = mysqli_query($con,"UPDATE `admin` SET sortid=$pos[sort] WHERE id=$pos[id]");
-        //$sql= $con->prepare("UPDATE `admin` SET sortid=? WHERE id=?");
-        //$sql->bind_param("ii",$pos['sortid'],$pos['id']);
-        //$sql->execute();
+        //$sql = mysqli_query($con,"UPDATE `admin` SET sortid=$pos[sort] WHERE id=$pos[id]");
+        $sql= $con->prepare("UPDATE `admin` SET sortid=? WHERE id=?");
+        $sql->bind_param("ii",$pos['sort'],$pos['id']);
+        $sql->execute();
     }
     // If we arrive here, it means that no exception was thrown
     // i.e. no query has failed, and we can commit the transaction

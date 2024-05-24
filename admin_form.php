@@ -275,7 +275,7 @@ if($action=='3')
                                         </div>
                                     </div>
                                     <div class="col-md-1">
-                                        <a href='index.php?p=admin_form?p=admin_form&a=3&id=<?php echo $id ?>&f=1'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> Update Password </button></a>
+                                        <a href='index.php?p=admin_form?p=admin_form&a=3&id=<?php echo $id ?>&f=1'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> Update </button></a>
                                     </div>
                                     <div class="col-md-5" id='f3'>
                                         <div class="form-group">

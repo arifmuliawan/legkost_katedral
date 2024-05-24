@@ -61,7 +61,7 @@ if($action=='2')
             if($sum_username==0)
             {
                 $pass 			    = md5($password);
-                $query_sort         = mysqli_query($con,"SELECT * from menu WHERE visible!='D' AND parentid='0' order by sortid DESC LIMIT 1")or die (mysqli_error($con));
+                $query_sort         = mysqli_query($con,"SELECT * from admin WHERE visible!='D' order by sortid DESC LIMIT 1")or die (mysqli_error($con));
                 $sum_sort           = mysqli_num_rows($query_sort);
                 if($sum_sort<=0)
                 {
@@ -74,7 +74,7 @@ if($action=='2')
                     $last_sort      = $data_sort['sortid'];
                     $new_sort       = $last_sort+1;
                 }
-                $input 	            = mysqli_query($con,"INSERT into admin (sortid,username,password,access,menu,visible,create_by,create_date,update_by,update_date) VALUES ('$new_sort','$username','$pass','$arr_access2','$arr_menu2','$visible','$user','$now','$user','$now')")or die (mysqli_error($con));
+                $input 	            = mysqli_query($con,"INSERT into admin (sortid,username,password,access,menu,visible,failed_login,last_login,last_logout,block_login,create_by,create_date,update_by,update_date) VALUES ('$new_sort','$username','$pass','$arr_access2','$arr_menu2','$visible',0,'2001-01-01 00:00:00','2001-01-01 00:00:00','2001-01-01 00:00:00','$user','$now','$user','$now')")or die (mysqli_error($con));
                 if($input==1)
                 {
                     //update Log//

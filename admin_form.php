@@ -97,6 +97,14 @@ if($action=='2')
             }
             else
             {
+                echo "
+                    <script type='text/javascript'> 
+                        toastr['danger']('Submited Failed!');
+                        toastr.options = {
+                            'showDuration': '3000'
+                        }
+                        var delay = 5000;
+                    </script>";
                 $msg_username       = "username is available, please use another username";
             }    
         }	

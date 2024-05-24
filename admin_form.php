@@ -60,8 +60,21 @@ if($action=='2')
             $sum_username   = mysqli_num_rows($query_username);
             if($sum_username==0)
             {
-                $pass 			= md5($password);
-                $input 	        = mysqli_query($con,"INSERT into admin (username,password,access,menu,visible,create_by,create_date,update_by,update_date) VALUES ('$username','$pass','$arr_access2','$arr_menu2','$visible','$user','$now','$user','$now')")or die (mysqli_error($con));
+                $pass 			    = md5($password);
+                $query_sort         = mysqli_query($con,"SELECT * from menu WHERE visible!='D' AND parentid='0' order by sortid DESC LIMIT 1")or die (mysqli_error($con));
+                $sum_sort           = mysqli_num_rows($query_sort);
+                if($sum_sort<=0)
+                {
+                    $last_sort      = 0;
+                    $new_sort       = $last_sort;
+                }
+                else
+                {
+                    $data_sort      = mysqli_fetch_array($query_sort);
+                    $last_sort      = $data_sort['sortid'];
+                    $new_sort       = $last_sort+1;
+                }
+                $input 	            = mysqli_query($con,"INSERT into admin (sortid,username,password,access,menu,visible,create_by,create_date,update_by,update_date) VALUES ('$new_sort','$username','$pass','$arr_access2','$arr_menu2','$visible','$user','$now','$user','$now')")or die (mysqli_error($con));
                 if($input==1)
                 {
                     //update Log//
@@ -97,7 +110,7 @@ if($action=='3')
     $query      = mysqli_query($con,"SELECT * from admin WHERE id='$id'")or die (mysqli_error($con));
     $data_query = mysqli_fetch_array($query);
     $username   = $data_query['username'];
-    if(empty($form) || $form!='2')
+    if(empty($form) || $form!='1')
     {
         $password   = $data_query['password'];
     }
@@ -111,48 +124,29 @@ if($action=='3')
     $arr_menu   = explode("/", $menu_adm);
     if(isset($_POST['submit']))
     {
-        if($form=='1')
-        {
-            $username 		= $_POST['username'];
-            $data_edit      = "username='".$username."'";
-            $log_edit       = "username - ".$username."";
+        $username 		    = $_POST['username'];
+        $password 			= $_POST['password'];
+        if(isset($_POST['access']))
+        {    
+            $access_adm     = $_POST['access'];
+            $arr_access     = $access_adm;
+            $arr_access2    = implode("/", $access_adm);
         }
-        if($form=='2')
+        else
         {
-            $password 		= $_POST['password'];
-            $pass 			= md5($password);
-            $data_edit      = "password='".$pass."'";
-            $log_edit       = "password - ".$username."";
+            $arr_access     = array();
+            $arr_access2    = "";
+        }    
+        if(isset($_POST['menu']))
+        {    
+            $menu_adm       = $_POST['menu'];
+            $arr_menu       = $menu_adm;
+            $arr_menu2      = implode("/", $menu_adm);
         }
-        if($form=='3')
+        else
         {
-            if(isset($_POST['access']))
-            {
-                $access_adm     = implode("/",$_POST['access']); 
-                $data_edit      = "access='".$access_adm."'";
-                $log_edit       = "access - ".$username."";
-            }
-            else
-            {
-                $access_adm     = array();
-                $data_edit      = "access=''";
-                $log_edit       = "access - ".$username."";
-            }    
-        }
-        if($form=='4')
-        {
-            if(isset($_POST['menu']))
-            {
-                $menu_adm       = implode("/",$_POST['menu']); 
-                $data_edit      = "menu='".$menu_adm."'";
-                $log_edit       = "menu - ".$username."";
-            }
-            else
-            {
-                $menu_adm       = array();
-                $data_edit      = "menu=''";
-                $log_edit       = "menu - ".$username."";
-            }    
+            $arr_menu       = array();
+            $arr_menu2      = "";
         }
         $update 	        = mysqli_query($con,"UPDATE admin SET $data_edit,update_by='$user',update_date='$now' WHERE id='$id'")or die (mysqli_error($con));
         if($update==1)

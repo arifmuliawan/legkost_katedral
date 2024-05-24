@@ -168,7 +168,7 @@ if($action=='3')
             $password 		= "";
             $uppass         = "";
         }
-        $update 	        = mysqli_query($con,"UPDATE admin SET $data_edit,update_by='$user',update_date='$now' $uppass WHERE id='$id'")or die (mysqli_error($con));
+        $update 	        = mysqli_query($con,"UPDATE admin SET username='$username',access='$arr_access2',menu='$arr_menu2',update_by='$user',update_date='$now' $uppass WHERE id='$id'")or die (mysqli_error($con));
         if($update==1)
         {
             //update Log//

@@ -88,7 +88,7 @@ if($action=='2')
                         toastr.options = {
                             'showDuration': '3000'
                         }
-                        var delay = 10000; 
+                        var delay = 5000; 
                         setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
                     </script>";
                     //echo "<script type='text/javascript'> alert('Submited Successfully!');</script>";

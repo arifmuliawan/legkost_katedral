@@ -110,7 +110,7 @@
 
     function updateOrder(data) {
         $.ajax({
-            url:"ajaxPro.php",
+            url:"change_sort.php",
             type:'post',
             data:{position:data},
             success:function(){

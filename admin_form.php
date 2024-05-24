@@ -136,7 +136,6 @@ if($action=='3')
     if(isset($_POST['submit']))
     {
         $username 		    = $_POST['username'];
-        $password 			= $_POST['password'];
         if(isset($_POST['access']))
         {    
             $access_adm     = $_POST['access'];
@@ -159,7 +158,17 @@ if($action=='3')
             $arr_menu       = array();
             $arr_menu2      = "";
         }
-        $update 	        = mysqli_query($con,"UPDATE admin SET $data_edit,update_by='$user',update_date='$now' WHERE id='$id'")or die (mysqli_error($con));
+        if($form==1)
+        {
+            $password 		= md5($_POST['password']);
+            $uppass         = ",password='".$password."'";
+        }
+        else
+        {
+            $password 		= "";
+            $uppass         = "";
+        }
+        $update 	        = mysqli_query($con,"UPDATE admin SET $data_edit,update_by='$user',update_date='$now' $uppass WHERE id='$id'")or die (mysqli_error($con));
         if($update==1)
         {
             //update Log//
@@ -167,24 +176,26 @@ if($action=='3')
             $log_action = "Edit";
             $log_text   = "Edit ".$log_edit."  Successfully!";
             $update_log = mysqli_query($con,"INSERT into `log` (`menu`,`action`,`log`,`create_by`,`create_date`) VALUES ('$log_menu','$log_action','$log_text','$user','$now')")or die (mysqli_error($con));
-           /* echo "
-                <script type='text/javascript'> 
-                    toastr['success']('Updated Successfully!');
-                    toastr.options = {
-                        'showDuration': '3000'
-                    }
-                    setTimeout(window.location.href='index.php?p=admin_form&a=3&id=".$id.", 5000);
-                </script>";*/
-            echo "<script type='text/javascript'> alert('Updated Successfully!');</script>";
-            echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=admin_form&a=3&id='.$id.'">';
+            echo "
+            <script type='text/javascript'> 
+                toastr['success']('Submited Successfully!');
+                toastr.options = {
+                    'showDuration': '3000'
+                }
+                var delay = 5000; 
+                setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
+            </script>
+            ";
+            //echo "<script type='text/javascript'> alert('Updated Successfully!');</script>";
+            //echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=admin_form&a=3&id='.$id.'">';
         }	
     }
     if(empty($form))
     {
-        $form_status_username   = "disabled";
-        $form_status_password   = "disabled";
-        $form_status_access     = "disabled";
-        $form_status_menu       = "disabled";
+        $form_status_username   = "required";
+        $form_status_password   = "required";
+        $form_status_access     = "";
+        $form_status_menu       = "";
         $form                   = "";
     }
     elseif($form=='1')
@@ -193,27 +204,6 @@ if($action=='3')
         $form_status_password   = "disabled";
         $form_status_access     = "disabled";
         $form_status_menu       = "disabled";
-    }
-    elseif($form=='2')
-    {
-        $form_status_username   = "disabled";
-        $form_status_password   = "required";
-        $form_status_access     = "disabled";
-        $form_status_menu       = "disabled";
-    }
-    elseif($form=='3')
-    {
-        $form_status_username   = "disabled";
-        $form_status_password   = "disabled";
-        $form_status_access     = "";
-        $form_status_menu       = "disabled";
-    }
-    elseif($form=='4')
-    {
-        $form_status_username   = "disabled";
-        $form_status_password   = "disabled";
-        $form_status_access     = "disabled";
-        $form_status_menu       = "";
     }
 }    
 ?>

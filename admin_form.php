@@ -88,10 +88,9 @@ if($action=='2')
                         toastr.options = {
                             'showDuration': '3000'
                         }
-                        setTimeout(window.location.href='index.php?p=admin', 5000);
                     </script>";
                     //echo "<script type='text/javascript'> alert('Submited Successfully!');</script>";
-                    //echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=admin">';
+                    //echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=admin">';setTimeout(window.location.href='index.php?p=admin', 5000);
                 }
             }
             else

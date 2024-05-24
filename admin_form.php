@@ -276,7 +276,7 @@ if($action=='3')
                                     </div>
                                     <div class="col-md-1">
                                         <br>
-                                        <a href='index.php?p=admin_form&a=3&id=<?php echo $id ?>&f=1'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> <i class="fa fa-arrows-rotate fa-fw"></i> </button></a>
+                                        <a href='index.php?p=admin_form&a=3&id=<?php echo $id ?>&f=1'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> <i class="fa fa-rotate-right"></i> </button></a>
                                     </div>
                                     <div class="col-md-5" id='f3'>
                                         <div class="form-group">

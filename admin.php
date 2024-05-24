@@ -77,14 +77,30 @@ if(isset($action))
                                             $no=1;
                                             while($data_query=mysqli_fetch_array($query))
                                             {
-                                                $id         = $data_query['id'];
-                                                $sortid     = $data_query['sortid'];
-                                                $username   = $data_query['username'];
-                                                $password   = "**********";
-                                                $access     = $data_query['access'];
-                                                $last_login = $data_query['last_login'];
-                                                $last_logout= $data_query['last_logout'];
-                                                $visible    = $data_query['visible'];
+                                                $id             = $data_query['id'];
+                                                $sortid         = $data_query['sortid'];
+                                                $username       = $data_query['username'];
+                                                $password       = "**********";
+                                                $access         = $data_query['access'];
+                                                $last_login_dt  = $data_query['last_login'];
+                                                if($last_login_dt=='2001-01-01 00:00:00')
+                                                {
+                                                    $last_login = '';
+                                                }
+                                                else
+                                                {
+                                                    $last_login = $last_login_dt;
+                                                }
+                                                $last_logout_dt = $data_query['last_logout'];
+                                                if($last_logout_dt=='2001-01-01 00:00:00')
+                                                {
+                                                    $last_logout= '';
+                                                }
+                                                else
+                                                {
+                                                    $last_logout= $last_logout_dt;
+                                                }
+                                                $visible        = $data_query['visible'];
                                                 if($visible=='Y')
                                                 {
                                                     $icon_visible   = 'fa fa-unlock';

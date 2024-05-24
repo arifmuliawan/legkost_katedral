@@ -100,7 +100,7 @@ if($action=='2')
             {
                 echo "
                     <script type='text/javascript'> 
-                        toastr['error']('Submited Failed!', username is available);
+                        toastr.error('Failed, username is available');
                         toastr.options = {
                             'showDuration': '3000'
                         }

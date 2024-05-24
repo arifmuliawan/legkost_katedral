@@ -88,7 +88,7 @@ if($action=='2')
                         toastr.options = {
                             'showDuration': '3000'
                         }
-                        var delay = 5000; 
+                        var delay = 3000; 
                         setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
                     </script>
                     ";
@@ -104,7 +104,7 @@ if($action=='2')
                         toastr.options = {
                             'showDuration': '3000'
                         }
-                        var delay = 5000;
+                        var delay = 3000;
                     </script>
                 ";
                 $msg_username       = "username is available, please use another username";
@@ -182,7 +182,7 @@ if($action=='3')
                 toastr.options = {
                     'showDuration': '3000'
                 }
-                var delay = 5000; 
+                var delay = 3000; 
                 setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
             </script>
             ";

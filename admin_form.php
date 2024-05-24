@@ -90,7 +90,8 @@ if($action=='2')
                         }
                         var delay = 5000; 
                         setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
-                    </script>";
+                    </script>
+                    ";
                     //echo "<script type='text/javascript'> alert('Submited Successfully!');</script>";
                     //echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=admin">';setTimeout(window.location.href='index.php?p=admin', 5000);
                 }
@@ -99,12 +100,13 @@ if($action=='2')
             {
                 echo "
                     <script type='text/javascript'> 
-                        toastr['danger']('Submited Failed!');
+                        toastr['error']('Submited Failed!', username is available);
                         toastr.options = {
                             'showDuration': '3000'
                         }
                         var delay = 5000;
-                    </script>";
+                    </script>
+                ";
                 $msg_username       = "username is available, please use another username";
             }    
         }	

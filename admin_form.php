@@ -174,7 +174,7 @@ if($action=='3')
             //update Log//
             $log_menu   = "Admin Management";
             $log_action = "Edit";
-            $log_text   = "Edit ".$log_edit."  Successfully!";
+            $log_text   = "Edit User Data Successfully!";
             $update_log = mysqli_query($con,"INSERT into `log` (`menu`,`action`,`log`,`create_by`,`create_date`) VALUES ('$log_menu','$log_action','$log_text','$user','$now')")or die (mysqli_error($con));
             echo "
             <script type='text/javascript'> 

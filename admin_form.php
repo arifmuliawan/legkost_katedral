@@ -193,7 +193,7 @@ if($action=='3')
     if(empty($form))
     {
         $form_status_username   = "required";
-        $form_status_password   = "required";
+        $form_status_password   = "disabled";
         $form_status_access     = "";
         $form_status_menu       = "";
         $form                   = "";
@@ -202,8 +202,8 @@ if($action=='3')
     {
         $form_status_username   = "required";
         $form_status_password   = "disabled";
-        $form_status_access     = "disabled";
-        $form_status_menu       = "disabled";
+        $form_status_access     = "";
+        $form_status_menu       = "";
     }
 }    
 ?>
@@ -247,7 +247,7 @@ if($action=='3')
                                         </div>
                                     </div>
                                     <div class="col-md-1"></div>       
-                                    <div class="col-md-5" id='f2'>
+                                    <div class="col-md-4" id='f1'>
                                         <div class="form-group">
                                             <label class="form-label">Password</label>
                                             <?php
@@ -258,7 +258,7 @@ if($action=='3')
                                                 <input type="text" name="password" class="form-control" placeholder="Enter Password" value="<?php echo $password ?>" <?php echo $form_status_password ?>>
                                             <?php
                                             }
-                                            elseif($action==3 && $form=="2")
+                                            elseif($action==3 && $form=="1")
                                             {
                                             ?>    
                                                 <input type="hidden" name="password" value="<?php echo $password ?>">    
@@ -274,7 +274,9 @@ if($action=='3')
                                             ?>
                                         </div>
                                     </div>
-                                    <div class="col-md-1"></div>
+                                    <div class="col-md-1">
+                                        <a href='index.php?p=admin_form?p=admin_form&a=3&id=<?php echo $id ?>&f=1'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> Update Password </button></a>
+                                    </div>
                                     <div class="col-md-5" id='f3'>
                                         <div class="form-group">
                                             <label class="form-label">Access</label>

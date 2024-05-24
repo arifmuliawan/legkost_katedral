@@ -274,7 +274,7 @@ if($action=='3')
                                             ?>
                                         </div>
                                     </div>
-                                    <div class="col-md-1">
+                                    <div class="col-md-1" style="margin-top: 10px;">
                                         <br>
                                         <a href='index.php?p=admin_form&a=3&id=<?php echo $id ?>&f=1'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> <i class="fa fa-undo"></i> </button></a>
                                     </div>

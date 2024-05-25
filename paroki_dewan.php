@@ -26,7 +26,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group" class="dropzone needsclick" id="dropzone-basic">
-                                            <label>FOTO BANNER *</label>
+                                            <label>FOTO BANNER * <br> (1820 x 595 px) JPG/JPEG/PNG</label>
                                             <div class="dropzone dz-clickable border rounded bg-light p-3">
                                                 <div class="dz-default dz-message text-center">
                                                     <i class="fas fa-upload" style="font-size: 2rem;"></i>

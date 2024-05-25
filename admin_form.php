@@ -83,6 +83,13 @@ if($action=='2')
                     $log_text   = "Add ".$username." Successfully!";
                     $update_log = mysqli_query($con,"INSERT into `log` (`menu`,`action`,`log`,`create_by`,`create_date`) VALUES ('$log_menu','$log_action','$log_text','$user','$now')")or die (mysqli_error($con));
                     echo "
+                    <script type='text/javascript'>
+                        $(window).on('load', function() {
+                            $('#successmodal').modal('show');
+                        });
+                    </script>
+                    ";
+                    /*echo "
                     <script type='text/javascript'> 
                         toastr['success']('Submited Successfully!');
                         toastr.options = {
@@ -91,7 +98,7 @@ if($action=='2')
                         var delay = 3000; 
                         setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
                     </script>
-                    ";
+                    ";*/
                     //echo "<script type='text/javascript'> alert('Submited Successfully!');</script>";
                     //echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=admin">';setTimeout(window.location.href='index.php?p=admin', 5000);
                 }
@@ -207,6 +214,19 @@ if($action=='3')
     }
 }    
 ?>
+        <div class="modal hide fade" id="successmodal">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Modal header</h3>
+            </div>
+            <div class="modal-body">
+                <p>One fine body…</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn">Close</a>
+                <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
+        </div>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->

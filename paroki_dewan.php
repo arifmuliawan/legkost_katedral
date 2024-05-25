@@ -6,7 +6,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>USER MANAGEMENT</h1>
+                            <h1 style="margin: 24px">DEWAN PAROKI</h1>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->

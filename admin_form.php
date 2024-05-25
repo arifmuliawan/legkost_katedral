@@ -227,6 +227,7 @@ if($action=='3')
                 <div class="modal-content">
                     <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
                         <img src="<?php echo $base_assets ?>dist/img/icon_success.png" style="width: 70px;">
+                        <br>
                         <h5> Perubahan anda telah berhasil disimpan </h5> 
                     </div>
                 </div>
@@ -240,6 +241,7 @@ if($action=='3')
                 <div class="modal-content">
                     <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
                         <img src="<?php echo $base_assets ?>dist/img/icon_failed.png" style="width: 70px;">
+                        <br>
                         <h5> 
                             <?php
                             if($err_username==1)

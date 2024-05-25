@@ -29,6 +29,12 @@
                                             <label class="form-label">FOTO BANNER *</label>
                                         </div>
                                     </div>
+                                    <div>
+                                    <div class="form-group files color">
+                                        <label>Upload Your File </label>
+                                        <input type="file" class="form-control" multiple="">
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>                    

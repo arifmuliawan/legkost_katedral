@@ -324,7 +324,7 @@ if($action=='3')
                                         if($action==2)
                                         {
                                         ?>    
-                                            <a href="" target="password"><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;" title="Refresh"><i class="fa fa-undo"></i></button></a>
+                                            <button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;" onclick="document.getElementById('myInput').reload(true)"><i class="fa fa-undo"></i></button>
                                         <?php
                                         }
                                         if($action==3)

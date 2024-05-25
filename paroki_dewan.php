@@ -25,7 +25,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group">
+                                        <div class="form-group" class="dropzone needsclick" id="dropzone-basic">
                                             <label>FOTO BANNER *</label>
                                             <div class="dz-message needsclick">
                                                 Drop files here or click to upload

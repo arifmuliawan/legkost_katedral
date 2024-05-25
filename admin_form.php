@@ -188,7 +188,7 @@ if($action=='3')
                 $(window).on('load', function() {
                     $('#successmodal').modal('show');
                 });
-                var delay = 3000; 
+                var delay = 2000; 
                 setTimeout(function(){ $('#successmodal').modal('hide') }, delay);
             </script>
             ";

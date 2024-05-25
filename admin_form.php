@@ -320,13 +320,7 @@ if($action=='3')
                                     </div>
                                     <div class="col-md-1" style="margin-top: 10px;">
                                         <br>
-                                        <?php
-                                        if($action==2)
-                                        {
-                                        ?>    
-                                            <button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;" onclick="document.getElementById('myInput').reload(true)"><i class="fa fa-undo"></i></button>
-                                        <?php
-                                        }
+                                        <?php    
                                         if($action==3)
                                         {
                                         ?>    

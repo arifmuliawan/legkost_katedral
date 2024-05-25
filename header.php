@@ -150,11 +150,11 @@
         #button-1 .checkbox:checked + .knobs:before {
         content: "OFF";
         left: 42px;
-        background-color: #f44336;
+        background-color: #fff;
         }
 
         #button-1 .checkbox:checked ~ .layer {
-        background-color: #fcebeb;
+        background-color: #888888AD;
         }
 
         #button-1 .knobs,

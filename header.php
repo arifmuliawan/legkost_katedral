@@ -24,6 +24,8 @@
     <script type="text/javascript" src="<?php echo $base_assets ?>plugins/jquery-ui/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="<?php echo $base_assets ?>plugins/jquery-ui/jquery-ui.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>-->
 
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -164,38 +166,6 @@
         }
         .switch label input[type="checkbox"]:checked + .lever {
             background-color: #DFDFDF;
-            }
-
-        .upload_dropZone {
-        color: #0f3c4b;
-        background-color: var(--colorPrimaryPale, #c8dadf);
-        outline: 2px dashed var(--colorPrimaryHalf, #c1ddef);
-        outline-offset: -12px;
-        transition:
-            outline-offset 0.2s ease-out,
-            outline-color 0.3s ease-in-out,
-            background-color 0.2s ease-out;
-        }
-        .upload_dropZone.highlight {
-        outline-offset: -4px;
-        outline-color: var(--colorPrimaryNormal, #0576bd);
-        background-color: var(--colorPrimaryEighth, #c8dadf);
-        }
-        .upload_svg {
-        fill: var(--colorPrimaryNormal, #0576bd);
-        }
-        .btn-upload {
-        color: #fff;
-        background-color: var(--colorPrimaryNormal);
-        }
-        .btn-upload:hover,
-        .btn-upload:focus {
-        color: #fff;
-        background-color: var(--colorPrimaryGlare);
-        }
-        .upload_img {
-        width: calc(33.333% - (2rem / 3));
-        object-fit: contain;
         }
     </style>
 

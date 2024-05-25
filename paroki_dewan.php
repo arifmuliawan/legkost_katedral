@@ -27,13 +27,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group" class="dropzone needsclick" id="dropzone-basic">
                                             <label>FOTO BANNER *</label>
-                                            <div class="dz-message needsclick">
-                                                Drop files here or click to upload
-                                                <span class="note needsclick">(This is just a demo dropzone. Selected files are <span class="fw-medium">not</span> actually uploaded.)</span>
-                                            </div>
-                                            <div class="fallback">
-                                                <input name="file" type="file" />
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>

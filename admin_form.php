@@ -189,7 +189,7 @@ if($action=='3')
                     $('#successmodal').modal('show');
                 });
                 var delay = 3000; 
-                setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
+                setTimeout(function(){ $('#successmodal').modal('hide') }, delay);
             </script>
             ";
             /*echo "

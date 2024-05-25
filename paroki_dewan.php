@@ -29,9 +29,9 @@
                                             <label>FOTO BANNER *</label>
                                             <div class="dropzone dz-clickable border rounded bg-light p-3">
                                                 <div class="dz-default dz-message text-center">
-                                                    <i class="fa fa-cloud-arrow-up" style="font-size: 2rem;"></i>
+                                                    <i class="fa-solid fa-arrow-up-from-bracket fa-fw" style="font-size: 2rem;"></i>
                                                     <div class="mt-3">Drop files to upload </div>
-                                                    <div class="mt-3">Dor Browse Files...</div>
+                                                    <div class="mt-3">or Browse Files...</div>
                                                 </div>
                                             </div>
                                         </div>

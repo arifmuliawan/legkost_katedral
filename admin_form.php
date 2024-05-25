@@ -165,7 +165,7 @@ if($action=='3')
             $arr_menu       = array();
             $arr_menu2      = "";
         }
-        if($form==1)
+        if(isset($form) && $form==1)
         {
             $password 		= md5($_POST['password']);
             $uppass         = ",password='".$password."'";

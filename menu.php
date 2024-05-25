@@ -116,7 +116,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                                                     }
                                                     ?>
                                                     <a href="index.php?p=<?php echo $file_submenu ?> " class="nav-link <?php echo $act_submenu ?>" <?php echo $act_bgclr ?> style="background-color: unset;box-shadow: unset;">
-                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <i class="fa fa-circle nav-icon"></i>
                                                     <p><?php echo $name_submenu ?></p>
                                                     </a>
                                                 </li>

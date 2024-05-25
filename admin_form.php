@@ -320,7 +320,20 @@ if($action=='3')
                                     </div>
                                     <div class="col-md-1" style="margin-top: 10px;">
                                         <br>
-                                        <a href='index.php?p=admin_form&a=3&id=<?php echo $id ?>&f=1'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> <i class="fa fa-undo"></i> </button></a>
+                                        <?php
+                                        if($action==2)
+                                        {
+                                        ?>    
+                                            <a href="".$cacheurl ?>" target="password"><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;" title="Refresh"><i class="fa fa-undo"></i></button></a>
+                                        <?php
+                                        }
+                                        if($action==3)
+                                        {
+                                        ?>    
+                                            <a href='index.php?p=admin_form&a=3&id=<?php echo $id ?>&f=1'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> <i class="fa fa-undo"></i> </button></a>
+                                        <?php
+                                        }
+                                        ?>    
                                     </div>
                                     <div class="col-md-5" id='f3'>
                                         <div class="form-group">

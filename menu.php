@@ -84,7 +84,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                                 {
                                     $drop_com   = "";
                                     $disp_com   = "none";
-                                    $bold_com   = "";
+                                    $bold_com   = 'style="color:#fff"';
                                 }
                     ?>    
                                 <li class="nav-item <?php echo $drop_com ?>">

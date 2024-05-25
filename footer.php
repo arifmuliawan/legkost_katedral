@@ -128,10 +128,10 @@
   var myDropzone = new Dropzone(".dropzone", {
       url: "/file/post", 
       paramName: "file",
-      maxFilesize: 2, // MB
-      maxFiles: 10,
+      maxFilesize: 200, // MB
+      maxFiles: 1,
       acceptedFiles: 'image/*',
-      dictDefaultMessage: "Drag files here or click to upload.",
+      dictDefaultMessage: "Drop files to upload or",
       clickable: true 
   });
 </script>    

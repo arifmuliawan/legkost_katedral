@@ -123,7 +123,7 @@
 
         .layer {
         width: 100%;
-        background-color: #ebf7fc;
+        background-color: #88A8D4;
         transition: 0.3s ease all;
         z-index: 1;
         }
@@ -142,7 +142,7 @@
         text-align: center;
         line-height: 1;
         padding: 9px 4px;
-        background-color: #2BBBB5;
+        background-color: #fff;
         border-radius: 100%;
         transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
         }

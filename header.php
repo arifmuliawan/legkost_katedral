@@ -166,52 +166,37 @@
             background-color: #DFDFDF;
             }
 
-        
-            .files input {
-                outline: 2px dashed #92b0b3;
-                outline-offset: -10px;
-                -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-                transition: outline-offset .15s ease-in-out, background-color .15s linear;
-                padding: 120px 0px 85px 35%;
-                text-align: center !important;
-                margin: 0;
-                width: 100% !important;
-            }
-            .files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
-                -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-                transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
-            }
-            .files{ position:relative}
-            .files:after {  pointer-events: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 50px;
-                right: 0;
-                height: 56px;
-                content: "";
-                background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
-                display: block;
-                margin: 0 auto;
-                background-size: 100%;
-                background-repeat: no-repeat;
-            }
-            .color input{ background-color:#f1f1f1;}
-            .files:before {
-                position: absolute;
-                bottom: 10px;
-                left: 0;  pointer-events: none;
-                width: 100%;
-                right: 0;
-                height: 57px;
-                content: "Drop ";
-                display: block;
-                margin: 0 auto;
-                color: #2ea591;
-                font-weight: 600;
-                text-transform: capitalize;
-                text-align: center;
-            }
+        .upload_dropZone {
+        color: #0f3c4b;
+        background-color: var(--colorPrimaryPale, #c8dadf);
+        outline: 2px dashed var(--colorPrimaryHalf, #c1ddef);
+        outline-offset: -12px;
+        transition:
+            outline-offset 0.2s ease-out,
+            outline-color 0.3s ease-in-out,
+            background-color 0.2s ease-out;
+        }
+        .upload_dropZone.highlight {
+        outline-offset: -4px;
+        outline-color: var(--colorPrimaryNormal, #0576bd);
+        background-color: var(--colorPrimaryEighth, #c8dadf);
+        }
+        .upload_svg {
+        fill: var(--colorPrimaryNormal, #0576bd);
+        }
+        .btn-upload {
+        color: #fff;
+        background-color: var(--colorPrimaryNormal);
+        }
+        .btn-upload:hover,
+        .btn-upload:focus {
+        color: #fff;
+        background-color: var(--colorPrimaryGlare);
+        }
+        .upload_img {
+        width: calc(33.333% - (2rem / 3));
+        object-fit: contain;
+        }
     </style>
 
     <script type="text/javascript">

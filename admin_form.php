@@ -87,6 +87,8 @@ if($action=='2')
                         $(window).on('load', function() {
                             $('#successmodal').modal('show');
                         });
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
                     </script>
                     ";
                     /*echo "

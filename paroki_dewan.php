@@ -8,7 +8,7 @@
                         <div class="col-sm-6">
                             <h1 style="margin: 24px">DEWAN PAROKI</h1>
                             <br><br>
-                            <p style="margin: 24px">KOLOM DENGAN TANDA * WAJIB DIISI</p>
+                            <p style="margin: 24px;color: red;font-size: 14px;">KOLOM DENGAN TANDA * WAJIB DIISI</p>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -22,7 +22,17 @@
                         <!-- jquery validation -->
                         <div class="card" style="box-shadow: unset;">
                         <!-- /.card-header -->
-                        
+                        <form action="" method="post">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">FOTO BANNER *</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>                    
                         </div>
                         <!-- /.card -->
                         </div>

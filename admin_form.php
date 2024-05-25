@@ -184,6 +184,13 @@ if($action=='3')
             $log_text   = "Edit User ".$username." Successfully!";
             $update_log = mysqli_query($con,"INSERT into `log` (`menu`,`action`,`log`,`create_by`,`create_date`) VALUES ('$log_menu','$log_action','$log_text','$user','$now')")or die (mysqli_error($con));
             echo "
+            <script type='text/javascript'>
+                $(window).on('load', function() {
+                    $('#successmodal').modal('show');
+                });
+            </script>
+            ";
+            /*echo "
             <script type='text/javascript'> 
                 toastr['success']('Submited Successfully!');
                 toastr.options = {
@@ -192,7 +199,7 @@ if($action=='3')
                 var delay = 3000; 
                 setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
             </script>
-            ";
+            ";*/
             //echo "<script type='text/javascript'> alert('Updated Successfully!');</script>";
             //echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=admin_form&a=3&id='.$id.'">';
         }	
@@ -214,19 +221,28 @@ if($action=='3')
     }
 }    
 ?>
-        <div class="modal hide fade" id="successmodal">
-            <div class="modal-header">
-                <a class="close" data-dismiss="modal">×</a>
-                <h3>Modal header</h3>
+        <div class="modal fade" id="successmodal">
+            <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h4 class="modal-title">Small Modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <p>One fine body…</p>
+            <!-- /.modal-content -->
             </div>
-            <div class="modal-footer">
-                <a href="#" class="btn">Close</a>
-                <a href="#" class="btn btn-primary">Save changes</a>
-            </div>
+            <!-- /.modal-dialog -->
         </div>
+        <!-- /.modal -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->

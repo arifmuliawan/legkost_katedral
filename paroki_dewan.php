@@ -8,7 +8,7 @@
                         <div class="col-sm-6">
                             <h1 style="margin: 24px">DEWAN PAROKI</h1>
                             <br><br>
-                            <font color='red'>KOLOM DENGAN TANDA * WAJIB DIISI</font>
+                            <p style="margin: 24px">KOLOM DENGAN TANDA * WAJIB DIISI</p>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->

@@ -250,7 +250,7 @@ if($action=='3')
                             }
                             ?>
                         </h5>
-                        <br><br>
+                        <br>
                         <button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> CLOSE </button>
                     </div>
                 </div>

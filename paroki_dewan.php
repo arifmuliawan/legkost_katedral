@@ -25,13 +25,8 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-label">FOTO BANNER *</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
                                         <div class="form-group files color">
-                                            <label>Upload Your File </label>
+                                            <label>FOTO BANNER *</label>
                                             <input type="file" class="form-control" multiple="">
                                         </div>
                                     </div>

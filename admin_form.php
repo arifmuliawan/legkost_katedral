@@ -106,14 +106,13 @@ if($action=='2')
             else
             {
                 echo "
-                    <script type='text/javascript'> 
-                        toastr.error('Failed, username is available');
-                        toastr.options = {
-                            'showDuration': '3000'
-                        }
-                        var delay = 3000;
+                    <script type='text/javascript'>
+                        $(window).on('load', function() {
+                            $('#failedmodal').modal('show');
+                        });
                     </script>
                 ";
+                $err_username       = 1;
                 $msg_username       = "username is available, please use another username";
             }    
         }	
@@ -236,6 +235,26 @@ if($action=='3')
             <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
+        <div class="modal fade" id="failedmodal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                        <img src="<?php echo $base_assets ?>dist/img/icon_failed.png" style="width: 70px;">
+                        <h5> 
+                            <?php
+                            if($err_username==1)
+                            {
+                                echo $msg_username;
+                            }
+                            ?>
+                        </h5> 
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->
@@ -264,15 +283,7 @@ if($action=='3')
                                     <div class="col-md-5" id='f1'>
                                         <div class="form-group">
                                             <label class="form-label">Username</label>
-                                            <input type="text" name="username" class="form-control" placeholder="Type something here...." value="<?php echo $username ?>" <?php echo $form_status_username ?>>
-                                            <?php
-                                            if(isset($msg_username))
-                                            {
-                                            ?>    
-                                                <font color="red"><b>ERROR : <?php echo $msg_username ?></b></font>
-                                            <?php
-                                            }
-                                            ?>
+                                            <input type="text" name="username" class="form-control" placeholder="Type something here...." value="<?php echo $username ?>" <?php echo $form_status_username ?> <?php if(isset($err_username) & $err_username==1){ echo "style='border-color: red;'"; } ?>>
                                         </div>
                                     </div>
                                     <div class="col-md-1"></div>       

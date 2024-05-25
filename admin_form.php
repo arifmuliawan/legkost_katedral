@@ -283,7 +283,7 @@ if($action=='3')
                                     <div class="col-md-5" id='f1'>
                                         <div class="form-group">
                                             <label class="form-label">Username</label>
-                                            <input type="text" name="username" class="form-control" placeholder="Type something here...." value="<?php echo $username ?>" <?php echo $form_status_username ?> <?php if(isset($err_username) & $err_username==1){ echo "style='border-color: red;'"; } ?>>
+                                            <input type="text" name="username" class="form-control" placeholder="Type something here...." value="<?php echo $username ?>" <?php echo $form_status_username ?> <?php if(isset($err_username) && $err_username==1){ echo "style='border-color: red;'"; } ?>>
                                         </div>
                                     </div>
                                     <div class="col-md-1"></div>       

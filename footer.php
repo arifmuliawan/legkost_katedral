@@ -131,7 +131,7 @@
       maxFilesize: 200, // MB
       maxFiles: 1,
       acceptedFiles: 'image/*',
-      dictDefaultMessage: "Drop files to upload or",
+      dictDefaultMessage: "Drop files here or click to upload.",
       clickable: true 
   });
 </script>    

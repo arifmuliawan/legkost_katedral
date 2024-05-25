@@ -121,21 +121,19 @@
     }
 </script>
 
-<script type="text/javascript">
-    $(document).on('change', '.file-input', function() {
-        
+<script>
+  Dropzone.autoDiscover = false;
 
-        var filesCount = $(this)[0].files.length;
-        
-        var textbox = $(this).prev();
-      
-        if (filesCount === 1) {
-          var fileName = $(this).val().split('\\').pop();
-          textbox.text(fileName);
-        } else {
-          textbox.text(filesCount + ' files selected');
-        }
-    });
-</script>      
+  // Dropzone configuration
+  var myDropzone = new Dropzone(".dropzone", {
+      url: "/file/post", 
+      paramName: "file",
+      maxFilesize: 2, // MB
+      maxFiles: 10,
+      acceptedFiles: 'image/*',
+      dictDefaultMessage: "Drag files here or click to upload.",
+      clickable: true 
+  });
+</script>    
 </body>
 </html>

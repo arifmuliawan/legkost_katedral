@@ -110,15 +110,17 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                                                     {
                                                         $act_submenu = "active";
                                                         $act_bgclr   = 'style="background-color: unset;box-shadow: unset;font-weight: bold;color: #fff;"';
+                                                        $act_icon    = "fa fa-circle nav-icon"; 
                                                     }
                                                     else
                                                     {
                                                         $act_submenu = "";
                                                         $act_bgclr   = "";
+                                                        $act_icon    = "far fa-circle nav-icon";
                                                     }
                                                     ?>
                                                     <a href="index.php?p=<?php echo $file_submenu ?> " class="nav-link <?php echo $act_submenu ?>" <?php echo $act_bgclr ?> style="background-color: unset;box-shadow: unset;">
-                                                    <i class="fa fa-circle nav-icon"></i>
+                                                    <i class="<?php echo $act_icon ?>"></i>
                                                     <p><?php echo $name_submenu ?></p>
                                                     </a>
                                                 </li>

@@ -188,6 +188,8 @@ if($action=='3')
                 $(window).on('load', function() {
                     $('#successmodal').modal('show');
                 });
+                var delay = 3000; 
+                setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
             </script>
             ";
             /*echo "
@@ -223,22 +225,13 @@ if($action=='3')
 ?>
         <div class="modal fade" id="successmodal">
             <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h4 class="modal-title">Small Modal</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <div class="modal-content">
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                        <img src="<?php echo $base_assets ?>dist/img/icon_success.png" style="width: 70px;">
+                        <h5> Perubahan anda telah berhasil disimpan </h5> 
+                    </div>
                 </div>
-                <div class="modal-body">
-                <p>One fine body&hellip;</p>
-                </div>
-                <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
+                <!-- /.modal-content -->
             </div>
             <!-- /.modal-dialog -->
         </div>

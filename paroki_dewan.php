@@ -27,7 +27,11 @@
                                     <div class="col-md-12">
                                         <div class="form-group" class="dropzone needsclick" id="dropzone-basic">
                                             <label>FOTO BANNER *</label>
-                                           
+                                            <div class="file-drop-area">
+                                                <span class="choose-file-button">Choose files</span>
+                                                <span class="file-message">or drag and drop files here</span>
+                                                <input class="file-input" type="file" multiple>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

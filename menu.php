@@ -107,7 +107,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                                                     if($page==$file_submenu)
                                                     {
                                                         $act_submenu = "active";
-                                                        $act_bgclr   = 'style="background-color:#432210;color:#ffffff"';
+                                                        $act_bgclr   = 'style="background-color: unset;box-shadow: unset;font-weight: bold;""';
                                                     }
                                                     else
                                                     {

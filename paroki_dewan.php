@@ -64,13 +64,15 @@ if(isset($_POST['submit_banner']))
                         <!-- jquery validation -->
                         <div class="card" style="box-shadow: unset;">
                         <!-- /.card-header -->
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group" class="dropzone needsclick" id="dropzone-basic">
                                             <label>FOTO BANNER *</label>
                                             <br> 
+                                            <form name="frmimage" action="" class="dropzone"></form>
+                                            <!--
                                             <div style="margin-bottom: 25px;margin-top: -10px;font-size: 13px;">(1820 x 595 px) JPG/JPEG/PNG</div>
                                             <div class="dropzone dz-clickable border rounded bg-light p-3">
                                                 <div class="dz-default dz-message text-center">
@@ -80,6 +82,7 @@ if(isset($_POST['submit_banner']))
                                                     <div class="mt-1" style="color: #88A8D4;font-weight: bold;">or Browse Files...</div>
                                                 </div>
                                             </div>
+                                            -->
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -89,7 +92,7 @@ if(isset($_POST['submit_banner']))
                                     </div>
                                 </div>
                             </div>
-                        </form>                    
+                        <!--</form>-->                    
                         </div>
                         <!-- /.card -->
                         </div>

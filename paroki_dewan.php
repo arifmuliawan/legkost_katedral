@@ -42,7 +42,7 @@
                                     <div class="col-md-12">
                                         <button type="submit" class="btn" name="submit_banner" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                         &nbsp&nbsp
-                                        <a href='index.php?p=paroki_dewan'><button type="button" class="btn" style="background-color:#ffffff;color: #ff0000;font-weight: bold;border-color: #88A8D4;"> DELETE </button></a>
+                                        <a href='index.php?p=paroki_dewan'><button type="button" class="btn" style="background-color:#ff0000;color: #ffffff;font-weight: bold;border-color: #88A8D4;"> DELETE </button></a>
                                     </div>
                                 </div>
                             </div>

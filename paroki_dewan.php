@@ -21,7 +21,7 @@
                         <!-- jquery validation -->
                         <div class="card" style="box-shadow: unset;">
                         <!-- /.card-header -->
-                        <form action="" method="post">
+                        <form action="" method="post" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -38,6 +38,10 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn" name="submit_banner" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                        <a href='index.php?p=paroki_dewan'><button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;"> DELETE </button></a>
                                     </div>
                                 </div>
                             </div>

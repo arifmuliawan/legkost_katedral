@@ -30,7 +30,7 @@ if(!empty($_FILES)){
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group" class="dropzone needsclick" id="dropzone-basic">
+                                        <div class="form-group" class="file_upload">
                                             <label>FOTO BANNER *</label>
                                             <br>
                                             <div class="dz-message needsclick">

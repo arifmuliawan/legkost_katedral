@@ -1,4 +1,47 @@
-        
+<?php
+if(isset($_POST['submit_banner']))
+{
+    print_r($_FILES);
+    exit();
+    $fullname           = $_POST['fullname'];
+    if($_FILES['photo']['name']!='')
+    {
+        $ekstensi_diperbolehkan = array('png','jpg','jpeg');
+        $nama_photo             = $_FILES['photo']['name'];
+        $x_photo                = explode('.', $nama_photo);
+        $ekstensi_photo         = strtolower(end($x_photo));
+        $ukuran_photo           = $_FILES['photo']['size'];
+        $file_tmp_photo         = $_FILES['photo']['tmp_name'];
+        $file_directory_photo   = "assets/dist/img/company/".$nama_photo;
+        $file_db_photo          = "dist/img/company/".$nama_photo;
+        $photo_info             = getimagesize($file_tmp_photo);
+        $photo_width            = $photo_info[0];
+        $photo_height           = $photo_info[1];
+        if(in_array($ekstensi_photo, $ekstensi_diperbolehkan) === true)
+        {
+            if(($photo_width>='350' && $photo_width<='360') && ($photo_height>='425' && $photo_height<='435'))
+            {          
+                move_uploaded_file($file_tmp_photo, $file_directory_photo);
+                $name_photo     = $file_db_photo; 
+            }
+            else
+            {
+                $error          = 1;
+                $msg_photo      = "Your Resolution image is not compatible";
+            }
+        }    
+        else
+        {
+            $error              = 1;
+            $msg_photo          = "Your image file is not compatible";
+        }
+    }
+    else
+    {
+        $name_photo             = "";
+    }  
+}
+?>          
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->

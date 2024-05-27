@@ -7,12 +7,12 @@ if(isset($_FILES['bannerparoki']))
         $nama_banner             = $_FILES['bannerparoki']['name'][0];
         $x_banner                = explode('.', $nama_banner);
         $ekstensi_banner         = strtolower(end($x_banner));
-        print_r($ekstensi_banner);
-        exit();
         $ukuran_banner           = $_FILES['bannerparoki']['size'][0];
         $file_tmp_banner         = $_FILES['bannerparoki']['tmp_name'][0];
         $file_directory_banner   = "assets/dist/img/".$nama_banner;
         $file_db_banner          = "dist/img/".$nama_banner;
+        print_r($file_tmp_banner);
+        exit();
         $banner_info             = getimagesize($file_tmp_banner);
         $banner_width            = $banner_info[0];
         $banner_height           = $banner_info[1];

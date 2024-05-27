@@ -1,48 +1,3 @@
-<?php
-if(isset($_FILES['banner']))
-{
-    if($_FILES['banner']['name']!='')
-    {
-        $ekstensi_diperbolehkan  = array('png','jpg','jpeg');
-        $nama_banner             = $_FILES['banner']['name'];
-        print_r($nama_banner);
-        exit();
-        $x_banner                = explode('.', $nama_banner);
-        $ekstensi_banner         = strtolower(end($x_banner));
-        $ukuran_banner           = $_FILES['banner']['size'];
-        $file_tmp_banner         = $_FILES['banner']['tmp_name'];
-        $file_directory_banner   = "assets/dist/img/".$nama_banner;
-        $file_db_banner          = "dist/img/".$nama_banner;
-        $banner_info             = getimagesize($file_tmp_banner);
-        $banner_width            = $banner_info[0];
-        $banner_height           = $banner_info[1];
-        move_uploaded_file($file_tmp_banner, $file_directory_banner);
-        $name_banner     = $file_db_banner;
-    }
-    else
-    {
-        $name_banner             = "";
-    }
-    $update_banner  = mysqli_query($con,"UPDATE banner SET url_img='$name_banner' WHERE id='1' AND code='1'");
-    if($update_banner==1)
-    {
-        echo "
-            <script type='text/javascript'>
-                $(window).on('load', function() {
-                    $('#successmodal').modal('show');
-                });
-                var delay = 2000;
-                setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
-            </script>
-        ";
-    }
-    else
-    {
-        echo "GAGAL UPLOAD";
-        exit();
-    }
-}
-?>
         <div class="modal fade" id="successmodal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -151,11 +106,11 @@ if(isset($_FILES['banner']))
                 uploadMultiple: true,
                 parallelUploads: 100,
                 maxFiles: 3,
-                paramName: 'banner',
+                paramName: 'bannerparoki',
                 clickable: true,
                 thumbnailWidth:500,
                 thumbnailHeight:500,
-                url: '<?php echo $base_current ?>',
+                url: 'ajax_upload.php',
                 init: function () {
 
                     var myDropzone = this;

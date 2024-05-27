@@ -131,6 +131,8 @@
     maxFiles: 3,
     paramName: 'file',
     clickable: true,
+    thumbnailWidth:500,
+    thumbnailHeight:500,
     url: 'ajax_upload.php',
     init: function () {
 

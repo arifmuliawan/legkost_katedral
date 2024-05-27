@@ -8,8 +8,7 @@ $my_server	= "localhost";
 $my_user 	= "u256116329_katedral";
 $my_password= "4PPYUD2Zk!";
 $my_db		= "u256116329_katedral"; 	
-$domain		= $_SERVER['HTTP_HOST'];
-$full_url   = $_SERVER['REQUEST_URI'];; 	
+$domain		= $_SERVER['HTTP_HOST']; 	
 $now        = date('Y-m-d H:i:s');
 if($domain=='localhost')
 {
@@ -21,6 +20,7 @@ else
 }
 $base_url			= 'https://'.$domain_url.'/';
 $base_assets	    = 'https://'.$domain_url.'/assets/';
+$base_current       = 'https://'.$domain_url.''.$_SERVER['REQUEST_URI'];
 //$base_cacheapi    = 'https://lederhaus-website.vercel.app/api/revalidate';
 $base_secret        = 'cms-api-secret';
 $con 		        = new mysqli($my_server,$my_user,$my_password,$my_db);

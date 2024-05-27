@@ -283,7 +283,7 @@ if(isset($_POST['submit_periode']))
                                                 </tr>
                                             </table>
                                         </div>
-                                        <div class="row_position" style="margin-top: 40px;">
+                                        <div class="paroki_position" style="margin-top: 40px;">
                                                 <div class="row">
                                                 <?php
                                                 $query_staff    = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));

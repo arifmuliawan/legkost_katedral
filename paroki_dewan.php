@@ -1,6 +1,4 @@
-<?php
-echo "$full_url";
-?>          
+        
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->
@@ -29,7 +27,7 @@ echo "$full_url";
                                 <div class="form-group">
                                     <label for="name">Name</label>
                                     <?php
-                                    echo $domain."/".$full_url;
+                                    echo $full_url;
                                     ?>
                                     <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter Name">
                                     <small class="form-text"></small>

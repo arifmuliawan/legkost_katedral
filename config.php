@@ -8,7 +8,8 @@ $my_server	= "localhost";
 $my_user 	= "u256116329_katedral";
 $my_password= "4PPYUD2Zk!";
 $my_db		= "u256116329_katedral"; 	
-$domain		= $_SERVER['HTTP_HOST']; 	
+$domain		= $_SERVER['HTTP_HOST'];
+$full_url   = $_SERVER['PHP_SELF']; 	
 $now        = date('Y-m-d H:i:s');
 if($domain=='localhost')
 {

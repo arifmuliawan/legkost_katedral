@@ -327,21 +327,23 @@ if(isset($_POST['submit_periode']))
                                                                      </div>               
                                                                 </div>
                                                             </div>
-                                                            <div class="card-footer" style="background-color: unset;">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <table border=0 width="100%">
-                                                                            <tr>
-                                                                                <td style="text-align: right;">
-                                                                                    <button id="uploaderBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
-                                                                                    &nbsp&nbsp
-                                                                                    <a href="" onclick="return confirm('Are you sure you want to delete this item ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
-                                                                                </td> 
-                                                                            </tr>
-                                                                        </table>
+                                                            <div class="col-md-12">
+                                                                <div class="card-footer" style="background-color: unset;">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <table border=0 width="100%">
+                                                                                <tr>
+                                                                                    <td style="text-align: right;">
+                                                                                        <button id="uploaderBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                                                        &nbsp&nbsp
+                                                                                        <a href="" onclick="return confirm('Are you sure you want to delete this item ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
+                                                                                    </td> 
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            </div> 
+                                                                </div> 
+                                                            </div>    
                                                         </div>
                                                         </div>      
                                                         </form>    

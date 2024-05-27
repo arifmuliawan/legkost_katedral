@@ -130,7 +130,7 @@
     maxFiles: 3,
     paramName: 'file',
     clickable: true,
-    url: 'ajax.php',
+    url: 'ajax_upload.php',
     init: function () {
 
         var myDropzone = this;

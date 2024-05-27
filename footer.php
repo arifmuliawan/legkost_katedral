@@ -122,7 +122,7 @@
 </script>
 
 <script type="text/javascript">
-    var el = document.querySelector('.panroki_position');
+    var el = document.querySelector('.paroki_position');
     var sortable = Sortable.create(el,{
       onUpdate: function (/**Event*/evt) {
         arr = [];index=0

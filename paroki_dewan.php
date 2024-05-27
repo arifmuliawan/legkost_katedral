@@ -28,24 +28,25 @@ if(!empty($_FILES)){
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="file_upload">
-                                            <label>FOTO BANNER *</label>
-                                            <br>
-                                            <form action="upload.php" enctype="multipart/form-data" class="dropzone" id="image-upload">  
-                                                <div>  
-                                                <h3>Upload Multiple Image By Click On Box</h3>  
-                                                </div>  
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn" name="submit_banner" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
-                                        &nbsp&nbsp
-                                        <a href='index.php?p=paroki_dewan'><button type="button" class="btn" style="background-color:#ff0000;color: #ffffff;font-weight: bold;border-color: #88A8D4;"> DELETE </button></a>
-                                    </div>
+                            <form id="imageUploadForm">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter Name">
+                                    <small class="form-text"></small>
                                 </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                    <small class="form-text"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobile">Mobile</label>
+                                    <input type="text" class="form-control" name="mobile" id="mobile" aria-describedby="mobile" placeholder="Enter mobile">
+                                    <small class="form-text"></small>
+                                </div>
+                                <div id="imageUpload" class="dropzone"></div>
+                                <button id="uploaderBtn" type="button" class="btn btn-primary">Save</button>
+                            </form>
                             </div>
                         <!--</form>-->                    
                         </div>

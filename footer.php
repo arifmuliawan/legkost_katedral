@@ -123,7 +123,7 @@
 
 <script type="text/javascript">  
     Dropzone.autoDiscover = false;
-    myDropzone = new Dropzone('div#imageUpload', {
+    myDropzone = new Dropzone('div#imageUploadBannerParoki', {
     addRemoveLinks: true,
     autoProcessQueue: false,
     uploadMultiple: true,
@@ -138,7 +138,7 @@
 
         var myDropzone = this;
         // Update selector to match your button
-        $("#uploaderBtn").click(function (e) {
+        $("#uploaderBtnBannerParoki").click(function (e) {
             e.preventDefault();
             myDropzone.processQueue();
             return false;
@@ -146,7 +146,7 @@
 
         this.on('sending', function (file, xhr, formData) {
             // Append all form inputs to the formData Dropzone will POST
-            var data = $("#imageUploadForm").serializeArray();
+            var data = $("#imageUploadFormBannerParoki").serializeArray();
             $.each(data, function (key, el) {
                 formData.append(el.name, el.value);
             });

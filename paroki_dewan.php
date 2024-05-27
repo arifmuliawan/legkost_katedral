@@ -27,27 +27,35 @@ if(!empty($_FILES)){
                         <div class="card" style="box-shadow: unset;">
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
+                        <form action="" enctype="multipart/form-data" class="dropzone" id="image-upload">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="file_upload">
                                             <label>FOTO BANNER *</label>
                                             <br>
-                                            <form action="upload.php" enctype="multipart/form-data" class="dropzone" id="image-upload">  
-                                                <div>  
+                                            <div>  
                                                 <h3>Upload Multiple Image By Click On Box</h3>  
-                                                </div>  
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Username</label>
+                                            <input type="text" name="username" class="form-control" placeholder="Type something here....">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button id="uploadFile">Upload Files</button>  
+                                        <!--
                                         <button type="submit" class="btn" name="submit_banner" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                         &nbsp&nbsp
                                         <a href='index.php?p=paroki_dewan'><button type="button" class="btn" style="background-color:#ff0000;color: #ffffff;font-weight: bold;border-color: #88A8D4;"> DELETE </button></a>
+                                        -->
                                     </div>
                                 </div>
                             </div>
-                        <!--</form>-->                    
+                        </form>                    
                         </div>
                         <!-- /.card -->
                         </div>

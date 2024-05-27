@@ -266,8 +266,20 @@ if(isset($_POST['submit_periode']))
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="form-label">PERIODE JABATAN <font color='red'>*</font></label>
-                                                <input type="text" name="periode_paroki" class="form-control" placeholder="Type something here...." value="<?php echo $periode_paroki ?>" <?php if(isset($err_upperiode) && $err_upperiode==1){ echo "style='border-color: red;'"; } ?> required>
+                                                <label class="form-label">DAFTAR PENGURUS <font color='red'>*</font></label><br>
+                                                Pilih salah satu pengurus untuk mengubah detail.     
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <table border=0 width="100%">
+                                                <tr>
+                                                    <td width="50%" style="text-align: left;">
+                                                        <button type="button" class="btn" style="background-color:#9C9C9C;color: #ffffff;font-weight: bold;">DELETE SELECTED</button>
+                                                        <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;">CLEAR SELECTION</button>
+                                                    </td> 
+                                                    <td width="50%" style="text-align: right;">
+                                                        <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">ADD NEW</button>
+                                                    </td>   
                                             </div>
                                         </div>
                                     </div>               

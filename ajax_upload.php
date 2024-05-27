@@ -41,4 +41,8 @@ if(isset($_FILES['bannerparoki']))
         exit();
     }
 }
+if(isset($_FILES['staffparoki']))
+{
+
+}    
 ?>

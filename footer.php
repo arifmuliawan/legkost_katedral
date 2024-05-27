@@ -126,7 +126,7 @@
     var sortable = Sortable.create(el,{
       onUpdate: function (/**Event*/evt) {
         arr = [];index=0
-        $('.tableid').each(function(item){
+        $('.col-md-2').each(function(item){
         arr.push({id:$(this).attr('data-id'),sort:index++})
         })
             updateOrderParoki(arr);

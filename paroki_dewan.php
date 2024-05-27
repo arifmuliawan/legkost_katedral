@@ -285,7 +285,7 @@ if(isset($_POST['submit_periode']))
                                         </div>
                                         <div class="col-md-12" style="margin-top: 40px;">
                                             <div class="row">
-                                                <div class="paroki_position">
+                                                <!--<div class="paroki_position">-->
                                                 <?php
                                                 $query_staff    = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
                                                 $sum_staff      = mysqli_num_rows($query_staff);
@@ -314,7 +314,7 @@ if(isset($_POST['submit_periode']))
                                                     }
                                                 }
                                                 ?>
-                                                </div>
+                                                <!--</div>-->
                                         </div>
                                     </div>               
                                 </div>

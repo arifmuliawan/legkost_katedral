@@ -12,11 +12,11 @@ if(isset($_FILES['bannerparoki']))
         $file_directory_banner   = "assets/dist/img/".$nama_banner;
         $file_db_banner          = "dist/img/".$nama_banner;
         $banner_info             = getimagesize($file_tmp_banner);
-        print_r($banner_info);
-        exit();
         $banner_width            = $banner_info[0];
         $banner_height           = $banner_info[1];
-        move_uploaded_file($file_tmp_banner, $file_directory_banner);
+        $up_img                  = move_uploaded_file($file_tmp_banner, $file_directory_banner);
+        print_r($up_img);
+        exit();
         $name_banner     = $file_db_banner;
     }
     else

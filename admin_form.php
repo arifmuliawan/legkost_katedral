@@ -260,7 +260,6 @@ if($action=='3')
             </div>
             <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->

@@ -278,12 +278,25 @@ if(isset($_POST['submit_periode']))
                                                         <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;">CLEAR SELECTION</button>
                                                     </td> 
                                                     <td width="50%" style="text-align: right;">
-                                                        <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">ADD NEW</button>
+                                                        <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#addparokimodal">ADD NEW</button>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </div>
                                     </div>               
+                                </div>
+                                <div class="modal fade" id="addparokimodal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                                                <img src="<?php echo $base_assets ?>dist/img/icon_success.png" style="width: 70px;">
+                                                <br><br>
+                                                <h5> Data Berhasil Dihapus </h5> 
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
                                 </div>
                             </form>                 
                         </div>

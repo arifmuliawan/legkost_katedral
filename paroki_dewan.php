@@ -283,7 +283,7 @@ if(isset($_POST['submit_periode']))
                                                 </tr>
                                             </table>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" style="margin-top: 40px;">
                                             <div class="row">
                                                 <?php
                                                 $query_staff    = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
@@ -304,7 +304,7 @@ if(isset($_POST['submit_periode']))
                                                             $photo_staff= "";
                                                         }
                                                 ?>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-3" style="margin: 10px;">
                                                             <img src="<?php echo $photo_staff ?>">
                                                         </div>
                                                 <?php

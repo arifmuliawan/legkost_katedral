@@ -191,7 +191,7 @@ if(isset($_POST['submit_periode']))
                     <!-- left column -->
                     <div class="col-md-12">
                         <!-- jquery validation -->
-                        <div class="card" style="">
+                        <div class="card" style="box-shadow: unset;">
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <div class="card-body">    
@@ -227,15 +227,6 @@ if(isset($_POST['submit_periode']))
                                     <a href="index.php?p=paroki_dewan&a=4" onclick="return confirm('Are you sure you want to delete this item ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
                                 </form>
                             </div>
-                        <!--</form>-->                    
-                        </div>
-                        <!-- /.card -->
-                    </div>
-                    <!--/.col (left) -->
-                    <div class="col-md-12">
-                        <!-- jquery validation -->
-                        <div class="card" style="box-shadow: unset;">
-                        <!-- /.card-header -->
                             <form action="" method="post" enctype="multipart/form-data">
                                 <div class="card-body">
                                     <div class="row">
@@ -260,7 +251,17 @@ if(isset($_POST['submit_periode']))
                                     </div>
                                 </div>        
                             </div>
-                            </form>                    
+                            </form> 
+                        <!--</form>-->                    
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (left) -->
+                    <div class="col-md-12">
+                        <!-- jquery validation -->
+                        <div class="card" style="box-shadow: unset;">
+                        <!-- /.card-header -->
+                                               
                         </div>
                         <!-- /.card -->
                     </div>

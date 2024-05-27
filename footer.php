@@ -136,7 +136,7 @@
 
         var myDropzone = this;
         // Update selector to match your button
-        $btn.click(function (e) {
+        $("#uploaderBtn").click(function (e) {
             e.preventDefault();
             if ( $form.valid() ) {
                 myDropzone.processQueue();

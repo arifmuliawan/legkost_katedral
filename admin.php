@@ -19,7 +19,7 @@ if(isset($action))
             echo "
                     <script type='text/javascript'>
                         $(window).on('load', function() {
-                            $('#successmodal').modal('show');
+                            $('#deletemodal').modal('show');
                         });
                         var delay = 2000;
                         setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);

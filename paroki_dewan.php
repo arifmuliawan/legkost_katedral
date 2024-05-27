@@ -27,18 +27,16 @@ if(!empty($_FILES)){
                         <div class="card" style="box-shadow: unset;">
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
-                        
+                        <form action="" enctype="multipart/form-data" class="dropzone" id="image-upload">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="file_upload">
                                             <label>FOTO BANNER *</label>
                                             <br>
-                                            <form action="" enctype="multipart/form-data" class="dropzone" id="image-upload">
-                                                <div>  
-                                                    <h3>Upload Multiple Image By Click On Box</h3>  
-                                                </div>
-                                            </form>
+                                            <div>  
+                                                <h3>Upload Multiple Image By Click On Box</h3>  
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -56,7 +54,8 @@ if(!empty($_FILES)){
                                         -->
                                     </div>
                                 </div>
-                            </div>                
+                            </div>
+                        </form>                    
                         </div>
                         <!-- /.card -->
                         </div>

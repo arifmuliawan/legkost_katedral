@@ -34,8 +34,10 @@ if(!empty($_FILES)){
                                         <div class="file_upload">
                                             <label>FOTO BANNER *</label>
                                             <br>
-                                            <div class="dropzone" id="image-upload">  
-                                                <h3>Upload Multiple Image By Click On Box</h3>  
+                                            <div class="dropzone" id="image-upload">
+                                                <div>  
+                                                    <h3>Upload Multiple Image By Click On Box</h3>  
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -130,7 +130,7 @@ if((isset($action)) && $action==4)
                                     <br>
                                     <button id="uploaderBtnBannerParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                     &nbsp&nbsp
-                                    <a href="index.php?p=paroki_dewan&a=4" onclick="return confirm('Are you sure want to delete ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
+                                    <a href="index.php?p=paroki_dewan&a=4" onclick="return confirm('Are you sure you want to delete this item ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
                                 </form>
                             </div>
                         <!--</form>-->                    

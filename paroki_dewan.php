@@ -1,5 +1,5 @@
 <?php
-$query_banner   = mysqli_query($con,"SELECT banner WHERE id='1' AND code='1' AND viisble='Y'");
+$query_banner   = mysqli_query($con,"SELECT * FROM banner WHERE id='1' AND code='1' AND viisble='Y'");
 $sum_banner     = mysqli_num_rows($query_banner);
 if($sum_banner>0)
 {

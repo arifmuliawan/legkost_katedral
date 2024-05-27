@@ -147,7 +147,13 @@
                 },
                 successmultiple: function (file, response) {
                     console.log(file, response);
-                    $("#successModal").modal("show");
+                    $(window).on('load', function() 
+                    {
+                        $('#successmodal').modal('show');
+                    });
+                    var delay = 2000;
+                    setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                    //$("#successModal").modal("show");
                 },
                 completemultiple: function (file, response) {
                     console.log(file, response, "completemultiple");

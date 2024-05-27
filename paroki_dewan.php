@@ -18,7 +18,7 @@ else
 {
     $banner_image   = "";
 }    
-if($action==4)
+if((isset($action)) && $action==4)
 {
     $delete_banner  = mysqli_query($con,"UPDATE banner SET url_img='' WHERE id='1' AND code='1'");
     if($delete_banner==1)

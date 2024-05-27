@@ -43,8 +43,12 @@ if((isset($action)) && $action==4)
         <style>
             .dropzone .dz-preview .dz-image
             {
-                width: 1820px;
-                height: 700px;
+                width: 1456px;
+                height: 560px;
+            }
+            .dropzone.dz-clickable
+            {
+                text-align: center;
             }
         </style>    
         <div class="modal fade" id="successmodal">
@@ -183,8 +187,8 @@ if((isset($action)) && $action==4)
                 maxFiles: 1,
                 paramName: 'bannerparoki',
                 clickable: true,
-                thumbnailWidth:1820,
-                thumbnailHeight:700,
+                thumbnailWidth:1456,
+                thumbnailHeight:560,
                 url: 'ajax_upload.php',
                 init: function () {
 

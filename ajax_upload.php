@@ -1,4 +1,5 @@
 <?php
+include("config.php");
 if(isset($_FILES['bannerparoki']))
 {
     if($_FILES['bannerparoki']['name']!='')

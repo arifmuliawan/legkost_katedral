@@ -23,16 +23,16 @@
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <div class="card-body">
-                                <form id="imageUploadForm">
+                                <form id="imageUploadFormBannerParoki">
                                     <div class="form-group">
                                         <label>FOTO BANNER *</label>
                                         (1820 x 595 px) JPG/JPEG/PNG
                                     </div>
-                                    <div id="imageUpload" class="dropzone"></div>
+                                    <div id="imageUploadBannerParoki" class="dropzone"></div>
                                     <br>
-                                    <button id="uploaderBtn" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                    <button id="uploaderBtnBannerParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                     &nbsp&nbsp
-                                    <button id="uploaderBtn" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button>
+                                    <button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button>
                                 </form>
                             </div>
                         <!--</form>-->                    

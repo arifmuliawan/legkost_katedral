@@ -103,8 +103,8 @@ if((isset($action)) && $action==4)
                             <div class="card-body">    
                                 <form id="imageUploadFormBannerParoki">
                                     <div class="form-group">
-                                        <label>FOTO BANNER *</label>
-                                        (1820 x 595 px) JPG/JPEG/PNG
+                                        <label>FOTO BANNER <font color='red'>*</font></label> <br>
+                                        (1456 x 560 px) JPG/JPEG/PNG
                                     </div>
                                     <?php
                                     if($banner_image!="")
@@ -147,7 +147,7 @@ if((isset($action)) && $action==4)
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="form-label">PERIODE JABATAN *</label>
+                                                <label class="form-label">PERIODE JABATAN <font color='red'>*</font></label>
                                                 <input type="text" name="periode_paroki" class="form-control" placeholder="Type something here....">
                                             </div>
                                         </div>
@@ -196,6 +196,7 @@ if((isset($action)) && $action==4)
                 clickable: true,
                 thumbnailWidth:1456,
                 thumbnailHeight:560,
+                aacceptedFiles: "image/jpeg,image/png,image/jpg",
                 url: 'ajax_upload.php',
                 init: function () {
 

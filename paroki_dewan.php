@@ -1,8 +1,5 @@
 <?php
-if(!empty($_FILES)){
-    print_r($_FILES);
-    exit();
-}    
+echo "$full_url";
 ?>          
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">

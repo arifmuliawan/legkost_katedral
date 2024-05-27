@@ -173,6 +173,12 @@
             background-color: #DFDFDF;
         }
 
+        .dropzone .dz-preview .dz-image
+        {
+            width: 500px;
+            height: 500px;
+        }
+
     </style>
 
     <script type="text/javascript">

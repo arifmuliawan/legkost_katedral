@@ -119,6 +119,22 @@
             }
         })
     }
-</script>   
+</script>
+
+<script type="text/javascript">  
+    
+    Dropzone.autoDiscover = false;  
+    
+    var myDropzone = new Dropzone(".dropzone", {   
+       autoProcessQueue: false,  
+       maxFilesize: 1,  
+       acceptedFiles: ".jpeg,.jpg,.png,.gif"  
+    });  
+    
+    $('#uploadFile').click(function(){  
+       myDropzone.processQueue();  
+    });  
+        
+</script>
 </body>
 </html>

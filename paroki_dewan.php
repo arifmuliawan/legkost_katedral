@@ -304,8 +304,8 @@ if(isset($_POST['submit_periode']))
                                                             $photo_staff= "";
                                                         }
                                                 ?>
-                                                        <div class="col-md-3" style="margin: 10px;">
-                                                            <img src="<?php echo $photo_staff ?>" width="144px">
+                                                        <div class="col-md-2" style="margin: 10px;">
+                                                            <img src="<?php echo $photo_staff ?>" style="width:100%">
                                                         </div>
                                                 <?php
                                                     }

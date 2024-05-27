@@ -265,6 +265,11 @@ if(isset($_POST['submit_periode']))
                         <!-- /.card -->
                     </div>
                     <!--/.col (left) -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+                <div class="container-fluid">
+                    <div class="row">
                     <!-- right column -->
                     <div class="col-md-12">
                         <!-- jquery validation -->

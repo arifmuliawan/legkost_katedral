@@ -285,19 +285,6 @@ if(isset($_POST['submit_periode']))
                                         </div>
                                     </div>               
                                 </div>
-                                <div class="card-footer" style="background-color: unset;">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <table border=0 width="100%">
-                                                <tr>
-                                                    <td style="text-align: right;">
-                                                        <button type="submit" class="btn" name="submit_periode" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
-                                                    </td> 
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>        
-                                </div>
                             </form>                 
                         </div>
                         <!-- /.card -->

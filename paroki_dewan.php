@@ -1,4 +1,12 @@
-        
+<?php
+if(isset($_FILES))
+{
+    print_r($_FILES);
+    echo "<br><br>";
+    print_r($_POST);
+    exit();
+}    
+?>        
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->

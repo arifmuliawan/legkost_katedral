@@ -267,7 +267,7 @@ if(isset($_POST['submit_periode']))
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="form-label">DAFTAR PENGURUS <font color='red'>*</font></label><br>
-                                                Pilih salah satu pengurus untuk mengubah detail.     
+                                                Pilih salah satu pengurus untuk mengubah detail.<br><br>     
                                             </div>
                                         </div>
                                         <div class="col-md-12">

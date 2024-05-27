@@ -122,6 +122,7 @@
 </script>
 
 <script type="text/javascript">  
+    Dropzone.autoDiscover = false;
     myDropzone = new Dropzone('div#imageUpload', {
     addRemoveLinks: true,
     autoProcessQueue: false,

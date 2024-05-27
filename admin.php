@@ -16,12 +16,34 @@ if(isset($action))
             $log_action = "Delete";
             $log_text   = "Delete ".$user_del." Successfully!";
             $update_log = mysqli_query($con,"INSERT into `log` (`menu`,`action`,`log`,`create_by`,`create_date`) VALUES ('$log_menu','$log_action','$log_text','$user','$now')")or die (mysqli_error($con));
-            echo "<script type='text/javascript'> alert('Deleteted Successfully!');</script>";
-            echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=admin">';
+            echo "
+                    <script type='text/javascript'>
+                        $(window).on('load', function() {
+                            $('#successmodal').modal('show');
+                        });
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
+                    </script>
+                    ";
         }
     }
 }
 ?>
+        <!-- /.modal -->
+        <div class="modal fade" id="deletemodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                        <img src="<?php echo $base_assets ?>dist/img/icon_success.png" style="width: 70px;">
+                        <br><br>
+                        <h5> Data Berhasil Dihapus </h5> 
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->

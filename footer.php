@@ -131,6 +131,7 @@
     maxFiles: 3,
     paramName: 'file',
     clickable: true,
+    thumbnailWidth: '100%',
     url: 'ajax_upload.php',
     init: function () {
 
@@ -139,7 +140,7 @@
         $("#uploaderBtn").click(function (e) {
             e.preventDefault();
             myDropzone.processQueue();
-            //return false;
+            return false;
         });
 
         this.on('sending', function (file, xhr, formData) {

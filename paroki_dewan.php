@@ -285,7 +285,7 @@ if(isset($_POST['submit_periode']))
                                         </div>
                                         <div class="col-md-12" style="margin-top: 40px;">
                                             <div class="row">
-                                                <!--<div class="paroki_position">-->
+                                                <div class="paroki_position">
                                                 <?php
                                                 $query_staff    = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
                                                 $sum_staff      = mysqli_num_rows($query_staff);
@@ -307,14 +307,14 @@ if(isset($_POST['submit_periode']))
                                                             $photo_staff= "";
                                                         }
                                                 ?>
-                                                        <div class="col-md-2" style="margin: 10px;" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>>
+                                                        <div class="col-md-2" style="margin: 10px;" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">
                                                             <img src="<?php echo $photo_staff ?>" style="width:100%">
                                                         </div>
                                                 <?php
                                                     }
                                                 }
                                                 ?>
-                                                <!--</div>-->
+                                                </div>
                                         </div>
                                     </div>               
                                 </div>

@@ -289,9 +289,72 @@ if(isset($_POST['submit_periode']))
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
-                                                <img src="<?php echo $base_assets ?>dist/img/icon_success.png" style="width: 70px;">
-                                                <br><br>
-                                                <h5> Data Berhasil Dihapus </h5> 
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <form id="imageUploadFormStaffParoki">
+                                                            <div class="form-group">
+                                                                <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
+                                                                (500 x 500 px) JPG/JPEG/PNG
+                                                            </div>
+                                                            <?php
+                                                            if($staff_image!="")
+                                                            {
+                                                            ?>    
+                                                                <img src='<?php echo $staff_image ?>' width='100%'> <br>
+                                                            <?php
+                                                            }
+                                                            else
+                                                            {
+                                                            ?>
+                                                                <div id="imageUploadStaffParoki" class="dropzone">
+                                                                    <div class="dz-message">
+                                                                        <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                                        <b>.JPG  .JPEG  .PNG</b><br>
+                                                                        Drop files to upload <br>
+                                                                        or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                                                    </div>
+                                                                </div>
+                                                            <?php
+                                                            }
+                                                            ?>    
+                                                            <br>
+                                                            <button id="uploaderBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                            &nbsp&nbsp
+                                                            <a href="index.php?p=paroki_dewan&a=4" onclick="return confirm('Are you sure you want to delete this item ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
+                                                        </form>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label class="form-label">NAMA <font color='red'>*</font></label>
+                                                                        <input type="text" name="nama_paroki" class="form-control" placeholder="Type something here...."  <?php if(isset($err_upnama) && $err_upnama==1){ echo "style='border-color: red;'"; } ?> required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label class="form-label">JABATAN <font color='red'>*</font></label>
+                                                                        <input type="text" name="jabatan_paroki" class="form-control" placeholder="Type something here...." <?php if(isset($err_upjabatan) && $err_upjabatan==1){ echo "style='border-color: red;'"; } ?> required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>               
+                                                        </div>
+                                                        <div class="card-footer" style="background-color: unset;">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <table border=0 width="100%">
+                                                                    <tr>
+                                                                        <td style="text-align: right;">
+                                                                            <button type="submit" class="btn" name="submit_staff" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
+                                                                        </td> 
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>    
                                             </div>
                                         </div>
                                         <!-- /.modal-content -->

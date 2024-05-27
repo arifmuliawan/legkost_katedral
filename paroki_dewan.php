@@ -196,7 +196,7 @@ if((isset($action)) && $action==4)
                 clickable: true,
                 thumbnailWidth:1456,
                 thumbnailHeight:560,
-                aacceptedFiles: "image/jpeg,image/png,image/jpg",
+                acceptedFiles: "image/jpeg,image/png,image/jpg",
                 url: 'ajax_upload.php',
                 init: function () {
 

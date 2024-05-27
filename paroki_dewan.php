@@ -434,7 +434,7 @@ if(isset($_POST['submit_periode']))
                 }
             });
 
-            myDropzone2 = new Dropzone('div#imageUploadStaffParoki', 
+            myDropzone = new Dropzone('div#imageUploadStaffParoki', 
             {
                 addRemoveLinks: true,
                 autoProcessQueue: false,
@@ -443,17 +443,17 @@ if(isset($_POST['submit_periode']))
                 maxFiles: 1,
                 paramName: 'staffparoki',
                 clickable: true,
-                thumbnailWidth:1456,
-                thumbnailHeight:560,
+                thumbnailWidth:500,
+                thumbnailHeight:500,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
                 url: 'ajax_upload.php',
                 init: function () {
 
-                    var myDropzone2 = this;
+                    var myDropzone = this;
                     // Update selector to match your button
                     $("#uploaderBtnStaffParoki").click(function (e) {
                         e.preventDefault();
-                        myDropzone2.processQueue();
+                        myDropzone.processQueue();
                         return false;
                     });
 

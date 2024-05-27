@@ -27,7 +27,7 @@
                                 <div class="form-group">
                                     <label for="name">Name</label>
                                     <?php
-                                    echo $full_url;
+                                    echo $base_url."".$full_url;
                                     ?>
                                     <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter Name">
                                     <small class="form-text"></small>

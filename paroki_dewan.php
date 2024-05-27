@@ -118,9 +118,10 @@ if((isset($action)) && $action==4)
                                     ?>
                                         <div id="imageUploadBannerParoki" class="dropzone">
                                             <div class="dz-message">
-                                                .JPG.JPEG.PNG<br>
+                                                <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                <b>.JPG  .JPEG  .PNG</b><br>
                                                 Drop files to upload <br>
-                                                or Browse Files...
+                                                or <font color='#88A8D4'><b>Browse Files...</b></font>
                                             </div>
                                         </div>
                                     <?php

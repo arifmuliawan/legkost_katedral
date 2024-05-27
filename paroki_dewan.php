@@ -1,5 +1,5 @@
 <?php
-$query_banner   = mysqli_query($con,"SELECT * FROM banner WHERE id='1' AND code='1' AND visible='Y'");
+$query_banner   = mysqli_query($con,"SELECT * FROM paroki_data WHERE id='1' AND code='1' AND visible='Y'");
 $sum_banner     = mysqli_num_rows($query_banner);
 if($sum_banner>0)
 {
@@ -20,7 +20,7 @@ else
 }    
 if((isset($action)) && $action==4)
 {
-    $delete_banner  = 0;//mysqli_query($con,"UPDATE banner SET url_img='' WHERE id='1' AND code='1'");
+    $delete_banner  = mysqli_query($con,"UPDATE paroki_data SET url_img='' WHERE id='1' AND code='1'")or die (mysqli_error($con));
     if($delete_banner==1)
     {
         echo "
@@ -37,6 +37,54 @@ if((isset($action)) && $action==4)
     {
         $err_delbanner  = 1;
         $msg_delbanner  = "Data Gagal Dihapus";
+        echo "
+        <script type='text/javascript'>
+            $(window).on('load', function() {
+                $('#failedmodal').modal('show');
+            });
+            var delay = 2000;
+            setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+        </script>
+        ";
+    }
+}
+if(isset($_POST['submit_periode']))
+{
+    $periode_paroki    = $_POST['periode_paroki'];
+    if($periode_paroki!="")
+    {
+        $update_periode  = mysqli_query($con,"UPDATE paroki_data SET url_img='$periode_paroki' WHERE id='2' AND code='2'")or die (mysqli_error($con));
+        if($update_periode==1)
+        {
+            echo "
+                <script type='text/javascript'>
+                    $(window).on('load', function() {
+                        $('#successmodal').modal('show');
+                    });
+                    var delay = 2000;
+                    setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                </script>
+            ";
+        }
+        else
+        {
+            $err_upperiode  = 1;
+            $msg_upperiode  = "Data Gagal Disimpan";
+            echo "
+            <script type='text/javascript'>
+                $(window).on('load', function() {
+                    $('#failedmodal').modal('show');
+                });
+                var delay = 2000;
+                setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+            </script>
+            ";
+        }
+    }
+    else
+    {
+        $err_upperiode  = 1;
+        $msg_upperiode  = "Data Periode Jabatan Tidak Boleh Kosong";
         echo "
         <script type='text/javascript'>
             $(window).on('load', function() {
@@ -84,6 +132,10 @@ if((isset($action)) && $action==4)
                             if($err_delbanner==1)
                             {
                                 echo $msg_delbanner;
+                            }
+                            if($err_upperiode==1)
+                            {
+                                echo $msg_upperiode;
                             }
                             ?>
                         </h5>
@@ -179,7 +231,7 @@ if((isset($action)) && $action==4)
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="form-label">PERIODE JABATAN <font color='red'>*</font></label>
-                                                <input type="text" name="periode_paroki" class="form-control" placeholder="Type something here....">
+                                                <input type="text" name="periode_paroki" class="form-control" placeholder="Type something here...." <?php if(isset($err_upperiode) && $err_upperiode==1){ echo "style='border-color: red;'"; } ?> required>
                                             </div>
                                         </div>
                                     </div>               
@@ -190,7 +242,7 @@ if((isset($action)) && $action==4)
                                         <table border=0 width="100%">
                                             <tr>
                                                 <td style="text-align: right;">
-                                                    <button type="submit" class="btn" name="submit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
+                                                    <button type="submit" class="btn" name="submit_periode" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
                                                 </td> 
                                             </tr>
                                         </table>

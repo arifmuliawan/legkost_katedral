@@ -16,8 +16,6 @@ if(isset($_FILES['bannerparoki']))
         $banner_width            = $banner_info[0];
         $banner_height           = $banner_info[1];
         $up_img                  = move_uploaded_file($file_tmp_banner, $file_directory_banner);
-        print_r($up_img);
-        exit();
         $name_banner     = $file_db_banner;
     }
     else

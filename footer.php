@@ -138,10 +138,8 @@
         // Update selector to match your button
         $("#uploaderBtn").click(function (e) {
             e.preventDefault();
-            if ( $("#imageUploadForm").valid() ) {
-                myDropzone.processQueue();
-            }
-            return false;
+            myDropzone.processQueue();
+            //return false;
         });
 
         this.on('sending', function (file, xhr, formData) {

@@ -9,7 +9,7 @@ $my_user 	= "u256116329_katedral";
 $my_password= "4PPYUD2Zk!";
 $my_db		= "u256116329_katedral"; 	
 $domain		= $_SERVER['HTTP_HOST'];
-$full_url   = $_SERVER['PHP_SELF']; 	
+$full_url   = $_SERVER['REQUEST_URI'];; 	
 $now        = date('Y-m-d H:i:s');
 if($domain=='localhost')
 {

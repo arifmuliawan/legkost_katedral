@@ -310,21 +310,19 @@ if(isset($_POST['submit_periode']))
                                                                 </div> 
                                                             </div>    
                                                             <div class="col-md-6">
-                                                                <div class="card-body">
-                                                                    <div class="row">
-                                                                        <div class="col-md-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">NAMA <font color='red'>*</font></label>
-                                                                                <input type="text" name="nama_paroki" class="form-control" placeholder="Type something here...."  <?php if(isset($err_upnama) && $err_upnama==1){ echo "style='border-color: red;'"; } ?> required>
-                                                                            </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label class="form-label">NAMA <font color='red'>*</font></label>
+                                                                            <input type="text" name="nama_paroki" class="form-control" placeholder="Type something here...."  <?php if(isset($err_upnama) && $err_upnama==1){ echo "style='border-color: red;'"; } ?> required>
                                                                         </div>
-                                                                        <div class="col-md-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label">JABATAN <font color='red'>*</font></label>
-                                                                                <input type="text" name="jabatan_paroki" class="form-control" placeholder="Type something here...." <?php if(isset($err_upjabatan) && $err_upjabatan==1){ echo "style='border-color: red;'"; } ?> required>
-                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label class="form-label">JABATAN <font color='red'>*</font></label>
+                                                                            <input type="text" name="jabatan_paroki" class="form-control" placeholder="Type something here...." <?php if(isset($err_upjabatan) && $err_upjabatan==1){ echo "style='border-color: red;'"; } ?> required>
                                                                         </div>
-                                                                     </div>               
+                                                                    </div>             
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12">

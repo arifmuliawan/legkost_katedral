@@ -133,7 +133,7 @@
     clickable: true,
     thumbnailWidth:500,
     thumbnailHeight:500,
-    url: '<?php echo $base_current ?>',
+    url: 'ajax_upload.php',
     init: function () {
 
         var myDropzone = this;

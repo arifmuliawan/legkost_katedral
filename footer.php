@@ -120,5 +120,56 @@
         })
     }
 </script>
+
+<script type="text/javascript">
+    var el = document.querySelector('.panroki_position');
+    var sortable = Sortable.create(el,{
+      onUpdate: function (/**Event*/evt) {
+        arr = [];index=0
+        $('.tableid').each(function(item){
+        arr.push({id:$(this).attr('data-id'),sort:index++})
+        })
+            updateOrder(arr);
+        },
+
+    });
+    /*
+    $( ".row_position" ).sortable({
+        delay: 150,
+        stop: function() {
+            var selectedData = new Array();
+            $('.row_position>tr').each(function() {
+                selectedData.push($(this).attr("id"));
+            });
+            updateOrder(selectedData);
+        }
+    });
+    
+    var itemEl = evt.item;  // dragged HTMLElement
+        var potstart = evt.oldIndex;  // element's old index within old parent
+        var potend = evt.newIndex;  // element's new index within new parent
+          // same properties as onEnd
+          //
+          //console.table('Sortable',evt.to,evt.from,evt.oldIndex,evt.newIndex,itemEl)
+          var target    = $(`.tableid:eq(${potstart})`).attr("data-id")
+          var ordersec  = $(`.tableid:eq(${potstart})`).attr("data-sec")
+          var target2   = $(`.tableid:eq(${potend})`).attr("data-id")
+          var ordersec2 = $(`.tableid:eq(${potend})`).attr("data-sec")
+          console.table('Updated',target,ordersec2,target2,ordersec,potstart,potend)
+    */
+
+
+    function updateOrder(data) {
+        $.ajax({
+            url:"change_sort.php",
+            type:'post',
+            data:{position:data,module:'paroki'},
+            success:function(){
+                //alert('your change successfully saved');
+                //location.reload();
+            }
+        })
+    }
+</script>
 </body>
 </html>

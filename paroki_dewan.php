@@ -283,6 +283,35 @@ if(isset($_POST['submit_periode']))
                                                 </tr>
                                             </table>
                                         </div>
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <?php
+                                                $query_staff    = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
+                                                $sum_staff      = mysqli_num_rows($query_staff);
+                                                if($sum_staff>0)
+                                                {
+                                                    while($data_staff=mysqli_fetch_array($query_staff))
+                                                    {
+                                                        $name_staff     = $data_staff['name'];
+                                                        $position_staff = $data_staff['position'];
+                                                        $photo_data     = $data_staff['img_url'];
+                                                        if($photo_data!="")
+                                                        {
+                                                            $photo_staff= $base_assets."".$photo_data;
+                                                        }
+                                                        else
+                                                        {
+                                                            $photo_staff= "";
+                                                        }
+                                                ?>
+                                                        <div class="col-md-3">
+                                                            <img src="<?php echo $photo_staff ?>">
+                                                        </div>
+                                                <?php
+                                                    }
+                                                }
+                                                ?>
+                                        </div>
                                     </div>               
                                 </div>
                                 <div class="modal fade" id="addparokimodal">

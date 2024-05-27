@@ -20,7 +20,7 @@ else
 }    
 if((isset($action)) && $action==4)
 {
-    $delete_banner  = mysqli_query($con,"UPDATE banner SET url_img='' WHERE id='1' AND code='1'");
+    $delete_banner  = 0;//mysqli_query($con,"UPDATE banner SET url_img='' WHERE id='1' AND code='1'");
     if($delete_banner==1)
     {
         echo "
@@ -35,8 +35,17 @@ if((isset($action)) && $action==4)
     }
     else
     {
-        echo "GAGAL UPLOAD";
-        exit();
+        $err_delbanner  = 1;
+        $msg_delbanner  = "Data Gagal Dihapus";
+        echo "
+        <script type='text/javascript'>
+            $(window).on('load', function() {
+                $('#failedmodal').modal('show');
+            });
+            var delay = 2000;
+            setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+        </script>
+        ";
     }
 }
 ?>
@@ -57,7 +66,29 @@ if((isset($action)) && $action==4)
                     <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
                         <img src="<?php echo $base_assets ?>dist/img/icon_success.png" style="width: 70px;">
                         <br><br>
-                        <h5> Perubahan anda telah berhasil disimpan </h5> 
+                        <h5> Perubahan Anda Telah Berhasil Disimpan </h5> 
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <div class="modal fade" id="failedmodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                        <img src="<?php echo $base_assets ?>dist/img/icon_failed.png" style="width: 70px;">
+                        <br><br>
+                        <h5> 
+                            <?php
+                            if($err_delbanner==1)
+                            {
+                                echo $msg_delbanner;
+                            }
+                            ?>
+                        </h5>
+                        <br>
+                        <button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;" data-dismiss="modal" aria-label="Close"> CLOSE </button>
                     </div>
                 </div>
                 <!-- /.modal-content -->

@@ -6,6 +6,8 @@ if(isset($_FILES['bannerparoki']))
         $ekstensi_diperbolehkan  = array('png','jpg','jpeg');
         $nama_banner             = $_FILES['bannerparoki']['name'];
         $x_banner                = explode('.', $nama_banner);
+        print_r($x_banner);
+        exit();
         $ekstensi_banner         = strtolower(end($x_banner));
         $ukuran_banner           = $_FILES['bannerparoki']['size'];
         $file_tmp_banner         = $_FILES['bannerparoki']['tmp_name'];

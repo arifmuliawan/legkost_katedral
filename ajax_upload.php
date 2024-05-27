@@ -11,9 +11,9 @@ if(isset($_FILES['bannerparoki']))
         $file_tmp_banner         = $_FILES['bannerparoki']['tmp_name'][0];
         $file_directory_banner   = "assets/dist/img/".$nama_banner;
         $file_db_banner          = "dist/img/".$nama_banner;
-        print_r($file_tmp_banner);
-        exit();
         $banner_info             = getimagesize($file_tmp_banner);
+        print_r($banner_info);
+        exit();
         $banner_width            = $banner_info[0];
         $banner_height           = $banner_info[1];
         move_uploaded_file($file_tmp_banner, $file_directory_banner);

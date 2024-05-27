@@ -294,7 +294,7 @@ if(isset($_POST['submit_periode']))
                                                     {
                                                         $name_staff     = $data_staff['name'];
                                                         $position_staff = $data_staff['position'];
-                                                        $photo_data     = $data_staff['img_url'];
+                                                        $photo_data     = $data_staff['url_img'];
                                                         if($photo_data!="")
                                                         {
                                                             $photo_staff= $base_assets."".$photo_data;

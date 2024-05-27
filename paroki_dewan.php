@@ -283,7 +283,7 @@ if(isset($_POST['submit_periode']))
                                                 </tr>
                                             </table>
                                         </div>
-                                        <div class="col-md-12" style="margin-top: 40px;">
+                                        <div class="col-md-12" style="margin-top: 40px;" class="panroki_position">
                                             <div class="row">
                                                 <?php
                                                 $query_staff    = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
@@ -292,6 +292,8 @@ if(isset($_POST['submit_periode']))
                                                 {
                                                     while($data_staff=mysqli_fetch_array($query_staff))
                                                     {
+                                                        $id_staff       = $data_staff['id'];
+                                                        $sortid_staff   = $data_staff['sortid'];
                                                         $name_staff     = $data_staff['name'];
                                                         $position_staff = $data_staff['position'];
                                                         $photo_data     = $data_staff['url_img'];
@@ -304,7 +306,7 @@ if(isset($_POST['submit_periode']))
                                                             $photo_staff= "";
                                                         }
                                                 ?>
-                                                        <div class="col-md-2" style="margin: 10px;">
+                                                        <div class="col-md-2" style="margin: 10px;" id="<?php echo $sortid ?>" data-id="<?php echo $id ?>" data-sec="<?php echo $sortid ?>>
                                                             <img src="<?php echo $photo_staff ?>" style="width:100%">
                                                         </div>
                                                 <?php

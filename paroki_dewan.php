@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="card-footer" style="background-color: unset;">
                                 <div class="row">
-                                    <div class="col-md-11">
+                                    <div class="col-md-12">
                                         <table border=0 width="100%">
                                             <tr>
                                                 <td style="text-align: right;">

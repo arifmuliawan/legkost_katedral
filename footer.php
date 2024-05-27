@@ -138,7 +138,7 @@
         // Update selector to match your button
         $("#uploaderBtn").click(function (e) {
             e.preventDefault();
-            if ( $form.valid() ) {
+            if ( $("#imageUploadForm").valid() ) {
                 myDropzone.processQueue();
             }
             return false;
@@ -146,7 +146,7 @@
 
         this.on('sending', function (file, xhr, formData) {
             // Append all form inputs to the formData Dropzone will POST
-            var data = $form.serializeArray();
+            var data = $("#imageUploadForm").serializeArray();
             $.each(data, function (key, el) {
                 formData.append(el.name, el.value);
             });
@@ -170,7 +170,7 @@
     },
     successmultiple: function (file, response) {
         console.log(file, response);
-        $modal.modal("show");
+        $("#successModal").modal("show");
     },
     completemultiple: function (file, response) {
         console.log(file, response, "completemultiple");

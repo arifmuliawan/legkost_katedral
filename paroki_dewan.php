@@ -33,11 +33,26 @@ if(!empty($_FILES)){
                                         <div class="file_upload">
                                             <label>FOTO BANNER *</label>
                                             <br>
-                                            <div class="dz-message needsclick">
-                                                <i class="fas fa-upload" style="font-size: 2rem;"></i>
-                                                <div class="mt-3" style="font-weight: bold;">.JPG   .JPEG   .PNG </div>
-                                                <div class="mt-1">Drop files to upload </div>
-                                                <div class="mt-1" style="color: #88A8D4;font-weight: bold;">or Browse Files...</div>
+                                            <div class="preview-zone hidden">
+                                                <div class="box box-solid">
+                                                    <div class="box-header with-border">
+                                                        <div><b>Preview</b></div>
+                                                        <div class="box-tools pull-right">
+                                                            <button type="button" class="btn btn-danger btn-xs remove-preview">
+                                                                <i class="fa fa-times"></i> Reset This Form
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box-body"></div>
+                                                </div>
+                                            </div>
+                                            <div class="dropzone-wrapper">
+                                                <div class="dropzone-desc">
+                                                    <i class="glyphicon glyphicon-download-alt"></i>
+                                                    <p>Choose an image file or drag it here.</p>
+                                                    </div>
+                                                    <input type="file" name="img_logo" class="dropzone">
+                                                </div>
                                             </div>
                                             <!--
                                             <div style="margin-bottom: 25px;margin-top: -10px;font-size: 13px;">(1820 x 595 px) JPG/JPEG/PNG</div>

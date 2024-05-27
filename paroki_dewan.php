@@ -48,11 +48,10 @@ if(!empty($_FILES)){
                                             </div>
                                             <div class="dropzone-wrapper">
                                                 <div class="dropzone-desc">
-                                                    <i class="glyphicon glyphicon-download-alt"></i>
-                                                    <p>Choose an image file or drag it here.</p>
-                                                    </div>
-                                                    <input type="file" name="img_logo" class="dropzone">
+                                                        <i class="glyphicon glyphicon-download-alt"></i>
+                                                        <p>Choose an image file or drag it here.</p>
                                                 </div>
+                                                <input type="file" name="img_logo" class="dropzone">
                                             </div>
                                             <!--
                                             <div style="margin-bottom: 25px;margin-top: -10px;font-size: 13px;">(1820 x 595 px) JPG/JPEG/PNG</div>

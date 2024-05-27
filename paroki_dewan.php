@@ -65,7 +65,7 @@ else
                                     if($banner_image!="")
                                     {
                                     ?>    
-                                        <img src='<?php echo $banner_image ?>' width='50%'>
+                                        <img src='<?php echo $banner_image ?>' width='50%'> <br>
                                     <?php
                                     }
                                     else

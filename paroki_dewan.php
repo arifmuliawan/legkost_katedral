@@ -30,7 +30,9 @@
                                     </div>
                                     <div id="imageUpload" class="dropzone"></div>
                                     <br>
-                                    <button id="uploaderBtn" type="button" class="btn btn-primary">Save</button>
+                                    <button id="uploaderBtn" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                    &nbsp&nbsp
+                                    <button id="uploaderBtn" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button>
                                 </form>
                             </div>
                         <!--</form>-->                    
@@ -59,7 +61,7 @@
                                         <table border=0 width="100%">
                                             <tr>
                                                 <td style="text-align: right;">
-                                                    <button type="submit" class="btn" name="submit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">Submit</button>
+                                                    <button type="submit" class="btn" name="submit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
                                                 </td> 
                                             </tr>
                                         </table>

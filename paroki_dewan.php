@@ -297,27 +297,14 @@ if(isset($_POST['submit_periode']))
                                                                 <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
                                                                 (500 x 500 px) JPG/JPEG/PNG
                                                             </div>
-                                                            <?php
-                                                            if($staff_image!="")
-                                                            {
-                                                            ?>    
-                                                                <img src='<?php echo $staff_image ?>' width='100%'> <br>
-                                                            <?php
-                                                            }
-                                                            else
-                                                            {
-                                                            ?>
-                                                                <div id="imageUploadStaffParoki" class="dropzone">
-                                                                    <div class="dz-message">
-                                                                        <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
-                                                                        <b>.JPG  .JPEG  .PNG</b><br>
-                                                                        Drop files to upload <br>
-                                                                        or <font color='#88A8D4'><b>Browse Files...</b></font>
-                                                                    </div>
+                                                            <div id="imageUploadStaffParoki" class="dropzone">
+                                                                <div class="dz-message">
+                                                                    <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                                    <b>.JPG  .JPEG  .PNG</b><br>
+                                                                    Drop files to upload <br>
+                                                                    or <font color='#88A8D4'><b>Browse Files...</b></font>
                                                                 </div>
-                                                            <?php
-                                                            }
-                                                            ?>    
+                                                            </div>    
                                                             <br>
                                                             <button id="uploaderBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                                             &nbsp&nbsp

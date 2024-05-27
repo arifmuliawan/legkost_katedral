@@ -268,45 +268,6 @@ if(isset($_POST['submit_periode']))
                     </div>
                     <!-- /.row -->
                 </div><!-- /.container-fluid -->
-                <div class="container-fluid">
-                    <div class="row">
-                    <!-- right column -->
-                    <div class="col-md-12">
-                        <!-- jquery validation -->
-                        <div class="card">
-                        <!-- /.card-header -->
-                            <form action="" method="post" enctype="multipart/form-data">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="form-label">PERIODE JABATAN <font color='red'>*</font></label>
-                                                <input type="text" name="periode_paroki" class="form-control" placeholder="Type something here...." value="<?php echo $periode_paroki ?>" <?php if(isset($err_upperiode) && $err_upperiode==1){ echo "style='border-color: red;'"; } ?> required>
-                                            </div>
-                                        </div>
-                                    </div>               
-                                </div>
-                                <div class="card-footer" style="background-color: unset;">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <table border=0 width="100%">
-                                            <tr>
-                                                <td style="text-align: right;">
-                                                    <button type="submit" class="btn" name="submit_periode" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
-                                                </td> 
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>        
-                            </div>
-                            </form>                    
-                        </div>
-                        <!-- /.card -->
-                    </div>
-                    <!--/.col (right) -->
-                    </div>
-                    <!-- /.row -->
-                </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
         </div>    

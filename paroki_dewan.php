@@ -1,6 +1,6 @@
 <?php
-$query_banner   = mysqli_query($con,"SELECT * FROM paroki_data WHERE id='1' AND code='1' AND visible='Y'");
-$sum_banner     = mysqli_num_rows($query_banner);
+$query_banner       = mysqli_query($con,"SELECT * FROM paroki_data WHERE id='1' AND code='1' AND visible='Y'")or die (mysqli_error($con));
+$sum_banner         = mysqli_num_rows($query_banner);
 if($sum_banner>0)
 {
     $data_banner    = mysqli_fetch_array($query_banner);
@@ -17,6 +17,17 @@ if($sum_banner>0)
 else
 {
     $banner_image   = "";
+}
+$query_periode      = mysqli_query($con,"SELECT * FROM paroki_data WHERE id='2' AND code='2' AND visible='Y'")or die (mysqli_error($con));
+$sum_periode        = mysqli_num_rows($query_periode);
+if($sum_periode>0)
+{
+    $data_periode   = mysqli_fetch_array($query_periode);
+    $periode_paroki = $data_periode['url_img'];
+}
+else
+{
+    $periode_paroki = "";
 }    
 if((isset($action)) && $action==4)
 {
@@ -231,7 +242,7 @@ if(isset($_POST['submit_periode']))
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="form-label">PERIODE JABATAN <font color='red'>*</font></label>
-                                                <input type="text" name="periode_paroki" class="form-control" placeholder="Type something here...." <?php if(isset($err_upperiode) && $err_upperiode==1){ echo "style='border-color: red;'"; } ?> required>
+                                                <input type="text" name="periode_paroki" class="form-control" placeholder="Type something here...." value="<?php echo $periode_paroki ?>" <?php if(isset($err_upperiode) && $err_upperiode==1){ echo "style='border-color: red;'"; } ?> required>
                                             </div>
                                         </div>
                                     </div>               

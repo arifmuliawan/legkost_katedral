@@ -283,7 +283,8 @@ if(isset($_POST['submit_periode']))
                                                 </tr>
                                             </table>
                                         </div>
-                                        <div class="paroki_position" style="margin-top: 40px;">
+                                        <div class="col-md-12" style="margin-top: 40px;">
+                                            
                                                 <div class="row">
                                                 <?php
                                                 $query_staff    = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
@@ -305,17 +306,16 @@ if(isset($_POST['submit_periode']))
                                                         {
                                                             $photo_staff= "";
                                                         }
-                                                ?>
-                                                        <div class="tableid" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">
-                                                            <div class="col-md-2" style="margin: 10px;">
-                                                                <img src="<?php echo $photo_staff ?>" style="width:100%">
-                                                            </div>
-                                                        </div>    
+                                                ?>  
+                                                    <div class="paroki_position">
+                                                        <div class="col-md-2" style="margin: 10px;" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">
+                                                            <img src="<?php echo $photo_staff ?>" style="width:100%">
+                                                        </div>
+                                                    </div>    
                                                 <?php
                                                     }
                                                 }
                                                 ?>
-                                                </div>
                                         </div>
                                     </div>               
                                 </div>

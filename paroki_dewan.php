@@ -307,7 +307,7 @@ if(isset($_POST['submit_periode']))
                                                             $photo_staff= "";
                                                         }
                                                 ?>
-                                                        <div class="col-md-2" style="margin: 10px;" id="<?php echo $sortid ?>" data-id="<?php echo $id ?>" data-sec="<?php echo $sortid ?>>
+                                                        <div class="col-md-2" style="margin: 10px;" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>>
                                                             <img src="<?php echo $photo_staff ?>" style="width:100%">
                                                         </div>
                                                 <?php

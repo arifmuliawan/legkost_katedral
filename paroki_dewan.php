@@ -26,9 +26,6 @@
                             <form id="imageUploadForm">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <?php
-                                    echo $base_current;
-                                    ?>
                                     <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter Name">
                                     <small class="form-text"></small>
                                 </div>
@@ -38,9 +35,8 @@
                                     <small class="form-text"></small>
                                 </div>
                                 <div class="form-group">
-                                    <label for="mobile">Mobile</label>
-                                    <input type="text" class="form-control" name="mobile" id="mobile" aria-describedby="mobile" placeholder="Enter mobile">
-                                    <small class="form-text"></small>
+                                    <label>FOTO BANNER *</label>
+                                    (1820 x 595 px) JPG/JPEG/PNG
                                 </div>
                                 <div id="imageUpload" class="dropzone"></div>
                                 <button id="uploaderBtn" type="button" class="btn btn-primary">Save</button>

@@ -22,7 +22,7 @@ if(isset($_FILES['bannerparoki']))
     {
         $name_banner             = "";
     }
-    $update_banner  = mysqli_query($con,"UPDATE banner SET url_img='$name_banner' WHERE id='1' AND code='1'");
+    $update_banner  = mysqli_query($con,"UPDATE paroki_data SET url_img='$name_banner' WHERE id='1' AND code='1'");
     if($update_banner==1)
     {
         echo "

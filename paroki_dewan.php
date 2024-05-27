@@ -116,7 +116,13 @@ if((isset($action)) && $action==4)
                                     else
                                     {
                                     ?>
-                                        <div id="imageUploadBannerParoki" class="dropzone"></div>
+                                        <div id="imageUploadBannerParoki" class="dropzone">
+                                            <div class="dz-message">
+                                                .JPG.JPEG.PNG<br>
+                                                Drop files to upload <br>
+                                                or Browse Files...
+                                            </div>
+                                        </div>
                                     <?php
                                     }
                                     ?>    

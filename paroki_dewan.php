@@ -1,3 +1,24 @@
+<?php
+$query_banner   = mysqli_query($con,"SELECT banner WHERE id='1' AND code='1' AND viisble='Y'");
+$sum_banner     = mysqli_num_rows($sum_banner);
+if($sum_banner>0)
+{
+    $data_banner    = mysqli_fetch_array($query_banner);
+    $url_img        = $data_banner['url_img'];
+    if($url_img!="")
+    {
+        $banner_image   = $base_assets."".$url_img;
+    }
+    else
+    {
+        $banner_image   = "";
+    }
+}
+else
+{
+    $banner_image   = "";
+}    
+?>
         <div class="modal fade" id="successmodal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -34,13 +55,26 @@
                         <div class="card" style="box-shadow: unset;">
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
-                            <div class="card-body">
+                            <div class="card-body">    
                                 <form id="imageUploadFormBannerParoki">
                                     <div class="form-group">
                                         <label>FOTO BANNER *</label>
                                         (1820 x 595 px) JPG/JPEG/PNG
                                     </div>
-                                    <div id="imageUploadBannerParoki" class="dropzone"></div>
+                                    <?php
+                                    if($banner_image!="")
+                                    {
+                                    ?>    
+                                        <img src='<?php echo $banner_image ?>' width='50%'>
+                                    <?php
+                                    }
+                                    else
+                                    {
+                                    ?>
+                                        <div id="imageUploadBannerParoki" class="dropzone"></div>
+                                    <?php
+                                    }
+                                    ?>    
                                     <br>
                                     <button id="uploaderBtnBannerParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                     &nbsp&nbsp

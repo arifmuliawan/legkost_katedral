@@ -129,7 +129,7 @@
         $('.tableid').each(function(item){
         arr.push({id:$(this).attr('data-id'),sort:index++})
         })
-            updateOrder(arr);
+            updateOrderParoki(arr);
         },
 
     });
@@ -159,7 +159,7 @@
     */
 
 
-    function updateOrder(data) {
+    function updateOrderParoki(data) {
         $.ajax({
             url:"change_sort.php",
             type:'post',

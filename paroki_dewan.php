@@ -279,8 +279,9 @@ if(isset($_POST['submit_periode']))
                                                     </td> 
                                                     <td width="50%" style="text-align: right;">
                                                         <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">ADD NEW</button>
-                                                    </td>   
-                                            </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </div>
                                     </div>               
                                 </div>

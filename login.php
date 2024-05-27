@@ -168,7 +168,7 @@ else
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition login-page" style="background-color:88A8D4;background-size:cover">
+<body class="hold-transition login-page" style="background-color:#88A8D4;background-size:cover">
     <div class="login-box">
         <div class="login-logo">
             <img src="assets/dist/img/Logo_Katedral.png" width="300px">

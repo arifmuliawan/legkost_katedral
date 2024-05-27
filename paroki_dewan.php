@@ -293,6 +293,7 @@ if(isset($_POST['submit_periode']))
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <form id="imageUploadFormStaffParoki">
+                                                        <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
@@ -339,7 +340,8 @@ if(isset($_POST['submit_periode']))
                                                                         </table>
                                                                     </div>
                                                                 </div>
-                                                            </div>   
+                                                            </div> 
+                                                        </div>      
                                                         </form>    
                                                     </div>  
                                                 </div>    

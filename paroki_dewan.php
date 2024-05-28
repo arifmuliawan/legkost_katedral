@@ -277,8 +277,8 @@ if(isset($_POST['submit_periode']))
                     <div class="col-md-12">
                         <!-- jquery validation -->
                         <div class="card" style="">
-                        <!-- /.card-header -->
-                            <form action="" method="post" enctype="multipart/form-data">
+                        <!-- /.card-header 
+                            <form action="" method="post" enctype="multipart/form-data">-->
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -405,7 +405,7 @@ if(isset($_POST['submit_periode']))
                                     </div>
                                     <!-- /.modal-dialog -->
                                 </div>
-                            </form>                 
+                            <!--</form>-->                 
                         </div>
                         <!-- /.card -->
                     </div>

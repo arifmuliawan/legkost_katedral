@@ -43,6 +43,46 @@ if(isset($_FILES['bannerparoki']))
 }
 if(isset($_FILES['staffparoki']))
 {
+    $nama_paroki    = $_POST['nama_paroki'];
+    $jabatan_paroki = $_POST['jabatan_paroki'];
+    if($_FILES['staffparoki']['name']!='')
+    {
+        $ekstensi_diperbolehkan  = array('png','jpg','jpeg');
+        $nama_banner             = $_FILES['staffparoki']['name'][0];
+        $x_banner                = explode('.', $nama_banner);
+        $ekstensi_banner         = strtolower(end($x_banner));
+        $ukuran_banner           = $_FILES['staffparoki']['size'][0];
+        $file_tmp_banner         = $_FILES['staffparoki']['tmp_name'][0];
+        $file_directory_banner   = "assets/dist/img/paroki/".$nama_banner;
+        $file_db_banner          = "dist/img/paroki/".$nama_banner;
+        $banner_info             = getimagesize($file_tmp_banner);
+        $banner_width            = $banner_info[0];
+        $banner_height           = $banner_info[1];
+        $up_img                  = move_uploaded_file($file_tmp_banner, $file_directory_banner);
+        $name_banner     = $file_db_banner;
+    }
+    else
+    {
+        $name_banner             = "";
+    }
+    $insert_paroki  = mysqli_query($con,"UPDATE paroki_data SET url_img='$name_banner' WHERE id='1' AND code='1'");
+    if($update_banner==1)
+    {
+        echo "
+            <script type='text/javascript'>
+                $(window).on('load', function() {
+                    $('#successmodal').modal('show');
+                });
+                var delay = 2000;
+                setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+            </script>
+        ";
+    }
+    else
+    {
+        echo "GAGAL UPLOAD";
+        exit();
+    }
     print_r($_FILES);
     echo "<br><br>";
     print_r($_POST);

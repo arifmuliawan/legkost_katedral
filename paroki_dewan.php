@@ -335,7 +335,7 @@ if(isset($_POST['submit_periode']))
                                                                     <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
                                                                     (500 x 500 px) JPG/JPEG/PNG
                                                                 </div>
-                                                                <div id="imageUploadStaffParoki" class="dropzone2">
+                                                                <div id="imageUploadStaffParoki" class="dropzone">
                                                                     <div class="dz-message">
                                                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
                                                                         <b>.JPG  .JPEG  .PNG</b><br>
@@ -482,8 +482,8 @@ if(isset($_POST['submit_periode']))
                 maxFiles: 1,
                 paramName: 'bannerparoki',
                 clickable: true,
-                thumbnailWidth:1456,
-                thumbnailHeight:560,
+                thumbnailWidth:500,
+                thumbnailHeight:500,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
                 url: 'ajax_upload.php',
                 init: function () {

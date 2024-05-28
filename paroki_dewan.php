@@ -115,7 +115,7 @@ if(isset($_POST['submit_periode']))
             }
             .dropzone:nth-of-type(1)
             {
-                padding : 0;
+                padding : 0 !important;
             }
             .dropzone .dz-preview
             {

@@ -509,6 +509,7 @@ if(isset($_POST['submit_periode']))
                     $("#uploaderBtnStaffParoki").click(function (e) {
                         e.preventDefault();
                         myDropzone2.processQueue();
+                        alert("staffparoki");
                         return false;
                     });
 

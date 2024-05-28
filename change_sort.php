@@ -1,7 +1,8 @@
 <?php 
 include("config.php");
-$position = $_POST['position'];
-print_r($position);
+$position   = $_POST['position'];
+$module     = $_POST['module'];
+print_r($position."<br>".$module);
 exit();
 $sql="";  
 try {

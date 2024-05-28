@@ -335,7 +335,7 @@ if(isset($_POST['submit_periode']))
                                                                     <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
                                                                     (500 x 500 px) JPG/JPEG/PNG
                                                                 </div>
-                                                                <div id="imageUploadStaffParoki" class="dropzone">
+                                                                <div id="imageUploadStaffParoki" class="dropzone2">
                                                                     <div class="dz-message">
                                                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
                                                                         <b>.JPG  .JPEG  .PNG</b><br>
@@ -428,6 +428,77 @@ if(isset($_POST['submit_periode']))
                     this.on('sending', function (file, xhr, formData) {
                         // Append all form inputs to the formData Dropzone will POST
                         var data = $("#imageUploadFormBannerParoki").serializeArray();
+                        $.each(data, function (key, el) {
+                            formData.append(el.name, el.value);
+                        });
+                        console.log(formData);
+
+                    });
+                },
+                error: function (file, response){
+                    if ($.type(response) === "string")
+                        var message = response; //dropzone sends it's own error messages in string
+                    else
+                        var message = response.message;
+                    file.previewElement.classList.add("dz-error");
+                    _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
+                    _results = [];
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i];
+                        _results.push(node.textContent = message);
+                    }
+                    return _results;
+                },
+                successmultiple: function (file, response) {
+                    console.log(file, response);
+                    $(window).on('load', function() 
+                    {
+                        $('#successmodal').modal('show');
+                    });
+                    var delay = 2000;
+                    setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                    //$("#successModal").modal("show");
+                },
+                completemultiple: function (file, response) {
+                    console.log(file, response, "completemultiple");
+                    //$modal.modal("show");
+                },
+                reset: function () {
+                    console.log("resetFiles");
+                    this.removeAllFiles(true);
+                }
+            });
+                
+        </script>
+
+        <script type="text/javascript">  
+            Dropzone.autoDiscover = false;
+            myDropzone2 = new Dropzone('div#imageUploadStaffParoki', 
+            {
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 1,
+                paramName: 'bannerparoki',
+                clickable: true,
+                thumbnailWidth:1456,
+                thumbnailHeight:560,
+                acceptedFiles: "image/jpeg,image/png,image/jpg",
+                url: 'ajax_upload.php',
+                init: function () {
+
+                    var myDropzone2 = this;
+                    // Update selector to match your button
+                    $("#uploaderBtnStaffParoki").click(function (e) {
+                        e.preventDefault();
+                        myDropzone2.processQueue();
+                        return false;
+                    });
+
+                    this.on('sending', function (file, xhr, formData) {
+                        // Append all form inputs to the formData Dropzone will POST
+                        var data = $("#imageUploadFormStaffParoki").serializeArray();
                         $.each(data, function (key, el) {
                             formData.append(el.name, el.value);
                         });

@@ -468,10 +468,7 @@ if(isset($_POST['submit_periode']))
                 },
                 successmultiple: function (file, response) {
                     console.log(file, response);
-                    $(window).on('load', function() 
-                    {
-                        $('#successmodal').modal('show');
-                    });
+                    $('#successmodal').modal('show');
                     var delay = 2000;
                     setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
                     //$("#successModal").modal("show");

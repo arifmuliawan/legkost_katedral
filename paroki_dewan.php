@@ -489,7 +489,7 @@ if(isset($_POST['submit_periode']))
 
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;
-            myDropzone2 = new Dropzone('div#imageUploadStaffParoki', 
+            myDropzone2 = new Dropzone('#addparokimodal div#imageUploadStaffParoki', 
             {
                 addRemoveLinks: true,
                 autoProcessQueue: false,

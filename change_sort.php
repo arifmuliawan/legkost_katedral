@@ -2,8 +2,6 @@
 include("config.php");
 $position   = $_POST['position'];
 $module     = $_POST['module'];
-print_r($module);
-exit();
 $sql="";  
 try {
     // First of all, let's begin a transaction

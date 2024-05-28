@@ -112,7 +112,7 @@
         $.ajax({
             url:"change_sort.php",
             type:'post',
-            data:{position:data},
+            data:{position:data,table:'admin'},
             success:function(){
                 //alert('your change successfully saved');
                 //location.reload();
@@ -163,7 +163,7 @@
         $.ajax({
             url:"change_sort.php",
             type:'post',
-            data:{position:data,module:'paroki_staff'},
+            data:{position:data,table:'paroki_staff'},
             success:function(){
                 //alert('your change successfully saved');
                 //location.reload();

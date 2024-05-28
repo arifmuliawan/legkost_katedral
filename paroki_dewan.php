@@ -123,8 +123,8 @@ if(isset($_POST['submit_periode']))
             }
             #imageUploadBannerParoki .dropzone .dz-preview .dz-image
             {
-                width: 1456px;
-                height: 560px;
+                width: 1456px !important;
+                height: 560px !important;
             }
             #imageUploadStaffParoki .dropzone .dz-preview .dz-image
             {

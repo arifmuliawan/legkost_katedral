@@ -496,7 +496,7 @@ if(isset($_POST['submit_periode']))
                 uploadMultiple: true,
                 parallelUploads: 100,
                 maxFiles: 1,
-                paramName: 'staffparoki',
+                paramName: 'staffparoki', 
                 clickable: true,
                 thumbnailWidth:300,
                 thumbnailHeight:300,

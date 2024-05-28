@@ -121,12 +121,12 @@ if(isset($_POST['submit_periode']))
             {
                 margin: 0 !important;
             }
-            .dropzone .dz-preview .dz-image
+            #imageUploadBannerParoki .dropzone .dz-preview .dz-image
             {
                 width: 1456px;
                 height: 560px;
             }
-            .dropzone .dz-preview .dz-image:nth-of-type(1)
+            #imageUploadStaffParoki .dropzone .dz-preview .dz-image
             {
                 width: 300px;
                 height: 300px;

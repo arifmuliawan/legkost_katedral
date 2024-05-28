@@ -117,13 +117,9 @@ if(isset($_POST['submit_periode']))
             {
                 padding : 0 !important;
             }
-            .dropzone .dz-preview
+            #imageUploadStaffParoki .dz-preview
             {
                 margin: 16px;
-            }
-            .dropzone .dz-preview:nth-of-type(1)
-            {
-                margin: 0;
             }
             .dropzone .dz-preview .dz-image
             {

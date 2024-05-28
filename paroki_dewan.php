@@ -113,28 +113,32 @@ if(isset($_POST['submit_periode']))
             {
                 padding : 20px 20px;
             }
-            #imageUploadStaffParoki
+
+            .dropzone.dz-clickable
             {
-                padding : 0 !important;
+                text-align: center;
             }
-            #imageUploadStaffParoki .dz-preview
-            {
-                margin: 0 !important;
-            }
+
             #imageUploadBannerParoki .dz-preview .dz-image
             {
                 width: 1456px;
                 height: 560px;
             }
-            /*
-            .dropzone .dz-preview .dz-image:nth-of-type(1)
+
+            #imageUploadStaffParoki
+            {
+                padding : 0 !important;
+            }
+
+            #imageUploadStaffParoki .dz-preview
+            {
+                margin: 0 !important;
+            }
+            
+            #imageUploadStaffParoki .dz-preview .dz-image
             {
                 width: 300px;
                 height: 300px;
-            }*/
-            .dropzone.dz-clickable
-            {
-                text-align: center;
             }
         </style>    
         <div class="modal fade" id="successmodal">

@@ -115,7 +115,7 @@ if(isset($_POST['submit_periode']))
             }
             .dropzone:nth-of-type(1)
             {
-                padding : unset;
+                padding : 0;
             }
             .dropzone .dz-preview
             {
@@ -123,7 +123,7 @@ if(isset($_POST['submit_periode']))
             }
             .dropzone .dz-preview:nth-of-type(1)
             {
-                margin: unset;
+                margin: 0;
             }
             .dropzone .dz-preview .dz-image
             {

@@ -163,7 +163,7 @@
         $.ajax({
             url:"change_sort.php",
             type:'post',
-            data:{position:data,module:'paroki'},
+            data:{position:data,module:'paroki_staff'},
             success:function(){
                 //alert('your change successfully saved');
                 //location.reload();

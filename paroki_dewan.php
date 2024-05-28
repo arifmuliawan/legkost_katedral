@@ -337,7 +337,7 @@ if(isset($_POST['submit_periode']))
                                         </div>
                                     </div>               
                                 </div>
-                                <div class="modal fade" id="addparokimodal">
+                                <div class="modal fade" id="addparokimodal" style="pointer-events: none;">
                                     <div class="modal-dialog" style="max-width: 800px;">
                                         <div class="modal-content">
                                             <div class="modal-body" style="padding: 40px;">

@@ -482,8 +482,8 @@ if(isset($_POST['submit_periode']))
                 maxFiles: 1,
                 paramName: 'bannerparoki',
                 clickable: true,
-                thumbnailWidth:500,
-                thumbnailHeight:500,
+                thumbnailWidth:326,
+                thumbnailHeight:326,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
                 url: 'ajax_upload.php',
                 init: function () {

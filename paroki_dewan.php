@@ -109,6 +109,22 @@ if(isset($_POST['submit_periode']))
 }
 ?>
         <style>
+            .dropzone
+            {
+                padding : 20px 20px;
+            }
+            .dropzone:nth-of-type(1)
+            {
+                padding : unset;
+            }
+            .dropzone .dz-preview
+            {
+                margin: 16px;
+            }
+            .dropzone .dz-preview:nth-of-type(1)
+            {
+                margin: unset;
+            }
             .dropzone .dz-preview .dz-image
             {
                 width: 1456px;

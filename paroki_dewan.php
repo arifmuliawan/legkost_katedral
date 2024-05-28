@@ -121,16 +121,17 @@ if(isset($_POST['submit_periode']))
             {
                 margin: 0 !important;
             }
-            .dropzone .dz-preview .dz-image:nth-of-type(0)
+            #imageUploadBannerParoki .dropzone .dz-preview .dz-image:nth-of-type(0)
             {
                 width: 1456px;
                 height: 560px;
             }
+            /*
             .dropzone .dz-preview .dz-image:nth-of-type(1)
             {
                 width: 300px;
                 height: 300px;
-            }
+            }*/
             .dropzone.dz-clickable
             {
                 text-align: center;

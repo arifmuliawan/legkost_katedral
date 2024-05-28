@@ -170,6 +170,10 @@ if(isset($_POST['submit_periode']))
                             {
                                 echo $msg_upperiode;
                             }
+                            else
+                            {
+                                echo "[ERROR] Data Tidak Berhasil Disimpan";
+                            }
                             ?>
                         </h5>
                         <br>

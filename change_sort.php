@@ -2,7 +2,7 @@
 include("config.php");
 $position   = $_POST['position'];
 $module     = $_POST['module'];
-print_r($position."<br>".$module);
+print_r($module);
 exit();
 $sql="";  
 try {

@@ -506,7 +506,7 @@ if(isset($_POST['submit_periode']))
 
                     var myDropzone2 = this;
                     // Update selector to match your button
-                    $("#uploaderBtnStaffParoki").click(function (e) {
+                    $("#addparokimodal #uploaderBtnStaffParoki").click(function (e) {
                         e.preventDefault();
                         myDropzone2.processQueue();
                         alert("staffparoki");

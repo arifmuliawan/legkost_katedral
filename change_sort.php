@@ -1,7 +1,7 @@
 <?php 
 include("config.php");
 $position   = $_POST['position'];
-$module     = $_POST['module'];
+$table      = $_POST['table'];
 $sql="";  
 try {
     // First of all, let's begin a transaction
@@ -10,7 +10,7 @@ try {
     foreach($position as $pos)
     {
         //$sql = mysqli_query($con,"UPDATE `admin` SET sortid=$pos[sort] WHERE id=$pos[id]");
-        $sql= $con->prepare("UPDATE `admin` SET sortid=? WHERE id=?");
+        $sql= $con->prepare("UPDATE $table SET sortid=? WHERE id=?");
         $sql->bind_param("ii",$pos['sort'],$pos['id']);
         $sql->execute();
     }

@@ -515,7 +515,7 @@ if(isset($_POST['submit_periode']))
                     $("#addparokimodal #uploaderBtnStaffParoki").click(function (e) {
                         e.preventDefault();
                         myDropzone2.processQueue();
-                        alert("staffparoki");
+                        //alert("staffparoki");
                         return false;
                     });
 

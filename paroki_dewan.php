@@ -515,7 +515,7 @@ if(isset($_POST['submit_periode']))
 
                     this.on('sending', function (file, xhr, formData) {
                         // Append all form inputs to the formData Dropzone will POST
-                        var data = $("#imageUploadFormStaffParoki").serializeArray();
+                        var data = $("#addparokimodal #imageUploadFormStaffParoki").serializeArray();
                         $.each(data, function (key, el) {
                             formData.append(el.name, el.value);
                         });

@@ -113,7 +113,7 @@ if(isset($_POST['submit_periode']))
             {
                 padding : 20px 20px;
             }
-            .dropzone:nth-of-type(1)
+            #imageUploadStaffParoki .dropzone
             {
                 padding : 0 !important;
             }

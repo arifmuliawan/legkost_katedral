@@ -468,7 +468,6 @@ if(isset($_POST['submit_periode']))
                     this.removeAllFiles(true);
                 }
             });
-                
         </script>
 
         <script type="text/javascript">  

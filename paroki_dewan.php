@@ -114,6 +114,11 @@ if(isset($_POST['submit_periode']))
                 width: 1456px;
                 height: 560px;
             }
+            .dropzone .dz-preview .dz-image:nth-of-type(1)
+            {
+                width: 300px;
+                height: 300px;
+            }
             .dropzone.dz-clickable
             {
                 text-align: center;
@@ -481,8 +486,8 @@ if(isset($_POST['submit_periode']))
                 maxFiles: 1,
                 paramName: 'bannerparoki',
                 clickable: true,
-                thumbnailWidth:326,
-                thumbnailHeight:326,
+                thumbnailWidth:300,
+                thumbnailHeight:300,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
                 url: 'ajax_upload.php',
                 init: function () {

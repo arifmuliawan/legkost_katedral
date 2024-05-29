@@ -409,6 +409,7 @@ if(isset($_POST['submit_periode']))
                                                     </div>  
                                                 </div>    
                                             </div>
+                                            </div>
                                         </div>
                                         <!-- /.modal-content -->
                                     </div>
@@ -474,7 +475,8 @@ if(isset($_POST['submit_periode']))
                                                         </div>
                                                         </div>      
                                                         </form>    
-                                                    </div>  
+                                                    </div> 
+                                                </div>     
                                                 </div>    
                                             </div>
                                         </div>

@@ -438,7 +438,7 @@ if(isset($_POST['submit_periode']))
                                                                     (500 x 500 px) JPG/JPEG/PNG
                                                                 </div>
                                                                 <img src="" id="photo_paroki" width="300px" style="display: none;">
-                                                                <a href="index.php?p=paroki_dewan&a=5" onclick="return confirm('Are you sure you want to delete photo ?')"><button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
+                                                                <a href="index.php?p=paroki_dewan&a=5" onclick="return confirm('Are you sure you want to delete photo ?')" id="btndeletephoto"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
                                                                 <div id="imageUpdateStaffParoki" class="dropzone">
                                                                     <div class="dz-message">
                                                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
@@ -472,7 +472,7 @@ if(isset($_POST['submit_periode']))
                                                                             <table border=0 width="100%">
                                                                                 <tr>
                                                                                     <td style="text-align: right;">
-                                                                                        <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                                                        <button id="updateBtnStaffParoki2" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                                                                         &nbsp&nbsp
                                                                                         <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
                                                                                     </td> 

@@ -17,5 +17,5 @@
         );
     }
     header("Content-type: application/json; charset=utf-8");
-    return json_encode($delete_json);
+    echo json_encode($delete_json);
 ?>

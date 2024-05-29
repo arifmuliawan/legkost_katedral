@@ -429,7 +429,7 @@ if(isset($_POST['submit_periode']))
                                                 <div class="card-body">
                                                     <div class="row">
                                                     <div class="col-md-12">
-                                                        <form id="imageUpdateStaffParoki">
+                                                        <form id="imageUpdateFormStaffParoki">
                                                         <div class="card-body">    
                                                         <div class="row">
                                                             <div class="col-md-6">
@@ -666,7 +666,7 @@ if(isset($_POST['submit_periode']))
 
                     this.on('sending', function (file, xhr, formData) {
                         // Append all form inputs to the formData Dropzone will POST
-                        var data = $("#updateparokimodal #imageUpdateStaffParoki").serializeArray();
+                        var data = $("#updateparokimodal #imageUpdateFormStaffParoki").serializeArray();
                         $.each(data, function (key, el) {
                             formData.append(el.name, el.value);
                         });

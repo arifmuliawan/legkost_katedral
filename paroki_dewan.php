@@ -414,25 +414,12 @@ if(isset($_POST['submit_periode']))
                                     </div>
                                     <!-- /.modal-dialog -->
                                 </div>
-                                
-                            <!--</form>-->                 
-                        </div>
-                        <!-- /.card -->
-                    </div>
-                    <!--/.col (left) -->
-                    </div>
-                    <!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
-        </div>    
-
-        <div class="modal fade" id="updateparokimodal">
+                                <div class="modal fade" id="updateparokimodal">
                                     <div class="modal-dialog" style="max-width: 800px;">
                                         <div class="modal-content">
                                             <div class="modal-body" style="padding: 40px;">
-                                            <div class="card-body">
-                                                <div class="row">
+                                                <div class="card-body">
+                                                    <div class="row">
                                                     <div class="col-md-12">
                                                         <form id="imageUpdateStaffParoki">
                                                         <div class="card-body">    
@@ -476,7 +463,7 @@ if(isset($_POST['submit_periode']))
                                                                                     <td style="text-align: right;">
                                                                                         <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                                                                         &nbsp&nbsp
-                                                                                        <a href="" onclick="return confirm('Are you sure you want to delete this item ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
+                                                                                        <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
                                                                                     </td> 
                                                                                 </tr>
                                                                             </table>
@@ -495,7 +482,17 @@ if(isset($_POST['submit_periode']))
                                     </div>
                                     <!-- /.modal-dialog -->
                                 </div>
-
+                            <!--</form>-->                 
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (left) -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>    
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;
             myDropzone = new Dropzone('div#imageUploadBannerParoki', 

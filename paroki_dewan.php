@@ -111,12 +111,14 @@ if(isset($_POST['submit_deletephotoparoki']))
 {
     $id_paroki      = $_POST['id_paroki'];
     $delete_photo   = mysqli_query($con,"UPDATE paroki_staff SET url_img='' WHERE id='$id_paroki'")or die (mysqli_error($con));
-    if($delete_photo)
+    if($delete_photo==1)
     {
         echo "
             <script type='text/javascript'>
                 $('#successmodal').modal('show');
                 var delay = 2000;
+                $('#successmodal').modal('hide');
+                $('#updateparokimodal').modal('show');
                 setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
             </script>
         ";

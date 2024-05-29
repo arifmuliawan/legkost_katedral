@@ -438,7 +438,7 @@ if(isset($_POST['submit_periode']))
                                                                     (500 x 500 px) JPG/JPEG/PNG
                                                                 </div>
                                                                 <img src="" id="photo_paroki" width="300px" style="display: none;">
-                                                                <a href="index.php?p=paroki_dewan&a=5" onclick="return confirm('Are you sure you want to delete photo ?')" id="btndeletephoto"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
+                                                                <!--<a href="index.php?p=paroki_dewan&a=5" onclick="return confirm('Are you sure you want to delete photo ?')" id="btndeletephoto"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>-->
                                                                 <div id="imageUpdateStaffParoki" class="dropzone">
                                                                     <div class="dz-message">
                                                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
@@ -447,7 +447,7 @@ if(isset($_POST['submit_periode']))
                                                                         or <font color='#88A8D4'><b>Browse Files...</b></font>
                                                                     </div>
                                                                 </div>
-                                                                <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                                <!--<button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>-->
                                                             </div>    
                                                             <div class="col-md-6">
                                                                 <div class="row">

@@ -472,7 +472,7 @@ if(isset($_POST['submit_periode']))
                                                                                     <td style="text-align: right;">
                                                                                         <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
                                                                                         &nbsp&nbsp
-                                                                                        <input type="submit" name="submit_editparoki" value="SAVE" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">
+                                                                                        <input type="submit" name="submit_editparoki" value="SAVE" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">
                                                                                     </td> 
                                                                                 </tr>
                                                                             </table>

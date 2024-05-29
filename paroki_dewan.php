@@ -713,9 +713,9 @@ if(isset($_POST['submit_periode']))
                 var me      = $(this);
                 var data    = me.attr('data-staff');
                 var jdata   = JSON.parse(data);
-                $("#updateparokimodal input:[name=id_paroki]").val( jdata.id_staff);
-                $("#updateparokimodal input:[name=nama_paroki]").val( jdata.name_staff);
-                $("#updateparokimodal input:[name=jabatan_paroki]").val( jdata.position_staff);
+                $("#updateparokimodal input[name=id_paroki]").val( jdata.id_staff);
+                $("#updateparokimodal input[name=nama_paroki]").val( jdata.name_staff);
+                $("#updateparokimodal input[name=jabatan_paroki]").val( jdata.position_staff);
                 if(jdata.url_img!="")
                 {
                     $("#updateparokimodal #photo_paroki").attr('src', jdata.photo_staff).show();

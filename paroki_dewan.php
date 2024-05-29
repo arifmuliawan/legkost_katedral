@@ -333,9 +333,15 @@ if(isset($_POST['submit_periode']))
                                                         {
                                                             $photo_staff= "";
                                                         }
+                                                        $data_json      = array(
+                                                            'id_staff'      => $id_staff,
+                                                            'name_staff'    => $name_staff,
+                                                            'position_staff'=> $position_staff,
+                                                            'photo_staff'   => $photo_data
+                                                        );
                                                 ?>  
                                                         <div class="col-md-2" style="margin: 10px;cursor: grab;" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">
-                                                            <img class="datastaff" src="<?php echo $photo_staff ?>" style="width:100%" data-toggle="modal" data-target="#updateparokimodal" data-staff="<?php echo json_encode($data_staff) ?>">
+                                                            <img class="datastaff" src="<?php echo $photo_staff ?>" style="width:100%" data-toggle="modal" data-target="#updateparokimodal" data-staff="<?php echo json_encode($data_json) ?>">
                                                         </div>
                                                 <?php
                                                     }
@@ -372,6 +378,7 @@ if(isset($_POST['submit_periode']))
                                                             </div>    
                                                             <div class="col-md-6">
                                                                 <div class="row">
+                                                                <input type="hidden" name="id_paroki">
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
                                                                             <label class="form-label">NAMA <font color='red'>*</font></label>
@@ -706,11 +713,12 @@ if(isset($_POST['submit_periode']))
                 var me      = $(this);
                 var data    = me.attr('data-staff');
                 var jdata   = JSON.parse(data);
-                $("#updateparokimodal input:[name=nama_paroki]").val( jdata.name);
-                $("#updateparokimodal input:[name=jabatan_paroki]").val( jdata.position);
+                $("#updateparokimodal input:[name=id_paroki]").val( jdata.id_staff);
+                $("#updateparokimodal input:[name=nama_paroki]").val( jdata.name_staff);
+                $("#updateparokimodal input:[name=jabatan_paroki]").val( jdata.position_staff);
                 if(jdata.url_img!="")
                 {
-                    $("#updateparokimodal #photo_paroki").attr('src', <?php echo $base_assets ?>+jdata.url_img).show();
+                    $("#updateparokimodal #photo_paroki").attr('src', jdata.photo_staff).show();
                     $("#updateparokimodal #imageUpdateStaffParoki").hide();
                 }    
                 else

@@ -117,8 +117,7 @@ if(isset($_POST['submit_deletephotoparoki']))
             <script type='text/javascript'>
                 $('#successmodal').modal('show');
                 var delay = 2000;
-                $('#successmodal').modal('hide');
-                $('#updateparokimodal').modal('show');
+                setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
             </script>
         ";
     }

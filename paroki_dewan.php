@@ -753,7 +753,7 @@ if(isset($_POST['submit_deletephotoparoki']))
         </script>
 
         <script>
-            $("btndeletephoto").click(function()
+            $("#btndeletephoto").click(function()
             {
                 $.post('ajax_delete_photo_paroki.php',
                 {

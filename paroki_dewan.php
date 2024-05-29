@@ -764,7 +764,9 @@ if(isset($_POST['submit_deletephotoparoki']))
                     if(data.delete_status=='1')
                     {
                         $("#updateparokimodal #photo_paroki").hide();
+                        $("#updateparokimodal #btndeletephoto").hide();
                         $('#imageUpdateStaffParoki').show();
+                        $("#updateparokimodal #updateBtnStaffParoki").show();
                     }
                     console.log(data,status);
                 }

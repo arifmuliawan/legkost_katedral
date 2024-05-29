@@ -437,7 +437,7 @@ if(isset($_POST['submit_periode']))
                                                                     (500 x 500 px) JPG/JPEG/PNG
                                                                 </div>
                                                                 <img src="" id="photo_paroki" width="300px" style="display: none;">
-                                                                <a href="index.php?p=paroki_dewan&a=5" onclick="return confirm('Are you sure you want to delete photo ?')"><button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
+                                                                <a href="index.php?p=paroki_dewan&a=5&id=" onclick="return confirm('Are you sure you want to delete photo ?')"><button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
                                                                 <form id="imageUpdateFormStaffParoki">
                                                                 <div id="imageUpdateStaffParoki" class="dropzone">
                                                                     <div class="dz-message">
@@ -456,6 +456,7 @@ if(isset($_POST['submit_periode']))
                                                                     <div class="row">
                                                                         <div class="col-md-12">
                                                                             <div class="form-group">
+                                                                                <input type="hidden" name="id_paroki">
                                                                                 <label class="form-label">NAMA <font color='red'>*</font></label>
                                                                                 <input type="text" name="nama_paroki" class="form-control" placeholder="Type something here...."  <?php if(isset($err_upnama) && $err_upnama==1){ echo "style='border-color: red;'"; } ?> required>
                                                                             </div>

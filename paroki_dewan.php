@@ -335,7 +335,7 @@ if(isset($_POST['submit_periode']))
                                                         }
                                                 ?>  
                                                         <div class="col-md-2" style="margin: 10px;cursor: grab;" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">
-                                                            <img src="<?php echo $photo_staff ?>" style="width:100%" data-toggle="modal" data-target="#updateparokimodal" data-id=>
+                                                            <img class="datastaff" src="<?php echo $photo_staff ?>" style="width:100%" data-toggle="modal" data-target="#updateparokimodal" data-staff="<?php echo json_encode($data_staff) ?>">
                                                         </div>
                                                 <?php
                                                     }
@@ -430,6 +430,7 @@ if(isset($_POST['submit_periode']))
                                                                     <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
                                                                     (500 x 500 px) JPG/JPEG/PNG
                                                                 </div>
+                                                                <img src="" id="photo_paroki" width="300px" style="display: none;">
                                                                 <div id="imageUpdateStaffParoki" class="dropzone">
                                                                     <div class="dz-message">
                                                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
@@ -437,7 +438,7 @@ if(isset($_POST['submit_periode']))
                                                                         Drop files to upload <br>
                                                                         or <font color='#88A8D4'><b>Browse Files...</b></font>
                                                                     </div>
-                                                                </div> 
+                                                                </div>
                                                             </div>    
                                                             <div class="col-md-6">
                                                                 <div class="row">
@@ -698,4 +699,24 @@ if(isset($_POST['submit_periode']))
                 }
             });
                 
+        </script>
+
+        <script>
+            $(document).on("click", ".datastaff", function () {
+                var me      = $(this);
+                var data    = me.attr('data-staff');
+                var jdata   = JSON.parse(data);
+                $("#updateparokimodal input:[name=nama_paroki]").val( jdata.name);
+                $("#updateparokimodal input:[name=jabatan_paroki]").val( jdata.position);
+                if(jdata.url_img!="")
+                {
+                    $("#updateparokimodal #photo_paroki").attr('src', <?php echo $base_assets ?>+jdata.url_img).show();
+                    $("#updateparokimodal #imageUpdateStaffParoki").hide();
+                }    
+                else
+                {
+                    $("#updateparokimodal #photo_paroki").hide();
+                    $("#updateparokimodal #imageUpdateStaffParoki").show();
+                }
+            });
         </script>

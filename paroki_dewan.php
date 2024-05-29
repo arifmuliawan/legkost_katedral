@@ -761,6 +761,10 @@ if(isset($_POST['submit_deletephotoparoki']))
                 },
                 function(data,status)
                 {
+                    if(data.delete_status=='1')
+                    {
+                        $('#successmodal').modal('show');
+                    }
                     console.log(data,status);
                 }
                 );

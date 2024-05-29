@@ -735,19 +735,19 @@ if(isset($_POST['submit_deletephotoparoki']))
                 $("#updateparokimodal input[name=id_paroki]").val( jdata.id_staff);
                 $("#updateparokimodal input[name=nama_paroki]").val( jdata.name_staff);
                 $("#updateparokimodal input[name=jabatan_paroki]").val( jdata.position_staff);
-                if(jdata.url_img!="")
-                {
-                    $("#updateparokimodal #photo_paroki").attr('src', jdata.photo_staff).show();
-                    $("#updateparokimodal #btndeletephoto").show();
-                    $("#updateparokimodal #imageUpdateStaffParoki").hide();
-                    $("#updateparokimodal #updateBtnStaffParoki").hide();
-                }    
-                else
+                if(jdata.url_img.includes("placehold.co"))
                 {
                     $("#updateparokimodal #photo_paroki").hide();
                     $("#updateparokimodal #btndeletephoto").hide();
                     $("#updateparokimodal #imageUpdateStaffParoki").show();
                     $("#updateparokimodal #updateBtnStaffParoki").show();
+                }    
+                else
+                {
+                    $("#updateparokimodal #photo_paroki").attr('src', jdata.photo_staff).show();
+                    $("#updateparokimodal #btndeletephoto").show();
+                    $("#updateparokimodal #imageUpdateStaffParoki").hide();
+                    $("#updateparokimodal #updateBtnStaffParoki").hide();
                 }    
             });
         </script>

@@ -348,7 +348,7 @@ if(isset($_POST['submit_deletephotoparoki']))
                                                         }
                                                         else
                                                         {
-                                                            $photo_staff= "";
+                                                            $photo_staff= "https://placehold.co/500x500?text=photo";
                                                         }
                                                         $data_json      = array(
                                                             'id_staff'      => $id_staff,

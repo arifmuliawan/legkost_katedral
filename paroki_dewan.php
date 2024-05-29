@@ -450,28 +450,23 @@ if(isset($_POST['submit_periode']))
                                                                 <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                                                 </form>  
                                                             </div>
-                                                            <form method="POST" action="">
                                                             <div class="col-md-6">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">NAMA <font color='red'>*</font></label>
-                                                                            <input type="text" name="nama_paroki" class="form-control" placeholder="Type something here...."  <?php if(isset($err_upnama) && $err_upnama==1){ echo "style='border-color: red;'"; } ?> required>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">JABATAN <font color='red'>*</font></label>
-                                                                            <input type="text" name="jabatan_paroki" class="form-control" placeholder="Type something here...." <?php if(isset($err_upjabatan) && $err_upjabatan==1){ echo "style='border-color: red;'"; } ?> required>
-                                                                        </div>
-                                                                    </div>             
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6"></div>
-                                                            <div class="col-md-6">
-                                                                <div class="card-footer" style="background-color: unset;">
+                                                                <form method="POST" action="">
+                                                                <div class="col-md-12">
                                                                     <div class="row">
-                                                                        <div class="col-md-6">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">NAMA <font color='red'>*</font></label>
+                                                                                <input type="text" name="nama_paroki" class="form-control" placeholder="Type something here...."  <?php if(isset($err_upnama) && $err_upnama==1){ echo "style='border-color: red;'"; } ?> required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">JABATAN <font color='red'>*</font></label>
+                                                                                <input type="text" name="jabatan_paroki" class="form-control" placeholder="Type something here...." <?php if(isset($err_upjabatan) && $err_upjabatan==1){ echo "style='border-color: red;'"; } ?> required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12">
                                                                             <table border=0 width="100%">
                                                                                 <tr>
                                                                                     <td style="text-align: right;">
@@ -481,11 +476,11 @@ if(isset($_POST['submit_periode']))
                                                                                     </td> 
                                                                                 </tr>
                                                                             </table>
-                                                                        </div>
+                                                                        </div>             
                                                                     </div>
-                                                                </div> 
-                                                            </div> 
-                                                            </form>   
+                                                                </div>
+                                                                </form>    
+                                                            </div>       
                                                         </div>
                                                         </div>   
                                                     </div> 

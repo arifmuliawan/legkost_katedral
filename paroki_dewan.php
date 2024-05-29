@@ -429,7 +429,6 @@ if(isset($_POST['submit_periode']))
                                                 <div class="card-body">
                                                     <div class="row">
                                                     <div class="col-md-12">
-                                                        <form id="imageUpdateFormStaffParoki">
                                                         <div class="card-body">    
                                                         <div class="row">
                                                             <div class="col-md-6">
@@ -439,6 +438,7 @@ if(isset($_POST['submit_periode']))
                                                                 </div>
                                                                 <img src="" id="photo_paroki" width="300px" style="display: none;">
                                                                 <a href="index.php?p=paroki_dewan&a=5" onclick="return confirm('Are you sure you want to delete photo ?')"><button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
+                                                                <form id="imageUpdateFormStaffParoki">
                                                                 <div id="imageUpdateStaffParoki" class="dropzone">
                                                                     <div class="dz-message">
                                                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
@@ -448,7 +448,9 @@ if(isset($_POST['submit_periode']))
                                                                     </div>
                                                                 </div>
                                                                 <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                                </form>  
                                                             </div>    
+                                                            <form method="POST" action="">
                                                             <div class="col-md-6">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
@@ -472,19 +474,19 @@ if(isset($_POST['submit_periode']))
                                                                             <table border=0 width="100%">
                                                                                 <tr>
                                                                                     <td style="text-align: right;">
-                                                                                        <button id="updateBtnStaffParoki2" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
-                                                                                        &nbsp&nbsp
                                                                                         <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
+                                                                                        &nbsp&nbsp
+                                                                                        <input type="submit" name="submit_editparoki" value="SAVE" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">
                                                                                     </td> 
                                                                                 </tr>
                                                                             </table>
                                                                         </div>
                                                                     </div>
                                                                 </div> 
-                                                            </div>    
+                                                            </div> 
+                                                            </form>   
                                                         </div>
-                                                        </div>      
-                                                        </form>    
+                                                        </div>   
                                                     </div> 
                                                 </div>     
                                                 </div>    

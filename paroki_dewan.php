@@ -414,7 +414,20 @@ if(isset($_POST['submit_periode']))
                                     </div>
                                     <!-- /.modal-dialog -->
                                 </div>
-                                <div class="modal fade" id="updateparokimodal">
+                                
+                            <!--</form>-->                 
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (left) -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>    
+
+        <div class="modal fade" id="updateparokimodal">
                                     <div class="modal-dialog" style="max-width: 800px;">
                                         <div class="modal-content">
                                             <div class="modal-body" style="padding: 40px;">
@@ -482,17 +495,6 @@ if(isset($_POST['submit_periode']))
                                     </div>
                                     <!-- /.modal-dialog -->
                                 </div>
-                            <!--</form>-->                 
-                        </div>
-                        <!-- /.card -->
-                    </div>
-                    <!--/.col (left) -->
-                    </div>
-                    <!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
-        </div>    
 
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;

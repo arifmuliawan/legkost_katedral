@@ -454,10 +454,8 @@ if(isset($_POST['submit_deletephotoparoki']))
                                                                     (500 x 500 px) JPG/JPEG/PNG
                                                                 </div>
                                                                 <img src="" id="photo_paroki" width="300px" style="display: none;">
-                                                                <form method="POST" action="">
-                                                                    <input type="hidden" name="id_paroki">
-                                                                    <input type="submit" name="submit_deletephotoparoki" value="DELETE" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">
-                                                                </form>    
+                                                                <input type="hidden" name="id_paroki">
+                                                                <input id="btndeletephoto" type="submit" name="submit_deletephotoparoki" value="DELETE" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">
                                                                 <form id="imageUpdateFormStaffParoki">
                                                                 <div id="imageUpdateStaffParoki" class="dropzone">
                                                                     <div class="dz-message">
@@ -753,3 +751,18 @@ if(isset($_POST['submit_deletephotoparoki']))
                 }    
             });
         </script>
+
+        <script>
+            $("btndeletephoto").click(function()
+            {
+                $.post('ajax_delete_photo_paroki.php',
+                {
+                    id_paroki:$("#updateparokimodal input[name=id_paroki]").val()
+                },
+                function(data,status)
+                {
+                    console.log(data,status);
+                }
+                );
+            });   
+        </script>    

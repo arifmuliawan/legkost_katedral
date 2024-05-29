@@ -337,7 +337,7 @@ if(isset($_POST['submit_periode']))
                                                             'id_staff'      => $id_staff,
                                                             'name_staff'    => $name_staff,
                                                             'position_staff'=> $position_staff,
-                                                            'photo_staff'   => $photo_data
+                                                            'photo_staff'   => $photo_staff
                                                         );
                                                 ?>  
                                                         <div class="col-md-2" style="margin: 10px;cursor: grab;" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">

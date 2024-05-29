@@ -107,6 +107,22 @@ if(isset($_POST['submit_periode']))
         ";
     }
 }
+if(isset($_POST['submit_deletephotoparoki']))
+{
+    $id_paroki      = $_POST['id_paroki'];
+    $delete_photo   = mysqli_query($con,"UPDATE paroki_staff SET url_image='' WHERE id='$id_paroki'")or die (mysqli_error($con));
+    if($delete_photo)
+    {
+        echo "
+            <script type='text/javascript'>
+                $('#successmodal').modal('show');
+                var delay = 2000;
+                $('#successmodal').modal('hide');
+                $('#updateparokimodal').modal('show');
+            </script>
+        ";
+    }
+}
 ?>
         <style>
             .dropzone
@@ -437,7 +453,10 @@ if(isset($_POST['submit_periode']))
                                                                     (500 x 500 px) JPG/JPEG/PNG
                                                                 </div>
                                                                 <img src="" id="photo_paroki" width="300px" style="display: none;">
-                                                                <a href="index.php?p=paroki_dewan&a=5&id=" onclick="return confirm('Are you sure you want to delete photo ?')"><button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button></a>
+                                                                <form method="POST" action="">
+                                                                    <input type="hidden" name="id_paroki">
+                                                                    <input type="submit" name="submit_deletephotoparoki" value="DELETE" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">
+                                                                </form>    
                                                                 <form id="imageUpdateFormStaffParoki">
                                                                 <div id="imageUpdateStaffParoki" class="dropzone">
                                                                     <div class="dz-message">

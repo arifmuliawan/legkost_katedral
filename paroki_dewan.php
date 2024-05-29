@@ -110,7 +110,7 @@ if(isset($_POST['submit_periode']))
 if(isset($_POST['submit_deletephotoparoki']))
 {
     $id_paroki      = $_POST['id_paroki'];
-    $delete_photo   = mysqli_query($con,"UPDATE paroki_staff SET url_image='' WHERE id='$id_paroki'")or die (mysqli_error($con));
+    $delete_photo   = mysqli_query($con,"UPDATE paroki_staff SET url_img='' WHERE id='$id_paroki'")or die (mysqli_error($con));
     if($delete_photo)
     {
         echo "

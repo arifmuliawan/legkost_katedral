@@ -455,17 +455,17 @@ if(isset($_POST['submit_deletephotoparoki']))
                                                                 </div>
                                                                 <img src="" id="photo_paroki" width="300px" style="display: none;">
                                                                 <input type="hidden" name="id_paroki">
-                                                                <button id="btndeletephoto" type=" button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button>
+                                                                <button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button>
                                                                 <form id="imageUpdateFormStaffParoki">
-                                                                <div id="imageUpdateStaffParoki" class="dropzone">
-                                                                    <div class="dz-message">
-                                                                        <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
-                                                                        <b>.JPG  .JPEG  .PNG</b><br>
-                                                                        Drop files to upload <br>
-                                                                        or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                                                    <div id="imageUpdateStaffParoki" class="dropzone">
+                                                                        <div class="dz-message">
+                                                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                                            <b>.JPG  .JPEG  .PNG</b><br>
+                                                                            Drop files to upload <br>
+                                                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                                    <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                                                 </form>  
                                                             </div>
                                                             <div class="col-md-6">

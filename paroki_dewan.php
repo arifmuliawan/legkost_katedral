@@ -449,7 +449,7 @@ if(isset($_POST['submit_periode']))
                                                                 </div>
                                                                 <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                                                 </form>  
-                                                            </div>    
+                                                            </div>
                                                             <form method="POST" action="">
                                                             <div class="col-md-6">
                                                                 <div class="row">
@@ -467,10 +467,11 @@ if(isset($_POST['submit_periode']))
                                                                     </div>             
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-12">
+                                                            <div class="col-md-6"></div>
+                                                            <div class="col-md-6">
                                                                 <div class="card-footer" style="background-color: unset;">
                                                                     <div class="row">
-                                                                        <div class="col-md-12">
+                                                                        <div class="col-md-6">
                                                                             <table border=0 width="100%">
                                                                                 <tr>
                                                                                     <td style="text-align: right;">

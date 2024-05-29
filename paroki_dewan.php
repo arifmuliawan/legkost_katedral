@@ -735,7 +735,7 @@ if(isset($_POST['submit_deletephotoparoki']))
                 $("#updateparokimodal input[name=id_paroki]").val( jdata.id_staff);
                 $("#updateparokimodal input[name=nama_paroki]").val( jdata.name_staff);
                 $("#updateparokimodal input[name=jabatan_paroki]").val( jdata.position_staff);
-                if(jdata.url_img.includes("placehold.co"))
+                if(jdata.url_img.includes("placehold.co")===true)
                 {
                     $("#updateparokimodal #photo_paroki").hide();
                     $("#updateparokimodal #btndeletephoto").hide();

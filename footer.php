@@ -34,6 +34,7 @@
 <script src="<?php echo $base_assets ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?php echo $base_assets ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?php echo $base_assets ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="<?php echo $base_assets ?>plugins/toastr/toastr.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo $base_assets ?>dist/js/adminlte.min.js"></script>
 <script>
@@ -82,31 +83,6 @@
         },
 
     });
-    /*
-    $( ".row_position" ).sortable({
-        delay: 150,
-        stop: function() {
-            var selectedData = new Array();
-            $('.row_position>tr').each(function() {
-                selectedData.push($(this).attr("id"));
-            });
-            updateOrder(selectedData);
-        }
-    });
-    
-    var itemEl = evt.item;  // dragged HTMLElement
-        var potstart = evt.oldIndex;  // element's old index within old parent
-        var potend = evt.newIndex;  // element's new index within new parent
-          // same properties as onEnd
-          //
-          //console.table('Sortable',evt.to,evt.from,evt.oldIndex,evt.newIndex,itemEl)
-          var target    = $(`.tableid:eq(${potstart})`).attr("data-id")
-          var ordersec  = $(`.tableid:eq(${potstart})`).attr("data-sec")
-          var target2   = $(`.tableid:eq(${potend})`).attr("data-id")
-          var ordersec2 = $(`.tableid:eq(${potend})`).attr("data-sec")
-          console.table('Updated',target,ordersec2,target2,ordersec,potstart,potend)
-    */
-
 
     function updateOrder(data) {
         $.ajax({

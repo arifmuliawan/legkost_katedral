@@ -113,10 +113,6 @@ if(isset($_FILES['staffparoki']))
 
 if(isset($_FILES['updatestaffparoki']))
 {   
-    print_r($_POST);
-    echo "<br>";
-    print_r($_FILES);
-    exit();
     $id_paroki    = $_POST['id_paroki'];
     if($_FILES['updatestaffparoki']['name']!='')
     {

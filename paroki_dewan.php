@@ -451,7 +451,7 @@ if(isset($_POST['submit_periode']))
                                                                 </div>
                                                                 <img src="" id="photo_paroki" width="300px" style="display: none;">
                                                                 <input type="hidden" name="id_paroki">
-                                                                <button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;">DELETE</button>
+                                                                <button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                                                 <form id="imageUpdateFormStaffParoki">
                                                                     <input type="hidden" name="id_paroki">
                                                                     <div id="imageUpdateStaffParoki" class="dropzone">

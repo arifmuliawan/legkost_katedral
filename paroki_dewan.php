@@ -157,6 +157,19 @@ if(isset($_POST['submit_deletephotoparoki']))
                 width: 300px;
                 height: 300px;
             }
+
+            #imageUpdateFormParoki .dz-preview
+            {
+                margin: 0 !important;
+            }
+            
+            #imageUpdateFormParoki .dz-preview .dz-image
+            {
+                width: 300px;
+                height: 300px;
+            }
+
+
         </style>    
         <div class="modal fade" id="successmodal">
             <div class="modal-dialog">

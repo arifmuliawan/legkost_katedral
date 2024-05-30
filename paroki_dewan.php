@@ -723,6 +723,13 @@ if(isset($_POST['submit_deletephotoparoki']))
                 },
                 successmultiple: function (file, response) {
                     console.log(file, response);
+                    if(response.update_status=='1')
+                    {
+                        $("#updateparokimodal #photo_paroki").show();
+                        $("#updateparokimodal #btndeletephoto").show();
+                        $('#imageUpdateStaffParoki').hide();
+                        $("#updateparokimodal #updateBtnStaffParoki").hide();
+                    }
                 },
                 completemultiple: function (file, response) {
                     console.log(file, response, "completemultiple");

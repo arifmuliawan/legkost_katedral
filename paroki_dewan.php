@@ -389,7 +389,7 @@ if(isset($_POST['submit_periode']))
                                                 ?>  
                                                         <div class="col-md-2" style="margin: 10px;cursor: grab;" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">
                                                             <img class="datastaff" src="<?php echo $photo_staff ?>" style="width:100%" data-toggle="modal" data-target="#updateparokimodal" data-staff='<?php echo json_encode($data_json) ?>'>
-                                                            <a href="index.php?p=paroki_dewan&a=5&id=<?php echo $id_staff ?>"<button type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm"><i class="nav-icon fas fa-trash"></i></button>
+                                                            <a href="index.php?p=paroki_dewan&a=5&id=<?php echo $id_staff ?>"<button type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm"><i class="nav-icon fas fa-trash"></i></button></a>
                                                         </div>
                                                 <?php
                                                     }

@@ -113,8 +113,54 @@ if(isset($_FILES['staffparoki']))
 
 if(isset($_FILES['updatestaffparoki']))
 {
-    print_r($_FILES);
-    echo "<br>";
-    print_r($_POST);
+    $id_paroki    = $_POST['id_paroki'];
+    if($_FILES['updatestaffparoki']['name']!='')
+    {
+        $ekstensi_diperbolehkan = array('png','jpg','jpeg');
+        $nama_photo             = $_FILES['updatestaffparoki']['name'][0];
+        $x_photo                = explode('.', $nama_photo);
+        $ekstensi_photo         = strtolower(end($x_photo));
+        $ukuran_photo           = $_FILES['updatestaffparoki']['size'][0];
+        $file_tmp_photo         = $_FILES['updatestaffparoki']['tmp_name'][0];
+        $file_directory_photo   = "assets/dist/img/paroki/".$nama_photo;
+        $file_db_photo          = "dist/img/paroki/".$nama_photo;
+        $photo_info             = getimagesize($file_tmp_photo);
+        $photo_width            = $photo_info[0];
+        $photo_height           = $photo_info[1];
+        $up_img                 = move_uploaded_file($file_tmp_photo, $file_directory_photo);
+        if($up_img==1)
+        {
+            $name_photo         = $file_db_photo;
+            $update_paroki      = mysqli_query($con,"UPDATE `paroki_staff` SET url_img='$name_photo',update_by='$user',update_date='$now' WHERE id='$id_paroki'")or die (mysqli_error($con));
+            if($update_paroki==1)
+            {
+                echo "
+                    <script type='text/javascript'>
+                        $('#successmodal').modal('show');
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                    </script>
+                ";
+            }
+            else
+            {
+                echo "
+                <script type='text/javascript'>
+                    $('#failedmodal').modal('show');
+                </script>
+                ";
+                exit();
+            }
+        }
+        else
+        {
+            echo "
+                <script type='text/javascript'>
+                    $('#failedmodal').modal('show');
+                </script>
+            ";
+            exit();
+        }
+    }
 }    
 ?>

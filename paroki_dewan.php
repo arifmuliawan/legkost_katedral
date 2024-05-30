@@ -470,6 +470,7 @@ if(isset($_POST['submit_deletephotoparoki']))
                                                                 <input type="hidden" name="id_paroki">
                                                                 <button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;">DELETE</button>
                                                                 <form id="imageUpdateFormStaffParoki">
+                                                                    <input type="hidden" name="id_paroki">
                                                                     <div id="imageUpdateStaffParoki" class="dropzone">
                                                                         <div class="dz-message">
                                                                             <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>

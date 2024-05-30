@@ -119,7 +119,7 @@ if(isset($_POST['submit_editparoki']))
             <script type='text/javascript'> 
                 toastr['success']('Perubahan Anda Telah Berhasil Disimpan!');
                 var delay = 3000; 
-                setTimeout(function(){ window.location ='index.php?p=admin'; }, delay);
+                
             </script>
         ";
     }

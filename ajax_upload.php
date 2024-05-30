@@ -138,9 +138,9 @@ if(isset($_FILES['updatestaffparoki']))
                     <script type='text/javascript'>
                         $('#successmodal').modal('show');
                         var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                        
                     </script>
-                ";
+                ";//setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
             }
             else
             {

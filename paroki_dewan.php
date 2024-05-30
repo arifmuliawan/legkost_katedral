@@ -455,7 +455,7 @@ if(isset($_POST['submit_deletephotoparoki']))
                                                                 </div>
                                                                 <img src="" id="photo_paroki" width="300px" style="display: none;">
                                                                 <input type="hidden" name="id_paroki">
-                                                                <button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">DELETE</button>
+                                                                <button id="btndeletephoto" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;">DELETE</button>
                                                                 <form id="imageUpdateFormStaffParoki">
                                                                     <div id="imageUpdateStaffParoki" class="dropzone">
                                                                         <div class="dz-message">
@@ -465,7 +465,7 @@ if(isset($_POST['submit_deletephotoparoki']))
                                                                             or <font color='#88A8D4'><b>Browse Files...</b></font>
                                                                         </div>
                                                                     </div>
-                                                                    <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                                    <button id="updateBtnStaffParoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 15px;">SAVE</button>
                                                                 </form>  
                                                             </div>
                                                             <div class="col-md-6">

@@ -134,33 +134,25 @@ if(isset($_FILES['updatestaffparoki']))
             $update_paroki      = mysqli_query($con,"UPDATE `paroki_staff` SET url_img='$name_photo',update_by='$user',update_date='$now' WHERE id='$id_paroki'")or die (mysqli_error($con));
             if($update_paroki==1)
             {
-                echo "
-                    <script type='text/javascript'>
-                        $('#successmodal').modal('show');
-                        var delay = 2000;
-                        
-                    </script>
-                ";//setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                $update_json      = array(
+                    'update_status' => 1
+                );
             }
             else
             {
-                echo "
-                <script type='text/javascript'>
-                    $('#failedmodal').modal('show');
-                </script>
-                ";
-                exit();
+                $update_json      = array(
+                    'update_status' => 0
+                );
             }
-        }
+        }  
         else
         {
-            echo "
-                <script type='text/javascript'>
-                    $('#failedmodal').modal('show');
-                </script>
-            ";
-            exit();
+            $update_json      = array(
+                'update_status' => 0
+            );
         }
+        header("Content-type: application/json; charset=utf-8");
+        echo json_encode($update_json);  
     }
 }    
 ?>

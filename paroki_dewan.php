@@ -783,7 +783,7 @@ if(isset($_POST['submit_periode']))
                 {
                     if(data.update_status=='1')
                     {
-                        toastr['success']('Submited Successfully!');
+                        toastr['success']('Perubahan Anda Telah Berhasil Disimpan');
                         var delay = 3000;
                     }
                     console.log(data,status);

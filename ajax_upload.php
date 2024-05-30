@@ -131,7 +131,7 @@ if(isset($_FILES['updatestaffparoki']))
         if($up_img==1)
         {
             $name_photo         = $file_db_photo;
-            $update_paroki      = mysqli_query($con,"UPDATE `paroki_staff` SET url_img='$name_photo',update_by='$user',update_date='$now' WHERE id='$id_paroki'")or die (mysqli_error($con));
+            $update_paroki      = mysqli_query($con,"UPDATE `paroki_staff` SET url_img='$name_photo',update_date='$now' WHERE id='$id_paroki'")or die (mysqli_error($con));
             if($update_paroki==1)
             {
                 $update_json      = array(

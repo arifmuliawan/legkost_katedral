@@ -143,6 +143,7 @@ if(isset($_FILES['updatestaffparoki']))
             }
             else
             {
+                http_response_code(410);
                 $update_json      = array(
                     'update_status' => 0
                 );
@@ -150,6 +151,7 @@ if(isset($_FILES['updatestaffparoki']))
         }  
         else
         {
+            http_response_code(411);
             $update_json      = array(
                 'update_status' => 0
             );

@@ -118,8 +118,7 @@ if(isset($_POST['submit_editparoki']))
         echo "
             <script type='text/javascript'> 
                 toastr['success']('Perubahan Anda Telah Berhasil Disimpan!');
-                var delay = 3000; 
-                
+                var delay = 3000;
             </script>
         ";
     }

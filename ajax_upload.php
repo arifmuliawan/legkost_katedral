@@ -127,7 +127,8 @@ if(isset($_FILES['updatestaffparoki']))
         $photo_info             = getimagesize($file_tmp_photo);
         $photo_width            = $photo_info[0];
         $photo_height           = $photo_info[1];
-        $up_img                 = move_uploaded_file($file_tmp_photo, $file_directory_photo);
+        //$up_img                 = move_uploaded_file($file_tmp_photo, $file_directory_photo);
+        $up_img                 = 0;
         if($up_img==1)
         {
             $name_photo         = $file_db_photo;

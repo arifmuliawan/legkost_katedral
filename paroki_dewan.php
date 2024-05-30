@@ -107,22 +107,6 @@ if(isset($_POST['submit_periode']))
         ";
     }
 }
-if(isset($_POST['submit_editparoki']))
-{
-    $id_paroki      = $_POST['id_paroki'];
-    $nama_paroki    = $_POST['nama_paroki'];
-    $jabatan_paroki = $_POST['jabatan_paroki'];
-    $delete_photo   = mysqli_query($con,"UPDATE paroki_staff SET `name`='$nama_paroki', `position`='$jabatan_paroki',`update_by`='$user',`update_date`='$now' WHERE id='$id_paroki'")or die (mysqli_error($con));
-    if($delete_photo==1)
-    {
-        echo "
-            <script type='text/javascript'> 
-                toastr['success']('Perubahan Anda Telah Berhasil Disimpan!');
-                var delay = 3000;
-            </script>
-        ";
-    }
-}
 ?>
         <style>
             .dropzone
@@ -482,7 +466,6 @@ if(isset($_POST['submit_editparoki']))
                                                                 </form>  
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <form method="POST" action="">
                                                                 <div class="col-md-12">
                                                                     <div class="row">
                                                                         <div class="col-md-12">
@@ -504,14 +487,13 @@ if(isset($_POST['submit_editparoki']))
                                                                                     <td style="text-align: right;">
                                                                                         <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
                                                                                         &nbsp&nbsp
-                                                                                        <input type="submit" name="submit_editparoki" value="SAVE" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">
+                                                                                        <button id="btneditparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                                                                     </td> 
                                                                                 </tr>
                                                                             </table>
                                                                         </div>             
                                                                     </div>
-                                                                </div>
-                                                                </form>    
+                                                                </div>   
                                                             </div>       
                                                         </div>
                                                         </div>   
@@ -788,3 +770,24 @@ if(isset($_POST['submit_editparoki']))
                 );
             });   
         </script>    
+        <script>
+            $("#btneditparoki").click(function()
+            {
+                $.post('ajax_update_data_paroki.php',
+                {
+                    id_paroki:$("#updateparokimodal input[name=id_paroki]").val(),
+                    nama_paroki:$("#updateparokimodal input[name=nama_paroki]").val(),
+                    jabatan_paroki:$("#updateparokimodal input[name=jabatan_paroki]").val()
+                },
+                function(data,status)
+                {
+                    if(data.update_status=='1')
+                    {
+                        toastr['success']('Submited Successfully!');
+                        var delay = 3000;
+                    }
+                    console.log(data,status);
+                }
+                );
+            });   
+        </script>

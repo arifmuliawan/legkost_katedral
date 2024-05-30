@@ -124,6 +124,24 @@ if(isset($_POST['submit_deletephotoparoki']))
         ";
     }
 }
+if(isset($_POST['submit_editparoki']))
+{
+    $id_paroki      = $_POST['id_paroki'];
+    $nama_paroki    = $_POST['nama_paroki'];
+    $jabatan_paroki = $_POST['jabatan_paroki'];
+    $delete_photo   = mysqli_query($con,"UPDATE paroki_staff SET `name`='$nama_paroki', `position`='$jabatan_paroki',`update_by`='$user',`update_date`='$now' WHERE id='$id_paroki'")or die (mysqli_error($con));
+    if($delete_photo==1)
+    {
+        echo "
+            <script type='text/javascript'>
+                $('#updateparokimodal').modal('hide');
+                $('#successmodal').modal('show');
+                var delay = 2000;
+                setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+            </script>
+        ";
+    }
+}
 ?>
         <style>
             .dropzone

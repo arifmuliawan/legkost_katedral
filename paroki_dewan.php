@@ -59,6 +59,36 @@ if((isset($action)) && $action==4)
         ";
     }
 }
+if((isset($action)) && $action==5)
+{
+    $delete_staff   = mysqli_query($con,"UPDATE paroki_staff SET visible='D',update_by='$user',update_date='$now' WHERE id='$id'")or die (mysqli_error($con));
+    if($delete_staff==1)
+    {
+        echo "
+            <script type='text/javascript'>
+                $(window).on('load', function() {
+                    $('#deletemodal').modal('show');
+                });
+                var delay = 2000;
+                setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+            </script>
+        ";
+    }
+    else
+    {
+        $err_delstaff  = 1;
+        $msg_delstaff  = "Data Gagal Dihapus";
+        echo "
+        <script type='text/javascript'>
+            $(window).on('load', function() {
+                $('#failedmodal').modal('show');
+            });
+            var delay = 2000;
+            setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+        </script>
+        ";
+    }
+}
 if(isset($_POST['submit_periode']))
 {
     $periode_paroki    = $_POST['periode_paroki'];
@@ -182,6 +212,10 @@ if(isset($_POST['submit_periode']))
                             if($err_upperiode==1)
                             {
                                 echo $msg_upperiode;
+                            }
+                            if($err_delstaff==1)
+                            {
+                                echo $msg_delstaff;
                             }
                             else
                             {
@@ -355,6 +389,7 @@ if(isset($_POST['submit_periode']))
                                                 ?>  
                                                         <div class="col-md-2" style="margin: 10px;cursor: grab;" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">
                                                             <img class="datastaff" src="<?php echo $photo_staff ?>" style="width:100%" data-toggle="modal" data-target="#updateparokimodal" data-staff='<?php echo json_encode($data_json) ?>'>
+                                                            <a href="index.php?p=paroki_dewan&a=5&id=<?php echo $id_staff ?>"<button type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm"><i class="nav-icon fas fa-trash"></i></button>
                                                         </div>
                                                 <?php
                                                     }

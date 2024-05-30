@@ -725,7 +725,7 @@ if(isset($_POST['submit_deletephotoparoki']))
                     console.log(file, response);
                     if(response.update_status=='1')
                     {
-                        $("#updateparokimodal #photo_paroki").show();
+                        $("#updateparokimodal #photo_paroki").attr('src', response.new_image).show();
                         $("#updateparokimodal #btndeletephoto").show();
                         $('#imageUpdateStaffParoki').hide();
                         $("#updateparokimodal #updateBtnStaffParoki").hide();

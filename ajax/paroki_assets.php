@@ -29,7 +29,7 @@ if(isset($_FILES['bannerparoki']))
         {
             if(($banner_width>='1815' && $banner_width<='1825') && ($banner_height>='695' && $banner_height<='705'))
             {
-                /*
+                
                 try {
                     move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 } catch (Exception $th) {
@@ -40,7 +40,7 @@ if(isset($_FILES['bannerparoki']))
                 }
                 var_dump("<pre>",$_FILES,$base_assets,$response_json,$file_tmp_banner,$file_directory_banner);
                 exit();
-                */
+                
                 $upload_file = move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 if($upload_file==true)
                 {

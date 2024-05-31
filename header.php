@@ -184,13 +184,15 @@
        }
     </script>
 </head>
-<div class="modal fade" id="successmodal">
+<div class="modal fade" id="notifmodal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
-                <img src="assets/dist/img/icon_success.png" style="width: 70px;">
+                <img src="" style="width: 70px;">
                 <br><br>
                 <h5>  </h5>
+                <br><br>
+                <button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;" data-dismiss="modal" aria-label="Close"> CLOSE </button>
             </div>
         </div>
         <!-- /.modal-content -->

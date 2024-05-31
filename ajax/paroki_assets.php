@@ -42,7 +42,7 @@ if(isset($_FILES['bannerparoki']))
                 exit();
                 */
                 $upload_file = move_uploaded_file($file_tmp_banner, $file_directory_banner);
-                if($upload_image==true)
+                if($upload_file==true)
                 {
                     $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$name_banner',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
                     if($update_banner==1)

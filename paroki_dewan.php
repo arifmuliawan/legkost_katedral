@@ -107,7 +107,7 @@ if(isset($_POST['submit_periode']))
         {
             echo "
             <script type='text/javascript'>
-                notifsuccessmodal('Test','p=paroki_dewan');
+                notifsuccessmodal('Test');
                 var delay = 2000;
                 setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
             </script>

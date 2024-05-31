@@ -31,7 +31,9 @@ if(isset($_FILES['bannerparoki']))
                 $up_img          = move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 if($up_img==1)
                 {
-                    $update_banner  = mysqli_query($con,"UPDATE paroki_data SET url_img='$name_banner',update_by='$user',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
+                    $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$name_banner',update_by='$user',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
+                    print_r($update_banner);
+                    exit();
                     if($update_banner==1)
                     {
                         $response_json       = array(

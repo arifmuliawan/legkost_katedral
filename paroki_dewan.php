@@ -61,7 +61,7 @@
                 thumbnailWidth:1456,
                 thumbnailHeight:560,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
-                url: 'ajax-paroki-assets.php',
+                url: 'ajax/paroki-assets.php',
                 init: function () {
 
                     var myDropzone = this;

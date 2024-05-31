@@ -16,6 +16,8 @@ if(isset($_FILES['bannerparoki']))
         $banner_info             = getimagesize($file_tmp_banner);
         $banner_width            = $banner_info[0];
         $banner_height           = $banner_info[1];
+        print_r($nama_banner);
+        exit();
         if(file_exists("assets/dist/img/paroki/".$nama_banner))
         {
             http_response_code(410);
@@ -31,7 +33,7 @@ if(isset($_FILES['bannerparoki']))
                 $up_img          = move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 if($up_img==1)
                 {
-                    $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$name_banner',update_by='$user',update_date='$now' WHERE id='1' AND code='1'");
+                    $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$name_banner',update_by='$user',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
                     if($update_banner==1)
                     {
                         $response_json       = array(
@@ -45,7 +47,7 @@ if(isset($_FILES['bannerparoki']))
                         http_response_code(412);
                         $response_json       = array(
                             'error_status'   => 1,
-                            'error_message'  => 'Perubahan anda gagal disimpan'
+                            'error_message'  => 'Perubahan anda gagal disimpan '.$con
                         );
                     }
                 }

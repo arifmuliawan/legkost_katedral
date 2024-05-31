@@ -24,7 +24,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>FOTO BANNER <font color='red'>*</font></label> <br>
-                                    (1456 x 560 px) JPG/JPEG/PNG
+                                    (1820 x 595 px) JPG/JPEG/PNG
                                 </div>
                                 <img src="" id="imgbanner" style="display: none;width:100%">
                                 <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>

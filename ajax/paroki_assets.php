@@ -28,8 +28,15 @@ if(isset($_FILES['bannerparoki']))
         {
             if(($banner_width>='1815' && $banner_width<='1825') && ($banner_height>='695' && $banner_height<='705'))
             {
-                $up_img          = move_uploaded_file($file_tmp_banner, $file_directory_banner);
-                var_dump("<pre>",$up_img,$file_tmp_banner,$file_directory_banner);
+                try {
+                    move_uploaded_file($file_tmp_banner, $file_directory_banner);
+                } catch (\Throwable $th) {
+                    $response_json       = array(
+                        'error_status'   => 1,
+                        'error_message'  => 'Perubahan anda gagal disimpan '.$th->getMessage()
+                    );
+                }
+                var_dump("<pre>",$file_tmp_banner,$file_directory_banner);
                 exit();
                 if($up_img==1)
                 {

@@ -102,11 +102,14 @@
                     return _results;
                 },
                 successmultiple: function (file, response) {
-                    console.log(file, response);
-                    notifsuccessmodal('Perubahan anda telah berhasil disimpan');
-                    var delay = 2000;
-                    setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
-                    //$("#successModal").modal("show");
+                    if(response.error_status==0)
+                    {
+                        notifmodal(response.error_message,'success');
+                        $("#formuploadbanner #upload_banner").hide();
+                        $("#formuploadbanner #btnsavebanner").hide();
+                        $("#imgbanner").attr('src', response.banner).show();
+                        $("#btndeletebanner").show();
+                    }
                 },
                 completemultiple: function (file, response) {
                     console.log(file, response, "completemultiple");

@@ -36,9 +36,9 @@ if(isset($_FILES['bannerparoki']))
                         'error_message'  => 'Perubahan anda gagal disimpan '.$th->getMessage()
                     );
                 }
-                var_dump("<pre>",$response_json,$file_tmp_banner,$file_directory_banner);
+                var_dump("<pre>",$_FILES,$response_json,$file_tmp_banner,$file_directory_banner);
                 exit();
-                if($up_img==1)
+                if($up_img==true)
                 {
                     $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$name_banner',update_by='$user',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
                     if($update_banner==1)

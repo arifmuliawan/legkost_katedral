@@ -97,15 +97,7 @@ if(isset($_POST['submit_periode']))
         $update_periode  = mysqli_query($con,"UPDATE paroki_data SET url_img='$periode_paroki' WHERE id='2' AND code='2'")or die (mysqli_error($con));
         if($update_periode==1)
         {
-            echo "
-                <script type='text/javascript'>
-                    $(window).on('load', function() {
-                        $('#successmodal').modal('show');
-                    });
-                    var delay = 2000;
-                    setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
-                </script>
-            ";
+            notifsuccessmodal("Perubahan anda telah berhasil disimpan","p=paroki_dewan");
         }
         else
         {
@@ -184,19 +176,7 @@ if(isset($_POST['submit_periode']))
 
 
         </style>    
-        <div class="modal fade" id="successmodal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
-                        <img src="<?php echo $base_assets ?>dist/img/icon_success.png" style="width: 70px;">
-                        <br><br>
-                        <h5> Perubahan Anda Telah Berhasil Disimpan </h5> 
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
+        
         <div class="modal fade" id="failedmodal">
             <div class="modal-dialog">
                 <div class="modal-content">

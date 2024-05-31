@@ -90,12 +90,12 @@
                         node = _ref[_i];
                         _results.push(node.textContent = message);
                     }
-                    return _results;
                     if(response.error_status==1)
                     {
                         notifmodal(response.error_message,'failed');
                     }
                     console.log(data,status);
+                    return _results;
                 },
                 successmultiple: function (file, response) {
                     console.log(file, response);

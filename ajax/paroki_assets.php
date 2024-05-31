@@ -36,7 +36,7 @@ if(isset($_FILES['bannerparoki']))
                         'error_message'  => 'Perubahan anda gagal disimpan '.$th->getMessage()
                     );
                 }
-                var_dump("<pre>",$_FILES,$response_json,$file_tmp_banner,$file_directory_banner);
+                var_dump("<pre>",$_FILES,$base_assets,$response_json,$file_tmp_banner,$file_directory_banner);
                 exit();
                 if($up_img==true)
                 {

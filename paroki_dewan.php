@@ -41,4 +41,99 @@
                     </div>
                 </div>
             </section>  
-        </div>                      
+        </div>
+        <!-- START DROPZONE UPLOAD BANNER PAROKI -->
+        <script type="text/javascript">  
+            Dropzone.autoDiscover = false;
+            myDropzone = new Dropzone('div#uploadbanner', 
+            {
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 1,
+                paramName: 'bannerparoki',
+                clickable: true,
+                thumbnailWidth:1456,
+                thumbnailHeight:560,
+                acceptedFiles: "image/jpeg,image/png,image/jpg",
+                url: 'ajax/paroki_uploadbanner.php',
+                init: function () {
+
+                    var myDropzone = this;
+                    // Update selector to match your button
+                    $("#btnsavebanner").click(function (e) {
+                        e.preventDefault();
+                        myDropzone.processQueue();
+                        return false;
+                    });
+
+                    this.on('sending', function (file, xhr, formData) {
+                        // Append all form inputs to the formData Dropzone will POST
+                        var data = $("#formuploadbanner").serializeArray();
+                        $.each(data, function (key, el) {
+                            formData.append(el.name, el.value);
+                        });
+                        console.log(formData);
+
+                    });
+                },
+                error: function (file, response){
+                    if ($.type(response) === "string")
+                        var message = response; //dropzone sends it's own error messages in string
+                    else
+                        var message = response.message;
+                    file.previewElement.classList.add("dz-error");
+                    _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
+                    _results = [];
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i];
+                        _results.push(node.textContent = message);
+                    }
+                    return _results;
+                },
+                successmultiple: function (file, response) {
+                    console.log(file, response);
+                    notifsuccessmodal('Perubahan anda telah berhasil disimpan');
+                    var delay = 2000;
+                    setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                    //$("#successModal").modal("show");
+                },
+                completemultiple: function (file, response) {
+                    console.log(file, response, "completemultiple");
+                    //$modal.modal("show");
+                },
+                reset: function () {
+                    console.log("resetFiles");
+                    this.removeAllFiles(true);
+                }
+            });
+        </script> 
+        <!-- END DROPZONE & NOTIF UPLOAD BANNER PAROKI -->   
+        <!-- START CHANGE SORT DEWAN PAROKI -->
+        <script type="text/javascript">
+            var parokipos   = document.querySelector('.paroki_position');
+            var sortable    = Sortable.create(parokipos,{
+            onUpdate: function (/**Event*/evt) {
+                arr = [];index=0
+                $('.col-md-2').each(function(item){
+                arr.push({id:$(this).attr('data-id'),sort:index++})
+                })
+                    updateOrderParoki(arr);
+                },
+
+            });
+            
+            function updateOrderParoki(data) {
+                $.ajax({
+                    url:"change_sort.php",
+                    type:'post',
+                    data:{position:data,table:'paroki_staff'},
+                    success:function(){
+                        //alert('your change successfully saved');
+                        //location.reload();
+                    }
+                })
+            }
+        </script>
+        <!-- START CHANGE SORT DEWAN PAROKI -->

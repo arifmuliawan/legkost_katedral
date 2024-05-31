@@ -1,3 +1,11 @@
+<script>
+    function notifsuccessmodal(msg)
+    {
+        var successmodal = $('#successmodal')
+        successmodal.find('.modal-content h5').html(msg)
+        successmodal.modal('show')
+    }    
+</script>
 <?php
 $query_banner       = mysqli_query($con,"SELECT * FROM paroki_data WHERE id='1' AND code='1' AND visible='Y'")or die (mysqli_error($con));
 $sum_banner         = mysqli_num_rows($query_banner);
@@ -99,7 +107,7 @@ if(isset($_POST['submit_periode']))
         {
             echo "
             <script type='text/javascript'>
-                notifsuccessmodal('Test','p=paroki_dewan')
+                notifsuccessmodal('Test','p=paroki_dewan');
                 var delay = 2000;
                 setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
             </script>
@@ -811,12 +819,4 @@ if(isset($_POST['submit_periode']))
                 }
                 );
             });   
-        </script>
-        <script>
-            function notifsuccessmodal(msg)
-            {
-                var successmodal = $('#successmodal')
-                successmodal.find('.modal-content h5').html(msg)
-                successmodal.modal('show')
-            }    
         </script>    

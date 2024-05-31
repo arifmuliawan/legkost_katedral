@@ -22,7 +22,7 @@
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <?php
-                            $query_paroki_assets    = mysqli_query($con,"SELECT * FROM paroki_assets WHERE id='1' & code='1'")or die (mysqli_error($con));
+                            $query_paroki_assets    = mysqli_query($con,"SELECT * FROM paroki_asset WHERE id='1' & code='1'")or die (mysqli_error($con));
                             $data_paroki_assets     = mysqli_fetch_array($query_paroki_assets);
                             $banner_paroki_assets   = $data_paroki_assets['url_img'];
                             if($banner_paroki_assets!='')

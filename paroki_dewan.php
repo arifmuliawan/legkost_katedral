@@ -21,12 +21,25 @@
                         <div class="card" style="">
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
-                            <div class="card-body">
+                            <?php
+                            $query_paroki_assets    = mysqli_query($con,"SELECT * FROM paroki_assets WHERE id='1' & code='1'")or die (mysqli_error($con));
+                            $data_paroki_assets     = mysqli_fetch_array($query_paroki_assets);
+                            $banner_paroki_assets   = $data_paroki_assets['url_img'];
+                            if($banner_paroki_assets!='')
+                            {
+                                $banner_paroki  = $base_assets.$banner_paroki_assets;
+                            }
+                            else
+                            {
+                                $banner_paroki  = "";
+                            }
+                            ?>
+                            <div class="card-body">ki
                                 <div class="form-group">
                                     <label>FOTO BANNER <font color='red'>*</font></label> <br>
                                     (1820 x 700 px) JPG/JPEG/PNG
                                 </div>
-                                <img src="" id="imgbanner" style="display: none;width:100%">
+                                <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="display: none;width:100%">
                                 <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                 <form id="formuploadbanner">
                                     <div id="uploadbanner" class="dropzone">

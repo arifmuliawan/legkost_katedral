@@ -1,0 +1,15 @@
+.dropzone
+{
+    padding : 20px 20px;
+}
+
+.dropzone.dz-clickable
+{
+    text-align: center;
+}
+
+#uploadbanner .dz-preview .dz-image
+{
+    width: 1456px;
+    height: 560px;
+}

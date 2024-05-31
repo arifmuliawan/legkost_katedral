@@ -12,7 +12,7 @@ if(isset($_FILES['bannerparoki']))
         $ekstensi_banner         = strtolower(end($x_banner));
         $ukuran_banner           = $_FILES['bannerparoki']['size'][0];
         $file_tmp_banner         = $_FILES['bannerparoki']['tmp_name'][0];
-        $file_directory_banner   = $base_assets."dist/img/paroki/".$nama_banner;
+        $file_directory_banner   = "../assets/dist/img/paroki/".$nama_banner;
         $file_db_banner          = "dist/img/paroki/".$nama_banner;
         $banner_info             = getimagesize($file_tmp_banner);
         $banner_width            = $banner_info[0];

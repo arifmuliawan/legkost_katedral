@@ -16,8 +16,6 @@ if(isset($_FILES['bannerparoki']))
         $banner_info             = getimagesize($file_tmp_banner);
         $banner_width            = $banner_info[0];
         $banner_height           = $banner_info[1];
-        print_r($nama_banner);
-        exit();
         if(file_exists("assets/dist/img/paroki/".$nama_banner))
         {
             http_response_code(410);
@@ -28,6 +26,8 @@ if(isset($_FILES['bannerparoki']))
         }
         else
         {
+            print_r($banner_width);
+            exit();
             if(($banner_width>='1815' && $banner_width<='1825') && ($banner_height>='695' && $banner_height<='705'))
             {
                 $up_img          = move_uploaded_file($file_tmp_banner, $file_directory_banner);

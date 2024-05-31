@@ -30,11 +30,11 @@ if(isset($_FILES['bannerparoki']))
             {
                 try {
                     move_uploaded_file($file_tmp_banner, $file_directory_banner);
-                } catch (\Throwable $th) {
+                } catch (Exception $th) {
                     $response_json       = array(
                         'error_status'   => 1,
                         'error_message'  => 'Perubahan anda gagal disimpan '.$th->getMessage()
-                    );
+                    );throw new Exception("Error Processing Request", 1);
                 }
                 if($up_img==1)
                 {

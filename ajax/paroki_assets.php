@@ -26,7 +26,7 @@ if(isset($_FILES['bannerparoki']))
         }
         else
         {
-            print_r($banner_width);
+            print_r($banner_info);
             exit();
             if(($banner_width>='1815' && $banner_width<='1825') && ($banner_height>='695' && $banner_height<='705'))
             {

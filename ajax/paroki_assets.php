@@ -44,17 +44,25 @@ if(isset($_FILES['bannerparoki']))
                     }
                     else
                     {
-                        http_response_code(412);
+                        http_response_code(410);
                         $response_json       = array(
                             'error_status'   => 1,
                             'error_message'  => 'Perubahan anda gagal disimpan '.$con
                         );
                     }
                 }
+                else
+                {
+                    http_response_code(410);
+                        $response_json       = array(
+                        'error_status'   => 1,
+                        'error_message'  => 'Gambar gagal di upload ke server'
+                        );
+                }
             }
             else
             {
-                http_response_code(411);
+                http_response_code(410);
                 $response_json       = array(
                     'error_status'   => 1,
                     'error_message'  => 'Resolusi Gambar Tidak Sesuai (1820 X 600)'

@@ -97,7 +97,13 @@ if(isset($_POST['submit_periode']))
         $update_periode  = mysqli_query($con,"UPDATE paroki_data SET url_img='$periode_paroki' WHERE id='2' AND code='2'")or die (mysqli_error($con));
         if($update_periode==1)
         {
-            notifsuccessmodal("Perubahan anda telah berhasil disimpan","p=paroki_dewan");
+            echo "
+            <script type='text/javascript'>
+                notifsuccessmodal('Test','p=paroki_dewan')
+                var delay = 2000;
+                setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+            </script>
+            ";
         }
         else
         {
@@ -806,3 +812,11 @@ if(isset($_POST['submit_periode']))
                 );
             });   
         </script>
+        <script>
+            function notifsuccessmodal(msg)
+            {
+                var successmodal = $('#successmodal')
+                successmodal.find('.modal-content h5').html(msg)
+                successmodal.modal('show')
+            }    
+        </script>    

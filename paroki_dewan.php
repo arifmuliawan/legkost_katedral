@@ -57,7 +57,7 @@
                 thumbnailWidth:1456,
                 thumbnailHeight:560,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
-                url: 'ajax/paroki_uploadbanner.php',
+                url: 'ajax/paroki_assets.php',
                 init: function () {
 
                     var myDropzone = this;
@@ -91,6 +91,11 @@
                         _results.push(node.textContent = message);
                     }
                     return _results;
+                    if(response.error_status==1)
+                    {
+                        notifmodal(response.error_message,'failed');
+                    }
+                    console.log(data,status);
                 },
                 successmultiple: function (file, response) {
                     console.log(file, response);

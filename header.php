@@ -185,6 +185,31 @@
     </script>
 </head>
 <?php
+function notifsuccessmodal($msg,$page)
+{
+?>    
+    <script type='text/javascript'>
+        $('#successmodal').modal('show');
+        var delay = 2000;
+        setTimeout(function(){ window.location ='index.php?p=<?php echo $page ?>'; }, delay);
+    </script>
+    <div class="modal fade" id="successmodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                    <img src="assets/dist/img/icon_success.png" style="width: 70px;">
+                    <br><br>
+                    <h5> <?php echo $msg ?> </h5> 
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+<?php        
+}
+?>
+<?php
     if(isset($form))
     {
     ?>

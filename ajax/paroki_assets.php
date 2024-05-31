@@ -35,7 +35,8 @@ if(isset($_FILES['bannerparoki']))
                     {
                         $response_json       = array(
                             'error_status'   => 0,
-                            'error_message'  => 'Perubahan anda telah berhasil disimpan'
+                            'error_message'  => 'Perubahan anda telah berhasil disimpan',
+                            'banner'         => $new_banner   
                         );
                     }
                     else

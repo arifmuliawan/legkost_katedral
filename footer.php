@@ -97,14 +97,23 @@
     }
 </script>
 <script>
-    function notifsuccessmodal(msg)
+    function notifmodal(msg,type)
     {
         $(function() {
-            //var successmodal = $("#successmodal");
-            $("#successmodal").find(".modal-content h5").html(msg);
-            $("#successmodal").modal("show");
+            switch (type) {
+                case 'failed':
+                    icon = 'assets/dist/img/icon_failed.png';
+                    break;
+            
+                default:
+                    icon = 'assets/dist/img/icon_success.png';
+                    break;
+            }
+            $("#notifmodal").find(".modal-content h5").html(msg);
+            $("#notifmodal").find(".modal-content img").attr('src',icon);
+            $("#notifmodal").modal("show");
         })
-    }    
+    }
 </script>
 </body>
 </html>

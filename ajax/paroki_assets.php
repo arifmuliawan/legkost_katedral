@@ -1,5 +1,6 @@
 <?php
-include("config.php");
+include("../config.php");
+include("../session.php");
 //include("session.php");
 if(isset($_FILES['bannerparoki']))
 {
@@ -28,6 +29,7 @@ if(isset($_FILES['bannerparoki']))
         {
             if(($banner_width>='1815' && $banner_width<='1825') && ($banner_height>='695' && $banner_height<='705'))
             {
+                /*
                 try {
                     move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 } catch (Exception $th) {
@@ -38,7 +40,9 @@ if(isset($_FILES['bannerparoki']))
                 }
                 var_dump("<pre>",$_FILES,$base_assets,$response_json,$file_tmp_banner,$file_directory_banner);
                 exit();
-                if($up_img==true)
+                */
+                $upload_file = move_uploaded_file($file_tmp_banner, $file_directory_banner);
+                if($upload_image==true)
                 {
                     $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$name_banner',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
                     if($update_banner==1)

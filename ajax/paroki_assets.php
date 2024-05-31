@@ -25,7 +25,7 @@ if(isset($_FILES['bannerparoki']))
         }
         else
         {
-            if(($banner_width>='1815' && $banner_width<='1825') && ($banner_height>='590' && $banner_height<='600'))
+            if(($banner_width>='1815' && $banner_width<='1825') && ($banner_height>='695' && $banner_height<='705'))
             {
                 $up_img          = move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 if($up_img==1)

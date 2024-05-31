@@ -1,9 +1,9 @@
 <script>
     function notifsuccessmodal(msg)
     {
-        var successmodal = $("#successmodal");
-        successmodal.find(".modal-content h5").html(msg);
-        successmodal.modal("show");
+        //var successmodal = $("#successmodal");
+        $("#successmodal").find(".modal-content h5").html(msg);
+        $("#successmodal").modal("show");
     }    
 </script>
 <?php

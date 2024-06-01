@@ -37,10 +37,10 @@ if(isset($_FILES['bannerparoki']))
             }
             else
             {
-                set_error_handler(function($severity, $message, $file, $line))
+                /*set_error_handler(function($severity, $message, $file, $line))
                 {
                     throw new \ErrorException($severity, $message, $file, $line);
-                }
+                }*/
                 $upload_file       = false;
                 try
                 {
@@ -48,7 +48,7 @@ if(isset($_FILES['bannerparoki']))
                 }
                 catch(Exception $e)
                 {}
-                restore_error_handler();
+                //restore_error_handler();
                 if($upload_file===false)
                 {
                     http_response_code(410);

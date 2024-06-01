@@ -42,20 +42,32 @@
                                     <label>FOTO BANNER <font color='red'>*</font></label> <br>
                                     (1820 x 700 px) JPG/JPEG/PNG
                                 </div>
-                                <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="display: none;width:100%" data_banner="<?php echo json_encode($banner_json) ?>">
-                                <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
-                                <form id="formuploadbanner">
-                                    <div id="uploadbanner" class="dropzone">
-                                        <div class="dz-message">
-                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
-                                            <b>.JPG  .JPEG  .PNG</b><br>
-                                            Drop files to upload <br>
-                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                <?php
+                                if($banner_paroki!="")
+                                {
+                                ?>    
+                                    <img src="<?php echo $banner_paroki ?>" id="imgbanner" data_banner="<?php echo json_encode($banner_json) ?>">
+                                    <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                <?php
+                                }
+                                else
+                                {
+                                ?>
+                                    <form id="formuploadbanner">
+                                        <div id="uploadbanner" class="dropzone">
+                                            <div class="dz-message">
+                                                <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                <b>.JPG  .JPEG  .PNG</b><br>
+                                                Drop files to upload <br>
+                                                or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br>
-                                    <button id="btnsavebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
-                                </form>
+                                        <br>
+                                        <button id="btnsavebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                    </form>
+                                <?php
+                                }
+                                ?>    
                             </div>
                         </div>
                     </div>

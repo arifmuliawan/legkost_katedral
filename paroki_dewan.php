@@ -16,7 +16,7 @@
                 <div class="container-fluid">
                     <div class="row">
                     <!-- left column -->
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="data-banner-paroki">
                         <!-- jquery validation -->
                         <div class="card" style="">
                         <!-- /.card-header -->
@@ -44,6 +44,7 @@
                                 {
                                 ?>    
                                     <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
+                                    <input type="hidden" name="deletebanner">
                                     <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                 <?php
                                 }
@@ -71,27 +72,26 @@
                 </div>
             </section>  
         </div>
-        <!-- START DATA BANNER PAROKI
+        <!-- START DELETE BANNER PAROKI -->
         <script>
-            var banner         = $(this);
-            var data_banner    = me.attr('data_banner');
-            var jdata_banner   = JSON.parse(data_banner);
-            if(jdata_banner.banner_paroki!="")
+            $("#btndeletebanner").click(function()
             {
-                $("#formuploadbanner #upload_banner").hide();
-                $("#formuploadbanner #btnsavebanner").hide();
-                $("#imgbanner").attr('src', jdata_banner.banner_paroki).show();
-                $("#btndeletebanner").show();
-            }    
-            else
-            {
-                $("#formuploadbanner #upload_banner").show();
-                $("#formuploadbanner #btnsavebanner").show();
-                $("#imgbanner").attr('src', jdata_banner.banner_paroki).hide();
-                $("#btndeletebanner").hide();
-            }
-        </script> 
-        END DATA BANNER PAROKI -->
+                $.post('ajax-paroki-assets.php',
+                {
+                    delete_paroki:$("#data-banner-paroki input[name=deletebanner]").val()
+                },
+                function(data,status)
+                {
+                    if(data.delete_status=='1')
+                    {
+                        alert("Delete Success");
+                    }
+                    console.log(data,status);
+                }
+                );
+            });   
+        </script>  
+        <!-- END DELETE BANNER PAROKI -->
         <!-- START DROPZONE UPLOAD BANNER PAROKI -->
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;

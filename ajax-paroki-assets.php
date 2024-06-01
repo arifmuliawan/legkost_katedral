@@ -37,8 +37,18 @@ if(isset($_FILES['bannerparoki']))
             }
             else
             {
+                set_error_handler(function($severity, $message, $file, $line))
+                {
+                    http_response_code(410);
+                        $response_json       = array(
+                        'error_status'   => 1,
+                        'error_message'  => 'Gambar gagal di upload ke server'
+                    );
+                    return;
+                }
                 $upload_file   = move_uploaded_file($file_tmp_banner, $file_directory_banner);
-                if(!move_uploaded_file($file_tmp_banner, $file_directory_banner))
+                restore_error_handler();
+                if($upload_file===false)
                 {
                     http_response_code(410);
                         $response_json       = array(

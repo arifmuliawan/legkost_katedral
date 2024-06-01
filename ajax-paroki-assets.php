@@ -74,6 +74,10 @@ if(isset($_FILES['bannerparoki']))
         }    
     }
 }
+if(isset($_POST['delete_banner']))
+{
+    echo "Delete Banner";
+}    
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

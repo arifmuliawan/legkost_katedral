@@ -24,6 +24,7 @@
                             <?php
                             $query_paroki_assets    = mysqli_query($con,"SELECT * FROM paroki_asset WHERE id='1' AND code='1'")or die (mysqli_error($con));
                             $data_paroki_assets     = mysqli_fetch_array($query_paroki_assets);
+                            p4
                             $banner_paroki_assets   = $data_paroki_assets['url_img'];
                             if($banner_paroki_assets!='')
                             {
@@ -34,7 +35,7 @@
                                 $banner_paroki  = "";
                             }
                             ?>
-                            <div class="card-body">ki
+                            <div class="card-body">
                                 <div class="form-group">
                                     <label>FOTO BANNER <font color='red'>*</font></label> <br>
                                     (1820 x 700 px) JPG/JPEG/PNG

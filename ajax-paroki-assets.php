@@ -12,7 +12,7 @@ if(isset($_FILES['bannerparoki']))
         $ekstensi_banner         = strtolower(end($x_banner));
         $ukuran_banner           = $_FILES['bannerparoki']['size'][0];
         $file_tmp_banner         = $_FILES['bannerparoki']['tmp_name'][0];
-        $file_directory_banner   = "assets/dist/img/parokis/".$nama_banner;
+        $file_directory_banner   = "assets/dist/img/paroki/".$nama_banner;
         $file_db_banner          = "dist/img/paroki/".$nama_banner;
         $banner_info             = getimagesize($file_tmp_banner);
         $banner_width            = $banner_info[0];
@@ -37,18 +37,7 @@ if(isset($_FILES['bannerparoki']))
             }
             else
             {
-                /*set_error_handler(function($severity, $message, $file, $line))
-                {
-                    throw new \ErrorException($severity, $message, $file, $line);
-                }*/
-                $upload_file       = false;
-                try
-                {
-                    $upload_file   = @move_uploaded_file($file_tmp_banner, $file_directory_banner);
-                }
-                catch(Exception $e)
-                {}
-                //restore_error_handler();
+                $upload_file   = @move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 if($upload_file===false)
                 {
                     http_response_code(410);

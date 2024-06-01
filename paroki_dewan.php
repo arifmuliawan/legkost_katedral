@@ -33,13 +33,16 @@
                             {
                                 $banner_paroki  = "";
                             }
+                            $banner_json      = array(
+                                'banner_paroki' => $banner_paroki
+                            );
                             ?>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>FOTO BANNER <font color='red'>*</font></label> <br>
                                     (1820 x 700 px) JPG/JPEG/PNG
                                 </div>
-                                <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="display: none;width:100%">
+                                <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="display: none;width:100%" data_banner="<?php echo json_encode($banner_json) ?>">
                                 <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                 <form id="formuploadbanner">
                                     <div id="uploadbanner" class="dropzone">
@@ -59,6 +62,27 @@
                 </div>
             </section>  
         </div>
+        <!-- START DATA BANNER PAROKI -->
+        <script>
+            var banner         = $(this);
+            var data_banner    = me.attr('data_banner');
+            var jdata_banner   = JSON.parse(data_banner);
+            if(jdata_banner.banner_paroki!="")
+            {
+                $("#formuploadbanner #upload_banner").hide();
+                $("#formuploadbanner #btnsavebanner").hide();
+                $("#imgbanner").attr('src', jdata_banner.banner_paroki).show();
+                $("#btndeletebanner").show();
+            }    
+            else
+            {
+                $("#formuploadbanner #upload_banner").show();
+                $("#formuploadbanner #btnsavebanner").show();
+                $("#imgbanner").attr('src', jdata_banner.banner_paroki).hide();
+                $("#btndeletebanner").hide();
+            }
+        </script> 
+        <!-- START DATA BANNER PAROKI -->
         <!-- START DROPZONE UPLOAD BANNER PAROKI -->
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;
@@ -134,7 +158,7 @@
                 }
             });
         </script> 
-        <!-- END DROPZONE & NOTIF UPLOAD BANNER PAROKI -->   
+        <!-- END DROPZONE & NOTIF UPLOAD BANNER PAROKI -->  
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
             var parokipos   = document.querySelector('.paroki_position');

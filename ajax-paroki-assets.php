@@ -38,13 +38,21 @@ if(isset($_FILES['bannerparoki']))
             else
             {
                 $upload_file    = move_uploaded_file($file_tmp_banner, $file_directory_banner);
-                var_dump($upload_file);
-                exit();
-                $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$file_db_banner',update_by='$user',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
+                if($upload_file==false)
+                {
+                    http_response_code(410);
+                        $response_json       = array(
+                        'error_status'   => 1,
+                        'error_message'  => 'Gambar gagal di upload ke server'
+                    );
+                    return;
+                }
+                $update_banner  = 0;//mysqli_query($con,"UPDATE paroki_asset SET url_img='$file_db_banner',update_by='$user',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
                 //var_dump($update_banner);
                 //exit();
                 if($update_banner!=1)
                 {
+                    unlink($file_directory_banner);
                     http_response_code(410);
                         $response_json       = array(
                         'error_status'   => 1,

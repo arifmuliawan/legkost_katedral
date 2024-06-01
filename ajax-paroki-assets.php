@@ -44,7 +44,7 @@ if(isset($_FILES['bannerparoki']))
                 $upload_file       = false;
                 try
                 {
-                    $upload_file   = move_uploaded_file($file_tmp_banner, $file_directory_banner);
+                    $upload_file   = @move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 }
                 catch(Exception $e)
                 {}

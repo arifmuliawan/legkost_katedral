@@ -33,9 +33,6 @@
                             {
                                 $banner_paroki  = "";
                             }
-                            $banner_json      = array(
-                                'banner_paroki' => $banner_paroki
-                            );
                             ?>
                             <div class="card-body">
                                 <div class="form-group">
@@ -46,7 +43,7 @@
                                 if($banner_paroki!="")
                                 {
                                 ?>    
-                                    <img src="<?php echo $banner_paroki ?>" id="imgbanner" data_banner="<?php echo json_encode($banner_json) ?>">
+                                    <img src="<?php echo $banner_paroki ?>" id="imgbanner">
                                     <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                 <?php
                                 }

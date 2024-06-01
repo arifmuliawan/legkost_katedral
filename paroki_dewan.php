@@ -62,7 +62,7 @@
                 </div>
             </section>  
         </div>
-        <!-- START DATA BANNER PAROKI -->
+        <!-- START DATA BANNER PAROKI
         <script>
             var banner         = $(this);
             var data_banner    = me.attr('data_banner');
@@ -82,7 +82,7 @@
                 $("#btndeletebanner").hide();
             }
         </script> 
-        <!-- START DATA BANNER PAROKI -->
+        END DATA BANNER PAROKI -->
         <!-- START DROPZONE UPLOAD BANNER PAROKI -->
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;

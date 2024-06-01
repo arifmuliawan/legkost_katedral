@@ -39,12 +39,7 @@ if(isset($_FILES['bannerparoki']))
             {
                 set_error_handler(function($severity, $message, $file, $line))
                 {
-                    http_response_code(410);
-                        $response_json       = array(
-                        'error_status'   => 1,
-                        'error_message'  => 'Gambar gagal di upload ke server'
-                    );
-                    return;
+                    throw new \ErrorException($severity, $message, $file, $line);
                 }
                 $upload_file       = false;
                 try

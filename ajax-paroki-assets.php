@@ -37,14 +37,8 @@ if(isset($_FILES['bannerparoki']))
             }
             else
             {
-                $upload_file   = false;
-                try
-                {
-                    $upload_file   = move_uploaded_file($file_tmp_banner, $file_directory_banner);
-                }
-                catch(Exception $e)
-                {}
-                if($upload_file==false)
+                $upload_file   = move_uploaded_file($file_tmp_banner, $file_directory_banner);
+                if(!move_uploaded_file($file_tmp_banner, $file_directory_banner))
                 {
                     http_response_code(410);
                         $response_json       = array(
@@ -53,26 +47,29 @@ if(isset($_FILES['bannerparoki']))
                     );
                     return;
                 }
-                $update_banner  = 0;//mysqli_query($con,"UPDATE paroki_asset SET url_img='$file_db_banner',update_by='$user',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
-                //var_dump($update_banner);
-                //exit();
-                if($update_banner!=1)
-                {
-                    unlink($file_directory_banner);
-                    http_response_code(410);
-                        $response_json       = array(
-                        'error_status'   => 1,
-                        'error_message'  => 'Gambar gagal di upload ke server'
-                    );
-                }
                 else
                 {
-                    $response_json       = array(
-                        'error_status'   => 0,
-                        'error_message'  => 'Perubahan anda telah berhasil disimpan',
-                        'banner'         => $new_banner   
-                    );
-                }
+                    $update_banner  = 0;//mysqli_query($con,"UPDATE paroki_asset SET url_img='$file_db_banner',update_by='$user',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
+                    //var_dump($update_banner);
+                    //exit();
+                    if($update_banner!=1)
+                    {
+                        unlink($file_directory_banner);
+                        http_response_code(410);
+                            $response_json       = array(
+                            'error_status'   => 1,
+                            'error_message'  => 'Gambar gagal di upload ke server'
+                        );
+                    }
+                    else
+                    {
+                        $response_json       = array(
+                            'error_status'   => 0,
+                            'error_message'  => 'Perubahan anda telah berhasil disimpan',
+                            'banner'         => $new_banner   
+                        );
+                    }
+                }    
             }    
         }    
     }

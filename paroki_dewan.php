@@ -44,7 +44,7 @@
                                 {
                                 ?>    
                                     <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
-                                    <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                    <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                 <?php
                                 }
                                 else

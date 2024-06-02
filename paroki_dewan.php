@@ -91,10 +91,6 @@
                     else
                     {
                         notifmodal(data.error_message,'success');
-                        $("#formuploadbanner #upload_banner").show();
-                        $("#formuploadbanner #btnsavebanner").show();
-                        $("#imgbanner").attr('src', response.banner).hide();
-                        $("#btndeletebanner").hide();
                     }
                     console.log(data,status);
                 }

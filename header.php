@@ -192,8 +192,6 @@
                 <img src="" style="width: 70px;">
                 <br><br>
                 <h5>  </h5>
-                <br><br>
-                <button type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;border-color: #88A8D4;" data-dismiss="modal" aria-label="Close"> CLOSE </button>
             </div>
         </div>
         <!-- /.modal-content -->

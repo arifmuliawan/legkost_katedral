@@ -461,7 +461,7 @@
             var sortable    = Sortable.create(parokilist,{
             onUpdate: function (/**Event*/evt) {
                 arr = [];index=0
-                $('.col-md-2').each(function(item){
+                $('.col-md-3').each(function(item){
                 arr.push({id:$(this).attr('data-id'),sort:index++})
                 })
                     updatelistparoki(arr);

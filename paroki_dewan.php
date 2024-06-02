@@ -562,7 +562,7 @@
                 $.post('ajax-paroki-assets.php',
                 {
                     id_paroki:$("#updateparokimodal input[name=id_paroki]").val(),
-                    delete_paroki:("#updateparokimodal input[name=delete_photo_paroki]").val()
+                    delete_paroki:$("#updateparokimodal input[name=delete_photo_paroki]").val()
                 },
                 function(data,status)
                 {

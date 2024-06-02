@@ -84,7 +84,7 @@
                 {
                     if(data.error_status=='1')
                     {
-                        alert("Delete Failed");
+                        notifmodal(response.error_message,'failed');
                     }
                     console.log(data,status);
                 }

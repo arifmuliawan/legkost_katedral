@@ -562,17 +562,24 @@
                 $.post('ajax-paroki-assets.php',
                 {
                     id_paroki:$("#modaldetailparoki input[name=id_paroki]").val(),
-                    delete_photo_paroki:$("#modaldetailparoki input[name=delete_photo_paroki]").val()
+                    delete_photo_paroki:$("#modaldetailparoki input[name=delete_photo_paroki]").val(jdata.photo_paroki);
                 },
                 function(data,status)
                 {
-                    /*if(data.delete_status=='1')
+                    if(data.error_status=='0')
                     {
+                        toastr['success'](data.error_message);
+                        var delay = 3000;
                         $("#updateparokimodal #photo_paroki").hide();
                         $("#updateparokimodal #btndeletephoto").hide();
                         $('#imageUpdateStaffParoki').show();
                         $("#updateparokimodal #updateBtnStaffParoki").show();
-                    }*/
+                    }
+                    else
+                    {
+                        toastr['error'](data.error_message);
+                        var delay = 3000;
+                    }
                     console.log(data,status);
                 }
                 );

@@ -436,7 +436,7 @@
                         console.log(file, response);
                         toastr['success'](response.error_message);
                         var delay = 3000;
-                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
                     }
                     else
                     {

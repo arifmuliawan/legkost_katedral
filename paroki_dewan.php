@@ -93,10 +93,8 @@
                     else
                     {
                         notifmodal(data.error_message,'success');
-                        $("#formuploadbanner #upload_banner").show();
-                        $("#formuploadbanner #btnsavebanner").show();
-                        $("#imgbanner").hide();
-                        $("#btndeletebanner").hide();
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
                     }
                     console.log(data,status);
                 }

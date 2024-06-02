@@ -100,22 +100,33 @@ if(isset($_POST['delete_banner']))
 if(isset($_POST['update_periode']))
 {
     $periode_paroki = $_POST['update_periode'];
-    $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$periode_paroki',update_by='$user',update_date='$now' WHERE id='2' AND code='2'") or die (mysqli_error($con));
-    if($update_banner!=1)
+    if($periode_paroki=="")
     {
         http_response_code(410);
         $response_json       = array(
             'error_status'   => 1,
-            'error_message'  => 'Data gagal disimpan'
-         );
+            'error_message'  => 'Data periode paroki wajib diisi'
+        );
     }
     else
     {
-        $response_json       = array(
-            'error_status'   => 0,
-            'error_message'  => 'Perubahan data telah berhasil disimpan'
-        );
-    }
+        $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$periode_paroki',update_by='$user',update_date='$now' WHERE id='2' AND code='2'") or die (mysqli_error($con));
+        if($update_banner!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Perubahan data telah berhasil disimpan'
+            );
+        }
+    }    
 }    
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);

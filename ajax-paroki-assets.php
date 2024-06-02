@@ -242,7 +242,7 @@ if(isset($_POST['delete_photo_paroki']))
             unlink($photo_paroki);
             $response_json       = array(
                 'error_status'   => 0,
-                'error_message'  => 'Photo berhasil disimpan'
+                'error_message'  => 'Photo berhasil dihapus'
             );
         }
     }        

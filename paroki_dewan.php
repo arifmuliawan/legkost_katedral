@@ -115,7 +115,7 @@
                                                     <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;">CLEAR SELECTION</button>
                                                 </td> 
                                                 <td width="50%" style="text-align: right;">
-                                                    <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#addparokimodal">ADD NEW</button>
+                                                    <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#formaddparoki">ADD NEW</button>
                                                 </td>
                                             </tr>
                                         </table>
@@ -169,6 +169,77 @@
                 </div>
             </section>  
         </div>
+        <!-- START MODAL FORM ADD PAROKI -->
+        <div class="modal fade" id="formaddparoki" style="pointer-events: none;">
+            <div class="modal-dialog" style="max-width: 800px;">
+                <div class="modal-content">
+                    <div class="modal-body" style="padding: 40px;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form id="formaddparoki">
+                                        <div class="card-body">    
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
+                                                        (500 x 500 px) JPG/JPEG/PNG
+                                                    </div>
+                                                    <div id="photo_paroki" class="dropzone">
+                                                        <div class="dz-message">
+                                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                            <b>.JPG  .JPEG  .PNG</b><br>
+                                                            Drop files to upload <br>
+                                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                                        </div>
+                                                    </div> 
+                                                </div>    
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label class="form-label">NAMA <font color='red'>*</font></label>
+                                                                <input type="text" name="name_paroki" class="form-control" placeholder="Type something here...."  <?php if(isset($err_upnama) && $err_upnama==1){ echo "style='border-color: red;'"; } ?> required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label class="form-label">JABATAN <font color='red'>*</font></label>
+                                                                <input type="text" name="position_paroki" class="form-control" placeholder="Type something here...." <?php if(isset($err_upjabatan) && $err_upjabatan==1){ echo "style='border-color: red;'"; } ?> required>
+                                                            </div>
+                                                        </div>             
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="card-footer" style="background-color: unset;">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <table border=0 width="100%">
+                                                                    <tr>
+                                                                        <td style="text-align: right;">
+                                                                            <button id="btnaddparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                                            &nbsp&nbsp
+                                                                            <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
+                                                                        </td> 
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                </div>    
+                                            </div>
+                                        </div>      
+                                    </form>    
+                                </div>  
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- START END FORM ADD PAROKI -->
         <!-- START DELETE BANNER PAROKI -->
         <script>
             $("#btndeletebanner").click(function()

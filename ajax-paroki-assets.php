@@ -78,7 +78,7 @@ if(isset($_POST['delete_banner']))
 {
     $response_json       = array(
         'error_status'   => 1,
-        'error_message'  => 'Gambar gagal di upload ke server'
+        'error_message'  => 'Gambar gagal di hapus'
     );
 }    
 header("Content-type: application/json; charset=utf-8");

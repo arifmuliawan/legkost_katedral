@@ -255,7 +255,7 @@
                                                     <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
                                                     (500 x 500 px) JPG/JPEG/PNG
                                                 </div>
-                                                <img src="" id="photo_paroki" width="300px" style="display: none;">
+                                                <img src="" id="detail_photo_paroki" width="300px" style="display: none;">
                                                 <input type="hidden" name="id_paroki">
                                                 <button id="btndeletephotoparoki" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                                 <form id="formdetailparoki">
@@ -539,14 +539,14 @@
                 $("#modaldetailparoki input[name=position_paroki]").val( jdata.position_paroki);
                 if(jdata.photo_paroki.includes("placehold.co")===true)
                 {
-                    $("#modaldetailparoki #photo_paroki").hide();
+                    $("#modaldetailparoki #detail_photo_paroki").hide();
                     $("#modaldetailparoki #btndeletephotoparoki").hide();
                     $("#modaldetailparoki #photo_paroki").show();
                     $("#modaldetailparoki #btnupdatephotoparoki").show();
                 }    
                 else
                 {
-                    $("#modaldetailparoki #photo_paroki").attr('src', jdata.photo_paroki).show();
+                    $("#modaldetailparoki #detail_photo_paroki").attr('src', jdata.photo_paroki).show();
                     $("#modaldetailparoki #btndeletephotoparoki").show();
                     $("#modaldetailparoki #photo_paroki").hide();
                     $("#modaldetailparoki #btnupdatephotoparoki").hide();

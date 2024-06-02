@@ -190,7 +190,7 @@ if(isset($_FILES['add_paroki']))
                         $last_sort      = $data_sort['sortid'];
                         $new_sort       = $last_sort+1;
                     }
-                    $insert_paroki      = mysqli_query($con,"INSERT INTO `paroki_staff`(`sortid`, `name`, `position`, `url_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$new_sort','$nama_paroki','$jabatan_paroki','$name_photo','Y','$user','$now','$user','$now')")or die (mysqli_error($con));
+                    $insert_paroki      = mysqli_query($con,"INSERT INTO `paroki_staff`(`sortid`, `name`, `position`, `url_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$new_sort','$name_paroki','$position_paroki','$file_db_photo','Y','$user','$now','$user','$now')")or die (mysqli_error($con));
                     var_dump($insert_paroki);
                     if($insert_paroki!=1)
                     {

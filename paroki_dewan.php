@@ -87,14 +87,14 @@
                     if(data.error_status=='1')
                     {
                         notifmodal(data.error_message,'failed');
-                        var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);    
+                        //var delay = 2000;
+                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);    
                     }
                     else
                     {
                         notifmodal(data.error_message,'success');
-                        var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                        //var delay = 2000;
+                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
                     }
                     console.log(data,status);
                 }

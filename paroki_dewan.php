@@ -575,10 +575,10 @@
                     {
                         toastr['success'](data.error_message);
                         var delay = 3000;
-                        $("#updateparokimodal #photo_paroki").hide();
-                        $("#updateparokimodal #btndeletephoto").hide();
-                        $('#imageUpdateStaffParoki').show();
-                        $("#updateparokimodal #updateBtnStaffParoki").show();
+                        $("#modaldetailparoki #detail_photo_paroki").hide();
+                        $("#modaldetailparoki #btndeletephoto").hide();
+                        $("#formdetailparoki").show();
+                        $("#modaldetailparoki #btnupdatephotoparoki").show();
                     }
                     console.log(data,status);
                 }

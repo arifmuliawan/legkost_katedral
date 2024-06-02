@@ -80,7 +80,7 @@
             {
                 $.post('ajax-paroki-assets.php',
                 {
-                    delete_banner:$("#actdeletebanner input[name=deletebanner]").val()
+                    delete_banner:$("#formdeletebanner input[name=deletebanner]").val()
                 },
                 function(data,status)
                 {

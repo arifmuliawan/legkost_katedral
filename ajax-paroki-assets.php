@@ -130,7 +130,7 @@ if(isset($_POST['update_periode']))
 
 if(isset($_FILES['add_paroki']))
 {
-    print_r($_POST);
+    print_r($_FILES);
     exit();
     $name_paroki        = $_POST['name_paroki'];
     $position_paroki    = $_POST['position_paroki'];

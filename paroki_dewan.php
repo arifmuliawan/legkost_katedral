@@ -115,7 +115,7 @@
                                                     <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;">CLEAR SELECTION</button>
                                                 </td> 
                                                 <td width="50%" style="text-align: right;">
-                                                    <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#formaddparoki">ADD NEW</button>
+                                                    <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#modaladdparoki">ADD NEW</button>
                                                 </td>
                                             </tr>
                                         </table>
@@ -170,7 +170,7 @@
             </section>  
         </div>
         <!-- START MODAL FORM ADD PAROKI -->
-        <div class="modal fade" id="formaddparoki" style="pointer-events: none;">
+        <div class="modal fade" id="modaladdparoki" style="pointer-events: none;">
             <div class="modal-dialog" style="max-width: 800px;">
                 <div class="modal-content">
                     <div class="modal-body" style="padding: 40px;">
@@ -374,6 +374,79 @@
             });   
         </script>  
         <!-- END SAVE PERIODE PAROKI -->
+        <!-- START DROPZONE ADD PAROKI LIST -->
+        <script type="text/javascript">  
+            Dropzone.autoDiscover = false;
+            myDropzone2 = new Dropzone('#modaladdparoki div#photo_paroki', 
+            {
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 1,
+                paramName: 'add_paroki',
+                clickable: true,
+                thumbnailWidth:100,
+                thumbnailHeight:100,
+                acceptedFiles: "image/jpeg,image/png,image/jpg",
+                url: 'ajax-paroki_assets.php',
+                init: function () {
+
+                    var myDropzone2 = this;
+                    // Update selector to match your button
+                    $("#modaladdparoki #btnaddparoki").click(function (e) {
+                        e.preventDefault();
+                        myDropzone2.processQueue();
+                        return false;
+                    });
+
+                    this.on('sending', function (file, xhr, formData) {
+                        // Append all form inputs to the formData Dropzone will POST
+                        var data = $("#modaladdparoki #formaddparoki").serializeArray();
+                        $.each(data, function (key, el) {
+                            formData.append(el.name, el.value);
+                        });
+                        console.log(formData);
+
+                    });
+                },
+                error: function (file, response){
+                    if ($.type(response) === "string")
+                        var message = response; //dropzone sends it's own error messages in string
+                    else
+                        var message = response.message;
+                    file.previewElement.classList.add("dz-error");
+                    _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
+                    _results = [];
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i];
+                        _results.push(node.textContent = message);
+                    }
+                    if(response.error_status==1)
+                    {
+                        toastr['error'](response.error_message);
+                        var delay = 3000;
+                    }
+                    console.log(data,status);
+                    return _results;
+                },
+                successmultiple: function (file, response) {
+                    console.log(file, response);
+                    toastr['success'](response.error_message);
+                    var delay = 3000;
+                    setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                },
+                completemultiple: function (file, response) {
+                    console.log(file, response, "completemultiple");
+                    //$modal.modal("show");
+                },
+                reset: function () {
+                    console.log("resetFiles");
+                    this.removeAllFiles(true);
+                }
+            }); 
+        </script>
+        <!-- END DROPZONE ADD PAROKI LIST -->
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
             var parokipos   = document.querySelector('.paroki_position');

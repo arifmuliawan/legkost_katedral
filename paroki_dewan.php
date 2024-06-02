@@ -99,69 +99,71 @@
                         <!-- jquery validation -->
                         <div class="card" style="">
                         <!-- /.card-header -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="form-label">DAFTAR PENGURUS <font color='red'>*</font></label><br>
-                                            Pilih salah satu pengurus untuk mengubah detail.<br><br>     
-                                        </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <table border=0 width="100%">
-                                        <tr>
-                                            <td width="50%" style="text-align: left;">
-                                                <button type="button" class="btn" style="background-color:#9C9C9C;color: #ffffff;font-weight: bold;">DELETE SELECTED</button>
-                                                <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;">CLEAR SELECTION</button>
-                                            </td> 
-                                            <td width="50%" style="text-align: right;">
-                                                <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#addparokimodal">ADD NEW</button>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <br><br>
-                                </div>    
-                                <?php
-                                $query_paroki_list      = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
-                                $sum_paroki_list        = mysqli_num_rows($query_paroki_list);
-                                if($sum_paroki_list>0)
-                                {
-                                    while($data_paroki=mysqli_fetch_array($query_paroki_list))
-                                    {
-                                        $id_paroki          = $data_paroki['id'];
-                                        $sortid_paroki      = $data_paroki['sortid'];
-                                        $name_paroki        = $data_paroki['name'];
-                                        $position_paroki    = $data_paroki['position'];
-                                        $photo_data         = $data_paroki['url_img'];
-                                        if($photo_data!="")
-                                        {
-                                            $photo_paroki   = $base_assets."".$photo_data;
-                                        }
-                                        else
-                                        {
-                                            $photo_paroki   = "https://placehold.co/500x500";
-                                        }
-                                        $paroki_json      = array(
-                                            'id_paroki'      => $id_paroki,
-                                            'name_paroki'    => $name_paroki,
-                                            'position_paroki'=> $position_paroki,
-                                            'photo_paroki'   => $photo_paroki                                     
-                                        );
-                                ?>
-                                        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">
-                                            <div class="card bg-light d-flex flex-fill">
-                                                <div class="card-body pt-3">
-                                                    <img class="dataparoki" src=<?php echo $photo_paroki ?> width="100%" data-toggle="modal" data-target="#detailparokimodal" data-staff='<?php echo json_encode($paroki_json) ?>'>
-                                                </div>
-                                                <div class="card-footer">
-                                                
-                                                </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">DAFTAR PENGURUS <font color='red'>*</font></label><br>
+                                                Pilih salah satu pengurus untuk mengubah detail.<br><br>     
                                             </div>
-                                        </div>        
-                                <?php
+                                    </div>
+                                    <div class="col-md-12">
+                                        <table border=0 width="100%">
+                                            <tr>
+                                                <td width="50%" style="text-align: left;">
+                                                    <button type="button" class="btn" style="background-color:#9C9C9C;color: #ffffff;font-weight: bold;">DELETE SELECTED</button>
+                                                    <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;">CLEAR SELECTION</button>
+                                                </td> 
+                                                <td width="50%" style="text-align: right;">
+                                                    <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#addparokimodal">ADD NEW</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br><br>
+                                    </div>    
+                                    <?php
+                                    $query_paroki_list      = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
+                                    $sum_paroki_list        = mysqli_num_rows($query_paroki_list);
+                                    if($sum_paroki_list>0)
+                                    {
+                                        while($data_paroki=mysqli_fetch_array($query_paroki_list))
+                                        {
+                                            $id_paroki          = $data_paroki['id'];
+                                            $sortid_paroki      = $data_paroki['sortid'];
+                                            $name_paroki        = $data_paroki['name'];
+                                            $position_paroki    = $data_paroki['position'];
+                                            $photo_data         = $data_paroki['url_img'];
+                                            if($photo_data!="")
+                                            {
+                                                $photo_paroki   = $base_assets."".$photo_data;
+                                            }
+                                            else
+                                            {
+                                                $photo_paroki   = "https://placehold.co/500x500";
+                                            }
+                                            $paroki_json      = array(
+                                                'id_paroki'      => $id_paroki,
+                                                'name_paroki'    => $name_paroki,
+                                                'position_paroki'=> $position_paroki,
+                                                'photo_paroki'   => $photo_paroki                                     
+                                            );
+                                    ?>
+                                            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column" id="<?php echo $sortid_staff ?>" data-id="<?php echo $id_staff ?>" data-sec="<?php echo $sortid_staff ?>">
+                                                <div class="card bg-light d-flex flex-fill">
+                                                    <div class="card-body pt-3">
+                                                        <img class="dataparoki" src=<?php echo $photo_paroki ?> width="100%" data-toggle="modal" data-target="#detailparokimodal" data-staff='<?php echo json_encode($paroki_json) ?>'>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>        
+                                    <?php
+                                        }
                                     }
-                                }
-                                ?>
-                            </div>    
+                                    ?>
+                                </div> 
+                            </div>       
                         </div>
                     </div>
                 </div>

@@ -431,10 +431,18 @@
                     return _results;
                 },
                 successmultiple: function (file, response) {
-                    console.log(file, response);
-                    toastr['success'](response.error_message);
-                    var delay = 3000;
-                    //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                    if(response.error_status==0)
+                    {
+                        console.log(file, response);
+                        toastr['success'](response.error_message);
+                        var delay = 3000;
+                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                    }
+                    else
+                    {
+                        toastr['error'](response.error_message);
+                        var delay = 3000;
+                    }
                 },
                 completemultiple: function (file, response) {
                     console.log(file, response, "completemultiple");

@@ -78,7 +78,7 @@ if(isset($_POST['delete_banner']))
 {
     $response_json       = array(
         'error_status'   => 0,
-        'error_message'  => 'Perubahan anda telah berhasil disimpan'
+        'error_message'  => 'Penghapusan data telah berhasil'
     );
 }    
 header("Content-type: application/json; charset=utf-8");

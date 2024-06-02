@@ -45,8 +45,7 @@
                                 ?>    
                                     <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
                                     <form id="formdeletebanner">
-                                        <input type="hidden" name="deletebanner">
-                                        <input type="hidden" name="namebanner" value="<?php echo 'assets/'.$banner_paroki_assets; ?>">
+                                        <input type="hidden" name="deletebanner" value="<?php echo 'assets/'.$banner_paroki_assets; ?>">
                                         <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                     </form>    
                                 <?php
@@ -82,7 +81,6 @@
                 $.post('ajax-paroki-assets.php',
                 {
                     delete_banner:$("#formdeletebanner input[name=deletebanner]").val()
-                    name_banner:$("#formdeletebanner input[name=deletebanner]").val()
                 },
                 function(data,status)
                 {

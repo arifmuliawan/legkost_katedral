@@ -93,7 +93,7 @@
                         notifmodal(data.error_message,'success');
                         $("#formuploadbanner #upload_banner").show();
                         $("#formuploadbanner #btnsavebanner").show();
-                        $("#data-banner-paroki #imgbanner").attr('src', response.banner).hide();
+                        $("#data-banner-paroki #imgbanner").hide();
                         $("#data-banner-paroki #btndeletebanner").hide();
                     }
                     console.log(data,status);

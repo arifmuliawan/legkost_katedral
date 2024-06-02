@@ -458,7 +458,7 @@
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
             var parokilist  = document.querySelector('#list-paroki');
-            var sortable    = Sortable.create(parokilost,{
+            var sortable    = Sortable.create(parokilist,{
             onUpdate: function (/**Event*/evt) {
                 arr = [];index=0
                 $('.col-md-2').each(function(item){

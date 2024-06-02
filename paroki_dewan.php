@@ -100,7 +100,7 @@
                         <div class="card" style="">
                         <!-- /.card-header -->
                             <div class="card-body">
-                                <div class="row">
+                                <div class="row" id=list-paroki>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-label">DAFTAR PENGURUS <font color='red'>*</font></label><br>
@@ -121,7 +121,6 @@
                                         </table>
                                         <br><br>
                                     </div> 
-                                    <div class="list-paroki">   
                                     <?php
                                     $query_paroki_list      = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
                                     $sum_paroki_list        = mysqli_num_rows($query_paroki_list);
@@ -163,7 +162,6 @@
                                         }
                                     }
                                     ?>
-                                    </div>
                                 </div> 
                             </div>       
                         </div>
@@ -459,7 +457,7 @@
         <!-- END DROPZONE ADD PAROKI LIST -->
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
-            var parokilist  = document.querySelector('.list-paroki');
+            var parokilist  = document.querySelector('#list-paroki');
             var sortable    = Sortable.create(parokilost,{
             onUpdate: function (/**Event*/evt) {
                 arr = [];index=0

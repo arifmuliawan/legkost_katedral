@@ -161,13 +161,12 @@
                     if(response.error_status==0)
                     {
                         notifmodal(response.error_message,'success');
-                        /*var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);*/
-                        $("#formuploadbanner #upload_banner").hide();
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                        /*$("#formuploadbanner #upload_banner").hide();
                         $("#formuploadbanner #btnsavebanner").hide();
                         $("#formbanner #imgbanner").attr('src', response.banner).show();
-                        $("#formbanner #btndeletebanner").show();
-                        
+                        $("#formbanner #btndeletebanner").show();*/
                     }
                 },
                 completemultiple: function (file, response) {

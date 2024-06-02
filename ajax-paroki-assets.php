@@ -83,7 +83,7 @@ if(isset($_POST['delete_banner']))
     if($delete_banner!=1)
     {
         $response_json       = array(
-            'error_status'   => 1,
+            'error_status'   => 0,
             'error_message'  => 'Penghapusan data gagal diproses'
         );
     }
@@ -92,8 +92,8 @@ if(isset($_POST['delete_banner']))
         $file_directory_banner   = "assets/dist/img/paroki/".$_POST['name_banner'];
         unlink($file_directory_banner);
         $response_json       = array(
-            'error_status'   => 0,
-            'error_message'  => 'Penghapusan data telah berhasil'
+            'error_status'   => 1,
+            'error_message'  => 'Penghapusan data telah berhasil diproses'
         );
     }
 }    

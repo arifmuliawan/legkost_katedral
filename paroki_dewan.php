@@ -257,6 +257,7 @@
                                                 </div>
                                                 <img src="" id="detail_photo_paroki" width="300px">
                                                 <input type="hidden" name="id_paroki">
+                                                <input type="hidden" name="delete_photo_paroki">
                                                 <button id="btndeletephotoparoki" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                                 <form id="formdetailparoki">
                                                     <input type="hidden" name="id_paroki">
@@ -554,6 +555,30 @@
             });
         </script>
         <!-- END DATA DETAIL PAROKI LIST -->
+        <!-- START DELETE PHOTO PAROKI -->
+        <script>
+            $("#btndeletephotoparoki").click(function()
+            {
+                $.post('ajax-paroki-assets.php',
+                {
+                    id_paroki:$("#updateparokimodal input[name=id_paroki]").val(),
+                    delete_paroki:("#updateparokimodal input[name=delete_photo_paroki]").val()
+                },
+                function(data,status)
+                {
+                    /*if(data.delete_status=='1')
+                    {
+                        $("#updateparokimodal #photo_paroki").hide();
+                        $("#updateparokimodal #btndeletephoto").hide();
+                        $('#imageUpdateStaffParoki').show();
+                        $("#updateparokimodal #updateBtnStaffParoki").show();
+                    }*/
+                    console.log(data,status);
+                }
+                );
+            });   
+        </script>
+        <!-- END DELETE PHOTO PAROKI -->
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
             var parokilist  = document.querySelector('#list-paroki');

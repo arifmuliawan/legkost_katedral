@@ -43,8 +43,8 @@
                                 if($banner_paroki!="")
                                 {
                                 ?>    
-                                    <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
-                                    <form id="formdeletebanner">
+                                    <form id="formbanner">
+                                        <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
                                         <input type="hidden" name="deletebanner" value="<?php echo 'assets/'.$banner_paroki_assets; ?>">
                                         <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                     </form>    
@@ -80,7 +80,7 @@
             {
                 $.post('ajax-paroki-assets.php',
                 {
-                    delete_banner:$("#formdeletebanner input[name=deletebanner]").val()
+                    delete_banner:$("#formbanner input[name=deletebanner]").val()
                 },
                 function(data,status)
                 {
@@ -163,8 +163,8 @@
                         notifmodal(response.error_message,'success');
                         $("#formuploadbanner #upload_banner").hide();
                         $("#formuploadbanner #btnsavebanner").hide();
-                        $("#imgbanner").attr('src', response.banner).show();
-                        $("#btndeletebanner").show();
+                        $("#formbanner #imgbanner").attr('src', response.banner).show();
+                        $("#formbanner #btndeletebanner").show();
                     }
                 },
                 completemultiple: function (file, response) {

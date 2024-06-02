@@ -63,6 +63,7 @@ if(isset($_FILES['bannerparoki']))
                     }
                     else
                     {
+                        $new_banner          = $base_assets.$file_db_banner;
                         $response_json       = array(
                             'error_status'   => 0,
                             'error_message'  => 'Perubahan anda telah berhasil disimpan',

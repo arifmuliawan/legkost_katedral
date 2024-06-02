@@ -217,32 +217,23 @@ if(isset($_POST['delete_photo_paroki']))
 {
     print_r($_POST);
     exit();
-    $periode_paroki = $_POST['update_periode'];
-    if($periode_paroki=="")
+    $id_paroki = $_POST['id_paroki'];
+    $update_paroki  = mysqli_query($con,"UPDATE paroki_staff SET url_img='',update_by='$user',update_date='$now' WHERE id='$id_paroki'") or die (mysqli_error($con));
+    if($update_paroki!=1)
     {
+        http_response_code(410);
         $response_json       = array(
             'error_status'   => 1,
-            'error_message'  => 'Data periode paroki wajib diisi'
+            'error_message'  => 'Photo gagal dihapus'
         );
     }
     else
     {
-        $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$periode_paroki',update_by='$user',update_date='$now' WHERE id='2' AND code='2'") or die (mysqli_error($con));
-        if($update_banner!=1)
-        {
-            http_response_code(410);
-            $response_json       = array(
-                'error_status'   => 1,
-                'error_message'  => 'Data gagal disimpan'
-            );
-        }
-        else
-        {
-            $response_json       = array(
-                'error_status'   => 0,
-                'error_message'  => 'Perubahan data telah berhasil disimpan'
-            );
-        }
+        //unlink($file_directory_photo);
+        $response_json       = array(
+            'error_status'   => 0,
+            'error_message'  => 'Photo berhasil disimpan'
+        );
     }    
 } 
 

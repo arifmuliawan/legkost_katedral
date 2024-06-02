@@ -82,9 +82,9 @@
                 },
                 function(data,status)
                 {
-                    if(data.delete_status=='1')
+                    if(data.error_status=='1')
                     {
-                        alert("Delete Success");
+                        alert("Delete Failed");
                     }
                     console.log(data,status);
                 }

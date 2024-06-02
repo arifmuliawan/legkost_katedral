@@ -148,7 +148,7 @@
                                                 'photo_paroki'   => $photo_paroki                                     
                                             );
                                     ?>
-                                            <div class="col-12 col-sm-6 col-md-3 d-flex align-items-stretch flex-column" id="<?php echo $sortid_paroki ?>" data-id="<?php echo $id_paroki ?>" data-sec="<?php echo $sortid_paroki ?>">
+                                            <div class="col-md-3" id="<?php echo $sortid_paroki ?>" data-id="<?php echo $id_paroki ?>" data-sec="<?php echo $sortid_paroki ?>">
                                                 <div class="card bg-light d-flex flex-fill">
                                                     <div class="card-body pt-3">
                                                         <img class="dataparoki" src=<?php echo $photo_paroki ?> width="100%" data-toggle="modal" data-target="#detailparokimodal" data-staff='<?php echo json_encode($paroki_json) ?>'>

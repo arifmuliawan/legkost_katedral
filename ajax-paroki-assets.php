@@ -220,7 +220,7 @@ if(isset($_POST['delete_photo_paroki']))
     $sum_paroki     = 0;//mysqli_num_rows($select_paroki);
     if($sum_paroki<=0)
     {
-        http_response_code(410);
+        //http_response_code(410);
         $response_json       = array(
             'error_status'   => 1,
             'error_message'  => 'Data tidak ditemukan'

@@ -84,7 +84,7 @@
                 {
                     if(data.error_status=='1')
                     {
-                        notifmodal(response.error_message,'failed');
+                        notifmodal(data.error_message,'failed');
                     }
                     console.log(data,status);
                 }

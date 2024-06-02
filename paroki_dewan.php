@@ -88,6 +88,7 @@
                                 </div>
                                 <form id="formperiode">
                                     <input type="text" class="form-control" placeholder="Type something here...." name="periodeparoki" value="<?php $paroki_periode; ?>" required>
+                                    <br>
                                     <button id="btnsaveperiode" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                 </form>   
                             </div>

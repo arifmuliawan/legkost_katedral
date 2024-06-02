@@ -114,8 +114,8 @@
                 maxFiles: 1,
                 paramName: 'bannerparoki',
                 clickable: true,
-                thumbnailWidth:1456,
-                thumbnailHeight:560,
+                thumbnailWidth:500,
+                thumbnailHeight:190,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
                 url: 'ajax-paroki-assets.php',
                 init: function () {

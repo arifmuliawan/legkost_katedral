@@ -16,6 +16,7 @@
                 <div class="container-fluid">
                     <div class="row">
                     <!-- left column -->
+                    <!-- HANDLE BANNER PAROKI --->
                     <div class="col-md-12">
                         <!-- jquery validation -->
                         <div class="card" style="">
@@ -68,6 +69,27 @@
                                 <?php
                                 }
                                 ?>    
+                            </div>
+                        </div>
+                    </div>
+                    <!-- HANDLE PERIODE PAROKI --->
+                    <div class="col-md-12">
+                        <!-- jquery validation -->
+                        <div class="card" style="">
+                        <!-- /.card-header -->
+                            <?php
+                            $query_paroki_periode   = mysqli_query($con,"SELECT * FROM paroki_asset WHERE id='2' AND code='2'")or die (mysqli_error($con));
+                            $data_paroki_periode    = mysqli_fetch_array($query_paroki_periode);
+                            $paroki_periode  = $data_paroki_periode['url_img'];
+                            ?>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>PERIODE JABATAN <font color='red'>*</font></label> 
+                                </div>
+                                <form id="formperiode">
+                                    <input type="text" class="form-control" placeholder="Type something here...." name="periodeparoki" value="<?php $paroki_periode; ?>" required>
+                                    <button id="btnsaveperiode" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                </form>   
                             </div>
                         </div>
                     </div>
@@ -180,6 +202,34 @@
             });
         </script> 
         <!-- END DROPZONE & NOTIF UPLOAD BANNER PAROKI -->  
+        <!-- START SAVE PERIODE PAROKI -->
+        <script>
+            $("#btnsaveperiode").click(function()
+            {
+                $.post('ajax-paroki-assets.php',
+                {
+                    update_periode:$("#formperiode input[name=periodeparoki]").val()
+                },
+                function(data,status)
+                {
+                    if(data.error_status=='1')
+                    {
+                        notifmodal(data.error_message,'failed');
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);    
+                    }
+                    else
+                    {
+                        notifmodal(data.error_message,'success');
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                    }
+                    console.log(data,status);
+                }
+                );
+            });   
+        </script>  
+        <!-- END SAVE PERIODE PAROKI -->
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
             var parokipos   = document.querySelector('.paroki_position');

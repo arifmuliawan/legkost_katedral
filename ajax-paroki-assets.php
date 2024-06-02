@@ -77,8 +77,8 @@ if(isset($_FILES['bannerparoki']))
 if(isset($_POST['delete_banner']))
 {
     $response_json       = array(
-        'error_status'   => 1,
-        'error_message'  => 'Gambar gagal di hapus'
+        'error_status'   => 0,
+        'error_message'  => 'Perubahan anda telah berhasil disimpan'
     );
 }    
 header("Content-type: application/json; charset=utf-8");

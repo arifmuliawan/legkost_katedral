@@ -115,7 +115,6 @@
                                 </div>    
                                 <?php
                                 $query_paroki_list      = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
-                                $data_paroki_list       = mysqli_fetch_array($query_paroki_list);
                                 $sum_paroki_list        = mysqli_num_rows($query_paroki_list);
                                 if($sum_paroki_list>0)
                                 {

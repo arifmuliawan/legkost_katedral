@@ -566,8 +566,14 @@
                 },
                 function(data,status)
                 {
-                    alert(data);
-                    if(data.error_status=='0')
+                    alert(data,status);
+                    /*
+                    if(data.error_status=='1')
+                    {
+                        toastr['error'](data.error_message);
+                        var delay = 3000;
+                    }
+                    else
                     {
                         toastr['success'](data.error_message);
                         var delay = 3000;
@@ -576,12 +582,7 @@
                         $('#imageUpdateStaffParoki').show();
                         $("#updateparokimodal #updateBtnStaffParoki").show();
                     }
-                    else
-                    {
-                        toastr['error'](data.error_message);
-                        var delay = 3000;
-                    }
-                    console.log(data,status);
+                    console.log(data,status);*/
                 }
                 );
             });   

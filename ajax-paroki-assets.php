@@ -130,16 +130,14 @@ if(isset($_POST['update_periode']))
 
 if(isset($_FILES['add_paroki']))
 {
-    print_r($_FILES);
-    exit();
     $name_paroki        = $_POST['name_paroki'];
     $position_paroki    = $_POST['position_paroki'];
-    if($_FILES['add_paroki']['name']!='')
+    if($_FILES['add_paroki']['name'][0]!='')
     {
         $ekstensi_diperbolehkan = array('png','jpg','jpeg');
         $nama_photo             = $_FILES['bannerparoki']['name'][0];
         $x_photo                = explode('.', $nama_photo);
-        $ekstensi_photo         = strtolower(end($x_banner));
+        $ekstensi_photo         = strtolower(end($x_photo));
         $ukuran_photo           = $_FILES['bannerparoki']['size'][0];
         $file_tmp_photo         = $_FILES['bannerparoki']['tmp_name'][0];
         $file_directory_photo   = "assets/dist/img/paroki/".$nama_photo;

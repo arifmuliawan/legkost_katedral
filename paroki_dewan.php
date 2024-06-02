@@ -432,9 +432,9 @@
                 },
                 successmultiple: function (file, response) {
                     console.log(file, response);
-                    //toastr['success'](response.error_message);
-                    //var delay = 3000;
-                    //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                    toastr['success'](response.error_message);
+                    var delay = 3000;
+                    setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
                 },
                 completemultiple: function (file, response) {
                     console.log(file, response, "completemultiple");

@@ -74,7 +74,7 @@
         </div>
         <!-- START DELETE BANNER PAROKI -->
         <script>
-            $("#btndeletebanner").click(function()
+            $("#data-banner-paroki #btndeletebanner").click(function()
             {
                 $.post('ajax-paroki-assets.php',
                 {

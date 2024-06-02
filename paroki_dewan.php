@@ -433,16 +433,16 @@
                 successmultiple: function (file, response) {
                     if(response.error_status==0)
                     {
-                        console.log(file, response);
                         toastr['success'](response.error_message);
                         var delay = 3000;
-                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
                     }
                     else
                     {
                         toastr['error'](response.error_message);
                         var delay = 3000;
                     }
+                    console.log(file, response);
                 },
                 completemultiple: function (file, response) {
                     console.log(file, response, "completemultiple");

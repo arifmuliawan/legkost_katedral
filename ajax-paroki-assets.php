@@ -2,8 +2,6 @@
 include("config.php");
 include("session.php");
 //include("session.php");
-print_r($_FILES);
-exit();
 if(isset($_FILES['bannerparoki']))
 {
     if($_FILES['bannerparoki']['name']!='')

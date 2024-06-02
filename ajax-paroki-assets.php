@@ -229,8 +229,6 @@ if(isset($_POST['delete_photo_paroki']))
     {
         $data_paroki    = mysqli_fetch_array($select_paroki);
         $photo_paroki   = 'assets/'.$data_paroki['url_img'];
-        print_r($photo_paroki);
-        exit();
         $update_paroki  = mysqli_query($con,"UPDATE paroki_staff SET url_img='',update_by='$user',update_date='$now' WHERE id='$id_paroki'") or die (mysqli_error($con));
         if($update_paroki!=1)
         {

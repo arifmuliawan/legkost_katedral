@@ -120,7 +120,8 @@
                                             </tr>
                                         </table>
                                         <br><br>
-                                    </div>    
+                                    </div> 
+                                    <div class="list-paroki">   
                                     <?php
                                     $query_paroki_list      = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));
                                     $sum_paroki_list        = mysqli_num_rows($query_paroki_list);
@@ -162,6 +163,7 @@
                                         }
                                     }
                                     ?>
+                                    </div>
                                 </div> 
                             </div>       
                         </div>
@@ -457,7 +459,7 @@
         <!-- END DROPZONE ADD PAROKI LIST -->
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
-            var parokipos   = document.querySelector('.paroki_position');
+            var parokipos   = document.querySelector('.list-paroki');
             var sortable    = Sortable.create(parokipos,{
             onUpdate: function (/**Event*/evt) {
                 arr = [];index=0

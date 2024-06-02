@@ -386,8 +386,8 @@
                 maxFiles: 1,
                 paramName: 'add_paroki',
                 clickable: true,
-                thumbnailWidth:100,
-                thumbnailHeight:100,
+                thumbnailWidth:150,
+                thumbnailHeight:150,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
                 url: 'ajax-paroki_assets.php',
                 init: function () {

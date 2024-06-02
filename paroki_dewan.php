@@ -151,7 +151,7 @@
                                             <div class="col-md-3" id="<?php echo $sortid_paroki ?>" data-id="<?php echo $id_paroki ?>" data-sec="<?php echo $sortid_paroki ?>">
                                                 <div class="card bg-light d-flex flex-fill">
                                                     <div class="card-body pt-3">
-                                                        <img class="dataparoki" src=<?php echo $photo_paroki ?> width="100%" data-toggle="modal" data-target="#detailparokimodal" data-staff='<?php echo json_encode($paroki_json) ?>'>
+                                                        <img class="dataparoki" src=<?php echo $photo_paroki ?> width="100%" data-toggle="modal" data-target="#modaldetailparoki" data-paroki='<?php echo json_encode($paroki_json) ?>'>
                                                     </div>
                                                     <div class="card-footer">
                                                     
@@ -239,7 +239,80 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
-        <!-- START END FORM ADD PAROKI -->
+        <!-- END MODAL FORM ADD PAROKI -->
+        <!-- START MODAL FORM DETAIL PAROKI -->
+        <div class="modal fade" id="modaldetailparoki">
+            <div class="modal-dialog" style="max-width: 800px;">
+                <div class="modal-content">
+                    <div class="modal-body" style="padding: 40px;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card-body">    
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
+                                                    (500 x 500 px) JPG/JPEG/PNG
+                                                </div>
+                                                <img src="" id="photo_paroki" width="300px" style="display: none;">
+                                                <input type="hidden" name="id_paroki">
+                                                <button id="btndeletephotoparoki" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                                <form id="formdetailparoki">
+                                                    <input type="hidden" name="id_paroki">
+                                                    <div id="photo_paroki" class="dropzone">
+                                                        <div class="dz-message">
+                                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                            <b>.JPG  .JPEG  .PNG</b><br>
+                                                            Drop files to upload <br>
+                                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                                        </div>
+                                                    </div>
+                                                    <button id="btnupdatephotoparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 15px;">SAVE</button>
+                                                </form>  
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <input type="hidden" name="id_paroki">
+                                                                <label class="form-label">NAMA <font color='red'>*</font></label>
+                                                                <input type="text" name="name_paroki" class="form-control" placeholder="Type something here....">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label class="form-label">JABATAN <font color='red'>*</font></label>
+                                                                <input type="text" name="position_paroki" class="form-control" placeholder="Type something here....">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <table border=0 width="100%">
+                                                                <tr>
+                                                                    <td style="text-align: right;">
+                                                                        <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
+                                                                        &nbsp&nbsp
+                                                                        <button id="btnupdatedetailparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                                    </td> 
+                                                                </tr>
+                                                            </table>
+                                                        </div>             
+                                                    </div>
+                                                </div>   
+                                            </div>       
+                                        </div>
+                                    </div>   
+                                </div> 
+                            </div>     
+                        </div>    
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- END MODAL FORM DETAIL PAROKI -->
         <!-- START DELETE BANNER PAROKI -->
         <script>
             $("#btndeletebanner").click(function()
@@ -455,6 +528,32 @@
             }); 
         </script>
         <!-- END DROPZONE ADD PAROKI LIST -->
+        <!-- START DATA DETAIL PAROKI LIST -->
+        <script>
+            $(document).on("click", ".dataparoki", function () {
+                var me      = $(this);
+                var data    = me.attr('data-paroki');
+                var jdata   = JSON.parse(data);
+                $("#modaldetailparoki input[name=id_paroki]").val( jdata.id_paroki);
+                $("#modaldetailparoki input[name=name_paroki]").val( jdata.name_paroki);
+                $("#modaldetailparoki input[name=position_paroki]").val( jdata.position_paroki);
+                if(jdata.photo_paroki.includes("placehold.co")===true)
+                {
+                    $("#modaldetailparoki #photo_paroki").hide();
+                    $("#modaldetailparoki #btndeletephotoparoki").hide();
+                    $("#modaldetailparoki #photo_paroki").show();
+                    $("#modaldetailparoki #btnupdatephotoparoki").show();
+                }    
+                else
+                {
+                    $("#modaldetailparoki #photo_paroki").attr('src', jdata.photo_paroki).show();
+                    $("#modaldetailparoki #btndeletephotoparoki").show();
+                    $("#modaldetailparoki #photo_paroki").hide();
+                    $("#modaldetailparoki #btnupdatephotoparoki").hide();
+                }    
+            });
+        </script>
+        <!-- END DATA DETAIL PAROKI LIST -->
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
             var parokilist  = document.querySelector('#list-paroki');

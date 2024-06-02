@@ -215,26 +215,39 @@ if(isset($_FILES['add_paroki']))
 
 if(isset($_POST['delete_photo_paroki']))
 {
-    print_r($_POST);
-    exit();
     $id_paroki = $_POST['id_paroki'];
-    $update_paroki  = mysqli_query($con,"UPDATE paroki_staff SET url_img='',update_by='$user',update_date='$now' WHERE id='$id_paroki'") or die (mysqli_error($con));
-    if($update_paroki!=1)
+    $select_paroki  = mysqli_query($con,"SELECT * FROM paroki_staff WHERE id='$id_paroki' AND visible='Y'") or die (mysqli_error($con));
+    $sum_paroki     = 0;//mysqli_num_rows($select_paroki);
+    if($sum_paroki<=0)
     {
         http_response_code(410);
         $response_json       = array(
             'error_status'   => 1,
-            'error_message'  => 'Photo gagal dihapus'
+            'error_message'  => 'Data tidak ditemukan'
         );
     }
     else
     {
-        //unlink($file_directory_photo);
-        $response_json       = array(
-            'error_status'   => 0,
-            'error_message'  => 'Photo berhasil disimpan'
-        );
-    }    
+        $data_paroki    = mysqli_fetch_array($select_paroki);
+        $photo_paroki   = 'assets.'.$data_paroki['url_img'];
+        $update_paroki  = mysqli_query($con,"UPDATE paroki_staff SET url_img='',update_by='$user',update_date='$now' WHERE id='$id_paroki'") or die (mysqli_error($con));
+        if($update_paroki!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Photo gagal dihapus'
+            );
+        }
+        else
+        {
+            unlink($photo_paroki);
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Photo berhasil disimpan'
+            );
+        }
+    }        
 } 
 
 header("Content-type: application/json; charset=utf-8");

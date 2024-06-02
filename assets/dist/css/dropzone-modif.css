@@ -13,3 +13,19 @@
     width: 500px;
     height: 190px;
 }
+
+#formaddparoki
+{
+    padding : 0 !important;
+}
+
+#formaddparoki .dz-preview
+{
+    margin: 0 !important;
+}
+            
+#formaddparoki .dz-preview .dz-image
+{
+    width: 150px;
+    height: 150px;
+}

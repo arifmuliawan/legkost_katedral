@@ -16,7 +16,7 @@
                 <div class="container-fluid">
                     <div class="row">
                     <!-- left column -->
-                    <div class="col-md-12" id="data-banner-paroki">
+                    <div class="col-md-12">
                         <!-- jquery validation -->
                         <div class="card" style="">
                         <!-- /.card-header -->
@@ -44,7 +44,7 @@
                                 {
                                 ?>    
                                     <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
-                                    <input type="hidden" name="deletebanner">
+                                    <input type="hidden" name="deletebanner" id="actdeletebanner">
                                     <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                 <?php
                                 }
@@ -78,7 +78,7 @@
             {
                 $.post('ajax-paroki-assets.php',
                 {
-                    delete_banner:$("#data-banner-paroki input[name=deletebanner]").val()
+                    delete_banner:$("#actdeletebanner input[name=deletebanner]").val()
                 },
                 function(data,status)
                 {
@@ -93,8 +93,8 @@
                         notifmodal(data.error_message,'success');
                         $("#formuploadbanner #upload_banner").show();
                         $("#formuploadbanner #btnsavebanner").show();
-                        $("#data-banner-paroki #imgbanner").hide();
-                        $("#data-banner-paroki #btndeletebanner").hide();
+                        $("#imgbanner").hide();
+                        $("#btndeletebanner").hide();
                     }
                     console.log(data,status);
                 }

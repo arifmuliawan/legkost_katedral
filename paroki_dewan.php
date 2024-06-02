@@ -564,11 +564,12 @@
                     id_paroki:$("#modaldetailparoki input[name=id_paroki]").val(),
                     delete_photo_paroki:$("#modaldetailparoki input[name=delete_photo_paroki]").val()
                 },
-                function(data,response)
+                function(data,status)
                 {
-                    if(response.error_status=='0')
+                    alert(data);
+                    if(data.error_status=='0')
                     {
-                        toastr['success'](response.error_message);
+                        toastr['success'](data.error_message);
                         var delay = 3000;
                         $("#updateparokimodal #photo_paroki").hide();
                         $("#updateparokimodal #btndeletephoto").hide();
@@ -577,7 +578,7 @@
                     }
                     else
                     {
-                        toastr['error'](response.error_message);
+                        toastr['error'](data.error_message);
                         var delay = 3000;
                     }
                     console.log(data,status);

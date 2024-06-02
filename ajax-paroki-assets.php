@@ -155,7 +155,7 @@ if(isset($_FILES['add_paroki']))
         }
         else
         {
-            if(($banner_width<='495' && $banner_width>='505') && ($banner_height<='495' && $banner_height>='505'))
+            if(($photo_width<='495' && $photo_width>='505') && ($photo_height<='495' && $photo_height>='505'))
             {
                 http_response_code(410);
                 $response_json       = array(
@@ -165,7 +165,7 @@ if(isset($_FILES['add_paroki']))
             }
             else
             {
-                $upload_file   = @move_uploaded_file($file_tmp_banner, $file_directory_banner);
+                $upload_file   = @move_uploaded_file($file_tmp_photo, $file_directory_photo);
                 if($upload_file===false)
                 {
                     http_response_code(410);
@@ -195,7 +195,7 @@ if(isset($_FILES['add_paroki']))
                     //exit();
                     if($insert_paroki!=1)
                     {
-                        unlink($file_directory_banner);
+                        unlink($file_directory_photo);
                         http_response_code(410);
                             $response_json       = array(
                             'error_status'   => 1,

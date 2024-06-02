@@ -99,7 +99,7 @@ if(isset($_POST['delete_banner']))
 
 if(isset($_POST['update_periode']))
 {
-    $periode_paroki = $_POST['update_paroki'];
+    $periode_paroki = $_POST['update_periode'];
     $update_banner  = mysqli_query($con,"UPDATE paroki_asset SET url_img='$periode_paroki',update_by='$user',update_date='$now' WHERE id='2' AND code='2'") or die (mysqli_error($con));
     if($update_banner!=1)
     {

@@ -78,7 +78,7 @@
             {
                 $.post('ajax-paroki-assets.php',
                 {
-                    delete_paroki:$("#data-banner-paroki input[name=deletebanner]").val()
+                    delete_banner:$("#data-banner-paroki input[name=deletebanner]").val()
                 },
                 function(data,status)
                 {

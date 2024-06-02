@@ -80,14 +80,14 @@
                             <?php
                             $query_paroki_periode   = mysqli_query($con,"SELECT * FROM paroki_asset WHERE id='2' AND code='2'")or die (mysqli_error($con));
                             $data_paroki_periode    = mysqli_fetch_array($query_paroki_periode);
-                            $paroki_periode  = $data_paroki_periode['url_img'];
+                            $paroki_periode         = $data_paroki_periode['url_img'];
                             ?>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>PERIODE JABATAN <font color='red'>*</font></label> 
                                 </div>
                                 <form id="formperiode">
-                                    <input type="text" class="form-control" placeholder="Type something here...." name="periodeparoki" value="<?php $paroki_periode; ?>">
+                                    <input type="text" class="form-control" placeholder="Type something here...." name="periodeparoki" value="<?php echo $paroki_periode ?>">
                                     <br>
                                     <button id="btnsaveperiode" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                 </form>   

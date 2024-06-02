@@ -87,7 +87,6 @@ if(isset($_POST['delete_banner']))
     }
     else
     {
-        $file_directory_banner   = "assets/dist/img/paroki/".$_POST['name_banner'];
         unlink($file_directory_banner);
         $response_json       = array(
             'error_status'   => 1,

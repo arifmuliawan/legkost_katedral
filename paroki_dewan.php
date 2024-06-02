@@ -101,6 +101,12 @@
                         <!-- /.card-header -->
                             <div class="row">
                                 <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">DAFTAR PENGURUS <font color='red'>*</font></label><br>
+                                            Pilih salah satu pengurus untuk mengubah detail.<br><br>     
+                                        </div>
+                                </div>
+                                <div class="col-md-12">
                                     <table border=0 width="100%">
                                         <tr>
                                             <td width="50%" style="text-align: left;">
@@ -112,6 +118,7 @@
                                             </td>
                                         </tr>
                                     </table>
+                                    <br><br>
                                 </div>    
                                 <?php
                                 $query_paroki_list      = mysqli_query($con,"SELECT * FROM paroki_staff WHERE visible='Y' order by sortid ASC")or die (mysqli_error($con));

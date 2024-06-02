@@ -102,7 +102,6 @@ if(isset($_POST['update_periode']))
     $periode_paroki = $_POST['update_periode'];
     if($periode_paroki=="")
     {
-        http_response_code(410);
         $response_json       = array(
             'error_status'   => 1,
             'error_message'  => 'Data periode paroki wajib diisi'

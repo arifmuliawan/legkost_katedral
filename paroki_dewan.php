@@ -566,8 +566,6 @@
                 },
                 function(data,status)
                 {
-                    alert(data,status);
-                    /*
                     if(data.error_status=='1')
                     {
                         toastr['error'](data.error_message);
@@ -582,7 +580,7 @@
                         $('#imageUpdateStaffParoki').show();
                         $("#updateparokimodal #updateBtnStaffParoki").show();
                     }
-                    console.log(data,status);*/
+                    console.log(data,status);
                 }
                 );
             });   

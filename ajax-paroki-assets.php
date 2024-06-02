@@ -197,7 +197,7 @@ if(isset($_FILES['add_paroki']))
                     {
                         unlink($file_directory_photo);
                         http_response_code(410);
-                            $response_json       = array(
+                            $response_json   = array(
                             'error_status'   => 1,
                             'error_message'  => 'Gambar gagal di upload ke server'
                         );

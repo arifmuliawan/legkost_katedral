@@ -338,7 +338,7 @@ if(isset($_FILES['update_photo_paroki']))
                         $response_json       = array(
                             'error_status'   => 0,
                             'error_message'  => 'Penambahan data telah berhasil disimpan',
-                            'new_photo'      => $base_assets.$file_directory_photo
+                            'new_photo'      => $base_assets.$file_db_photo
                         );
                     }
                 }    

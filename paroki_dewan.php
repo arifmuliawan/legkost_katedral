@@ -675,7 +675,7 @@
         <script>
             $("#btnupdatedetailparoki").click(function()
             {
-                $.post('ajax-paroki_assets.php',
+                $.post('ajax-paroki-assets.php',
                 {
                     id_paroki:$("#updateparokimodal input[name=id_paroki]").val(),
                     name_paroki:$("#updateparokimodal input[name=name_paroki]").val(),

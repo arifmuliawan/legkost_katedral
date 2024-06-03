@@ -69,7 +69,7 @@
                                                                         $sch    = $ds;
                                                                     ?>
                                                                         <tr style="<?php echo $clr_row ?>" class="tableid">
-                                                                            <td><?php echo $sch ?></td>
+                                                                            <td style="border: unset;"><?php echo $sch ?></td>
                                                                         </tr>    
                                                                     <?php
                                                                         $i++;

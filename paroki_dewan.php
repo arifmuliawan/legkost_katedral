@@ -722,6 +722,7 @@
                     {
                         toastr['success'](data.error_message);
                         var delay = 3000;
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
                     }
                     console.log(data,status);
                 }

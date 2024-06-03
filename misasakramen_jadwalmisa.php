@@ -47,7 +47,7 @@
                                                         $misa_day_name  = $data_misa_day['name'];
                                                         $misa_day_sch   = $data_misa_day['schedule']
                                                 ?>
-                                                        <table class="table" style="margin: 24px;width: 100%;">
+                                                        <table class="table" style="margin: 24px;width: 50%;">
                                                             <thead style="color: #000000;">
                                                                 <tr>
                                                                     <th colspan="" style="padding: unset;border: unset;">

@@ -29,3 +29,19 @@
     width: 150px;
     height: 150px;
 }
+
+#formdetailparoki
+{
+    padding : 0 !important;
+}
+
+#formdetailparoki .dz-preview
+{
+    margin: 0 !important;
+}
+            
+#formdetailparoki .dz-preview .dz-image
+{
+    width: 150px;
+    height: 150px;
+}

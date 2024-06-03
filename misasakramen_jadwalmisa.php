@@ -47,8 +47,8 @@
                                                         $misa_day_name  = $data_misa_day['name'];
                                                         $misa_day_sch   = $data_misa_day['schedule']
                                                 ?>
-                                                        <table class="table" style="text-align: center;">
-                                                            <thead style="background-color: #88A8D4;color: #ffffff;">
+                                                        <table class="table">
+                                                            <thead style="background-color: #88A8D4;color: #000000;">
                                                                 <tr>
                                                                     <th><?php echo $misa_day_name ?></th>
                                                                 </tr>

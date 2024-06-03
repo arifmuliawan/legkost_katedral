@@ -50,9 +50,31 @@
                                                         <table class="table" style="margin: 24px;width: 100%;">
                                                             <thead style="color: #000000;">
                                                                 <tr>
-                                                                    <th style="padding: unset;border: unset;">
+                                                                    <th colspan="" style="padding: unset;border: unset;">
                                                                         <?php echo $misa_day_name ?>
                                                                     </th>
+                                                                    <?php
+                                                                    $exp_day_sch    = explode("|",$misa_day_sch);
+                                                                    $i=1;
+                                                                    foreach($exp_day_sch as $ds)
+                                                                    {
+                                                                        if ($i % 2 == 0)
+                                                                        {
+                                                                            $clr_row = "background-color: #D9D9D9B2;";
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            $clr_row = "background-color: #ffffff;";
+                                                                        }
+                                                                        $sch    = $ds;
+                                                                    ?>
+                                                                        <tr style="<?php echo $clr_row ?>" class="tableid">
+                                                                            <td><?php echo $sch ?></td>
+                                                                        </tr>    
+                                                                    <?php
+                                                                        $i++;
+                                                                    }                                                                    
+                                                                    ?>
                                                                 </tr>
                                                             </thead>
                                                             <tbody class="row_position">

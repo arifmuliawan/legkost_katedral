@@ -706,11 +706,11 @@
         <script>
             $("#list-paroki #btndeleteparoki").click(function()
             {
+                var me2      = $(this);
+                var data2    = me2.val('data-paroki-2');
+                var jdata2   = JSON.parse(data2);
                 $.post('ajax-paroki-assets.php',
                 {
-                    var me2      = $(this);
-                    var data2    = me2.attr('data-paroki-2');
-                    var jdata2   = JSON.parse(data2);
                     id_paroki:$("#list-paroki input[name=id_paroki]").val(jdata2.id_paroki),
                     delete_paroki:$("#list-paroki input[name=delete_paroki]").val()
                 },

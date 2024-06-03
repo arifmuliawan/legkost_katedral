@@ -272,6 +272,7 @@
                                                     <button id="btnupdatephotoparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 15px;">SAVE</button>
                                                 </form>  
                                             </div>
+                                            <form id="formdetailparoki2">
                                             <div class="col-md-6">
                                                 <div class="col-md-12">
                                                     <div class="row">
@@ -302,7 +303,8 @@
                                                         </div>             
                                                     </div>
                                                 </div>   
-                                            </div>       
+                                            </div> 
+                                            </form>      
                                         </div>
                                     </div>   
                                 </div> 
@@ -677,10 +679,10 @@
             {
                 $.post('ajax-paroki-assets.php',
                 {
-                    id_paroki:$("#updateparokimodal input[name=id_paroki]").val(),
-                    name_paroki:$("#updateparokimodal input[name=name_paroki]").val(),
-                    position_paroki:$("#updateparokimodal input[name=position_paroki]").val(),
-                    edit_paroki:$("#updateparokimodal input[name=edit_paroki]").val()
+                    id_paroki:$("#updateparokimodal #formdetailparoki2 input[name=id_paroki]").val(),
+                    name_paroki:$("#updateparokimodal #formdetailparoki2 input[name=name_paroki]").val(),
+                    position_paroki:$("#updateparokimodal #formdetailparoki2 input[name=position_paroki]").val(),
+                    edit_paroki:$("#updateparokimodal #formdetailparoki2 input[name=edit_paroki]").val()
                 },
                 function(data,status)
                 {

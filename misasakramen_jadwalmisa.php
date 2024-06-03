@@ -23,7 +23,6 @@
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <div class="card-body">
-                                <div class="row">
                                 <?php
                                     $query_misa_category    = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='0' AND visible='Y'")or die (mysqli_error($con));
                                     $sum_misa_category      = mysqli_num_rows($query_misa_category);
@@ -68,7 +67,6 @@
                                         }
                                     }
                                 ?>
-                                </div>
                             </div>
                         </div>
                     </div>

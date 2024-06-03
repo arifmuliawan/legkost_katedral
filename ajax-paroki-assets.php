@@ -389,7 +389,7 @@ if(isset($_POST['edit_paroki']))
         }
         else
         {
-            $update_paroki  = mysqli_query($con,"UPDATE paroki_staff SET name_paroki='$name_paroki',position_paroki='$position_paroki',update_by='$user',update_date='$now' WHERE id='$id_paroki'") or die (mysqli_error($con));
+            $update_paroki  = mysqli_query($con,"UPDATE paroki_staff SET name='$name_paroki',position='$position_paroki',update_by='$user',update_date='$now' WHERE id='$id_paroki'") or die (mysqli_error($con));
             if($update_paroki!=1)
             {
                 $response_json       = array(

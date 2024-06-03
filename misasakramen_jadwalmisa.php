@@ -74,7 +74,7 @@
                                                                     ?>
                                                                         <tr style="<?php echo $clr_row ?>" class="tableid">
                                                                             <td style="border: unset;">
-                                                                                <select class="form-control">
+                                                                                <select class="form-control" style="width: 12%;">
                                                                                     <option>00</option>
                                                                                     <option>01</option>
                                                                                     <option>02</option>
@@ -101,7 +101,7 @@
                                                                                     <option>23</option>
                                                                                 </select>
                                                                                 :
-                                                                                <select class="form-control">
+                                                                                <select class="form-control" style="width: 12%;">
                                                                                     <option>00</option>
                                                                                     <option>15</option>
                                                                                     <option>30</option>

@@ -48,7 +48,7 @@
                                                         $misa_day_name  = $data_misa_day['name'];
                                                         $misa_day_sch   = $data_misa_day['schedule']
                                                 ?>
-                                                        <div class="col-sm-12" style="margin: 24px;">
+                                                        <div class="col-sm-12" style="margin: 10px 24px;">
                                                             <div id="dayname" style="font-weight: bold;font-size: larger;"> <?php echo $misa_day_name ?> </div>
                                                         </div>
                                                 <?php

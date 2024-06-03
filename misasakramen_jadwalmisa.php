@@ -125,7 +125,10 @@
                                                                     }                                                                    
                                                                     ?>
                                                             </tbody>
-                                                        </table>    
+                                                        </table>  
+                                                        <button id="btnaddparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
+                                                        &nbsp&nbsp
+                                                        <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">RESET ALL</button></a>  
                                                 <?php
                                                     }
                                                 }

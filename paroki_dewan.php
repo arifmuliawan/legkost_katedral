@@ -677,10 +677,10 @@
             {
                 $.post('ajax-paroki-assets.php',
                 {
-                    id_paroki:$("#updateparokimodal #formdetailparoki2 input[name=id_paroki]").val(),
-                    name_paroki:$("#updateparokimodal #formdetailparoki2 input[name=name_paroki]").val(),
-                    position_paroki:$("#updateparokimodal #formdetailparoki2 input[name=position_paroki]").val(),
-                    edit_paroki:$("#updateparokimodal #formdetailparoki2 input[name=edit_paroki]").val()
+                    id_paroki:$("#modaldetailparoki input[name=id_paroki]").val(),
+                    name_paroki:$("#modaldetailparoki input[name=name_paroki]").val(),
+                    position_paroki:$("#modaldetailparoki input[name=position_paroki]").val(),
+                    edit_paroki:$("#modaldetailparoki input[name=edit_paroki]").val()
                 },
                 function(data,status)
                 {

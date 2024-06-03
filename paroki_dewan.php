@@ -156,7 +156,7 @@
                                                     <div class="card-footer" style="text-align:right">
                                                         <input type="hidden" name="id_paroki" value="<?php echo $id_paroki ?>">
                                                         <input type="hidden" name="delete_paroki">
-                                                        <button id="btndeleteparoki" type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm"><i class="nav-icon fas fa-trash"></i></button>
+                                                        <button id="btndeleteparoki" type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm" onclick="return confirm('Are you sure you want to delete this data ?')"><i class="nav-icon fas fa-trash"></i></button>
                                                     </div>
                                                 </div>
                                             </div>        
@@ -704,7 +704,7 @@
         <!-- END UPDATE DATA PAROKI LIST -->
         <!-- START DELETE DATA PAROKI LIST -->
         <script>
-            $("#btnupdatedetailparoki").click(function()
+            $("#btndeleteparoki").click(function()
             {
                 $.post('ajax-paroki-assets.php',
                 {

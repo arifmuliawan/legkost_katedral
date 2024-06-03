@@ -35,7 +35,7 @@
                                             $misa_category_name = $data_misa_category['name']; 
                                 ?>
                                             <div class="col-sm-12">
-                                                <h5 style="margin: 24px;color: #88A8D4;"><?php echo $misa_category ?></h5>
+                                                <h5 style="margin: 24px;color: #88A8D4;"><?php echo $misa_category_name ?></h5>
                                                 <br><br>
                                                 <div class="row">
                                                 <?php

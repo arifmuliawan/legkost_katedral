@@ -272,7 +272,6 @@
                                                     <button id="btnupdatephotoparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 15px;">SAVE</button>
                                                 </form>  
                                             </div>
-                                            <form id="formdetailparoki2">
                                             <div class="col-md-6">
                                                 <div class="col-md-12">
                                                     <div class="row">
@@ -303,8 +302,7 @@
                                                         </div>             
                                                     </div>
                                                 </div>   
-                                            </div> 
-                                            </form>      
+                                            </div>      
                                         </div>
                                     </div>   
                                 </div> 

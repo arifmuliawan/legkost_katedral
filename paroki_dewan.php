@@ -156,7 +156,7 @@
                                                     <div class="card-footer" style="text-align:right">
                                                         <input type="hidden" name="id_paroki" value="<?php echo $id_paroki ?>">
                                                         <input type="hidden" name="delete_paroki">
-                                                        <button id="btndeleteparoki" type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm" onclick="return confirm('Are you sure you want to delete this data ?')"><i class="nav-icon fas fa-trash"></i></button>
+                                                        <button id="btndeleteparoki" type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm" onclick="return confirm('Are you sure you want to delete this data ?')" data-paroki='<?php echo json_encode($paroki_json) ?>'><i class="nav-icon fas fa-trash"></i></button>
                                                     </div>
                                                 </div>
                                             </div>        
@@ -706,9 +706,12 @@
         <script>
             $("#list-paroki #btndeleteparoki").click(function()
             {
+                var me      = $(this);
+                var data    = me.attr('data-paroki');
+                var jdata   = JSON.parse(data);
                 $.post('ajax-paroki-assets.php',
                 {
-                    id_paroki:$("#list-paroki input[name=id_paroki]").val(),
+                    id_paroki:$("#list-paroki input[name=id_paroki]").val(jdata.id_paroki);,
                     delete_paroki:$("#list-paroki input[name=delete_paroki]").val(),
                 },
                 function(data,status)

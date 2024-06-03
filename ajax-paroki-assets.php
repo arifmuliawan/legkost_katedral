@@ -349,8 +349,6 @@ if(isset($_FILES['update_photo_paroki']))
 
 if(isset($_POST['edit_paroki']))
 {
-    print_r($_POST);
-    exit();
     $id_paroki      = $_POST['id_paroki'];
     $name_paroki    = $_POST['name_paroki'];
     $position_paroki= $_POST['position_paroki'];
@@ -401,7 +399,6 @@ if(isset($_POST['edit_paroki']))
             }
             else
             {
-                unlink($photo_paroki);
                 $response_json       = array(
                     'error_status'   => 0,
                     'error_message'  => 'perubahan data berhasil disimpan'

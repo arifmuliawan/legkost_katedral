@@ -36,7 +36,6 @@
                                 ?>
                                             <div class="col-sm-12">
                                                 <h5 style="margin: 24px;color: #88A8D4;"><?php echo $misa_category_name ?></h5>
-                                                <br><br>
                                                 <div class="row">
                                                 <?php
                                                 $query_misa_day = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='$misa_category_id' AND visible='Y'")or die (mysqli_error($con));

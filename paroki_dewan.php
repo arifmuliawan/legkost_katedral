@@ -153,8 +153,8 @@
                                                     <div class="card-body pt-3">
                                                         <img class="dataparoki" src=<?php echo $photo_paroki ?> width="100%" data-toggle="modal" data-target="#modaldetailparoki" data-paroki='<?php echo json_encode($paroki_json) ?>'>
                                                     </div>
-                                                    <div class="card-footer">
-                                                    
+                                                    <div class="card-footer" style="text-align:right">
+                                                        <button type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm"><i class="nav-icon fas fa-trash"></i></button>
                                                     </div>
                                                 </div>
                                             </div>        

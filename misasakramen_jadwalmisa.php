@@ -1,3 +1,9 @@
+<?php
+if(isset($_POST['updateschedule']))
+{
+    print_r($_POST);
+}
+?>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->
@@ -80,7 +86,7 @@
                                                                     ?>
                                                                         <tr style="<?php echo $clr_row ?>" class="tableid">
                                                                             <td style="border: unset;vertical-align: middle;">
-                                                                                <select class="form-control" style="width: 25%;display: unset;">
+                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_hour[]">
                                                                                     <option <?php if($sch_hour=='00') { echo 'SELECTED';} ?>>00</option>
                                                                                     <option <?php if($sch_hour=='01') { echo 'SELECTED';} ?>>01</option>
                                                                                     <option <?php if($sch_hour=='02') { echo 'SELECTED';} ?>>02</option>
@@ -107,7 +113,7 @@
                                                                                     <option <?php if($sch_hour=='23') { echo 'SELECTED';} ?>>23</option>
                                                                                 </select>
                                                                                 :
-                                                                                <select class="form-control" style="width: 25%;display: unset;">
+                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_min[]">
                                                                                     <option <?php if($sch_hour=='00') { echo 'SELECTED';} ?>>00</option>
                                                                                     <option <?php if($sch_hour=='15') { echo 'SELECTED';} ?>>15</option>
                                                                                     <option <?php if($sch_hour=='30') { echo 'SELECTED';} ?>>30</option>
@@ -115,11 +121,11 @@
                                                                                 </select>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;">    
-                                                                                <input class="form-check-input" type="checkbox" name="sch_online" <?php if($sch_online=='1'){ echo "CHECKED";} ?>> 
+                                                                                <input class="form-check-input" type="checkbox" name="sch_online[]" <?php if($sch_online=='1'){ echo "CHECKED";} ?>> 
                                                                                 <label class="form-check-label">ONLINE</label>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;">    
-                                                                                <input class="form-check-input" type="checkbox" name="sch_offline" <?php if($sch_offline=='1'){ echo "CHECKED";} ?>> 
+                                                                                <input class="form-check-input" type="checkbox" name="sch_offline[]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?>> 
                                                                                 <label class="form-check-label">OFFLINE</label>
                                                                             </td>
                                                                         </tr>    

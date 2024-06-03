@@ -323,7 +323,7 @@ if(isset($_FILES['update_photo_paroki']))
                 }
                 else
                 {
-                    $update_photo_paroki     = mysqli_query($con,"UPDATE INTO paroki_staff SET url_img='$file_db_photo' WHERE id='$id_paroki'")or die (mysqli_error($con));
+                    $update_photo_paroki     = mysqli_query($con,"UPDATE paroki_staff SET url_img='$file_db_photo' WHERE id='$id_paroki'")or die (mysqli_error($con));
                     if($update_photo_paroki!=1)
                     {
                         unlink($file_directory_photo);

@@ -154,7 +154,9 @@
                                                         <img class="dataparoki" src=<?php echo $photo_paroki ?> width="100%" data-toggle="modal" data-target="#modaldetailparoki" data-paroki='<?php echo json_encode($paroki_json) ?>'>
                                                     </div>
                                                     <div class="card-footer" style="text-align:right">
-                                                        <button type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm"><i class="nav-icon fas fa-trash"></i></button>
+                                                        <input type="hidden" name="id_paroki" value="<?php echo $id_paroki ?>">
+                                                        <input type="hidden" name="delete_paroki">
+                                                        <button id="btndeleteparoki" type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;" class="btn-sm"><i class="nav-icon fas fa-trash"></i></button>
                                                     </div>
                                                 </div>
                                             </div>        
@@ -700,6 +702,33 @@
             });   
         </script> 
         <!-- END UPDATE DATA PAROKI LIST -->
+        <!-- START DELETE DATA PAROKI LIST -->
+        <script>
+            $("#btnupdatedetailparoki").click(function()
+            {
+                $.post('ajax-paroki-assets.php',
+                {
+                    id_paroki:$("#list-paroki input[name=id_paroki]").val(),
+                    delete_paroki:$("#list-paroki input[name=delete_paroki]").val(),
+                },
+                function(data,status)
+                {
+                    if(data.error_status==1)
+                    {
+                        toastr['error'](data.error_message);
+                        var delay = 3000;
+                    }
+                    else
+                    {
+                        toastr['success'](data.error_message);
+                        var delay = 3000;
+                    }
+                    console.log(data,status);
+                }
+                );
+            });   
+        </script> 
+        <!-- END DELETE DATA PAROKI LIST -->
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
             var parokilist  = document.querySelector('#list-paroki');

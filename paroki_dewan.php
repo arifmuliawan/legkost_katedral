@@ -679,7 +679,7 @@
                 {
                     id_paroki:$("#updateparokimodal input[name=id_paroki]").val(),
                     name_paroki:$("#updateparokimodal input[name=name_paroki]").val(),
-                    position_paroki:$("#updateparokimodal input[name=position_paroki]").val()
+                    position_paroki:$("#updateparokimodal input[name=position_paroki]").val(),
                     edit_paroki:$("#updateparokimodal input[name=edit_paroki]").val()
                 },
                 function(data,status)

@@ -27,7 +27,6 @@
                                 <?php
                                     $query_misa_category    = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='0' AND visible='Y'")or die (mysqli_error($con));
                                     $sum_misa_category      = mysqli_num_rows($query_misa_category);
-                                    print_r($sum_misa_category);
                                     if($sum_misa_category>0)
                                     {
                                         while($data_misa_category=mysqli_fetch_array($query_misa_category))
@@ -35,7 +34,7 @@
                                             $misa_category  = $data_misa_category['category_name']; 
                                 ?>
                                             <div class="col-sm-12">
-                                                <h3 style="margin: 24px"><?php echo $misa_category ?></h3>
+                                                <h4 style="margin: 24px"><?php echo $misa_category ?></h4>
                                             </div>
                                 <?php
                                         }

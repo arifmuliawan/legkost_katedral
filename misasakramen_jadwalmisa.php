@@ -53,7 +53,10 @@
                                                                     <th colspan="" style="padding: unset;border: unset;">
                                                                         <?php echo $misa_day_name ?>
                                                                     </th>
-                                                                    <?php
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="row_position">
+                                                                <?php
                                                                     $exp_day_sch    = explode("|",$misa_day_sch);
                                                                     $i=1;
                                                                     foreach($exp_day_sch as $ds)
@@ -121,10 +124,6 @@
                                                                         $i++;
                                                                     }                                                                    
                                                                     ?>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody class="row_position">
-
                                                             </tbody>
                                                         </table>    
                                                 <?php

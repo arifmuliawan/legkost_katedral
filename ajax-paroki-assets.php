@@ -248,6 +248,90 @@ if(isset($_POST['delete_photo_paroki']))
     }        
 } 
 
+if(isset($_FILES['update_photo_paroki']))
+{   
+    if($_FILES['update_photo_paroki']['name'][0]!='')
+    {
+        $ekstensi_diperbolehkan = array('png','jpg','jpeg');
+        $nama_photo             = $_FILES['update_photo_paroki']['name'][0];
+        $x_photo                = explode('.', $nama_photo);
+        $ekstensi_photo         = strtolower(end($x_photo));
+        $ukuran_photo           = $_FILES['update_photo_paroki']['size'][0];
+        $file_tmp_photo         = $_FILES['update_photo_paroki']['tmp_name'][0];
+        $file_directory_photo   = "assets/dist/img/paroki/".$nama_photo;
+        $file_db_photo          = "dist/img/paroki/".$nama_photo;
+        $photo_info             = getimagesize($file_tmp_photo);
+        $photo_width            = $photo_info[0];
+        $photo_height           = $photo_info[1];
+        if(file_exists("assets/dist/img/paroki/".$nama_photo))
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Nama file sudah digunakan, silahkan upload kembali dengan nama file berbeda'
+            );
+        }
+        else
+        {
+            if(($photo_width<='495' && $photo_width>='505') && ($photo_height<='495' && $photo_height>='505'))
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (500 X 500)'
+                );
+            }
+            else
+            {
+                $upload_file   = @move_uploaded_file($file_tmp_photo, $file_directory_photo);
+                if($upload_file===false)
+                {
+                    http_response_code(410);
+                        $response_json       = array(
+                        'error_status'   => 1,
+                        'error_message'  => 'Gambar gagal di upload ke server'
+                    );
+                    return;
+                }
+                else
+                {
+                    $query_sort         = mysqli_query($con,"SELECT * from `paroki_staff` WHERE visible!='D' order by sortid DESC LIMIT 1")or die (mysqli_error($con));
+                    $sum_sort           = mysqli_num_rows($query_sort);
+                    if($sum_sort<=0)
+                    {
+                        $last_sort      = 0;
+                        $new_sort       = $last_sort;
+                    }
+                    else
+                    {
+                        $data_sort      = mysqli_fetch_array($query_sort);
+                        $last_sort      = $data_sort['sortid'];
+                        $new_sort       = $last_sort+1;
+                    }
+                    $insert_paroki      = mysqli_query($con,"INSERT INTO `paroki_staff`(`sortid`, `name`, `position`, `url_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$new_sort','$name_paroki','$position_paroki','$file_db_photo','Y','$user','$now','$user','$now')")or die (mysqli_error($con));
+                    if($insert_paroki!=1)
+                    {
+                        unlink($file_directory_photo);
+                        http_response_code(410);
+                            $response_json   = array(
+                            'error_status'   => 1,
+                            'error_message'  => 'Gambar gagal di upload ke server'
+                        );
+                    }
+                    else
+                    {
+                        $response_json       = array(
+                            'error_status'   => 0,
+                            'error_message'  => 'Penambahan data telah berhasil disimpan',
+                            'new_photo'      => $base_assets.$file_directory_photo
+                        );
+                    }
+                }    
+            }    
+        }    
+    }
+}
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

@@ -347,6 +347,68 @@ if(isset($_FILES['update_photo_paroki']))
     }
 }
 
+if(isset($_POST['edit_paroki']))
+{
+    $id_paroki      = $_POST['id_paroki'];
+    $name_paroki    = $_POST['name_paroki'];
+    $position_paroki= $_POST['position_paroki'];
+    if($name_paroki=="" && $position_paroki=="")
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Kolom nama & jabatan tidak boleh kosong'
+        );
+    }
+    elseif($name_paroki=="" && $position_paroki!="")
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Kolom nama tidak boleh kosong'
+        );
+    }
+    elseif($name_paroki!="" && $position_paroki=="")
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Kolom jabatan tidak boleh kosong'
+        );
+    }
+    else
+    {
+        $select_paroki  = mysqli_query($con,"SELECT * FROM paroki_staff WHERE id='$id_paroki' AND visible='Y'") or die (mysqli_error($con));
+        $sum_paroki     = mysqli_num_rows($select_paroki);
+        if($sum_paroki<=0)
+        {
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Data tidak ditemukan'
+            );
+        }
+        else
+        {
+            $update_paroki  = mysqli_query($con,"UPDATE paroki_staff SET name_paroki='$name_paroki',position_paroki='$position_paroki',update_by='$user',update_date='$now' WHERE id='$id_paroki'") or die (mysqli_error($con));
+            if($update_paroki!=1)
+            {
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Perubahan data gagal disimpan'
+                );
+            }
+            else
+            {
+                unlink($photo_paroki);
+                $response_json       = array(
+                    'error_status'   => 0,
+                    'error_message'  => 'perubahan data berhasil disimpan'
+                );
+            }
+        } 
+    }           
+}
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

@@ -34,6 +34,7 @@
                                             $misa_category_id   = $data_misa_category['id'];
                                             $misa_category_name = $data_misa_category['name']; 
                                 ?>
+                                            <form method="POST" action="">
                                             <div class="col-sm-12">
                                                 <h5 style="margin: 24px;color: #88A8D4;"><?php echo $misa_category_name ?></h5>
                                                 <?php
@@ -47,6 +48,8 @@
                                                         $misa_day_name  = $data_misa_day['name'];
                                                         $misa_day_sch   = $data_misa_day['schedule']
                                                 ?>
+                                                        <input type="hidden" name="category_id" value="<?php echo $misa_category_id ?>">
+                                                        <input type="hidden" name="day_id" value="<?php echo $misa_day_id ?>">
                                                         <table class="table" style="margin: 24px;width: 50%;">
                                                             <thead style="color: #000000;">
                                                                 <tr>
@@ -127,7 +130,7 @@
                                                             </tbody>
                                                         </table>  
                                                         <div style="margin:24px">
-                                                            <button id="btnaddparoki" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
+                                                            <input type="submit" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" name="updateschedule" VALUE="SUBMIT">
                                                             &nbsp&nbsp
                                                             <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;">RESET ALL</button></a>
                                                         </div>    
@@ -136,6 +139,7 @@
                                                 }
                                                 ?>
                                             </div>
+                                            </form>
                                 <?php
                                         }
                                     }

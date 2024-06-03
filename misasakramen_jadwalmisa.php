@@ -73,7 +73,7 @@
                                                                         $sch_offline = $exp_sch[3];
                                                                     ?>
                                                                         <tr style="<?php echo $clr_row ?>" class="tableid">
-                                                                            <td style="border: unset;">
+                                                                            <td style="border: unset;vertical-align: middle;">
                                                                                 <select class="form-control" style="width: 25%;display: unset;">
                                                                                     <option>00</option>
                                                                                     <option>01</option>
@@ -108,11 +108,11 @@
                                                                                     <option>45</option>
                                                                                 </select>
                                                                             </td>
-                                                                            <td style="border: unset;">    
+                                                                            <td style="border: unset;vertical-align: middle;">    
                                                                                 <input class="form-check-input" type="checkbox" name="sch_online"> 
                                                                                 <label class="form-check-label">ONLINE</label>
                                                                             </td>
-                                                                            <td style="border: unset;">    
+                                                                            <td style="border: unset;vertical-align: middle;">    
                                                                                 <input class="form-check-input" type="checkbox" name="sch_offline"> 
                                                                                 <label class="form-check-label">OFFLINE</label>
                                                                             </td>

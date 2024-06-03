@@ -278,6 +278,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <input type="hidden" name="id_paroki">
+                                                                <input type="hidden" name="edit_paroki">
                                                                 <label class="form-label">NAMA <font color='red'>*</font></label>
                                                                 <input type="text" name="name_paroki" class="form-control" placeholder="Type something here....">
                                                             </div>
@@ -670,6 +671,35 @@
             }); 
         </script>
         <!-- END DROPZONE UPDATE PAROKI LIST -->
+        <!-- START UPDATE DATA PAROKI LIST -->
+        <script>
+            $("#btnupdatedetailparoki").click(function()
+            {
+                $.post('ajax-paroki_assets.php',
+                {
+                    id_paroki:$("#updateparokimodal input[name=id_paroki]").val(),
+                    name_paroki:$("#updateparokimodal input[name=name_paroki]").val(),
+                    position_paroki:$("#updateparokimodal input[name=position_paroki]").val()
+                    edit_paroki:$("#updateparokimodal input[name=edit_paroki]").val()
+                },
+                function(data,status)
+                {
+                    if(data.error_status==1)
+                    {
+                        toastr['error'](data.error_message);
+                        var delay = 3000;
+                    }
+                    else
+                    {
+                        toastr['success'](data.error_message);
+                        var delay = 3000;
+                    }
+                    console.log(data,status);
+                }
+                );
+            });   
+        </script> 
+        <!-- END UPDATE DATA PAROKI LIST -->
         <!-- START CHANGE SORT DEWAN PAROKI -->
         <script type="text/javascript">
             var parokilist  = document.querySelector('#list-paroki');

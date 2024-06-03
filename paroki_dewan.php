@@ -707,7 +707,7 @@
             $("#list-paroki #btndeleteparoki").click(function()
             {
                 var me2      = $(this);
-                var data2    = me.attr('data-paroki-2');
+                var data2    = me.val('data-paroki-2');
                 var jdata2   = JSON.parse(data2);
                 $.post('ajax-paroki-assets.php',
                 {

@@ -704,7 +704,7 @@
         <!-- END UPDATE DATA PAROKI LIST -->
         <!-- START DELETE DATA PAROKI LIST -->
         <script>
-            $("#btndeleteparoki").click(function()
+            $("#list-paroki #btndeleteparoki").click(function()
             {
                 $.post('ajax-paroki-assets.php',
                 {

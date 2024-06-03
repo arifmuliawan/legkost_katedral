@@ -108,11 +108,11 @@
                                                                                     <option>45</option>
                                                                                 </select>
                                                                             </td>
-                                                                            <td>    
+                                                                            <td style="border: unset;">    
                                                                                 <input class="form-check-input" type="checkbox" name="sch_online"> 
                                                                                 <label class="form-check-label">ONLINE</label>
                                                                             </td>
-                                                                            <td>    
+                                                                            <td style="border: unset;">    
                                                                                 <input class="form-check-input" type="checkbox" name="sch_offline"> 
                                                                                 <label class="form-check-label">OFFLINE</label>
                                                                             </td>

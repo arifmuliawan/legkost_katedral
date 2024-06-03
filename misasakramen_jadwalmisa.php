@@ -107,6 +107,12 @@
                                                                                     <option>30</option>
                                                                                     <option>45</option>
                                                                                 </select>
+                                                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                                                <input class="form-check-input" type="checkbox" name="sch_online"> 
+                                                                                <label class="form-check-label">ONLINE</label>
+                                                                                &nbsp&nbsp&nbsp&nbsp
+                                                                                <input class="form-check-input" type="checkbox" name="sch_offline"> 
+                                                                                <label class="form-check-label">OFFLINE</label>
                                                                             </td>
                                                                         </tr>    
                                                                     <?php

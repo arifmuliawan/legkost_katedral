@@ -2,6 +2,8 @@
 include("config.php");
 include("session.php");
 //include("session.php");
+print_r($_POST);
+exit();
 if(isset($_FILES['bannerparoki']))
 {
     if($_FILES['bannerparoki']['name']!='')
@@ -349,8 +351,6 @@ if(isset($_FILES['update_photo_paroki']))
 
 if(isset($_POST['edit_paroki']))
 {
-    print_r($_POST);
-    exit();
     $id_paroki      = $_POST['id_paroki'];
     $name_paroki    = $_POST['name_paroki'];
     $position_paroki= $_POST['position_paroki'];

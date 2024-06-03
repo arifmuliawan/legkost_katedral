@@ -608,7 +608,7 @@
                     // Update selector to match your button
                     $("#modaldetailparoki #btnupdatephotoparoki").click(function (e) {
                         e.preventDefault();
-                        myDropzone2.processQueue();
+                        myDropzone3.processQueue();
                         return false;
                     });
 

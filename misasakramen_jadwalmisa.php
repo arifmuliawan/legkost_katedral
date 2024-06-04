@@ -54,8 +54,6 @@ if(isset($_POST['updateschedule']))
                                                         $misa_day_name  = $data_misa_day['name'];
                                                         $misa_day_sch   = $data_misa_day['schedule']
                                                 ?>
-                                                        <input type="hidden" name="category_id" value="<?php echo $misa_category_id ?>">
-                                                        <input type="hidden" name="day_id" value="<?php echo $misa_day_id ?>">
                                                         <table class="table" style="margin: 24px;width: 50%;">
                                                             <thead style="color: #000000;">
                                                                 <tr>

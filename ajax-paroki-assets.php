@@ -426,9 +426,7 @@ if(isset($_POST['delete_paroki']))
     {
         $data_paroki         = mysqli_fetch_array($select_paroki);
         $photo_paroki        = $base_assets.$data_paroki['url_img'];
-        $delete_paroki       = mysqli_query($con,"DELETE paroki_staff WHERE id='$id_paroki'") or die (mysqli_error($con));
-        print_r($delete_paroki);
-        exit();
+        $delete_paroki       = mysqli_query($con,"DELETE FROM paroki_staff WHERE id='$id_paroki'") or die (mysqli_error($con));
         if($delete_paroki!=1)
         {
             $response_json       = array(

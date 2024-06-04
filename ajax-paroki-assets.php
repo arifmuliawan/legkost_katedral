@@ -413,10 +413,10 @@ if(isset($_POST['edit_paroki']))
 if(isset($_POST['delete_paroki']))
 {
     $id_paroki           = $_POST['id_paroki'];
-    print_r($id_paroki);
-    exit();
     $select_paroki  = mysqli_query($con,"SELECT * FROM paroki_staff WHERE id='$id_paroki' AND visible='Y'") or die (mysqli_error($con));
     $sum_paroki     = mysqli_num_rows($select_paroki);
+    print_r($sum_paroki);
+    exit();
     if($sum_paroki<=0)
     {
         $response_json       = array(

@@ -711,8 +711,8 @@
                 var jdata2   = JSON.parse(data2);
                 $.post('ajax-paroki-assets.php',
                 {
-                    id_paroki:$("#list-paroki input[name=id_paroki]").val(jdata2.id_paroki),
-                    delete_paroki:$("#list-paroki input[name=delete_paroki]").val()
+                    id_paroki:jdata2.id_paroki,
+                    delete_paroki:true
                 },
                 function(data,status)
                 {

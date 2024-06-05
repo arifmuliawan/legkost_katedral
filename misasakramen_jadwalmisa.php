@@ -35,37 +35,38 @@ if(isset($_POST['updateschedule']))
                                     $sum_misa_category      = mysqli_num_rows($query_misa_category);
                                     if($sum_misa_category>0)
                                     {
-                                        $x=1;
                                         while($data_misa_category=mysqli_fetch_array($query_misa_category))
                                         {
-                                            $misa_category_id[$i]   = $data_misa_category['id'];
-                                            $misa_category_name[$i] = $data_misa_category['name']; 
+                                            $misa_category_id   = $data_misa_category['id'];
+                                            $misa_category_name = $data_misa_category['name']; 
                                 ?>
                                             <div class="col-sm-12">
                                             <form method="POST" action="" >
                                                 <h5 style="margin: 24px;color: #88A8D4;"><?php echo $misa_category_name ?></h5>
                                                 <?php
-                                                $query_misa_day[$x] = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='$misa_category_id[$i]' AND visible='Y'")or die (mysqli_error($con));
+                                                $query_misa_day = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='$misa_category_id[$x]' AND visible='Y'")or die (mysqli_error($con));
                                                 $sum_misa_day   = mysqli_num_rows($query_misa_day);
                                                 if($sum_misa_day>0)
                                                 {
+                                                    $j=1;
                                                     while($data_misa_day=mysqli_fetch_array($query_misa_day))
                                                     {
-                                                        $misa_day_id[]  = $data_misa_day['id'];
-                                                        $misa_day_name[]= $data_misa_day['name'];
-                                                        $misa_day_sch[] = $data_misa_day['schedule']
+                                                        $misa_day_id[$j]  = $data_misa_day['id'];
+                                                        $misa_day_name[$j]= $data_misa_day['name'];
+                                                        $misa_day_sch[$j] = $data_misa_day['schedule']
                                                 ?>
                                                         <table class="table" style="margin: 24px;width: 50%;">
                                                             <thead style="color: #000000;">
                                                                 <tr>
                                                                     <th colspan="" style="padding: unset;border: unset;">
-                                                                        <?php echo $misa_day_name[] ?>
+                                                                        <?php echo $misa_day_name[$j] ?>
                                                                     </th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody class="row_position">
+                                                                <input type="hidden" name="scheduleid" value="<?php echo $misa_day_id[$j] ?>">
                                                                 <?php
-                                                                    $exp_day_sch    = explode("|",$misa_day_sch[]);
+                                                                    $exp_day_sch    = explode("|",$misa_day_sch[$j]);
                                                                     $i=1;
                                                                     foreach($exp_day_sch as $ds)
                                                                     {

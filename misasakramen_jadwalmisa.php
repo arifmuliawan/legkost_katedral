@@ -44,7 +44,7 @@ if(isset($_POST['updateschedule']))
                                             <form method="POST" action="" >
                                                 <h5 style="margin: 24px;color: #88A8D4;"><?php echo $misa_category_name ?></h5>
                                                 <?php
-                                                $query_misa_day = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='$misa_category_id[$x]' AND visible='Y'")or die (mysqli_error($con));
+                                                $query_misa_day = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='$misa_category_id' AND visible='Y'")or die (mysqli_error($con));
                                                 $sum_misa_day   = mysqli_num_rows($query_misa_day);
                                                 if($sum_misa_day>0)
                                                 {

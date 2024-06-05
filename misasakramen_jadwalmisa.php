@@ -65,7 +65,7 @@ if(isset($_POST['updateschedule']))
                                                                 </tr>
                                                             </thead>
                                                             <tbody class="row_position">
-                                                                <input type="text" name="scheduleid[]" value="<?php echo $misa_day_id[$j] ?>">
+                                                                <input type="text" name="scheduleid" value="<?php echo $misa_day_id[$j] ?>">
                                                             </tbody>
                                                         </table>  
                                                         <div style="margin:24px">

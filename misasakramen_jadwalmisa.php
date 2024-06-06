@@ -41,7 +41,7 @@ if(isset($_POST['updateschedule']))
                                             $misa_category_name = $data_misa_category['name']; 
                                 ?>
                                             <div class="col-sm-12">
-                                            
+                                            <form method="POST" action="" >
                                                 <h5 style="margin: 24px;color: #88A8D4;"><?php echo $misa_category_name ?></h5>
                                                 <?php
                                                 $query_misa_day = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='$misa_category_id' AND visible='Y'")or die (mysqli_error($con));
@@ -55,7 +55,6 @@ if(isset($_POST['updateschedule']))
                                                         $misa_day_name[$j]= $data_misa_day['name'];
                                                         $misa_day_sch[$j] = $data_misa_day['schedule']
                                                 ?>
-                                                        <form method="POST" action="" >
                                                         <table class="table" style="margin: 24px;width: 50%;">
                                                             <thead style="color: #000000;">
                                                                 <tr>
@@ -65,19 +64,87 @@ if(isset($_POST['updateschedule']))
                                                                 </tr>
                                                             </thead>
                                                             <tbody class="row_position">
-                                                                <input type="text" name="scheduleid" value="<?php echo $misa_day_id[$j] ?>">
+                                                                <input type="hidden" name="scheduleid" value="<?php echo $misa_day_id[$j] ?>">
+                                                                <?php
+                                                                    $exp_day_sch    = explode("|",$misa_day_sch[$j]);
+                                                                    $i=1;
+                                                                    foreach($exp_day_sch as $ds)
+                                                                    {
+                                                                        if ($i % 2 == 0)
+                                                                        {
+                                                                            $clr_row = "background-color: #D9D9D9B2;";
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            $clr_row = "background-color: #ffffff;";
+                                                                        }
+                                                                        $exp_sch     = explode(":",$ds);
+                                                                        $sch_hour    = $exp_sch[0];
+                                                                        $sch_min     = $exp_sch[1];
+                                                                        $sch_online  = $exp_sch[2];
+                                                                        $sch_offline = $exp_sch[3];
+                                                                    ?>
+                                                                        <tr style="<?php echo $clr_row ?>" class="tableid">
+                                                                            <td style="border: unset;vertical-align: middle;">
+                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_hour[]">
+                                                                                    <option <?php if($sch_hour=='00') { echo 'SELECTED';} ?> value="00">00</option>
+                                                                                    <option <?php if($sch_hour=='01') { echo 'SELECTED';} ?> value="01">01</option>
+                                                                                    <option <?php if($sch_hour=='02') { echo 'SELECTED';} ?> value="02">02</option>
+                                                                                    <option <?php if($sch_hour=='03') { echo 'SELECTED';} ?> value="03">03</option>
+                                                                                    <option <?php if($sch_hour=='04') { echo 'SELECTED';} ?> value="04">04</option>
+                                                                                    <option <?php if($sch_hour=='05') { echo 'SELECTED';} ?> value="05">05</option>
+                                                                                    <option <?php if($sch_hour=='06') { echo 'SELECTED';} ?> value="06">06</option>
+                                                                                    <option <?php if($sch_hour=='07') { echo 'SELECTED';} ?> value="07">07</option>
+                                                                                    <option <?php if($sch_hour=='08') { echo 'SELECTED';} ?> value="08">08</option>
+                                                                                    <option <?php if($sch_hour=='09') { echo 'SELECTED';} ?> value="09">09</option>
+                                                                                    <option <?php if($sch_hour=='10') { echo 'SELECTED';} ?> value="10">10</option>
+                                                                                    <option <?php if($sch_hour=='11') { echo 'SELECTED';} ?> value="11">11</option>
+                                                                                    <option <?php if($sch_hour=='12') { echo 'SELECTED';} ?> value="12">12</option>
+                                                                                    <option <?php if($sch_hour=='13') { echo 'SELECTED';} ?> value="13">13</option>
+                                                                                    <option <?php if($sch_hour=='14') { echo 'SELECTED';} ?> value="14">14</option>
+                                                                                    <option <?php if($sch_hour=='15') { echo 'SELECTED';} ?> value="15">15</option>
+                                                                                    <option <?php if($sch_hour=='16') { echo 'SELECTED';} ?> value="16">16</option>
+                                                                                    <option <?php if($sch_hour=='17') { echo 'SELECTED';} ?> value="17">17</option>
+                                                                                    <option <?php if($sch_hour=='18') { echo 'SELECTED';} ?> value="18">18</option>
+                                                                                    <option <?php if($sch_hour=='19') { echo 'SELECTED';} ?> value="19">19</option>
+                                                                                    <option <?php if($sch_hour=='20') { echo 'SELECTED';} ?> value="20">20</option>
+                                                                                    <option <?php if($sch_hour=='21') { echo 'SELECTED';} ?> value="21">21</option>
+                                                                                    <option <?php if($sch_hour=='22') { echo 'SELECTED';} ?> value="22">22</option>
+                                                                                    <option <?php if($sch_hour=='23') { echo 'SELECTED';} ?> value="23">23</option>
+                                                                                </select>
+                                                                                :
+                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_min[]">
+                                                                                    <option <?php if($sch_hour=='00') { echo 'SELECTED';} ?> value="00">00</option>
+                                                                                    <option <?php if($sch_hour=='15') { echo 'SELECTED';} ?> value="15">15</option>
+                                                                                    <option <?php if($sch_hour=='30') { echo 'SELECTED';} ?> value="30">30</option>
+                                                                                    <option <?php if($sch_hour=='45') { echo 'SELECTED';} ?> value="45">45</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td style="border: unset;vertical-align: middle;">    
+                                                                                <input class="form-check-input" type="checkbox" name="sch_online[]" <?php if($sch_online=='1'){ echo "CHECKED";} ?>> 
+                                                                                <label class="form-check-label">ONLINE</label>
+                                                                            </td>
+                                                                            <td style="border: unset;vertical-align: middle;">    
+                                                                                <input class="form-check-input" type="checkbox" name="sch_offline[]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?>> 
+                                                                                <label class="form-check-label">OFFLINE</label>
+                                                                            </td>
+                                                                        </tr>    
+                                                                    <?php
+                                                                        $i++;
+                                                                    }                                                                    
+                                                                    ?>
                                                             </tbody>
                                                         </table>  
                                                         <div style="margin:24px">
                                                             <input type="submit" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" name="updateschedule" VALUE="SUBMIT">
                                                             &nbsp&nbsp
                                                             <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;">RESET ALL</button></a>
-                                                        </div> 
-                                                        </form>   
+                                                        </div>    
                                                 <?php
                                                     }
                                                 }
                                                 ?>
+                                            </form>
                                             </div>
                                 <?php
                                         }

@@ -1,6 +1,8 @@
 <?php
 if(isset($_POST['updateschedule']))
 {
+    print_r($_POST);
+    exit();
     for($z=0;$z<=7;$z++)
     {
         $sch_hour[$z]   = $_POST['sch_hour'][$z];
@@ -8,8 +10,6 @@ if(isset($_POST['updateschedule']))
         $schedule[$z]   = $sch_hour[$z].':'.$sch_min[$z];
     }
     $schdule_misa       = implode("|",$schedule);
-    print_r($_POST);
-    exit();
 }
 ?>
         <!-- Content Wrapper. Contains page content -->

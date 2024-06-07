@@ -159,7 +159,7 @@ if(isset($_POST['updateschedule']))
                                                                 else arr.push(0);
                                                             })
 
-                                                            $('[name="sch_online_values"]').val(arr);
+                                                            $('[name="sch_online_values[]"]').val(arr);
                                                             });
 
                                                             $('[name="sch_offline[]"]').click(function() {
@@ -169,7 +169,7 @@ if(isset($_POST['updateschedule']))
                                                                 else arr.push(0);
                                                             })
 
-                                                            $('[name="sch_offline_values"]').val(arr);
+                                                            $('[name="sch_offline_values[]"]').val(arr);
                                                             });
                                                         </script>
                                                         </form>   

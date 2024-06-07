@@ -75,7 +75,6 @@ if(isset($_POST['updateschedule']))
                                                                 <?php
                                                                     $exp_day_sch    = explode("|",$misa_day_sch);
                                                                     $i=1;
-                                                                    $j=0;
                                                                     foreach($exp_day_sch as $ds)
                                                                     {
                                                                         if ($i % 2 == 0)
@@ -129,15 +128,15 @@ if(isset($_POST['updateschedule']))
                                                                                 </select>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;">  
-                                                                                <input class="form-check-input" type="checkbox" name="sch_online[<?php echo $j ?>][]" <?php if($sch_online=='1'){ echo "CHECKED";} ?> value="1"> 
+                                                                                <input class="form-check-input" type="checkbox" name="sch_online[<?php echo $misa_day_id ?>][]" <?php if($sch_online=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">ONLINE</label>
-                                                                                <input type="hidden" name="sch_online_values[]">
+                                                                                <input type="hidden" name="sch_online_values[<?php echo $misa_day_id ?>]">
 
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;"> 
-                                                                                <input class="form-check-input" type="checkbox" name="sch_offline[]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?> value="1"> 
+                                                                                <input class="form-check-input" type="checkbox" name="sch_offline[<?php echo $misa_day_id ?>][]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">OFFLINE</label>
-                                                                                <input type="hidden" name="sch_offline_values[]">
+                                                                                <input type="hidden" name="sch_offline_values[<?php echo $misa_day_id ?>]">
                                                                             </td>
                                                                         </tr>    
                                                                     <?php
@@ -152,24 +151,24 @@ if(isset($_POST['updateschedule']))
                                                             <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;">RESET ALL</button></a>
                                                         </div> 
                                                         <script>
-                                                            $('[name="sch_online[]"]').click(function() {
+                                                            $('[name="sch_online[<?php echo $misa_day_id ?>][]"]').click(function() {
                                                             var arr = [];
-                                                            $('[name="sch_online[]"]').each(function() {
+                                                            $('[name="sch_online[<?php echo $misa_day_id ?>][]"]').each(function() {
                                                                 if ($(this).prop('checked')) arr.push($(this).val());
                                                                 else arr.push(0);
                                                             })
 
-                                                            $('[name="sch_online_values[]"]').val(arr);
+                                                            $('[name="sch_online_values[<?php echo $misa_day_id ?>]"]').val(arr);
                                                             });
 
-                                                            $('[name="sch_offline[]"]').click(function() {
+                                                            $('[name="sch_offline[<?php echo $misa_day_id ?>][]"]').click(function() {
                                                             var arr = [];
-                                                            $('[name="sch_offline[]"]').each(function() {
+                                                            $('[name="sch_offline[<?php echo $misa_day_id ?>][]"]').each(function() {
                                                                 if ($(this).prop('checked')) arr.push($(this).val());
                                                                 else arr.push(0);
                                                             })
 
-                                                            $('[name="sch_offline_values[]"]').val(arr);
+                                                            $('[name="sch_offline_values[<?php echo $misa_day_id ?>]"]').val(arr);
                                                             });
                                                         </script>
                                                         </form>   

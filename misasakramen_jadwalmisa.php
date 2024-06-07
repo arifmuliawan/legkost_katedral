@@ -1,15 +1,22 @@
 <?php
 if(isset($_POST['updateschedule']))
 {
-    print_r($_POST);
-    exit();
+    $scheduleid         = $_POST['scheduleid'];
+    $stt_online         = $_POST['sch_online_values'][$scheduleid];
+    $stt_offline        = $_POST['sch_offline_values'][$scheduleid];
+    $exp_stt_online     = explode(",",$stt_online);
+    $exp_stt_offline    = explode(",",$stt_offline);
     for($z=0;$z<=7;$z++)
     {
         $sch_hour[$z]   = $_POST['sch_hour'][$z];
         $sch_min[$z]    = $_POST['sch_min'][$z];
-        $schedule[$z]   = $sch_hour[$z].':'.$sch_min[$z];
+        $online         = $exp_stt_online[$z];
+        $offline        = $exp_stt_offline[$z];
+        $schedule[$z]   = $sch_hour[$z].':'.$sch_min[$z].':'.$online.':'.$offline;
     }
     $schdule_misa       = implode("|",$schedule);
+    print_r($schdule_misa);
+    exit();
 }
 ?>
         <!-- Content Wrapper. Contains page content -->

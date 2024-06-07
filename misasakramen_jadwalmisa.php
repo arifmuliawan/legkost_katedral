@@ -121,11 +121,11 @@ if(isset($_POST['updateschedule']))
                                                                                 </select>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;">    
-                                                                                <input class="form-check-input" type="checkbox" name="sch_online[]" <?php if($sch_online=='1'){ echo "CHECKED";} ?>> 
+                                                                                <input class="form-check-input" type="checkbox" name="sch_online[]" <?php if($sch_online=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">ONLINE</label>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;">    
-                                                                                <input class="form-check-input" type="checkbox" name="sch_offline[]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?>> 
+                                                                                <input class="form-check-input" type="checkbox" name="sch_offline[]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">OFFLINE</label>
                                                                             </td>
                                                                         </tr>    

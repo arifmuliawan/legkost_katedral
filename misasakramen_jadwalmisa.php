@@ -129,15 +129,15 @@ if(isset($_POST['updateschedule']))
                                                                                 </select>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;">  
-                                                                                <input class="form-check-input" type="checkbox" name="sch_online[]" <?php if($sch_online=='1'){ echo "CHECKED";} ?> value="1"> 
+                                                                                <input class="form-check-input" type="checkbox" name="sch_online[<?php echo $j ?>][]" <?php if($sch_online=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">ONLINE</label>
-                                                                                <input type="hidden" name="sch_online_values">
+                                                                                <input type="hidden" name="sch_online_values[]">
 
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;"> 
                                                                                 <input class="form-check-input" type="checkbox" name="sch_offline[]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">OFFLINE</label>
-                                                                                <input type="hidden" name="sch_offline_values">
+                                                                                <input type="hidden" name="sch_offline_values[]">
                                                                             </td>
                                                                         </tr>    
                                                                     <?php

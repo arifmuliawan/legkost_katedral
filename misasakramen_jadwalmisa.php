@@ -151,6 +151,27 @@ if(isset($_POST['updateschedule']))
                                                             &nbsp&nbsp
                                                             <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;">RESET ALL</button></a>
                                                         </div> 
+                                                        <script>
+                                                            $('[name="sch_online[]"]').click(function() {
+                                                            var arr = [];
+                                                            $('[name="sch_online[]"]').each(function() {
+                                                                if ($(this).prop('checked')) arr.push($(this).val());
+                                                                else arr.push(0);
+                                                            })
+
+                                                            $('[name="sch_online_values"]').val(arr);
+                                                            });
+
+                                                            $('[name="sch_offline[]"]').click(function() {
+                                                            var arr = [];
+                                                            $('[name="sch_offline[]"]').each(function() {
+                                                                if ($(this).prop('checked')) arr.push($(this).val());
+                                                                else arr.push(0);
+                                                            })
+
+                                                            $('[name="sch_offline_values"]').val(arr);
+                                                            });
+                                                        </script>
                                                         </form>   
                                                 <?php
                                                     }
@@ -168,25 +189,4 @@ if(isset($_POST['updateschedule']))
                     <!-- /HANDLE MISA SCHEDULE --->
                 </div>
             </section>  
-        </div>
-        <script>
-            $('[name="sch_online[]"]').click(function() {
-            var arr = [];
-            $('[name="sch_online[]"]').each(function() {
-                if ($(this).prop('checked')) arr.push($(this).val());
-                else arr.push(0);
-            })
-
-            $('[name="sch_online_values"]').val(arr);
-            });
-
-            $('[name="sch_offline[]"]').click(function() {
-            var arr = [];
-            $('[name="sch_offline[]"]').each(function() {
-                if ($(this).prop('checked')) arr.push($(this).val());
-                else arr.push(0);
-            })
-
-            $('[name="sch_offline_values"]').val(arr);
-            });
-        </script>     
+        </div>     

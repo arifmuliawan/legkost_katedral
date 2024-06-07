@@ -41,7 +41,6 @@ if(isset($_POST['updateschedule']))
                                             $misa_category_name = $data_misa_category['name']; 
                                 ?>
                                             <div class="col-sm-12">
-                                            <form method="POST" action="" >
                                                 <h5 style="margin: 24px;color: #88A8D4;"><?php echo $misa_category_name ?></h5>
                                                 <?php
                                                 $query_misa_day = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='$misa_category_id' AND visible='Y'")or die (mysqli_error($con));
@@ -51,22 +50,23 @@ if(isset($_POST['updateschedule']))
                                                     $j=1;
                                                     while($data_misa_day=mysqli_fetch_array($query_misa_day))
                                                     {
-                                                        $misa_day_id[$j]  = $data_misa_day['id'];
-                                                        $misa_day_name[$j]= $data_misa_day['name'];
-                                                        $misa_day_sch[$j] = $data_misa_day['schedule']
+                                                        $misa_day_id    = $data_misa_day['id'];
+                                                        $misa_day_name  = $data_misa_day['name'];
+                                                        $misa_day_sch   = $data_misa_day['schedule']
                                                 ?>
+                                                        <form method="POST" action="" >
                                                         <table class="table" style="margin: 24px;width: 50%;">
                                                             <thead style="color: #000000;">
                                                                 <tr>
                                                                     <th colspan="" style="padding: unset;border: unset;">
-                                                                        <?php echo $misa_day_name[$j] ?>
+                                                                        <?php echo $misa_day_name ?>
                                                                     </th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody class="row_position">
-                                                                <input type="hidden" name="scheduleid" value="<?php echo $misa_day_id[$j] ?>">
+                                                                <input type="hidden" name="scheduleid" value="<?php echo $misa_day_id ?>">
                                                                 <?php
-                                                                    $exp_day_sch    = explode("|",$misa_day_sch[$j]);
+                                                                    $exp_day_sch    = explode("|",$misa_day_sch);
                                                                     $i=1;
                                                                     foreach($exp_day_sch as $ds)
                                                                     {
@@ -139,12 +139,12 @@ if(isset($_POST['updateschedule']))
                                                             <input type="submit" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" name="updateschedule" VALUE="SUBMIT">
                                                             &nbsp&nbsp
                                                             <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;">RESET ALL</button></a>
-                                                        </div>    
+                                                        </div> 
+                                                        </form>   
                                                 <?php
                                                     }
                                                 }
                                                 ?>
-                                            </form>
                                             </div>
                                 <?php
                                         }

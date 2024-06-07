@@ -134,7 +134,7 @@ if(isset($_POST['updateschedule']))
                                                                                 <label class="form-check-label">ONLINE</label>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;"> 
-                                                                                <input class="form-check-input" type="checkbox" name="sch_offline[]" value="0">   
+                                                                                <input class="form-check-input" type="hidden" name="sch_offline[]" value="0">   
                                                                                 <input class="form-check-input" type="checkbox" name="sch_offline[]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">OFFLINE</label>
                                                                             </td>

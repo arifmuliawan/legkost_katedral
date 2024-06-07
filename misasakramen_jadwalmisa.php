@@ -8,7 +8,7 @@ if(isset($_POST['updateschedule']))
         $schedule[$z]   = $sch_hour[$z].':'.$sch_min[$z];
     }
     $schdule_misa       = implode("|",$schedule);
-    print_r($schdule_misa);
+    print_r($_POST);
     exit();
 }
 ?>
@@ -55,7 +55,6 @@ if(isset($_POST['updateschedule']))
                                                 $sum_misa_day   = mysqli_num_rows($query_misa_day);
                                                 if($sum_misa_day>0)
                                                 {
-                                                    $j=1;
                                                     while($data_misa_day=mysqli_fetch_array($query_misa_day))
                                                     {
                                                         $misa_day_id    = $data_misa_day['id'];
@@ -76,6 +75,7 @@ if(isset($_POST['updateschedule']))
                                                                 <?php
                                                                     $exp_day_sch    = explode("|",$misa_day_sch);
                                                                     $i=1;
+                                                                    $j=0;
                                                                     foreach($exp_day_sch as $ds)
                                                                     {
                                                                         if ($i % 2 == 0)
@@ -94,7 +94,7 @@ if(isset($_POST['updateschedule']))
                                                                     ?>
                                                                         <tr style="<?php echo $clr_row ?>" class="tableid">
                                                                             <td style="border: unset;vertical-align: middle;">
-                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_hour[]">
+                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_hour[<?php echo $j ?>][]">
                                                                                     <option <?php if($sch_hour=='00') { echo 'SELECTED';} ?> value="00">00</option>
                                                                                     <option <?php if($sch_hour=='01') { echo 'SELECTED';} ?> value="01">01</option>
                                                                                     <option <?php if($sch_hour=='02') { echo 'SELECTED';} ?> value="02">02</option>
@@ -121,7 +121,7 @@ if(isset($_POST['updateschedule']))
                                                                                     <option <?php if($sch_hour=='23') { echo 'SELECTED';} ?> value="23">23</option>
                                                                                 </select>
                                                                                 :
-                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_min[]">
+                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_min[<?php echo $j ?>][]">
                                                                                     <option <?php if($sch_hour=='00') { echo 'SELECTED';} ?> value="00">00</option>
                                                                                     <option <?php if($sch_hour=='15') { echo 'SELECTED';} ?> value="15">15</option>
                                                                                     <option <?php if($sch_hour=='30') { echo 'SELECTED';} ?> value="30">30</option>
@@ -129,11 +129,11 @@ if(isset($_POST['updateschedule']))
                                                                                 </select>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;">    
-                                                                                <input class="form-check-input" type="checkbox" name="sch_online[]" <?php if($sch_online=='1'){ echo "CHECKED";} ?> value="1"> 
+                                                                                <input class="form-check-input" type="checkbox" name="sch_online[<?php echo $j ?>][]" <?php if($sch_online=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">ONLINE</label>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;">    
-                                                                                <input class="form-check-input" type="checkbox" name="sch_offline[]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?> value="1"> 
+                                                                                <input class="form-check-input" type="checkbox" name="sch_offline[<?php echo $j ?>][]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">OFFLINE</label>
                                                                             </td>
                                                                         </tr>    

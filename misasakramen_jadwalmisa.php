@@ -1,7 +1,14 @@
 <?php
 if(isset($_POST['updateschedule']))
 {
-    print_r($_POST);
+    for($z=0;$z<=7;$z++)
+    {
+        $sch_hour[$z]   = $_POST['sch_hour'][$z];
+        $sch_min[$z]    = $_POST['sch_min'][$z];
+        $schedule[$z]   = $sch_hour[$z].':'.$sch_min[$z];
+    }
+    print_r($schedule);
+    exit();
 }
 ?>
         <!-- Content Wrapper. Contains page content -->

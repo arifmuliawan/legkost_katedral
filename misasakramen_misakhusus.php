@@ -18,13 +18,13 @@ if($sum_misa_khusus>0)
         $ys                 = $exp_publish_start[0];
         $publish_start      = $ds.'/'.$ms.'/'.$ys;
     }  
+    $data_publish_end   = $data_misa_khusus['publish_end'];
     if($data_publish_end=="")
     {
         $publish_end        = "";
     }
     else
     {  
-        $data_publish_end   = $data_misa_khusus['publish_end'];
         $exp_publish_end    = explode("-",$data_pubish_end);
         $de                 = $exp_publish_end[2];
         $me                 = $exp_publish_end[1];

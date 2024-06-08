@@ -107,8 +107,8 @@ else
                 $.post('ajax-misasakrame.php',
                 {
                     misakhususid:$("#formpublish input[name=misakhususid]").val(),
-                    publish_start:$("#formpublish input[name=publish_start]").val(),
-                    publish_end:$("#formpublish input[name=publish_end]").val(),
+                    publish_start:$("#formpublish #dp1").val(),
+                    publish_end:$("#formpublish #dp2").val(),
                     publish_misakhusus:true
                 },
                 function(data,status)

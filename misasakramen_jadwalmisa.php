@@ -20,19 +20,11 @@ if(isset($_POST['updateschedule']))
     $update_schedule    = mysqli_query($con,"UPDATE `misa_schedule` SET `schedule`='$schdule_misa' WHERE id='$scheduleid'") or die (mysqli_error($con));
     if($update_schedule==1)
     {
-        echo "
-            <script>      
-                notifmodal('Perubahan data telah berhasil disimpan','success');
-            </script> 
-        ";
+        notifmodal('Perubahan data telah berhasil disimpan','success');
     }
     else
     {
-        echo "
-            <script>      
-                notifmodal('Perubahan data telah berhasil disimpan','success');
-            </script> 
-        ";
+        notifmodal('Perubahan data telah berhasil disimpan','success');
     }
 }
 ?>

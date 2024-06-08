@@ -248,7 +248,7 @@ if(isset($_POST['updateschedule']))
                 var jdata   = JSON.parse(data);
                 $.post('ajax-misasakrame.php',
                 {
-                    id_paroki:jdata.scheduleid,
+                    scheduleid:jdata.scheduleid,
                     reset_schedule_misa:true
                 },
                 function(data,status)

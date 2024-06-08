@@ -196,7 +196,7 @@ if(isset($_POST['updateschedule']))
                                                         <div style="margin:24px">
                                                             <input type="submit" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" name="updateschedule" VALUE="SUBMIT">
                                                             &nbsp&nbsp
-                                                            <button id="btnresetschedule" type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;" onclick="return confirm('Are you sure you want to reset schedule ?')" data-schdule='<?php echo json_encode($schedule_json) ?>'>RESET ALL</button></a>
+                                                            <button id="btnresetschedule" type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;" onclick="return confirm('Are you sure you want to reset schedule ?')" data-schedule='<?php echo json_encode($schedule_json) ?>'>RESET ALL</button></a>
                                                         </div> 
                                                         <!--
                                                         <script>

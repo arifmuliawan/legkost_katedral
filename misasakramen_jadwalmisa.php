@@ -33,7 +33,7 @@ if(isset($_POST['updateschedule']))
         echo "
             <script type='text/javascript'>
                 $(document).ready(function(){
-                    notifmodal('Perubahan data gagal disimpan','success')
+                    notifmodal('Perubahan data gagal disimpan','failed')
                 })
             </script>
         ";

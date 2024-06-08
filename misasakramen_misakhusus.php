@@ -197,7 +197,7 @@ else
 
         <!-- START FORM DETAIL MISA KHUSUS -->
         <script>
-            $("#formpdetail #btnsubmitdetail").click(function()
+            $("#formdetail #btnsubmitdetail").click(function()
             {
                 $.post('ajax-misasakrame.php',
                 {

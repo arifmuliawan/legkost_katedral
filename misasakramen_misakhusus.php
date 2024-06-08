@@ -96,8 +96,20 @@ else
                             </div>
                         </div>
 
+                        
+                    </div>
+                    <!-- /HANDLE MISA SCHEDULE --->
+                </div>
+            </section> 
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                    <!-- left column -->
+                    <!-- HANDLE MISA SCHEDULE --->
+                    <div class="col-md-12">
                         <!-- jquery validation -->
-                        <div class="card">
+                        <div class="card" style="box-shadow: unset;">
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <div class="card-body">
@@ -134,9 +146,9 @@ else
                     </div>
                     <!-- /HANDLE MISA SCHEDULE --->
                 </div>
-            </section>  
+            </section> 
         </div>   
-        <!-- START RESET SCHEDULE -->
+        <!-- START FORM PUBLISH SCHEDULE -->
         <script>
             $("#formpublish #btnsubmitpublish").click(function()
             {

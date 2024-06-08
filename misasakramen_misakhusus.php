@@ -61,7 +61,7 @@ else
                     <!-- HANDLE MISA SCHEDULE --->
                     <div class="col-md-12">
                         <!-- jquery validation -->
-                        <div class="card" style="box-shadow: unset;">
+                        <div class="card">
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <div class="card-body">

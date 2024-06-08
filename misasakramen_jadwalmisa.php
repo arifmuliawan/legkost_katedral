@@ -13,7 +13,7 @@ if(isset($_POST['updateschedule']))
         {
             $schonline[]  = '1';
         }
-        $off1    = $_POST['sch_offonline'][$scheduleid][$k];
+        $off1    = $_POST['sch_offline'][$scheduleid][$k];
         if(empty($off1[1]))
         {
             $schoffline[]  = '0';

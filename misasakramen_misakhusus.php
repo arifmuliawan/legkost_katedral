@@ -5,6 +5,11 @@ if($sum_misa_khusus>0)
 {
     $data_misa_khusus   = mysqli_fetch_array($query_misa_khusus);
     $misa_khusus_id     = $data_misa_khusus['id'];
+    $misa_khusus_title  = $data_misa_khusus['title'];
+    $misa_khusus_desc   = $data_misa_khusus['description'];
+    $misa_kregis_img    = $data_misa_khusus['regis_img'];
+    $misa_kregis_url    = $data_misa_khusus['regis_url'];
+    $misa_kschedule_img = $data_misa_khusus['schedule_img'];
     $data_publish_start = $data_misa_khusus['publish_start'];
     if($data_publish_start=="")
     {
@@ -66,27 +71,38 @@ else
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <div class="card-body">
                                 <form method="POST" id="formpublish">
+                                <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p>
-                                        Pop up acara misa khusus dan tombol yang mengarahkan pada pop up tersebut dapat secara otomatis ditampilkan dan dihilangkan dari website, yaitu dengan cara mengisi isian tanggal dibawah ini.
-                                        </p>   
-                                        <p>
-                                        Mohon diperhatikan bahwa untuk kemudahan pengisian data berikutnya, seluruh data yang telah diisi pada halaman ini akan dihapus secara otomatis dalam jangka waktu 3 hari setelah tanggal berakhir. Apabila ada keperluan rekap atau keperluan lainnya, mohon untuk melakukannya dalam jangka waktu tersebut.
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                         <div class="form-group">
-                                            <label class="form-label">TANGGAL MULAI TAMPIL <font color="red">*</font></label>
-                                            <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" value="<?php echo $publish_start ?>" id="dp1" required>
+                                            <label class="form-label">JUDUL MISA KHUSUS (TOMBOL) <font color="red">*</font></label>
+                                            <input type="text" class="form-control" name='title' placeholder="Type something here...." value="<?php echo $misa_khusus_title ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-label">TANGGAL BERAKHIR <font color="red">*</font></label>
-                                            <input type="text" class="form-control" name='publist_end' placeholder="dd/mm/yyyy" value="<?php echo $publish_end ?>" id="dp2" required>
+                                            
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">LINK REGISTRASI <font color="red">*</font></label>
+                                            <input type="text" class="form-control" name='regis_url' placeholder="Type something here...." value="<?php echo $misa_khusus_url ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">DESKRIPSI REGISTRASI <font color="red">*</font></label>
+                                            <textarea class="ckeditor" id="ckedtor" name="article" placeholder="Type something here...." style="margin-top: 0px; margin-bottom: 0px; height: 400px;"> <?php echo $misa_khusus_desc ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        
                                     </div>
                                     <div class="col-md-12" style="text-align:right">
                                         <button id="btnsubmitpublish" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button></a>

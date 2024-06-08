@@ -2,9 +2,9 @@
 if(isset($_POST['updateschedule']))
 {
     $scheduleid         = $_POST['scheduleid'];
-    for($z=1;$z<=8;$z++)
+    for($k=1;$k<=8;$k++)
     {
-        $on1    = $_POST['sch_online'][$scheduleid][$z][1];
+        $on1    = $_POST['sch_online'][$scheduleid][$k][1];
         if(empty($on1))
         {
             $schonline  = '0';

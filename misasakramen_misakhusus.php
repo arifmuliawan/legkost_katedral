@@ -106,9 +106,9 @@ else
             {
                 $.post('ajax-misasakrame.php',
                 {
-                    misakhususid:$("#formperiode input[name=misakhususid]").val(),
-                    publish_start:$("#formperiode input[name=publish_start]").val(),
-                    publish_end:$("#formperiode input[name=publish_end]").val(),
+                    misakhususid:$("#formpublish input[name=misakhususid]").val(),
+                    publish_start:$("#formpublish input[name=publish_start]").val(),
+                    publish_end:$("#formpublish input[name=publish_end]").val(),
                     publish_misakhusus:true
                 },
                 function(data,status)
@@ -120,8 +120,8 @@ else
                     else
                     {
                         notifmodal(data.error_message,'success');
-                        //var delay = 2000;
-                        //setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
                     }
                     console.log(data,status);
                 }

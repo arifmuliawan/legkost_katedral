@@ -154,33 +154,13 @@ if(isset($_POST['updateschedule']))
                                                                             <td style="border: unset;vertical-align: middle;">  
                                                                                 <input class="form-check-input" type="checkbox" name="sch_online[<?php echo $misa_day_id ?>][]" <?php if($sch_online=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">ONLINE</label>
-                                                                                <?php
-                                                                                if($sch_online=='1')
-                                                                                {
-                                                                                    $vl     = '1';
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    $vl     = '0';
-                                                                                }
-                                                                                ?>
-                                                                                <input type="hidden" name="sch_online_values[<?php echo $misa_day_id ?>]" value="<?php echo $vl ?>">
+                                                                                <input type="hidden" name="sch_online_values[<?php echo $misa_day_id ?>]">
 
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;"> 
                                                                                 <input class="form-check-input" type="checkbox" name="sch_offline[<?php echo $misa_day_id ?>][]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">OFFLINE</label>
-                                                                                <?php
-                                                                                if($sch_offline=='1')
-                                                                                {
-                                                                                    $vlo     = '1';
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    $vlo     = '0';
-                                                                                }
-                                                                                ?>
-                                                                                <input type="hidden" name="sch_offline_values[<?php echo $misa_day_id ?>]" value="<?php echo $vlo ?>">
+                                                                                <input type="hidden" name="sch_offline_values[<?php echo $misa_day_id ?>]">
                                                                             </td>
                                                                         </tr>    
                                                                     <?php

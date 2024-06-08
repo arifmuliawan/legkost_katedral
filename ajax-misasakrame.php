@@ -104,7 +104,6 @@ if(isset($_POST['detail_misakhusus']))
             'error_status'   => 1,
             'error_message'  => 'Judul tidak boleh kosong'
         );
-        return;
     }
     if(empty($misakhusustitle))
     {
@@ -113,7 +112,6 @@ if(isset($_POST['detail_misakhusus']))
             'error_status'   => 1,
             'error_message'  => 'Deskripsi tidak boleh kosong'
         );
-        return;
     }
     if(empty($misakregisurl))
     {
@@ -122,7 +120,6 @@ if(isset($_POST['detail_misakhusus']))
             'error_status'   => 1,
             'error_message'  => 'Link Registrasi tidak boleh kosong'
         );
-        return;
     }
     if(empty($error))
     {

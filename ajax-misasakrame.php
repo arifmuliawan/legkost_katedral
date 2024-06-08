@@ -94,6 +94,7 @@ if(isset($_POST['publish_misakhusus']))
 
 if(isset($_POST['detail_misakhusus']))
 {
+    $misakhususid           = $_POST['misakhususid'];
     $misakhusustitle        = $_POST['misakhusustitle'];
     $misakhususdesc         = $_POST['misakhususdesc'];
     $misakregisurl          = $_POST['misakregisurl'];

@@ -139,7 +139,7 @@ else
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-label">DESKRIPSI REGISTRASI <font color="red">*</font></label>
-                                            <textarea class="ckeditor" id="ckedtor" name="article" placeholder="Type something here...." style="margin-top: 0px; margin-bottom: 0px; height: 400px;"> <?php echo $misa_khusus_desc ?></textarea>
+                                            <textarea class="ckeditor" id="ckedtor" name="desc" placeholder="Type something here...." style="margin-top: 0px; margin-bottom: 0px; height: 400px;"> <?php echo $misa_khusus_desc ?></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -202,8 +202,8 @@ else
                 $.post('ajax-misasakrame.php',
                 {
                     misakhususid:$("#formdetail input[name=misakhususid]").val(),
-                    misakhusustitle:$("#formdetail input[namw=title]").val(),
-                    misakhususdesc:$("#formdetail #ckeditor").val(),
+                    misakhusustitle:$("#formdetail input[name=title]").val(),
+                    misakhususdesc:$("#formdetail textarea[name=desc]").val(),
                     misakregisurl:$("#formdetail input[name=regis_url]").val(),
                     detail_misakhusus:true
                 },

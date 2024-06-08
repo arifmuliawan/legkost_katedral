@@ -5,9 +5,7 @@ if(isset($_POST['updateschedule']))
     for($k=1;$k<=8;$k++)
     {
         $on1    = $_POST['sch_online'][$scheduleid][$k];
-        print_r($on1);
-        exit();
-        if(empty($on1))
+        if(empty($on1[1]))
         {
             $schonline  = '0';
         }
@@ -15,6 +13,8 @@ if(isset($_POST['updateschedule']))
         {
             $schonline  = '1';
         }
+        print_r($schonline);
+        exit();
     }
     $stt_online         = $_POST['sch_online_values'][$scheduleid];
     $stt_offline        = $_POST['sch_offline_values'][$scheduleid];

@@ -38,24 +38,24 @@ if(isset($_POST['reset_schedule_misa']))
 }
 if(isset($_POST['publish_misakhusus']))
 {
-    $misakhususid   = $_POST['misakhususid'];
-    $pubish_start   = $_POST['publish_start'];
-    $pubish_end     = $_POST['publish_end'];
-    if($pubish_start=="" && $pubish_end=="")
+    $misakhususid       = $_POST['misakhususid'];
+    $input_pubish_start = $_POST['publish_start'];
+    $input_pubish_end   = $_POST['publish_end'];
+    if($input_pubish_start=="" && $input_pubish_end=="")
     {
         $response_json       = array(
             'error_status'   => 1,
             'error_message'  => 'Tanggal Mulai & Tanggal Berakhir Harus Terisi'
         );
     }
-    elseif($pubish_start=="" && $pubish_end!="")
+    elseif($input_pubish_start=="" && $input_pubish_end!="")
     {
         $response_json       = array(
             'error_status'   => 1,
             'error_message'  => 'Tanggal Mulai Harus Terisi'
         );
     }
-    elseif($pubish_start!="" && $pubish_end=="")
+    elseif($input_pubish_start!="" && $input_pubish_end=="")
     {
         $response_json       = array(
             'error_status'   => 1,
@@ -64,6 +64,16 @@ if(isset($_POST['publish_misakhusus']))
     }
     else
     {
+        $exp_publish_start  = explode("/",$input_pubish_start);
+        $ds                 = $exp_publish_start[0];
+        $ms                 = $exp_publish_start[1];
+        $ys                 = $exp_publish_start[2];
+        $pubish_start       = $ys.'-'.$ms.'-'.$ds;
+        $exp_publish_end    = explode("/",$input_pubish_end);
+        $de                 = $exp_publish_end[0];
+        $me                 = $exp_publish_end[1];
+        $ye                 = $exp_publish_end[2];
+        $pubish_end         = $ye.'-'.$me.'-'.$de;
         $update_misakhusus  = mysqli_query($con,"UPDATE misa_khusus SET publish_start='$pubish_start', publish_end='$pubish_end', update_by='$user', update_date='$now' WHERE id='$misakhususid'") or die (mysqli_error($con));
         if($update_misakhusus!=1)
         {

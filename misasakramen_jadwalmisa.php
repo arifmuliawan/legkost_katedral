@@ -22,7 +22,9 @@ if(isset($_POST['updateschedule']))
     {
         echo "
             <script type='text/javascript'>
-                notifmodal('Perubahan data telah berhasil disimpan','success')
+                $(document).ready(function(){
+                    notifmodal('Perubahan data telah berhasil disimpan','success')
+                })
             </script>
         ";
     }
@@ -30,7 +32,9 @@ if(isset($_POST['updateschedule']))
     {
         echo "
             <script type='text/javascript'>
-                notifmodal('Perubahan data gagal disimpan','failed')
+                $(document).ready(function(){
+                    notifmodal('Perubahan data gagal disimpan','success')
+                })
             </script>
         ";
     }

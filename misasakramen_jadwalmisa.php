@@ -7,11 +7,11 @@ if(isset($_POST['updateschedule']))
         $on1    = $_POST['sch_online'][$scheduleid][$k];
         if(empty($on1[1]))
         {
-            $schonline  = '0';
+            $schonline[]  = '0';
         }
         else
         {
-            $schonline  = '1';
+            $schonline[]  = '1';
         }
     }
     print_r($schonline);

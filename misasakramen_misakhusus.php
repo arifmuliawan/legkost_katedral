@@ -199,11 +199,12 @@ else
         <script>
             $("#formdetail #btnsubmitdetail").click(function()
             {
+                var textdesc    = CKEDITOR.instances[editordesc].getData();
                 $.post('ajax-misasakrame.php',
                 {
                     misakhususid:$("#formdetail input[name=misakhususid]").val(),
                     misakhusustitle:$("#formdetail input[name=title]").val(),
-                    misakhususdesc:CKEDITOR.instances[editordesc].getData(),
+                    misakhususdesc:$textdesc,
                     misakregisurl:$("#formdetail input[name=regis_url]").val(),
                     detail_misakhusus:true
                 },

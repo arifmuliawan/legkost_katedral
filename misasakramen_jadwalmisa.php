@@ -1,6 +1,7 @@
 <?php
 if(isset($_POST['updateschedule']))
 {
+    /*
     $scheduleid         = $_POST['scheduleid'];
     for($z=0;$z<=7;$z++)
     {
@@ -13,7 +14,7 @@ if(isset($_POST['updateschedule']))
         else
         {}
     }
-    echo "<br><br>";
+    echo "<br><br>";*/
     print_r($_POST);
     exit();
     $stt_online         = $_POST['sch_online_values'][$scheduleid];

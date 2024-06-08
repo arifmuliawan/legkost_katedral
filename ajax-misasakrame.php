@@ -29,7 +29,6 @@ if(isset($_POST['reset_schedule_misa']))
         }
         else
         {
-            unlink($photo_paroki);
             $response_json       = array(
                 'error_status'   => 0,
                 'error_message'  => 'Reset data telah berhasil diproses'

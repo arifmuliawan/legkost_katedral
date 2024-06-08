@@ -112,7 +112,7 @@
             $("#notifmodal").find(".modal-content h5").html(msg);
             $("#notifmodal").find(".modal-content img").attr('src',icon);
             $("#notifmodal").modal("show");
-            window.setTimeout(function() {$('#notifmodal').modal('hide'); }, 2000);
+            setTimeout(function() {$('#notifmodal').modal('hide'); }, 2000);
         })
     }
 </script>

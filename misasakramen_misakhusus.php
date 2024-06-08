@@ -6,7 +6,7 @@ if($sum_misa_khusus>0)
     $data_misa_khusus   = mysqli_fetch_array($query_misa_khusus);
     $misa_khusus_id     = $data_misa_khusus['id'];
     $data_publish_start = $data_misa_khusus['publish_start'];
-    if($data_pubish_start=="")
+    if($data_publish_start=="")
     {
         $publish_start      = "";
     }
@@ -16,9 +16,9 @@ if($sum_misa_khusus>0)
         $ds                 = $exp_publish_start[2];
         $ms                 = $exp_publish_start[1];
         $ys                 = $exp_publish_start[0];
-        $pubish_start       = $ds.'/'.$ms.'/'.$ys;
+        $publish_start      = $ds.'/'.$ms.'/'.$ys;
     }  
-    if($data_pubish_end=="")
+    if($data_publish_end=="")
     {
         $publish_end        = "";
     }
@@ -29,7 +29,7 @@ if($sum_misa_khusus>0)
         $de                 = $exp_publish_end[2];
         $me                 = $exp_publish_end[1];
         $ye                 = $exp_publish_end[0];
-        $pubish_end         = $de.'/'.$me.'/'.$ye;
+        $publish_end        = $de.'/'.$me.'/'.$ye;
     }    
 }
 else

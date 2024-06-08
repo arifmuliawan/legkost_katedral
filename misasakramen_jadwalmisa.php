@@ -1,8 +1,8 @@
 <?php
 if(isset($_POST['updateschedule']))
 {
-    print_r($_POST);
-    exit();
+    //print_r($_POST);
+    //exit();
     $scheduleid         = $_POST['scheduleid'];
     $stt_online         = $_POST['sch_online_values'][$scheduleid];
     $stt_offline        = $_POST['sch_offline_values'][$scheduleid];

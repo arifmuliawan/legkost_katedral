@@ -97,20 +97,20 @@ if(isset($_POST['detail_misakhusus']))
     $misakhusustitle        = $_POST['misakhusustitle'];
     $misakhususdesc         = $_POST['misakhususdesc'];
     $misakregisurl          = $_POST['misakregisurl'];
-    if(empty($misakregisurl))
-    {
-        $error               = 1;
-        $response_json       = array(
-            'error_status'   => 1,
-            'error_message'  => 'Link Registrasi tidak boleh kosong'
-        );
-    }
     if(empty($misakhususdesc))
     {
         $error               = 1;
         $response_json       = array(
             'error_status'   => 1,
             'error_message'  => 'Deskripsi tidak boleh kosong'
+        );
+    }
+    if(empty($misakregisurl))
+    {
+        $error               = 1;
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Link Registrasi tidak boleh kosong'
         );
     }
     if(empty($misakhusustitle))

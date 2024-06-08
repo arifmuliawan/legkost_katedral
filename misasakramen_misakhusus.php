@@ -133,7 +133,7 @@ else
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label">LINK REGISTRASI <font color="red">*</font></label>
-                                            <input type="text" class="form-control" name='regis_url' placeholder="Type something here...." value="<?php echo $misa_khusus_url ?>">
+                                            <input type="text" class="form-control" name='regis_url' placeholder="Type something here...." value="<?php echo $misa_kregis_url ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-12">

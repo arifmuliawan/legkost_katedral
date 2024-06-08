@@ -39,8 +39,8 @@ if(isset($_POST['reset_schedule_misa']))
 if(isset($_POST['publish_misakhusus']))
 {
     $misakhususid       = $_POST['misakhususid'];
-    $input_pubish_start = $_POST['publish_start'];
-    $input_pubish_end   = $_POST['publish_end'];
+    $input_publish_start = $_POST['publish_start'];
+    $input_publish_end   = $_POST['publish_end'];
     if($input_pubish_start=="" && $input_pubish_end=="")
     {
         $response_json       = array(
@@ -64,12 +64,12 @@ if(isset($_POST['publish_misakhusus']))
     }
     else
     {
-        $exp_publish_start  = explode("/",$input_pubish_start);
+        $exp_publish_start  = explode("/",$input_publish_start);
         $ds                 = $exp_publish_start[0];
         $ms                 = $exp_publish_start[1];
         $ys                 = $exp_publish_start[2];
         $publish_start       = $ys.'-'.$ms.'-'.$ds;
-        $exp_publish_end    = explode("/",$input_pubish_end);
+        $exp_publish_end    = explode("/",$input_publish_end);
         $de                 = $exp_publish_end[0];
         $me                 = $exp_publish_end[1];
         $ye                 = $exp_publish_end[2];

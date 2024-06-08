@@ -13,22 +13,27 @@ if(isset($_POST['updateschedule']))
         {
             $schonline[]  = '1';
         }
+        $off1    = $_POST['sch_offonline'][$scheduleid][$k];
+        if(empty($off1[1]))
+        {
+            $schoffline[]  = '0';
+        }
+        else
+        {
+            $schoffline[]  = '1';
+        }
     }
-    print_r($schonline);
-    exit();
-    $stt_online         = $_POST['sch_online_values'][$scheduleid];
-    $stt_offline        = $_POST['sch_offline_values'][$scheduleid];
-    $exp_stt_online     = explode(",",$stt_online);
-    $exp_stt_offline    = explode(",",$stt_offline);
     for($z=0;$z<=7;$z++)
     {
         $sch_hour[$z]   = $_POST['sch_hour'][$z];
         $sch_min[$z]    = $_POST['sch_min'][$z];
-        $online         = $exp_stt_online[$z];
-        $offline        = $exp_stt_offline[$z];
+        $online         = $schonline[$z];
+        $offline        = $schoffline[$z];
         $schedule[$z]   = $sch_hour[$z].':'.$sch_min[$z].':'.$online.':'.$offline;
     }
     $schdule_misa       = implode("|",$schedule);
+    print_r($schdule_misa);
+    exit();
     $update_schedule    = mysqli_query($con,"UPDATE `misa_schedule` SET `schedule`='$schdule_misa' WHERE id='$scheduleid'") or die (mysqli_error($con));
     if($update_schedule==1)
     {

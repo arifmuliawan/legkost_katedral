@@ -54,6 +54,7 @@ if(isset($_POST['updateschedule']))
         ";
     }
 }
+if()
 ?>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
@@ -102,7 +103,10 @@ if(isset($_POST['updateschedule']))
                                                     {
                                                         $misa_day_id    = $data_misa_day['id'];
                                                         $misa_day_name  = $data_misa_day['name'];
-                                                        $misa_day_sch   = $data_misa_day['schedule']
+                                                        $misa_day_sch   = $data_misa_day['schedule'];
+                                                        $schedule_json  = array(
+                                                            'scheduleid'      => $misa_day_id
+                                                        );    
                                                 ?>
                                                         <form method="POST" action="" >
                                                         <table class="table" style="margin: 24px;width: 50%;">
@@ -193,7 +197,7 @@ if(isset($_POST['updateschedule']))
                                                         <div style="margin:24px">
                                                             <input type="submit" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" name="updateschedule" VALUE="SUBMIT">
                                                             &nbsp&nbsp
-                                                            <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;">RESET ALL</button></a>
+                                                            <button id="btnresetschedule" type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;" onclick="return confirm('Are you sure you want to reset schedule ?')" data-schdule='<?php echo json_encode($schedule_json) ?>'>RESET ALL</button></a>
                                                         </div> 
                                                         <!--
                                                         <script>
@@ -235,4 +239,36 @@ if(isset($_POST['updateschedule']))
                     <!-- /HANDLE MISA SCHEDULE --->
                 </div>
             </section>  
-        </div>     
+        </div>   
+        <!-- START RESET SCHEDULE -->
+        <script>
+            $("#btnresetschedule").click(function()
+            {
+                var me      = $(this);
+                var data    = me2.attr('data-schedule');
+                var jdata   = JSON.parse(data2);
+                $.post('ajax-misasakrame.php',
+                {
+                    id_paroki:jdata2.scheduleid,
+                    reset_schedule_misa:true
+                },
+                function(data,status)
+                {
+                    if(data.error_status==1)
+                    {
+                        notifmodal(data.error_message,'failed');    
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=misasakrame_jadwalmisa'; }, delay);
+                    }
+                    else
+                    {
+                        notifmodal(data.error_message,'success');    
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=misasakrame_jadwalmisa'; }, delay);
+                    }
+                    console.log(data,status);
+                }
+                );
+            });   
+        </script>
+        <!-- END RESET SCHEDULE -->

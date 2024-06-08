@@ -18,7 +18,7 @@ if(isset($_POST['updateschedule']))
     }
     $schdule_misa       = implode("|",$schedule);
     $update_schedule    = mysqli_query($con,"UPDATE `misa_schedule` SET `schedule`='$schdule_misa' WHERE id='$scheduleid'") or die (mysqli_error($con));
-    if($update_schedule==1)
+    if($update_schedule==0)
     {
         echo "
             <script type='text/javascript'>

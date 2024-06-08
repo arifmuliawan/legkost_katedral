@@ -94,7 +94,7 @@ if(isset($_POST['publish_misakhusus']))
 
 if(isset($_POST['detail_misakhusus']))
 {
-    print_r($_POST)
+    print_r($_POST);
     exit();
     $misakhusustitle        = $_POST['misakhusustitle'];
     $misakhususdesc         = $_POST['misakhususdesc'];

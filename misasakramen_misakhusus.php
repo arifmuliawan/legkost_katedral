@@ -202,9 +202,9 @@ else
                 $.post('ajax-misasakrame.php',
                 {
                     misakhususid:$("#formdetail input[name=misakhususid]").val(),
-                    misakhusustitle:$("#formdetail input[title]").val(),
+                    misakhusustitle:$("#formdetail input[namw=title]").val(),
                     misakhususdesc:$("#formdetail #ckeditor").val(),
-                    misakregisurl:$("#formdetail input[regis_url]").val(),
+                    misakregisurl:$("#formdetail input[name=regis_url]").val(),
                     detail_misakhusus:true
                 },
                 function(data,status)

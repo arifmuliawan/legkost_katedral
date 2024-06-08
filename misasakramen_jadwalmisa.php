@@ -1,9 +1,21 @@
 <?php
 if(isset($_POST['updateschedule']))
 {
+    $scheduleid         = $_POST['scheduleid'];
+    for($z=0;$z<=7;$z++)
+    {
+        if($_POST['sch_online'][$scheduleid][$z] == 0) 
+        {
+            echo "0";
+        } elseif ($_POST['sch_online'][$scheduleid][$z] == 1) {
+            echo "1";
+        }
+        else
+        {}
+    }
+    echo "<br><br>";
     print_r($_POST);
     exit();
-    $scheduleid         = $_POST['scheduleid'];
     $stt_online         = $_POST['sch_online_values'][$scheduleid];
     $stt_offline        = $_POST['sch_offline_values'][$scheduleid];
     $exp_stt_online     = explode(",",$stt_online);
@@ -158,13 +170,13 @@ if(isset($_POST['updateschedule']))
                                                                             <td style="border: unset;vertical-align: middle;">  
                                                                                 <input class="form-check-input" type="checkbox" name="sch_online[<?php echo $misa_day_id ?>][]" <?php if($sch_online=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">ONLINE</label>
-                                                                                <input type="hidden" name="sch_online_values[<?php echo $misa_day_id ?>]">
+                                                                                <!--<input type="hidden" name="sch_online_values[<?php echo $misa_day_id ?>]">-->
 
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;"> 
                                                                                 <input class="form-check-input" type="checkbox" name="sch_offline[<?php echo $misa_day_id ?>][]" <?php if($sch_offline=='1'){ echo "CHECKED";} ?> value="1"> 
                                                                                 <label class="form-check-label">OFFLINE</label>
-                                                                                <input type="hidden" name="sch_offline_values[<?php echo $misa_day_id ?>]">
+                                                                                <!--<input type="hidden" name="sch_offline_values[<?php echo $misa_day_id ?>]">-->
                                                                             </td>
                                                                         </tr>    
                                                                     <?php
@@ -178,6 +190,7 @@ if(isset($_POST['updateschedule']))
                                                             &nbsp&nbsp
                                                             <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;">RESET ALL</button></a>
                                                         </div> 
+                                                        <!--
                                                         <script>
                                                             $('[name="sch_online[<?php echo $misa_day_id ?>][]"]').click(function() {
                                                             var arr = [];
@@ -199,6 +212,7 @@ if(isset($_POST['updateschedule']))
                                                             $('[name="sch_offline_values[<?php echo $misa_day_id ?>]"]').val(arr);
                                                             });
                                                         </script>
+                                                        -->
                                                         </form>   
                                                 <?php
                                                     }

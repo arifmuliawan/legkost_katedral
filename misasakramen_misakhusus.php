@@ -4,11 +4,13 @@ $sum_misa_khusus     = mysqli_num_rows($query_misa_khusus);
 if($sum_misa_khusus>0)
 {
     $data_misa_khusus   = mysqli_fetch_array($query_misa_khusus);
+    $misa_khusus_id     = $data_misa_khusus['id'];
     $publish_start      = $data_misa_khusus['publish_start'];
     $publish_end        = $data_misa_khusus['publish_end'];
 }
 else
 {
+    $misa_khusus_id     = "";
     $publish_start      = "";
     $publish_end        = "";
 }
@@ -50,6 +52,7 @@ else
                                         </p>
                                     </div>
                                     <div class="col-md-6">
+                                        <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                         <div class="form-group">
                                             <label class="form-label">TANGGAL MULAI TAMPIL <font color="red">*</font></label>
                                             <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" value="<?php echo $publish_start ?>" id="dp1" required>
@@ -75,33 +78,30 @@ else
         </div>   
         <!-- START RESET SCHEDULE -->
         <script>
-            $("#formschedule #btnresetschedule").click(function()
+            $("#formpublish #btnsubmitpublish").click(function()
             {
-                var me      = $(this);
-                var data    = me.attr('data-schedule');
-                var jdata   = JSON.parse(data);
                 $.post('ajax-misasakrame.php',
                 {
-                    scheduleid:jdata.scheduleid,
-                    reset_schedule_misa:true
+                    misakhususid:$("#formperiode input[name=misakhususid]").val(),
+                    publish_start:$("#formperiode input[name=publish_start]").val(),
+                    publish_end:$("#formperiode input[name=publish_end]").val(),
+                    publish_misakhusus:true
                 },
                 function(data,status)
                 {
-                    if(data.error_status==1)
+                    if(data.error_status=='1')
                     {
-                        notifmodal(data.error_message,'failed');    
-                        var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
+                        notifmodal(data.error_message,'failed');
                     }
                     else
                     {
-                        notifmodal(data.error_message,'success');    
+                        notifmodal(data.error_message,'success');
                         var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
                     }
                     console.log(data,status);
                 }
                 );
-            });   
+            }); 
         </script>
         <!-- END RESET SCHEDULE -->

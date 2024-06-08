@@ -85,7 +85,7 @@ else
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label">TANGGAL BERAKHIR <font color="red">*</font></label>
-                                            <input type="text" class="form-control" name='publist_end' placeholder="dd/mm/yyyy" value="<?php echo $publish_start ?>" id="dp2" required>
+                                            <input type="text" class="form-control" name='publist_end' placeholder="dd/mm/yyyy" value="<?php echo $publish_end ?>" id="dp2" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12" style="text-align:right">

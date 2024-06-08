@@ -1,21 +1,21 @@
 <?php
 if(isset($_POST['updateschedule']))
 {
-    /*
     $scheduleid         = $_POST['scheduleid'];
-    for($z=0;$z<=7;$z++)
+    for($z=1;$z<=8;$z++)
     {
-        if($_POST['sch_online'][$scheduleid][$z] == 0) 
+        $on1    = $_POST['sch_online'][$scheduleid][$z][1];
+        if(empty($on1))
         {
-            echo "0";
-        } elseif ($_POST['sch_online'][$scheduleid][$z] == 1) {
-            echo "1";
+            $schonline  = '0';
         }
         else
-        {}
+        {
+            $schonline  = '1';
+        }
     }
-    echo "<br><br>";*/
-    print_r($_POST);
+    $impschonline   = implode(',',$schonline);
+    print_r($impschonline);
     exit();
     $stt_online         = $_POST['sch_online_values'][$scheduleid];
     $stt_offline        = $_POST['sch_offline_values'][$scheduleid];

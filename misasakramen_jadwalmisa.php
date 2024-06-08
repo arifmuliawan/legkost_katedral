@@ -107,7 +107,7 @@ if(isset($_POST['updateschedule']))
                                                             'scheduleid'      => $misa_day_id
                                                         );    
                                                 ?>
-                                                        <form method="POST" action="" >
+                                                        <form method="POST" action="" id="formschedule">
                                                         <table class="table" style="margin: 24px;width: 50%;">
                                                             <thead style="color: #000000;">
                                                                 <tr>
@@ -241,7 +241,7 @@ if(isset($_POST['updateschedule']))
         </div>   
         <!-- START RESET SCHEDULE -->
         <script>
-            $("#btnresetschedule").click(function()
+            $("#formschedule #btnresetschedule").click(function()
             {
                 var me      = $(this);
                 var data    = me2.attr('data-schedule');

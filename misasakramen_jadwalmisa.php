@@ -20,7 +20,7 @@ if(isset($_POST['updateschedule']))
     {
 ?> 
         <script>        
-            notifmodal(0,'success');
+            notifmodal('Perubahan data telah berhasil disimpan','success');
         </script> 
 <?php
     }

@@ -38,24 +38,24 @@ if(isset($_POST['reset_schedule_misa']))
 }
 if(isset($_POST['publish_misakhusus']))
 {
-    $misakhususid       = $_POST['misakhususid'];
+    $misakhususid        = $_POST['misakhususid'];
     $input_publish_start = $_POST['publish_start'];
     $input_publish_end   = $_POST['publish_end'];
-    if($input_pubish_start=="" && $input_pubish_end=="")
+    if($input_publish_start=="" && $input_publish_end=="")
     {
         $response_json       = array(
             'error_status'   => 1,
             'error_message'  => 'Tanggal Mulai & Tanggal Berakhir Harus Terisi'
         );
     }
-    elseif($input_pubish_start=="" && $input_pubish_end!="")
+    elseif($input_publish_start=="" && $input_publish_end!="")
     {
         $response_json       = array(
             'error_status'   => 1,
             'error_message'  => 'Tanggal Mulai Harus Terisi'
         );
     }
-    elseif($input_pubish_start!="" && $input_pubish_end=="")
+    elseif($input_publish_start!="" && $input_publish_end=="")
     {
         $response_json       = array(
             'error_status'   => 1,

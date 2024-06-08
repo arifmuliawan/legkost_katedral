@@ -124,7 +124,7 @@ if(isset($_POST['detail_misakhusus']))
         );
         return;
     }
-    echo "$error | $response_json";
+    echo "title : $misakhusustitle";
     exit();
     if(empty($error))
     {

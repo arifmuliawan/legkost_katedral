@@ -38,6 +38,8 @@ if(isset($_POST['reset_schedule_misa']))
 }
 if(isset($_POST['publish_misakhusus']))
 {
+    print_r($_POST);
+    exit();
     $misakhususid       = $_POST['misakhususid'];
     $input_publish_start = $_POST['publish_start'];
     $input_publish_end   = $_POST['publish_end'];

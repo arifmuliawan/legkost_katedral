@@ -19,8 +19,8 @@ if(isset($_POST['updateschedule']))
     if($update_schedule==1)
     {
 ?> 
-        <script>        
-            notifmodal('Perubahan data telah berhasil disimpan','success');
+        <script>      
+            notifmodal(Perubahan data telah berhasil disimpan,'success');
         </script> 
 <?php
     }

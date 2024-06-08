@@ -244,8 +244,8 @@ if(isset($_POST['updateschedule']))
             $("#formschedule #btnresetschedule").click(function()
             {
                 var me      = $(this);
-                var data    = me2.attr('data-schedule');
-                var jdata   = JSON.parse(data2);
+                var data    = me.attr('data-schedule');
+                var jdata   = JSON.parse(data);
                 $.post('ajax-misasakrame.php',
                 {
                     id_paroki:jdata2.scheduleid,

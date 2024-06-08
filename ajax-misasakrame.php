@@ -68,12 +68,12 @@ if(isset($_POST['publish_misakhusus']))
         $ds                 = $exp_publish_start[0];
         $ms                 = $exp_publish_start[1];
         $ys                 = $exp_publish_start[2];
-        $publish_start       = $ys.'-'.$ms.'-'.$ds;
+        $publish_start      = $ys.'-'.$ms.'-'.$ds;
         $exp_publish_end    = explode("/",$input_publish_end);
         $de                 = $exp_publish_end[0];
         $me                 = $exp_publish_end[1];
         $ye                 = $exp_publish_end[2];
-        $publish_end         = $ye.'-'.$me.'-'.$de;
+        $publish_end        = $ye.'-'.$me.'-'.$de;
         $update_misakhusus  = mysqli_query($con,"UPDATE misa_khusus SET publish_start='$publish_start', publish_end='$publish_end', update_by='$user', update_date='$now' WHERE id='$misakhususid'") or die (mysqli_error($con));
         if($update_misakhusus!=1)
         {
@@ -91,6 +91,58 @@ if(isset($_POST['publish_misakhusus']))
         }
     }
 }
+
+if(isset($_POST['detail_misakhusus']))
+{
+    $misakhusustitle        = $_POST['misakhusustitle'];
+    $misakhususdesc         = $_POST['misakhususdesc'];
+    $misakregisurl          = $_POST['misakregisurl'];
+    if($misakhusustitle=="")
+    {
+        $error               = 1;
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Judul tidak boleh kosong'
+        );
+        return;
+    }
+    if($misakhususdesc=="")
+    {
+        $error               = 1;
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Deskripsi tidak boleh kosong'
+        );
+        return;
+    }
+    if($misakregisurl=="")
+    {
+        $error               = 1;
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Link Registrasi tidak boleh kosong'
+        );
+        return;
+    }
+    if(empty($error))
+    {
+        $update_misakhusus  = mysqli_query($con,"UPDATE misa_khusus SET title='$misakhusustitle', description='$misakhususdesc', regis_url='$misakregisurl', update_by='$user', update_date='$now' WHERE id='$misakhususid'") or die (mysqli_error($con));
+        if($update_misakhusus!=1)
+        {
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Perubahan data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Perubahan data berhasil disimpan'
+            ); 
+        }
+    }
+}    
 
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);

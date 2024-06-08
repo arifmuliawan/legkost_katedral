@@ -32,8 +32,6 @@ if(isset($_POST['updateschedule']))
         $schedule[$z]   = $sch_hour[$z].':'.$sch_min[$z].':'.$online.':'.$offline;
     }
     $schdule_misa       = implode("|",$schedule);
-    print_r($schdule_misa);
-    exit();
     $update_schedule    = mysqli_query($con,"UPDATE `misa_schedule` SET `schedule`='$schdule_misa' WHERE id='$scheduleid'") or die (mysqli_error($con));
     if($update_schedule==1)
     {

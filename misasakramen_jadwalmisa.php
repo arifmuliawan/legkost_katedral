@@ -54,7 +54,6 @@ if(isset($_POST['updateschedule']))
         ";
     }
 }
-if()
 ?>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">

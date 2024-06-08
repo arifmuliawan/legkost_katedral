@@ -6,17 +6,31 @@ if($sum_misa_khusus>0)
     $data_misa_khusus   = mysqli_fetch_array($query_misa_khusus);
     $misa_khusus_id     = $data_misa_khusus['id'];
     $data_publish_start = $data_misa_khusus['publish_start'];
-    $exp_publish_start  = explode("-",$data_pubish_start);
-    $ds                 = $exp_publish_start[2];
-    $ms                 = $exp_publish_start[1];
-    $ys                 = $exp_publish_start[0];
-    $pubish_start       = $ds.'/'.$ms.'/'.$ys;
-    $data_publish_end   = $data_misa_khusus['publish_end'];
-    $exp_publish_end    = explode("-",$data_pubish_end);
-    $de                 = $exp_publish_end[2];
-    $me                 = $exp_publish_end[1];
-    $ye                 = $exp_publish_end[0];
-    $pubish_end         = $de.'/'.$me.'/'.$ye;
+    if($data_pubish_start=="")
+    {
+        $publish_start      = "";
+    }
+    else
+    {
+        $exp_publish_start  = explode("-",$data_pubish_start);
+        $ds                 = $exp_publish_start[2];
+        $ms                 = $exp_publish_start[1];
+        $ys                 = $exp_publish_start[0];
+        $pubish_start       = $ds.'/'.$ms.'/'.$ys;
+    }  
+    if($data_pubish_end=="")
+    {
+        $publish_end        = "";
+    }
+    else
+    {  
+        $data_publish_end   = $data_misa_khusus['publish_end'];
+        $exp_publish_end    = explode("-",$data_pubish_end);
+        $de                 = $exp_publish_end[2];
+        $me                 = $exp_publish_end[1];
+        $ye                 = $exp_publish_end[0];
+        $pubish_end         = $de.'/'.$me.'/'.$ye;
+    }    
 }
 else
 {

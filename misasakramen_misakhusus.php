@@ -1,3 +1,19 @@
+<?php
+$query_misa_khusus   = mysqli_query($con,"SELECT * FROM misa_khusus WHERE id='1'")or die (mysqli_error($con));
+$sum_misa_khusus     = mysqli_num_rows($query_misa_khusus);
+if($sum_misa_khusus>0)
+{
+    $data_misa_khusus   = mysqli_fetch_array($query_misa_khusus);
+    $publish_start      = $data_misa_khusus['publish_start'];
+    $publish_end        = $data_misa_khusus['publish_end'];
+}
+else
+{
+    $publish_start      = "";
+    $publish_end        = "";
+}
+
+?>        
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color: #ffffff;">
             <!-- Content Header (Page header) -->
@@ -36,13 +52,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label">TANGGAL MULAI TAMPIL <font color="red">*</font></label>
-                                            <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" value="" id="dp1" required>
+                                            <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" value="<?php echo $publish_start ?>" id="dp1" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label">TANGGAL BERAKHIR <font color="red">*</font></label>
-                                            <input type="text" class="form-control" name='publist_end' placeholder="dd/mm/yyyy" value="" id="dp2" required>
+                                            <input type="text" class="form-control" name='publist_end' placeholder="dd/mm/yyyy" value="<?php echo $publish_start ?>" id="dp2" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12" style="text-align:right">

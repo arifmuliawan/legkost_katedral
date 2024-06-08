@@ -97,7 +97,7 @@ if(isset($_POST['detail_misakhusus']))
     $misakhusustitle        = $_POST['misakhusustitle'];
     $misakhususdesc         = $_POST['misakhususdesc'];
     $misakregisurl          = $_POST['misakregisurl'];
-    print_r($misakhusustitle);
+    print_r($misakhususid);
     exit();
     if($misakhusustitle=="")
     {

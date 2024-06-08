@@ -97,9 +97,7 @@ if(isset($_POST['detail_misakhusus']))
     $misakhusustitle        = $_POST['misakhusustitle'];
     $misakhususdesc         = $_POST['misakhususdesc'];
     $misakregisurl          = $_POST['misakregisurl'];
-    print_r($_POST['misakhusustitle']);
-    exit();
-    if($misakhusustitle=="")
+    if(empty($misakhusustitle))
     {
         $error               = 1;
         $response_json       = array(
@@ -108,7 +106,7 @@ if(isset($_POST['detail_misakhusus']))
         );
         return;
     }
-    if($misakhususdesc=="")
+    if(empty($misakhusustitle))
     {
         $error               = 1;
         $response_json       = array(
@@ -117,7 +115,7 @@ if(isset($_POST['detail_misakhusus']))
         );
         return;
     }
-    if($misakregisurl=="")
+    if(empty($misakregisurl))
     {
         $error               = 1;
         $response_json       = array(

@@ -12,7 +12,7 @@ if($sum_misa_khusus>0)
     }
     else
     {
-        $exp_publish_start  = explode("-",$data_pubish_start);
+        $exp_publish_start  = explode("-",$data_publish_start);
         $ds                 = $exp_publish_start[2];
         $ms                 = $exp_publish_start[1];
         $ys                 = $exp_publish_start[0];
@@ -25,7 +25,7 @@ if($sum_misa_khusus>0)
     }
     else
     {  
-        $exp_publish_end    = explode("-",$data_pubish_end);
+        $exp_publish_end    = explode("-",$data_publish_end);
         $de                 = $exp_publish_end[2];
         $me                 = $exp_publish_end[1];
         $ye                 = $exp_publish_end[0];

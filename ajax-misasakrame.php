@@ -7,7 +7,7 @@ include("session.php");
 if(isset($_POST['reset_schedule_misa']))
 {
     $scheduleid         = $_POST['scheduleid'];
-    $select_schedule    = mysqli_query($con,"SELECT * FROM misa_schedule WHERE id='$schedule' AND visible='Y'") or die (mysqli_error($con));
+    $select_schedule    = mysqli_query($con,"SELECT * FROM misa_schedule WHERE id='$scheduleid' AND visible='Y'") or die (mysqli_error($con));
     $sum_schedule       = mysqli_num_rows($select_schedule);
     if($sum_schedule<=0)
     {

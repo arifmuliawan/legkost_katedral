@@ -203,7 +203,7 @@ else
                 {
                     misakhususid:$("#formdetail input[name=misakhususid]").val(),
                     misakhusustitle:$("#formdetail input[name=title]").val(),
-                    misakhususdesc:$("#formdetail #editordesc").val(),
+                    misakhususdesc:document.getElementById("editordesc").val(),
                     misakregisurl:$("#formdetail input[name=regis_url]").val(),
                     detail_misakhusus:true
                 },

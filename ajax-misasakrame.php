@@ -105,7 +105,7 @@ if(isset($_POST['detail_misakhusus']))
             'error_message'  => 'Judul tidak boleh kosong'
         );
     }
-    if(empty($misakhusustitle))
+    if(empty($misakhususdesc))
     {
         $error               = 1;
         $response_json       = array(

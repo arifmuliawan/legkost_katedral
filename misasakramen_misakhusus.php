@@ -216,8 +216,8 @@ else
                     else
                     {
                         notifmodal(data.error_message,'success');
-                        //var delay = 2000;
-                        //setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
                     }
                     console.log(data,status);
                 }

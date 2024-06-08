@@ -116,7 +116,7 @@ else
                         <!-- /.card-header -->
                         <!--<form action="" method="post" enctype="multipart/form-data">-->
                             <div class="card-body">
-                                <form method="POST" id="formpublish">
+                                <form method="POST" id="formdetail">
                                 <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -151,7 +151,7 @@ else
                                         
                                     </div>
                                     <div class="col-md-12" style="text-align:right">
-                                        <button id="btnsubmitpublish" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button></a>
+                                        <button id="btnsubmitdetail" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button></a>
                                     </div>
                                 </div>
                                 </form>
@@ -164,15 +164,16 @@ else
                 </div>
             </section> 
         </div>   
+        
         <!-- START FORM PUBLISH SCHEDULE -->
         <script>
             $("#formpublish #btnsubmitpublish").click(function()
             {
                 $.post('ajax-misasakrame.php',
                 {
-                    misakhususid:$("#formpublish input[name=misakhususid]").val(),
-                    publish_start:$("#formpublish #dp1").val(),
-                    publish_end:$("#formpublish #dp2").val(),
+                    misakhususid:$("#formpdetail input[name=misakhususid]").val(),
+                    publish_start:$("#formpdetail #dp1").val(),
+                    publish_end:$("#formpdetail #dp2").val(),
                     publish_misakhusus:true
                 },
                 function(data,status)
@@ -192,4 +193,35 @@ else
                 );
             }); 
         </script>
-        <!-- END RESET SCHEDULE -->
+        <!-- END FORM PUBLISH SCHEDULE -->
+
+        <!-- START FORM DETAIL MISA KHUSUS -->
+        <script>
+            $("#formpdetail #btnsubmitdetail").click(function()
+            {
+                $.post('ajax-misasakrame.php',
+                {
+                    misakhususid:$("#formpublish input[name=misakhususid]").val(),
+                    misakhusustitle:$("#formpublish input[title]").val(),
+                    misakhususdesc:$("#formpublish #ckeditor").val(),
+                    misakregisurl:$("#formpublish input[regis_url]").val(),
+                    detail_misakhusus:true
+                },
+                function(data,status)
+                {
+                    if(data.error_status=='1')
+                    {
+                        notifmodal(data.error_message,'failed');
+                    }
+                    else
+                    {
+                        notifmodal(data.error_message,'success');
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
+                    }
+                    console.log(data,status);
+                }
+                );
+            }); 
+        </script>
+        <!-- END FORM DETAIL MISA KHUSUS -->

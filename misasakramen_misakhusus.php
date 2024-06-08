@@ -32,6 +32,23 @@
                                         Mohon diperhatikan bahwa untuk kemudahan pengisian data berikutnya, seluruh data yang telah diisi pada halaman ini akan dihapus secara otomatis dalam jangka waktu 3 hari setelah tanggal berakhir. Apabila ada keperluan rekap atau keperluan lainnya, mohon untuk melakukannya dalam jangka waktu tersebut.
                                         </p>
                                     </div>
+                                    <form method="POST">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">TANGGAL MULAI TAMPIL <font color="red">*</font></label>
+                                            <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" value="" id="dp1" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">TANGGAL BERAKHIR <font color="red">*</font></label>
+                                            <input type="text" class="form-control" name='publist_end' placeholder="dd/mm/yyyy" value="" id="dp2" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="text-align:right">
+                                        <button id="btnsubmitpublish" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button></a>
+                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

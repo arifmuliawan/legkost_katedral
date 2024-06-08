@@ -112,6 +112,7 @@
             $("#notifmodal").find(".modal-content h5").html(msg);
             $("#notifmodal").find(".modal-content img").attr('src',icon);
             $("#notifmodal").modal("show");
+            $("##notifmodal").modal("hide",2000);
         })
     }
 </script>

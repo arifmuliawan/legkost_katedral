@@ -13,9 +13,9 @@ if(isset($_POST['updateschedule']))
         {
             $schonline  = '1';
         }
-        print_r($schonline);
-        exit();
     }
+    print_r($schonline);
+    exit();
     $stt_online         = $_POST['sch_online_values'][$scheduleid];
     $stt_offline        = $_POST['sch_offline_values'][$scheduleid];
     $exp_stt_online     = explode(",",$stt_online);

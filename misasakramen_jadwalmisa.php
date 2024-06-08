@@ -257,13 +257,13 @@ if(isset($_POST['updateschedule']))
                     {
                         notifmodal(data.error_message,'failed');    
                         var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=misasakrame_jadwalmisa'; }, delay);
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
                     }
                     else
                     {
                         notifmodal(data.error_message,'success');    
                         var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=misasakrame_jadwalmisa'; }, delay);
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
                     }
                     console.log(data,status);
                 }

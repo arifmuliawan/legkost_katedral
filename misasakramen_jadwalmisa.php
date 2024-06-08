@@ -2,7 +2,7 @@
 if(isset($_POST['updateschedule']))
 {
     $scheduleid         = $_POST['scheduleid'];
-    $on1                = $_POST['sch_online'][$scheduleid][1];
+    $on1                = $_POST['sch_online'][$scheduleid][2];
     if(empty($on1[1]))
     {
         $schonline  = '0';

@@ -24,6 +24,15 @@ if(isset($_POST['updateschedule']))
         </script> 
 <?php
     }
+    else
+    {
+?> 
+        <script>        
+            notifmodal('Perubahan data gagal disimpan','failed');
+        </script> 
+<?php
+
+    }
 }
 ?>
         <!-- Content Wrapper. Contains page content -->

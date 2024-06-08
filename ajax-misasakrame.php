@@ -97,6 +97,8 @@ if(isset($_POST['detail_misakhusus']))
     $misakhusustitle        = $_POST['misakhusustitle'];
     $misakhususdesc         = $_POST['misakhususdesc'];
     $misakregisurl          = $_POST['misakregisurl'];
+    print_r($misakhusustitle);
+    exit();
     if($misakhusustitle=="")
     {
         $error               = 1;
@@ -124,8 +126,6 @@ if(isset($_POST['detail_misakhusus']))
         );
         return;
     }
-    echo "title : $misakhusustitle";
-    exit();
     if(empty($error))
     {
         $update_misakhusus  = mysqli_query($con,"UPDATE misa_khusus SET title='$misakhusustitle', description='$misakhususdesc', regis_url='$misakregisurl', update_by='$user', update_date='$now' WHERE id='$misakhususid'") or die (mysqli_error($con));

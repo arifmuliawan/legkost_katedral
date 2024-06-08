@@ -94,8 +94,6 @@ if(isset($_POST['publish_misakhusus']))
 
 if(isset($_POST['detail_misakhusus']))
 {
-    print_r($_POST);
-    exit();
     $misakhusustitle        = $_POST['misakhusustitle'];
     $misakhususdesc         = $_POST['misakhususdesc'];
     $misakregisurl          = $_POST['misakregisurl'];
@@ -126,6 +124,8 @@ if(isset($_POST['detail_misakhusus']))
         );
         return;
     }
+    echo "$error | $response_json";
+    exit();
     if(empty($error))
     {
         $update_misakhusus  = mysqli_query($con,"UPDATE misa_khusus SET title='$misakhusustitle', description='$misakhususdesc', regis_url='$misakregisurl', update_by='$user', update_date='$now' WHERE id='$misakhususid'") or die (mysqli_error($con));

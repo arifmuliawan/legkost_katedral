@@ -212,14 +212,10 @@ else
                     if(data.error_status=='1')
                     {
                         notifmodal(data.error_message,'failed');
-                        var delay = 2000;
-                        $('#modal').modal('hide');
                     }
                     else
                     {
                         notifmodal(data.error_message,'success');
-                        var delay = 2000;
-                        $('#modal').modal('hide');
                         //setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
                     }
                     console.log(data,status);

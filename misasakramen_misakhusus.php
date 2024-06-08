@@ -203,7 +203,7 @@ else
                 {
                     misakhususid:$("#formdetail input[name=misakhususid]").val(),
                     misakhusustitle:$("#formdetail input[name=title]").val(),
-                    misakhususdesc:document.getElementById("#editordesc"),
+                    misakhususdesc:CKEDITOR.instances['editordesc'].getData();,
                     misakregisurl:$("#formdetail input[name=regis_url]").val(),
                     detail_misakhusus:true
                 },

@@ -272,7 +272,8 @@ else
                 var title_data      = $("#formdetail input[name=title]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
                 var regisurl_data   = $("#formdetail input[name=regis_url]").val();
-                alert(regisurl_data);
+                var regisimg_data   = document.getElementById("kregis_img").src; 
+                alert(regisimg_data);
                 /*
                 $.post('ajax-misasakrame.php',
                 {

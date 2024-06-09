@@ -127,8 +127,40 @@ else
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            
+                                            <label>QR LINK REGISTRASI <font color='red'>*</font></label> <br>
+                                            (195 x 195 px) JPG/JPEG/PNG
                                         </div>
+                                        <?php
+                                        if($misa_kregis_img!="")
+                                        {
+                                        ?>    
+                                            <form id="formregister">
+                                                <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
+                                                <img src="<?php echo 'assets/'.$misa_kregis_img; ?>" id="kregis_img" style="width: 100%;">
+                                                <input type="hidden" name="deletekregisimg" value="<?php echo 'assets/'.$misa_kregis_img; ?>">
+                                                <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                            </form>    
+                                        <?php
+                                        }
+                                        else
+                                        {
+                                        ?>
+                                            <form id="formuploadkregisimg">
+                                                <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
+                                                <div id="uploadkregisimg" class="dropzone">
+                                                    <div class="dz-message">
+                                                        <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                        <b>.JPG  .JPEG  .PNG</b><br>
+                                                        Drop files to upload <br>
+                                                        or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                            </form>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -222,3 +254,80 @@ else
             }); 
         </script>
         <!-- END FORM DETAIL MISA KHUSUS -->
+
+        <!-- START DROPZONE UPLOAD REGISTER -->
+        <script type="text/javascript">  
+            Dropzone.autoDiscover = false;
+            myDropzone = new Dropzone('div#uploadkregisimg', 
+            {
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 1,
+                paramName: 'upload_kregisimg',
+                clickable: true,
+                thumbnailWidth:195,
+                thumbnailHeight:195,
+                acceptedFiles: "image/jpeg,image/png,image/jpg",
+                url: 'ajax-misasakrame.php',
+                init: function () {
+
+                    var myDropzone = this;
+                    // Update selector to match your button
+                    $("#btnsavekregisimg").click(function (e) {
+                        e.preventDefault();
+                        myDropzone.processQueue();
+                        return false;
+                    });
+
+                    this.on('sending', function (file, xhr, formData) {
+                        // Append all form inputs to the formData Dropzone will POST
+                        var data = $("#formuploadkregisimg").serializeArray();
+                        $.each(data, function (key, el) {
+                            formData.append(el.name, el.value);
+                        });
+                        console.log(formData);
+
+                    });
+                },
+                error: function (file, response){
+                    if ($.type(response) === "string")
+                        var message = response; //dropzone sends it's own error messages in string
+                    else
+                        var message = response.message;
+                    file.previewElement.classList.add("dz-error");
+                    _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
+                    _results = [];
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i];
+                        _results.push(node.textContent = message);
+                    }
+                    if(response.error_status==1)
+                    {
+                        notifmodal(response.error_message,'failed');
+                    }
+                    console.log(data,status);
+                    return _results;
+                },
+                successmultiple: function (file, response) {
+                    if(response.error_status==0)
+                    {
+                        notifmodal(response.error_message,'success');
+                        $("#formuploadkregisimg #uploadkregisimg").hide();
+                        $("#formuploadkregisimg #btnsavekregisimg").hide();
+                        $("#formregister #kregis_img").attr('src', response.kregis_img).show();
+                        $("#formregister #btndeletekregisimg").show();
+                    }
+                },
+                completemultiple: function (file, response) {
+                    console.log(file, response, "completemultiple");
+                    //$modal.modal("show");
+                },
+                reset: function () {
+                    console.log("resetFiles");
+                    this.removeAllFiles(true);
+                }
+            });
+        </script> 
+        <!-- END DROPZONE & NOTIF UPLOAD BANNER PAROKI --> 

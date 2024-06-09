@@ -134,7 +134,7 @@ else
                                         if($misa_kregis_img!="")
                                         {
                                         ?>    
-                                            <img src="<?php echo 'assets/'.$misa_kregis_img; ?>" id="kregis_img" style="width: 100%;">
+                                            <img src="<?php echo 'assets/'.$misa_kregis_img; ?>" id="kregis_img" style="width: 30%;"><br>
                                             <input type="hidden" name="deletekregisimg" value="<?php echo 'assets/'.$misa_kregis_img; ?>">
                                             <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>    
                                             <br>
@@ -143,7 +143,7 @@ else
                                         else
                                         {
                                         ?>
-                                            <img src="" id="kregis_img" style="width: 100%;" style="display: none;">
+                                            <img src="" id="kregis_img" style="width: 30%;" style="display: none;"><br>
                                             <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                             <div id="uploadkregisimg" class="dropzone">
                                                 <div class="dz-message">
@@ -181,7 +181,7 @@ else
                                         if($misa_kschedule_img!="")
                                         {
                                         ?>    
-                                            <img src="<?php echo 'assets/'.$misa_kschedule_img; ?>" id="kschedule_img" style="width: 100%;">
+                                            <img src="<?php echo 'assets/'.$misa_kschedule_img; ?>" id="kschedule_img" style="width: 30%;"><br>
                                             <input type="hidden" name="deletescheduleimg" value="<?php echo 'assets/'.$misa_kschedule_img; ?>">
                                             <button id="btndeletescheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>    
                                             <br>
@@ -190,7 +190,7 @@ else
                                         else
                                         {
                                         ?>
-                                            <img src="" id="kschedule_img" style="width: 100%;" style="display: none;">
+                                            <img src="" id="kschedule_img" style="width: 30%;" style="display: none;"><br>
                                             <button id="btndeletekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                             <div id="uploadkscheduleimg" class="dropzone">
                                                 <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">

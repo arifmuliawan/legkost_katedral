@@ -319,7 +319,7 @@ else
                 uploadMultiple: true,
                 parallelUploads: 100,
                 maxFiles: 1,
-                paramName: 'upload_kregisimg_temp',
+                paramName: 'upload_kregisimg',
                 clickable: true,
                 thumbnailWidth:150,
                 thumbnailHeight:150,
@@ -367,7 +367,7 @@ else
                 successmultiple: function (file, response) {
                     if(response.error_status==0)
                     {
-                        //notifmodal(response.error_message,'success');
+                        notifmodal(response.error_message,'success');
                         $("#formdetail #uploadkregisimg").hide();
                         $("#formdetail #btnsavekregisimg").hide();
                         $("#formdetail #kregis_img").attr('src', response.kregis_img).show();

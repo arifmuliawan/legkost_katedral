@@ -144,9 +144,6 @@ if(isset($_POST['detail_misakhusus']))
 
 if(isset($_FILES['upload_kregisimg']))
 {
-    print_r($_POST);
-    exit();
-    /*
     $misakhususid               = 1;
     if($_FILES['upload_kregisimg']['name'][0]!='')
     {
@@ -207,14 +204,14 @@ if(isset($_FILES['upload_kregisimg']))
                     {
                         $response_json       = array(
                             'error_status'   => 0,
-                            'error_message'  => 'Penambahan data telah berhasil disimpan'
+                            'error_message'  => 'Penambahan data telah berhasil disimpan',
+                            'kregis_img'     => $base_assets.$file_db_image
                         );
                     }
                 }    
             }    
         }    
     }
-    */
 }    
 
 header("Content-type: application/json; charset=utf-8");

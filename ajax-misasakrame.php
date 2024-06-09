@@ -144,10 +144,8 @@ if(isset($_POST['detail_misakhusus']))
 
 if(isset($_FILES['upload_kregisimg']))
 {
-    $response_json       = array(
-        'error_status'   => 0,
-        'error_message'  => 'Penambahan data telah berhasil disimpan'
-    );
+    print_r($_POST);
+    exit();
     /*
     $misakhususid               = 1;
     if($_FILES['upload_kregisimg']['name'][0]!='')

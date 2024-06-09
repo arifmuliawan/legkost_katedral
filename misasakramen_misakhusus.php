@@ -361,6 +361,38 @@ else
         </script> 
         <!-- END DROPZONE UPLOAD REGISTER --> 
 
+        <!-- START DELETE IMAGE REGISTER -->
+        <script>
+            $("#btndeletekregisimg").click(function()
+            {
+                $.post('ajax-misasakrame.php',
+                {
+                    misakhususid:$("#formdetail input[name=misakhususid]").val(),
+                    delete_kregis_img:$("#formdetail input[name=deletekregisimg]").val()
+                },
+                function(data,status)
+                {
+                    if(data.error_status=='1')
+                    {
+                        toastr['error'](data.error_message);
+                        var delay = 3000;
+                    }
+                    else
+                    {
+                        toastr['success'](data.error_message);
+                        var delay = 3000;
+                        $("#modaldetailparoki #detail_photo_paroki").hide();
+                        $("#modaldetailparoki #btndeletephotoparoki").hide();
+                        $("#formdetailparoki #photo_paroki").show();
+                        $("#modaldetailparoki #btnupdatephotoparoki").show();
+                    }
+                    console.log(data,status);
+                }
+                );
+            });   
+        </script>
+        <!-- END DELETE IMAGE REGISTER -->
+
         <!-- START DROPZONE UPLOAD SCHEDULE -->
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;

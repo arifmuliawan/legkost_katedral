@@ -283,7 +283,7 @@ else
 
                     this.on('sending', function (file, xhr, formData) {
                         // Append all form inputs to the formData Dropzone will POST
-                        var data = $("#formdetail #formuploadkregisimg").serializeArray();
+                        var data = $("#formdetail").serializeArray();
                         $.each(data, function (key, el) {
                             formData.append(el.name, el.value);
                         });
@@ -314,10 +314,10 @@ else
                     if(response.error_status==0)
                     {
                         notifmodal(response.error_message,'success');
-                        $("#formdetail #formuploadkregisimg #uploadkregisimg").hide();
-                        $("#formdetail #formuploadkregisimg #btnsavekregisimg").hide();
-                        $("#formdetail #formregister #kregis_img").attr('src', response.kregis_img).show();
-                        $("#formdetail #formregister #btndeletekregisimg").show();
+                        $("#formdetail #uploadkregisimg").hide();
+                        $("#formdetail #btnsavekregisimg").hide();
+                        $("#formdetail #kregis_img").attr('src', response.kregis_img).show();
+                        $("#formdetail #btndeletekregisimg").show();
                     }
                 },
                 completemultiple: function (file, response) {

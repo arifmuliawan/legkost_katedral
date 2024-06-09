@@ -147,7 +147,7 @@ else
                                                 </div>
                                             </div>
                                             <br>
-                                            <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" style="display: none;">SAVE</button>
+                                            <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: none;">SAVE</button>
                                             <br>
                                         <?php
                                         }

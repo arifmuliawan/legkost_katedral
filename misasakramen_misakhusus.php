@@ -146,8 +146,8 @@ else
                                         {
                                         ?>
                                             <form id="formuploadkregisimg">
-                                                <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                                 <div id="uploadkregisimg" class="dropzone">
+                                                    <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                                     <div class="dz-message">
                                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
                                                         <b>.JPG  .JPEG  .PNG</b><br>

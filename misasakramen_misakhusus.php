@@ -258,7 +258,7 @@ else
         <!-- START DROPZONE UPLOAD REGISTER -->
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;
-            myDropzone = new Dropzone('div#uploadkregisimg', 
+            myDropzone = new Dropzone('#formdetail div#uploadkregisimg', 
             {
                 addRemoveLinks: true,
                 autoProcessQueue: false,

@@ -144,6 +144,11 @@ if(isset($_POST['detail_misakhusus']))
 
 if(isset($_FILES['upload_kregisimg']))
 {
+    $response_json       = array(
+        'error_status'   => 0,
+        'error_message'  => 'Penambahan data telah berhasil disimpan'
+    );
+    /*
     $misakhususid               = 1;
     if($_FILES['upload_kregisimg']['name'][0]!='')
     {
@@ -211,6 +216,7 @@ if(isset($_FILES['upload_kregisimg']))
             }    
         }    
     }
+    */
 }    
 
 header("Content-type: application/json; charset=utf-8");

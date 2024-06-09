@@ -136,7 +136,7 @@ else
                                         ?>    
                                             <img src="<?php echo 'assets/'.$misa_kregis_img; ?>" id="kregis_img" style="width: 30%;"><br>
                                             <input type="hidden" name="deletekregisimg" value="<?php echo 'assets/'.$misa_kregis_img; ?>">
-                                            <button id="btnreplacekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 15px 0px;" onclick="return confirm('Are you sure you want to replace this image ?')">REPLACE</button>    
+                                            <button id="btnreplacekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 0px 15px;" onclick="return confirm('Are you sure you want to replace this image ?')">REPLACE</button>    
                                             <div id="uploadkregisimg" class="dropzone" style="display: none;">
                                                 <div class="dz-message">
                                                     <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
@@ -145,9 +145,9 @@ else
                                                     or <font color='#88A8D4'><b>Browse Files...</b></font>
                                                 </div>
                                             </div>
-                                            <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;">SAVE</button>
+                                            <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 0px 15px;display: none;">SAVE</button>
                                             &nbsp&nbsp&nbsp
-                                            <button id="btncreplacekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px 0px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
+                                            <button id="btncreplacekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 0px 15px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                             <br>
                                         <?php
                                         }
@@ -155,7 +155,7 @@ else
                                         {
                                         ?>
                                             <img src="" id="kregis_img" style="width: 30%;" style="display: none;"><br>
-                                            <button id="btnreplacekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px 0px;display: none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
+                                            <button id="btnreplacekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 0px 15px;display: none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                             <div id="uploadkregisimg" class="dropzone">
                                                 <div class="dz-message">
                                                     <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>

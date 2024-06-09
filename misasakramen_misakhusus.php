@@ -134,30 +134,27 @@ else
                                         if($misa_kregis_img!="")
                                         {
                                         ?>    
-                                            <form id="formregister">
-                                                <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
-                                                <img src="<?php echo 'assets/'.$misa_kregis_img; ?>" id="kregis_img" style="width: 100%;">
-                                                <input type="hidden" name="deletekregisimg" value="<?php echo 'assets/'.$misa_kregis_img; ?>">
-                                                <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
-                                            </form>    
+                                            <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
+                                            <img src="<?php echo 'assets/'.$misa_kregis_img; ?>" id="kregis_img" style="width: 100%;">
+                                            <input type="hidden" name="deletekregisimg" value="<?php echo 'assets/'.$misa_kregis_img; ?>">
+                                            <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>    
+                                            <br>
                                         <?php
                                         }
                                         else
                                         {
                                         ?>
-                                            <form id="formuploadkregisimg">
-                                                <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
-                                                <div id="uploadkregisimg" class="dropzone">
-                                                    <div class="dz-message">
-                                                        <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
-                                                        <b>.JPG  .JPEG  .PNG</b><br>
-                                                        Drop files to upload <br>
-                                                        or <font color='#88A8D4'><b>Browse Files...</b></font>
-                                                    </div>
+                                            <div id="uploadkregisimg" class="dropzone">
+                                                <div class="dz-message">
+                                                    <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                    <b>.JPG  .JPEG  .PNG</b><br>
+                                                    Drop files to upload <br>
+                                                    or <font color='#88A8D4'><b>Browse Files...</b></font>
                                                 </div>
-                                                <br>
-                                                <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
-                                            </form>
+                                            </div>
+                                            <br>
+                                            <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                            <br>
                                         <?php
                                         }
                                         ?>

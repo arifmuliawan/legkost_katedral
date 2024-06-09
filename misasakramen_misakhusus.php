@@ -174,7 +174,36 @@ else
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            
+                                        <?php
+                                        if($misa_kschedule_img!="")
+                                        {
+                                        ?>    
+                                            <img src="<?php echo 'assets/'.$misa_kschedule_img; ?>" id="kschedule_img" style="width: 100%;">
+                                            <input type="hidden" name="deletescheduleimg" value="<?php echo 'assets/'.$misa_kschedule_img; ?>">
+                                            <button id="btndeletescheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>    
+                                            <br>
+                                        <?php
+                                        }
+                                        else
+                                        {
+                                        ?>
+                                            <img src="" id="kschedule_img" style="width: 100%;" style="display: none;">
+                                            <button id="btndeletekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                            <div id="uploadkscheduleimg" class="dropzone">
+                                                <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
+                                                <div class="dz-message">
+                                                    <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                    <b>.JPG  .JPEG  .PNG</b><br>
+                                                    Drop files to upload <br>
+                                                    or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <button id="btnsavekscheduleimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                            <br>
+                                        <?php
+                                        }
+                                        ?>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -333,14 +362,14 @@ else
         <!-- START DROPZONE UPLOAD SCHEDULE -->
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;
-            myDropzone2 = new Dropzone('#formdetail div#uploadscheduleimg', 
+            myDropzone2 = new Dropzone('#formdetail div#uploadkscheduleimg', 
             {
                 addRemoveLinks: true,
                 autoProcessQueue: false,
                 uploadMultiple: true,
                 parallelUploads: 100,
                 maxFiles: 1,
-                paramName: 'upload_scheduleimg',
+                paramName: 'upload_kscheduleimg',
                 clickable: true,
                 thumbnailWidth:150,
                 thumbnailHeight:150,
@@ -350,7 +379,7 @@ else
 
                     var myDropzone2 = this;
                     // Update selector to match your button
-                    $("#formdetail #btnsavescheduleimg").click(function (e) {
+                    $("#formdetail #btnsavekscheduleimg").click(function (e) {
                         e.preventDefault();
                         myDropzone2.processQueue();
                         return false;
@@ -358,7 +387,7 @@ else
 
                     this.on('sending', function (file, xhr, formData) {
                         // Append all form inputs to the formData Dropzone will POST
-                        var data = $("#formdetail").serializeArray();
+                        var data = $("#formdetail div#uploadkscheduleimg").serializeArray();
                         $.each(data, function (key, el) {
                             formData.append(el.name, el.value);
                         });
@@ -389,10 +418,10 @@ else
                     if(response.error_status==0)
                     {
                         notifmodal(response.error_message,'success');
-                        $("#formdetail #uploadscheduleimg").hide();
-                        $("#formdetail #btnsavescheduleimg").hide();
-                        $("#formdetail #schedule_img").attr('src', response.kregis_img).show();
-                        $("#formdetail #btndeletescheduleimg").show();
+                        $("#formdetail #uploadkscheduleimg").hide();
+                        $("#formdetail #btnsavekscheduleimg").hide();
+                        $("#formdetail #kschedule_img").attr('src', response.kregis_img).show();
+                        $("#formdetail #btndeletekscheduleimg").show();
                     }
                 },
                 completemultiple: function (file, response) {

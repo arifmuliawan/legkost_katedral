@@ -274,7 +274,7 @@ else
                 var scheduleimg_data= document.getElementById("kschedule_img").src; 
                 if(title_data=="" || desc_data=="" || regisurl_data=="" || regisimg_data=="" || scheduleimg_data=="")
                 {
-                    alert("Mohon data dilengkapin");
+                    notifmodal('Mohon lengkapi data','success');
                 }
                 else
                 {

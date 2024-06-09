@@ -174,6 +174,9 @@ else
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label>JADWAL MISA KHUSUS <font color='red'>*</font></label> <br>
+                                            (880 x 1250 px) JPG/JPEG/PNG
+                                        </div>
                                         <?php
                                         if($misa_kschedule_img!="")
                                         {
@@ -204,7 +207,6 @@ else
                                         <?php
                                         }
                                         ?>
-                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         

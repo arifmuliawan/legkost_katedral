@@ -272,8 +272,16 @@ else
                 var title_data      = $("#formdetail input[name=title]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
                 var regisurl_data   = $("#formdetail input[name=regis_url]").val();
-                var regisimg_data   = document.getElementById("kregis_img").src; 
-                alert(regisimg_data);
+                var regisimg_data   = document.getElementById("kregis_img").src;
+                var scheduleimg_data= document.getElementById("kschedule_img").src; 
+                if(title_data=="" || desc_data=="" || regisurl_data=="" || regisimg_data=="" || scheduleimg_data=="")
+                {
+                    alert("Mohon data dilengkapin");
+                }
+                else
+                {
+                    alert("Data lengkap");
+                }
                 /*
                 $.post('ajax-misasakrame.php',
                 {

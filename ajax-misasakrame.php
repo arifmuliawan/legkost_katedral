@@ -144,6 +144,8 @@ if(isset($_POST['detail_misakhusus']))
 
 if(isset($_FILES['upload_kregisimg']))
 {
+    print_r($_POST);
+    exit();
     $misakhususid               = $_POST['misakhususid'];
     if($_FILES['upload_kregisimg']['name'][0]!='')
     {

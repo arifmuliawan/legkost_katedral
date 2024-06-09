@@ -267,8 +267,8 @@ else
                 maxFiles: 1,
                 paramName: 'upload_kregisimg',
                 clickable: true,
-                thumbnailWidth:195,
-                thumbnailHeight:195,
+                thumbnailWidth:150,
+                thumbnailHeight:150,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
                 url: 'ajax-misasakrame.php',
                 init: function () {

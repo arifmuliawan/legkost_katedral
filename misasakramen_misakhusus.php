@@ -272,9 +272,10 @@ else
                 var regisurl_data   = $("#formdetail input[name=regis_url]").val();
                 var regisimg_data   = document.getElementById("kregis_img").src;
                 var scheduleimg_data= document.getElementById("kschedule_img").src; 
+                alert(regisurl_data);
                 if(title_data=="" || desc_data=="" || regisurl_data=="" || regisimg_data=="" || scheduleimg_data=="")
                 {
-                    notifmodal('Mohon lengkapi data','success');
+                    notifmodal('Mohon lengkapi data','failed');
                 }
                 else
                 {
@@ -318,7 +319,7 @@ else
                 uploadMultiple: true,
                 parallelUploads: 100,
                 maxFiles: 1,
-                paramName: 'upload_kregisimg',
+                paramName: 'upload_kregisimg_temp',
                 clickable: true,
                 thumbnailWidth:150,
                 thumbnailHeight:150,
@@ -366,7 +367,7 @@ else
                 successmultiple: function (file, response) {
                     if(response.error_status==0)
                     {
-                        notifmodal(response.error_message,'success');
+                        //notifmodal(response.error_message,'success');
                         $("#formdetail #uploadkregisimg").hide();
                         $("#formdetail #btnsavekregisimg").hide();
                         $("#formdetail #kregis_img").attr('src', response.kregis_img).show();

@@ -149,7 +149,7 @@ else
                                             <br>
                                             <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: none;">SAVE</button>
                                             &nbsp&nbsp&nbsp
-                                            <button id="btncancelkregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: none;">CANCEL</button>
+                                            <button id="#btncreplacekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                             <br>
                                         <?php
                                         }
@@ -380,6 +380,7 @@ else
             {
                 $("#formdetail #uploadkregisimg").show();
                 $("#formdetail #btnsavekregisimg").show();
+                $("#formdetail #btncreplacekregisimg").show();
                 $("#formdetail #kregis_img").hide();
                 $("#formdetail #btnreplacekregisimg").hide();
             });
@@ -388,6 +389,7 @@ else
             {
                 $("#formdetail #uploadkregisimg").hide();
                 $("#formdetail #btnsavekregisimg").hide();
+                $("#formdetail #btncreplacekregisimg").hide();
                 $("#formdetail #kregis_img").show();
                 $("#formdetail #btnreplacekregisimg").show();
             });

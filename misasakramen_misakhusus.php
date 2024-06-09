@@ -363,7 +363,7 @@ else
 
         <!-- START REPLACE IMAGE REGISTER -->
         <script>
-            $("#btnreplacekregisimg").click(function()
+            $("#formdetail #btnreplacekregisimg").click(function()
             {
                 $("#formdetail #uploadkregisimg").show();
                 $("#formdetail #btnsavekregisimg").show();
@@ -371,7 +371,7 @@ else
                 $("#formdetail #btnreplacekregisimg").hide();
             });
             
-            $("#btncreplacekregisimg").click(function()
+            $("#formdetail #btncreplacekregisimg").click(function()
             {
                 $("#formdetail #uploadkregisimg").hide();
                 $("#formdetail #btnsavekregisimg").hide();

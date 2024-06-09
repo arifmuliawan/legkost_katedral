@@ -164,9 +164,7 @@ else
                                                     or <font color='#88A8D4'><b>Browse Files...</b></font>
                                                 </div>
                                             </div>
-                                            <br>
                                             <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
-                                            <br>
                                         <?php
                                         }
                                         ?>

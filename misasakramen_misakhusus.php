@@ -148,6 +148,8 @@ else
                                             </div>
                                             <br>
                                             <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: none;">SAVE</button>
+                                            &nbsp&nbsp&nbsp
+                                            <button id="btncancelkregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: none;">CANCEL</button>
                                             <br>
                                         <?php
                                         }

@@ -134,7 +134,6 @@ else
                                         if($misa_kregis_img!="")
                                         {
                                         ?>    
-                                            <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                             <img src="<?php echo 'assets/'.$misa_kregis_img; ?>" id="kregis_img" style="width: 100%;">
                                             <input type="hidden" name="deletekregisimg" value="<?php echo 'assets/'.$misa_kregis_img; ?>">
                                             <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>    
@@ -144,6 +143,8 @@ else
                                         else
                                         {
                                         ?>
+                                            <img src="" id="kregis_img" style="width: 100%;" style="display: none;">
+                                            <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')" style="display: none;">DELETE</button>
                                             <div id="uploadkregisimg" class="dropzone">
                                                 <div class="dz-message">
                                                     <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>

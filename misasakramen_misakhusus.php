@@ -328,4 +328,81 @@ else
                 }
             });
         </script> 
+        <!-- END DROPZONE UPLOAD REGISTER --> 
+
+        <!-- START DROPZONE UPLOAD SCHEDULE -->
+        <script type="text/javascript">  
+            Dropzone.autoDiscover = false;
+            myDropzone2 = new Dropzone('#formdetail div#uploadscheduleimg', 
+            {
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 1,
+                paramName: 'upload_scheduleimg',
+                clickable: true,
+                thumbnailWidth:150,
+                thumbnailHeight:150,
+                acceptedFiles: "image/jpeg,image/png,image/jpg",
+                url: 'ajax-misasakrame.php',
+                init: function () {
+
+                    var myDropzone2 = this;
+                    // Update selector to match your button
+                    $("#formdetail #btnsavescheduleimg").click(function (e) {
+                        e.preventDefault();
+                        myDropzone2.processQueue();
+                        return false;
+                    });
+
+                    this.on('sending', function (file, xhr, formData) {
+                        // Append all form inputs to the formData Dropzone will POST
+                        var data = $("#formdetail").serializeArray();
+                        $.each(data, function (key, el) {
+                            formData.append(el.name, el.value);
+                        });
+                        console.log(formData);
+
+                    });
+                },
+                error: function (file, response){
+                    if ($.type(response) === "string")
+                        var message = response; //dropzone sends it's own error messages in string
+                    else
+                        var message = response.message;
+                    file.previewElement.classList.add("dz-error");
+                    _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
+                    _results = [];
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i];
+                        _results.push(node.textContent = message);
+                    }
+                    if(response.error_status==1)
+                    {
+                        notifmodal(response.error_message,'failed');
+                    }
+                    console.log(data,status);
+                    return _results;
+                },
+                successmultiple: function (file, response) {
+                    if(response.error_status==0)
+                    {
+                        notifmodal(response.error_message,'success');
+                        $("#formdetail #uploadscheduleimg").hide();
+                        $("#formdetail #btnsavescheduleimg").hide();
+                        $("#formdetail #schedule_img").attr('src', response.kregis_img).show();
+                        $("#formdetail #btndeletescheduleimg").show();
+                    }
+                },
+                completemultiple: function (file, response) {
+                    console.log(file, response, "completemultiple");
+                    //$modal.modal("show");
+                },
+                reset: function () {
+                    console.log("resetFiles");
+                    this.removeAllFiles(true);
+                }
+            });
+        </script> 
         <!-- END DROPZONE & NOTIF UPLOAD BANNER PAROKI --> 

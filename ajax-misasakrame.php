@@ -144,6 +144,7 @@ if(isset($_POST['detail_misakhusus']))
 
 if(isset($_FILES['upload_kregisimg']))
 {
+    $misakhususid               = $_POST['misakhususid'];
     if($_FILES['upload_kregisimg']['name'][0]!='')
     {
         $ekstensi_diperbolehkan = array('png','jpg','jpeg');

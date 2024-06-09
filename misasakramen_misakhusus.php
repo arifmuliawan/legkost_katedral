@@ -137,7 +137,6 @@ else
                                             <img src="<?php echo 'assets/'.$misa_kregis_img; ?>" id="kregis_img" style="width: 30%;"><br>
                                             <input type="hidden" name="deletekregisimg" value="<?php echo 'assets/'.$misa_kregis_img; ?>">
                                             <button id="btnreplacekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to replace this image ?')">REPLACE</button>    
-                                            <br>
                                             <div id="uploadkregisimg" class="dropzone" style="display: none;">
                                                 <div class="dz-message">
                                                     <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>

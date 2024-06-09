@@ -275,7 +275,7 @@ else
 
                     var myDropzone = this;
                     // Update selector to match your button
-                    $("#btnsavekregisimg").click(function (e) {
+                    $("#formdetail #btnsavekregisimg").click(function (e) {
                         e.preventDefault();
                         myDropzone.processQueue();
                         return false;

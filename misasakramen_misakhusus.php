@@ -144,7 +144,7 @@ else
                                         {
                                         ?>
                                             <img src="" id="kregis_img" style="width: 100%;" style="display: none;">
-                                            <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')" style="display: none;">DELETE</button>
+                                            <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                             <div id="uploadkregisimg" class="dropzone">
                                                 <div class="dz-message">
                                                     <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>

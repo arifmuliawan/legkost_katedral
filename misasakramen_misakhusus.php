@@ -149,7 +149,7 @@ else
                                             <br>
                                             <button id="btnsavekregisimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: none;">SAVE</button>
                                             &nbsp&nbsp&nbsp
-                                            <button id="#btncreplacekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
+                                            <button id="#btncreplacekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                             <br>
                                         <?php
                                         }

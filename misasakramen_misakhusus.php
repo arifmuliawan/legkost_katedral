@@ -136,7 +136,7 @@ else
                                         ?>    
                                             <img src="<?php echo 'assets/'.$misa_kregis_img; ?>" id="kregis_img" style="width: 30%;"><br>
                                             <input type="hidden" name="deletekregisimg" value="<?php echo 'assets/'.$misa_kregis_img; ?>">
-                                            <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>    
+                                            <button id="btnreplacekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to replace this image ?')">REPLACE</button>    
                                             <br>
                                         <?php
                                         }
@@ -144,7 +144,7 @@ else
                                         {
                                         ?>
                                             <img src="" id="kregis_img" style="width: 30%;" style="display: none;"><br>
-                                            <button id="btndeletekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                            <button id="btnreplacekregisimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                             <div id="uploadkregisimg" class="dropzone">
                                                 <div class="dz-message">
                                                     <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
@@ -183,7 +183,7 @@ else
                                         ?>    
                                             <img src="<?php echo 'assets/'.$misa_kschedule_img; ?>" id="kschedule_img" style="width: 30%;"><br>
                                             <input type="hidden" name="deletescheduleimg" value="<?php echo 'assets/'.$misa_kschedule_img; ?>">
-                                            <button id="btndeletescheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>    
+                                            <button id="btnreplacescheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>    
                                             <br>
                                         <?php
                                         }
@@ -361,37 +361,25 @@ else
         </script> 
         <!-- END DROPZONE UPLOAD REGISTER --> 
 
-        <!-- START DELETE IMAGE REGISTER -->
+        <!-- START REPLACE IMAGE REGISTER -->
         <script>
-            $("#btndeletekregisimg").click(function()
+            $("#btnreplacekregisimg").click(function()
             {
-                $.post('ajax-misasakrame.php',
-                {
-                    misakhususid:$("#formdetail input[name=misakhususid]").val(),
-                    delete_kregis_img:$("#formdetail input[name=deletekregisimg]").val()
-                },
-                function(data,status)
-                {
-                    if(data.error_status=='1')
-                    {
-                        toastr['error'](data.error_message);
-                        var delay = 3000;
-                    }
-                    else
-                    {
-                        toastr['success'](data.error_message);
-                        var delay = 3000;
-                        $("#modaldetailparoki #detail_photo_paroki").hide();
-                        $("#modaldetailparoki #btndeletephotoparoki").hide();
-                        $("#formdetailparoki #photo_paroki").show();
-                        $("#modaldetailparoki #btnupdatephotoparoki").show();
-                    }
-                    console.log(data,status);
-                }
-                );
-            });   
+                $("#formdetail #uploadkregisimg").show();
+                $("#formdetail #btnsavekregisimg").show();
+                $("#formdetail #kregis_img").hide();
+                $("#formdetail #btnreplacekregisimg").hide();
+            });
+            
+            $("#btncreplacekregisimg").click(function()
+            {
+                $("#formdetail #uploadkregisimg").hide();
+                $("#formdetail #btnsavekregisimg").hide();
+                $("#formdetail #kregis_img").show();
+                $("#formdetail #btnreplacekregisimg").show();
+            });
         </script>
-        <!-- END DELETE IMAGE REGISTER -->
+        <!-- END REPLACE IMAGE REGISTER -->
 
         <!-- START DROPZONE UPLOAD SCHEDULE -->
         <script type="text/javascript">  

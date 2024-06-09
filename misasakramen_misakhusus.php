@@ -314,10 +314,10 @@ else
                     if(response.error_status==0)
                     {
                         notifmodal(response.error_message,'success');
-                        $("#formuploadkregisimg #uploadkregisimg").hide();
-                        $("#formuploadkregisimg #btnsavekregisimg").hide();
-                        $("#formregister #kregis_img").attr('src', response.kregis_img).show();
-                        $("#formregister #btndeletekregisimg").show();
+                        $("#formdetail #formuploadkregisimg #uploadkregisimg").hide();
+                        $("#formdetail #formuploadkregisimg #btnsavekregisimg").hide();
+                        $("#formdetail #formregister #kregis_img").attr('src', response.kregis_img).show();
+                        $("#formdetail #formregister #btndeletekregisimg").show();
                     }
                 },
                 completemultiple: function (file, response) {

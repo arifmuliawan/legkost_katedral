@@ -269,6 +269,11 @@ else
         <script>
             $("#formdetail #btnsubmitdetail").click(function()
             {
+                var title_data      = $("#formdetail input[name=title]").val();
+                var desc_data       = CKEDITOR.instances['editordesc'].getData();
+                var regisurl_data   = $("#formdetail input[name=regis_url]").val();
+                alert(title_data);
+                /*
                 $.post('ajax-misasakrame.php',
                 {
                     misakhususid:$("#formdetail input[name=misakhususid]").val(),
@@ -291,6 +296,7 @@ else
                     console.log(data,status);
                 }
                 );
+                */
             }); 
         </script>
         <!-- END FORM DETAIL MISA KHUSUS -->

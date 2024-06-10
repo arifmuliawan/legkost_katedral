@@ -200,7 +200,7 @@ else
                                         {
                                         ?>
                                             <img src="" id="kschedule_img" style="width: 30%;" style="display: none;"><br>
-                                            <button id="btndeletekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                            <button id="btnreplacekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
                                             <div id="uploadkscheduleimg" class="dropzone">
                                                 <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                                 <div class="dz-message">

@@ -173,7 +173,7 @@ if(isset($_FILES['upload_kregisimg']))
                 http_response_code(410);
                 $response_json       = array(
                     'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (500 X 500)'
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (195 X 195)'
                 );
             }
             else
@@ -245,7 +245,7 @@ if(isset($_FILES['upload_kscheduleimg']))
                 http_response_code(410);
                 $response_json       = array(
                     'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (500 X 500)'
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (880 X 1250)'
                 );
             }
             else

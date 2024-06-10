@@ -158,7 +158,7 @@ if(isset($_FILES['upload_kregisimg']))
         $image_info             = getimagesize($file_tmp_image);
         $image_width            = $image_info[0];
         $image_height           = $image_info[1];
-        print_r($image_width);
+        print_r($image_height);
         exit();
         if(file_exists("assets/dist/img/misa/".$nama_image))
         {

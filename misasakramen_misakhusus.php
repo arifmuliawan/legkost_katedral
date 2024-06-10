@@ -272,7 +272,6 @@ else
                 var regisurl_data   = $("#formdetail input[name=regis_url]").val();
                 var regisimg_data   = document.getElementById("kregis_img").src;
                 var scheduleimg_data= document.getElementById("kschedule_img").src; 
-                alert(regisimg_data);
                 if(title_data=="" || desc_data=="" || regisurl_data=="" || regisimg_data=="" || scheduleimg_data=="")
                 {
                     notifmodal('Mohon lengkapi data','failed');

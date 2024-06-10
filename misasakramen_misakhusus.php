@@ -272,9 +272,7 @@ else
                 var regisurl_data   = $("#formdetail input[name=regis_url]").val();
                 var regisimg_data   = document.getElementById("kregis_img").src;
                 var scheduleimg_data= document.getElementById("kschedule_img").src; 
-                alert(scheduleimg_data);
-                /*
-                if(title_data=="" || desc_data=="" || regisurl_data=="" || regisimg_data=="" || scheduleimg_data=="")
+                if(title_data=="" || desc_data=="" || regisurl_data=="" || regisimg_data=="" || scheduleimg_data==""|| scheduleimg_data=="https://katedralcms.legkostproject.com/index.php?p=misasakramen_misakhusus")
                 {
                     notifmodal('Mohon lengkapi data','failed');
                 }
@@ -302,8 +300,7 @@ else
                         console.log(data,status);
                     }
                     );
-                }   
-                */
+                }
             }); 
         </script>
         <!-- END FORM DETAIL MISA KHUSUS -->

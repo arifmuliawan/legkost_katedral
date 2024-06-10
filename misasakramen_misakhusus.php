@@ -193,7 +193,7 @@ else
                                             <img src="<?php echo 'assets/'.$misa_kschedule_img; ?>" id="kschedule_img" style="width: 30%;"><br>
                                             <input type="hidden" name="deletescheduleimg" value="<?php echo 'assets/'.$misa_kschedule_img; ?>">
                                             <button id="btnreplacescheduleimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>    
-                                            <div id="uploadkscheduleimg" class="dropzone">
+                                            <div id="uploadkscheduleimg" class="dropzone" style="display: none;">
                                                 <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                                 <div class="dz-message">
                                                     <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
@@ -203,7 +203,7 @@ else
                                                 </div>
                                             </div>
                                             <br>
-                                            <button id="btnsavekscheduleimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE</button>
+                                            <button id="btnsavekscheduleimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;">SAVE</button>
                                             &nbsp&nbsp&nbsp
                                             <button id="btncreplacekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                         <?php

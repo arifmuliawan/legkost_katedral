@@ -192,15 +192,27 @@ else
                                         ?>    
                                             <img src="<?php echo 'assets/'.$misa_kschedule_img; ?>" id="kschedule_img" style="width: 30%;"><br>
                                             <input type="hidden" name="deletescheduleimg" value="<?php echo 'assets/'.$misa_kschedule_img; ?>">
-                                            <button id="btnreplacescheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>    
+                                            <button id="btnreplacescheduleimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>    
+                                            <div id="uploadkscheduleimg" class="dropzone">
+                                                <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
+                                                <div class="dz-message">
+                                                    <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                    <b>.JPG  .JPEG  .PNG</b><br>
+                                                    Drop files to upload <br>
+                                                    or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                                </div>
+                                            </div>
                                             <br>
+                                            <button id="btnsavekscheduleimg" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE</button>
+                                            &nbsp&nbsp&nbsp
+                                            <button id="btncreplacekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                         <?php
                                         }
                                         else
                                         {
                                         ?>
                                             <img src="" id="kschedule_img" style="width: 30%;" style="display: none;"><br>
-                                            <button id="btnreplacekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
+                                            <button id="btnreplacekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                             <div id="uploadkscheduleimg" class="dropzone">
                                                 <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                                 <div class="dz-message">
@@ -480,3 +492,25 @@ else
             });
         </script> 
         <!-- END DROPZONE & NOTIF UPLOAD BANNER PAROKI --> 
+
+        <!-- START REPLACE IMAGE SCHEDULE -->
+        <script>
+            $("#formdetail #btnreplacekscheduleimg").click(function()
+            {
+                $("#formdetail #uploadkscheduleimg").show();
+                $("#formdetail #btnsavekscheduleimg").show();
+                $("#formdetail #btncreplacekscheduleimg").show();
+                $("#formdetail #kschedule_img").hide();
+                $("#formdetail #btnreplacekscheduleimg").hide();
+            });
+            
+            $("#formdetail #btncreplacekscheduleimg").click(function()
+            {
+                $("#formdetail #uploadkscheduleimg").hide();
+                $("#formdetail #btnsavekscheduleimg").hide();
+                $("#formdetail #btncreplacekscheduleimg").hide();
+                $("#formdetail #kschedule_img").show();
+                $("#formdetail #btnreplacekscheduleimg").show();
+            });
+        </script>
+        <!-- END REPLACE IMAGE SCHEDULE -->

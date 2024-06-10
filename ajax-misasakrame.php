@@ -240,7 +240,7 @@ if(isset($_FILES['upload_kscheduleimg']))
         }
         else
         {
-            if(($image_width<='190' && $image_width>='200') && ($image_height<='190' && $image_height>='200'))
+            if(($image_width>='875' && $image_width<='885') && ($image_height>='1245' && $image_height>='1255'))
             {
                 http_response_code(410);
                 $response_json       = array(

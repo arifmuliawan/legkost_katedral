@@ -158,8 +158,6 @@ if(isset($_FILES['upload_kregisimg']))
         $image_info             = getimagesize($file_tmp_image);
         $image_width            = $image_info[0];
         $image_height           = $image_info[1];
-        print_r($image_height);
-        exit();
         if(file_exists("assets/dist/img/misa/".$nama_image))
         {
             http_response_code(410);
@@ -170,7 +168,7 @@ if(isset($_FILES['upload_kregisimg']))
         }
         else
         {
-            if(($image_width>='190' && $image_width<='200') && ($image_height>='190' && $image_height<='200'))
+            if(($image_width<='190' && $image_width>='200') && ($image_height<='190' && $image_height>='200'))
             {
                 http_response_code(410);
                 $response_json       = array(
@@ -242,7 +240,7 @@ if(isset($_FILES['upload_kscheduleimg']))
         }
         else
         {
-            if(($image_width>='875' && $image_width<='885') && ($image_height>='1245' && $image_height>='1255'))
+            if(($image_width<='875' && $image_width>='885') && ($image_height<='1245' && $image_height>='1255'))
             {
                 http_response_code(410);
                 $response_json       = array(

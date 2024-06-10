@@ -142,51 +142,6 @@ if(isset($_POST['detail_misakhusus']))
     }
 }  
 
-if(isset($_FILES['upload_kregisimg_temp']))
-{
-    if($_FILES['upload_kregisimg']['name'][0]!='')
-    {
-        $ekstensi_diperbolehkan = array('png','jpg','jpeg');
-        $nama_image             = $_FILES['upload_kregisimg']['name'][0];
-        $x_image                = explode('.', $nama_image);
-        $ekstensi_image         = strtolower(end($x_image));
-        $ukuran_image           = $_FILES['upload_kregisimg']['size'][0];
-        $file_tmp_image         = $_FILES['upload_kregisimg']['tmp_name'][0];
-        $file_directory_image   = "assets/dist/img/misa/".$nama_image;
-        $file_db_image          = "dist/img/misa/".$nama_image;
-        $image_info             = getimagesize($file_tmp_image);
-        $image_width            = $image_info[0];
-        $image_height           = $image_info[1];
-        if(file_exists("assets/dist/img/misa/".$nama_image))
-        {
-            http_response_code(410);
-            $response_json       = array(
-                'error_status'   => 1,
-                'error_message'  => 'Nama file sudah digunakan, silahkan upload kembali dengan nama file berbeda'
-            );
-        }
-        else
-        {
-            if(($image_width<='190' && $image_width>='200') && ($image_height<='190' && $image_height>='200'))
-            {
-                http_response_code(410);
-                $response_json       = array(
-                    'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (500 X 500)'
-                );
-            }
-            else
-            {
-                $response_json       = array(
-                    'error_status'   => 0,
-                    'error_message'  => 'Penambahan data telah berhasil disimpan',
-                    'kregis_img'     => $file_tmp_image
-                );
-            }    
-        }    
-    }
-}
-
 if(isset($_FILES['upload_kregisimg']))
 {
     $misakhususid               = 1;
@@ -203,6 +158,8 @@ if(isset($_FILES['upload_kregisimg']))
         $image_info             = getimagesize($file_tmp_image);
         $image_width            = $image_info[0];
         $image_height           = $image_info[1];
+        print_r($image_info);
+        exit();
         if(file_exists("assets/dist/img/misa/".$nama_image))
         {
             http_response_code(410);

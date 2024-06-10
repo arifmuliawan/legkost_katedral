@@ -192,7 +192,7 @@ else
                                         ?>    
                                             <img src="<?php echo 'assets/'.$misa_kschedule_img; ?>" id="kschedule_img" style="width: 30%;"><br>
                                             <input type="hidden" name="deletescheduleimg" value="<?php echo 'assets/'.$misa_kschedule_img; ?>">
-                                            <button id="btnreplacescheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>    
+                                            <button id="btnreplacescheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>    
                                             <br>
                                         <?php
                                         }
@@ -200,7 +200,7 @@ else
                                         {
                                         ?>
                                             <img src="" id="kschedule_img" style="width: 30%;" style="display: none;"><br>
-                                            <button id="btnreplacekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                            <button id="btnreplacekscheduleimg" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;display: none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                             <div id="uploadkscheduleimg" class="dropzone">
                                                 <input type="hidden" name="misakhususid" value="<?php echo $misa_khusus_id ?>">
                                                 <div class="dz-message">
@@ -272,6 +272,8 @@ else
                 var regisurl_data   = $("#formdetail input[name=regis_url]").val();
                 var regisimg_data   = document.getElementById("kregis_img").src;
                 var scheduleimg_data= document.getElementById("kschedule_img").src; 
+                alert(scheduleimg_data);
+                /*
                 if(title_data=="" || desc_data=="" || regisurl_data=="" || regisimg_data=="" || scheduleimg_data=="")
                 {
                     notifmodal('Mohon lengkapi data','failed');
@@ -301,6 +303,7 @@ else
                     }
                     );
                 }   
+                */
             }); 
         </script>
         <!-- END FORM DETAIL MISA KHUSUS -->

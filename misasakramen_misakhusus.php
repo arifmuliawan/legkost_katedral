@@ -279,32 +279,29 @@ else
                 }
                 else
                 {
-                    alert("Data lengkap");
-                }
-                /*
-                $.post('ajax-misasakrame.php',
-                {
-                    misakhususid:$("#formdetail input[name=misakhususid]").val(),
-                    misakhusustitle:$("#formdetail input[name=title]").val(),
-                    misakhususdesc:CKEDITOR.instances['editordesc'].getData(),
-                    misakregisurl:$("#formdetail input[name=regis_url]").val(),
-                    detail_misakhusus:true
-                },
-                function(data,status)
-                {
-                    if(data.error_status=='1')
+                    $.post('ajax-misasakrame.php',
                     {
-                        notifmodal(data.error_message,'failed');
-                    }
-                    else
+                        misakhususid:$("#formdetail input[name=misakhususid]").val(),
+                        misakhusustitle:$("#formdetail input[name=title]").val(),
+                        misakhususdesc:CKEDITOR.instances['editordesc'].getData(),
+                        misakregisurl:$("#formdetail input[name=regis_url]").val(),
+                        detail_misakhusus:true
+                    },
+                    function(data,status)
                     {
-                        notifmodal(data.error_message,'success');
-                        //setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
+                        if(data.error_status=='1')
+                        {
+                            notifmodal(data.error_message,'failed');
+                        }
+                        else
+                        {
+                            notifmodal(data.error_message,'success');
+                            //setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
+                        }
+                        console.log(data,status);
                     }
-                    console.log(data,status);
-                }
-                );
-                */
+                    );
+                }   
             }); 
         </script>
         <!-- END FORM DETAIL MISA KHUSUS -->

@@ -495,7 +495,7 @@ else
 
         <!-- START REPLACE IMAGE SCHEDULE -->
         <script>
-            $("#formdetail #btnreplacekscheduleimg").click(function()
+            $("#formdetail #btnreplacescheduleimg").click(function()
             {
                 $("#formdetail #uploadkscheduleimg").show();
                 $("#formdetail #btnsavekscheduleimg").show();

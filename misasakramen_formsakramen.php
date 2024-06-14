@@ -54,16 +54,18 @@
                                                 </div>
                                             </div> 
                                             <div class="card-body">
-                                                <table>
-                                                    <tr>
-                                                        <td> aaaa </td>
-                                                        <td> 
-                                                            <button type="button" class="btn" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit"></i></button>
-                                                            &nbsp&nbsp&nbsp
-                                                            <button type="button" class="btn" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                </table>
+                                                <div class="col-md-12">
+                                                    <table style="width:100%">
+                                                        <tr>
+                                                            <td> aaaa </td>
+                                                            <td> 
+                                                                <button type="button" class="btn" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit"></i></button>
+                                                                &nbsp&nbsp&nbsp
+                                                                <button type="button" class="btn" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
                                             </div>   
                                         </div>
                                     </div>        

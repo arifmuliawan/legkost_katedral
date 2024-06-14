@@ -127,27 +127,36 @@
         <script>
             $("#formsakramen #btnsaveformsakramen").click(function()
             {
-                $.post('ajax-misasakrame.php',
+                var title_data  = $("#formsakramen input[name=title]").val();
+                var link_data   = $("#formsakramen input[name=link]").val();
+                if(title_data=="" || link_data=="")
                 {
-                    categoryid:$("#formsakramen input[name=categoryid]").val(),
-                    title:$("#formsakramen input[name=title]").val(),
-                    link:$("#formsakramen input[name=link]").val(),
-                    add_sakramen:true
-                },
-                function(data,status)
-                {
-                    if(data.error_status=='1')
-                    {
-                        notifmodal(data.error_message,'failed');
-                    }
-                    else
-                    {
-                        notifmodal(data.error_message,'success');
-                        //setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, 3000);
-                    }
-                    console.log(data,status);
+                    notifmodal('Mohon lengkapi data','failed');
                 }
-                );
+                else
+                {
+                    $.post('ajax-misasakrame.php',
+                    {
+                        categoryid:$("#formsakramen input[name=categoryid]").val(),
+                        title:$("#formsakramen input[name=title]").val(),
+                        link:$("#formsakramen input[name=link]").val(),
+                        add_sakramen:true
+                    },
+                    function(data,status)
+                    {
+                        if(data.error_status=='1')
+                        {
+                            notifmodal(data.error_message,'failed');
+                        }
+                        else
+                        {
+                            notifmodal(data.error_message,'success');
+                            //setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, 3000);
+                        }
+                        console.log(data,status);
+                    }
+                    );
+                }    
             }); 
         </script>
         <!-- END PROCESS FORM SAKRAMEN -->

@@ -286,6 +286,12 @@ if(isset($_FILES['upload_kscheduleimg']))
     }
 } 
 
+if(isset($_POST['add_sakramen']))
+{
+    print_r($_POST;
+    exit();
+}    
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

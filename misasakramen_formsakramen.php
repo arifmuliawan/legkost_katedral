@@ -30,7 +30,7 @@
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 style="margin: 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
+                                            <h5 style="margin: 0px 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
                                             <button id="btnaddlist" type="button" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;">Add New</button>
                                         </div>
                                     </div>        

@@ -510,7 +510,7 @@ else
                 $("#formdetail #btnsavekscheduleimg").hide();
                 $("#formdetail #btncreplacekscheduleimg").hide();
                 $("#formdetail #kschedule_img").show();
-                $("#formdetail #btnreplacekscheduleimg").show();
+                $("#formdetail #btnreplacescheduleimg").show();
             });
         </script>
         <!-- END REPLACE IMAGE SCHEDULE -->

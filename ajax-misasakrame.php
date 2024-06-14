@@ -288,6 +288,8 @@ if(isset($_FILES['upload_kscheduleimg']))
 
 if(isset($_POST['add_sakramen']))
 {
+    print_r($_POST);
+    exit();
     $categoryid     = $_POST['categoryid'];
     $title          = $_POST['title'];
     $link           = $_POST['link'];

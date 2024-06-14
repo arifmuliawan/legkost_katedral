@@ -501,7 +501,7 @@ else
                 $("#formdetail #btnsavekscheduleimg").show();
                 $("#formdetail #btncreplacekscheduleimg").show();
                 $("#formdetail #kschedule_img").hide();
-                $("#formdetail #btnreplacekscheduleimg").hide();
+                $("#formdetail #btnreplacescheduleimg").hide();
             });
             
             $("#formdetail #btncreplacekscheduleimg").click(function()

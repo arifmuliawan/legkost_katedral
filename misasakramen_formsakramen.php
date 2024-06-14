@@ -52,7 +52,20 @@
                                                         <button id="btncancelformsakramen" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                                     </div>
                                                 </div>
-                                            </div>        
+                                            </div> 
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        aaaa
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <button type="button" class="btn" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit"></i></button>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                    <button type="button" class="btn" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>   
                                         </div>
                                     </div>        
                                 </div>

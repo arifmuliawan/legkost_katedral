@@ -32,7 +32,7 @@
                                         <div class="card-body">
                                             <h5 style="margin: 0px 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
                                             <button id="btnaddlist" type="button" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;">Add New</button>
-                                            <div class="card-body">
+                                            <div class="card-body" style="margin: 0px 24px;background: #D9D9D9;" id="formsakramen" style="display: none;">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
@@ -46,8 +46,10 @@
                                                             <input type="text" class="form-control" name='link' placeholder="Type something here....">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12" style="text-align:right">
-                                                        <button id="btnsubmitpublish" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                    <div class="col-md-12">
+                                                        <button id="btnsaveformsakramen" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;">SAVE</button>
+                                                        &nbsp&nbsp&nbsp
+                                                        <button id="btncancelformsakramen" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                                     </div>
                                                 </div>
                                             </div>        

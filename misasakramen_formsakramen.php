@@ -115,9 +115,9 @@
 
             $("#formsakramen #btncancelformsakramen").click(function()
             {
-                $("#formsakramen #formaddsakramen").hide();
-                $("#formsakramen #formaddsakramen #btnsaveformsakramen").hide();
-                $("#formsakramen #formaddsakramen #btncancelformsakramen").hide();
+                $("#formsakramen").hide();
+                $("#formsakramen #btnsaveformsakramen").hide();
+                $("#formsakramen #btncancelformsakramen").hide();
             });
         </script>
         <!-- END ADD FORM SAKRAMEN -->

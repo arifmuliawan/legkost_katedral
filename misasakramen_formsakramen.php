@@ -32,6 +32,21 @@
                                         <div class="card-body">
                                             <h5 style="margin: 0px 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
                                             <button id="btnaddlist" type="button" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;">Add New</button>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-label">JUDUL FORMULIR <font color="red">*</font></label>
+                                                    <input type="text" class="form-control" name='title' placeholder="Type something here....">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-label">LINK FORMULIR <font color="red">*</font></label>
+                                                    <input type="text" class="form-control" name='link' placeholder="Type something here....">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12" style="text-align:right">
+                                                <button id="btnsubmitpublish" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                            </div>
                                         </div>
                                     </div>        
                                 </div>

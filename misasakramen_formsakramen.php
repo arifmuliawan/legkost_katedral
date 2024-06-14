@@ -12,7 +12,7 @@
                 </div><!-- /.container-fluid -->
             </section>
             <?php
-            $query_category = mysqli_query($con,"SELECT * FROM sakramen_category WHERE visible='Y' order by sortid");
+            $query_category = mysqli_query($con,"SELECT * FROM sakramen_category WHERE visible='Y' order by sortid")or die (mysqli_error($con));
             $sum_category   = mysqli_num_rows($query_category);
             if($sum_category>0)
             {
@@ -57,7 +57,7 @@
                                                 <div class="col-md-12">
                                                     <table style="width:100%">
                                                         <?php
-                                                        $query_list = mysqli_query($con,"SELECT * FROM `sakramen_list` WHERE categoryid='$category_id' AND visible='Y' order by sortid");
+                                                        $query_list = mysqli_query($con,"SELECT * FROM `sakramen_list` WHERE categoryid='$category_id' AND visible='Y' order by sortid ASC")or die (mysqli_error($con));
                                                         $sum_list   = mysqli_num_rows($query_list);
                                                         if($sum_list>0)
                                                         {

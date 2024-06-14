@@ -119,7 +119,7 @@
             $(".btn-cancel").click(function()
             {
                 me = $(this);
-                me.parents(".card-body").hide();
+                me.closest(".card-body").hide();
             });
         </script>
         <!-- END VIEW FORM SAKRAMEN -->

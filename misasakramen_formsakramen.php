@@ -108,9 +108,9 @@
         <script>
             $("#btnaddlist").click(function()
             {
-                $("#formsakramen #formaddsakramen").show();
-                $("#formsakramen #formaddsakramen #btnsaveformsakramen").show();
-                $("#formsakramen #formaddsakramen #btncancelformsakramen").show();
+                $("#formsakramen").show();
+                $("#formsakramen #btnsaveformsakramen").show();
+                $("#formsakramen #btncancelformsakramen").show();
             });
 
             $("#formsakramen #btncancelformsakramen").click(function()

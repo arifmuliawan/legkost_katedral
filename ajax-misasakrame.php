@@ -288,8 +288,40 @@ if(isset($_FILES['upload_kscheduleimg']))
 
 if(isset($_POST['add_sakramen']))
 {
-    print_r($_POST);
-    exit();
+    $categoryid     = $_POST['categoryid'];
+    $title          = $_POST['title'];
+    $link           = $_POST['link'];
+    $query_sort     = mysqli_query($con,"SELECT * from `sakramen_list` WHERE categoryid='$categoryid' AND visible!='D' order by sortid DESC LIMIT 1")or die (mysqli_error($con));
+    $sum_sort       = mysqli_num_rows($query_sort);
+    if($sum_sort<=0)
+    {
+        $last_sort      = 0;
+        $new_sort       = $last_sort;
+    }
+    else
+    {
+        $data_sort      = mysqli_fetch_array($query_sort);
+        $last_sort      = $data_sort['sortid'];
+        $new_sort       = $last_sort+1;
+    }
+    $insert_sakramen    = mysqli_query($con,"INSERT INTO `sakramen_list`(`sortid`, `title`, `link`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$new_sort','$title','$link','Y','$user','$now','$user','$now')")or die (mysqli_error($con));
+    if($insert_sakramen!=1)
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Penambahan data gagal disimpan',
+            'kregis_img'     => $base_assets.$file_db_image
+        );
+    }
+    else
+    {
+        $response_json       = array(
+            'error_status'   => 0,
+            'error_message'  => 'Penambahan data telah berhasil disimpan',
+            'kregis_img'     => $base_assets.$file_db_image
+        );
+    }    
 }    
 
 header("Content-type: application/json; charset=utf-8");

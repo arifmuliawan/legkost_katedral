@@ -126,10 +126,13 @@
 
         <!-- START PROCESS FORM SAKRAMEN -->
         <script>
-            $("#formsakramen #btnsaveformsakramen").click(function()
+            $(".btn-save").click(function()
             {
-                var title_data  = $("#formsakramen input[name=title]").val();
-                var link_data   = $("#formsakramen input[name=link]").val();
+                me      = $(this);
+                form    = me.closest("form");
+                var catid_data  = form.find("input[name=categoryid]").val();
+                var title_data  = form.find("input[name=title]").val();
+                var link_data   = form.find("input[name=link]").val();
                 if(title_data=="" || link_data=="")
                 {
                     notifmodal('Mohon lengkapi data','failed');
@@ -138,9 +141,9 @@
                 {
                     $.post('ajax-misasakrame.php',
                     {
-                        categoryid:$("#formsakramen input[name=categoryid]").val(),
-                        title:$("#formsakramen input[name=title]").val(),
-                        link:$("#formsakramen input[name=link]").val(),
+                        categoryid:catid_data,
+                        title:title_data,
+                        link:link_data,
                         add_sakramen:true
                     },
                     function(data,status)

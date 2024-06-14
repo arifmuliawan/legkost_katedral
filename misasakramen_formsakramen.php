@@ -32,8 +32,8 @@
                                         <div class="card-body">
                                             <h5 style="margin: 0px 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
                                             <button id="btnaddlist" type="button" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;">Add New</button>
-                                            <form method="POST" id="formsakramen">
-                                            <div class="card-body" style="margin: 0px 24px;background: #D9D9D9;display: none;">
+                                            <div class="card-body" style="margin: 0px 24px;background: #D9D9D9;display: none;"  id="formsakramen">
+                                                <form method="POST">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
@@ -53,8 +53,8 @@
                                                         <button id="btncancelformsakramen" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                                     </div>
                                                 </div>
-                                            </div> 
-                                            </form>
+                                                </form>
+                                            </div>
                                             <div class="card-body">
                                                 <div class="col-md-12">
                                                     <table style="width:100%">

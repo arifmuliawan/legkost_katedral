@@ -28,7 +28,7 @@
                             <!-- left column -->
                                 <!-- HANDLE MISA SCHEDULE --->
                                 <div class="col-md-12">
-                                    <h5 style="margin: 24px;color: #88A8D4;">MISA MINGGUAN</h5>
+                                    <h5 style="margin: 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
                                 </div>
                             </div>
                             <!-- /HANDLE MISA SCHEDULE --->

@@ -116,11 +116,10 @@
                 //$("#formsakramen #btncancelformsakramen").show();
             });
 
-            $("#formsakramen #btncancelformsakramen").click(function()
+            $(".btn-cancel").click(function()
             {
-                $("#formsakramen").hide();
-                $("#formsakramen #btnsaveformsakramen").hide();
-                $("#formsakramen #btncancelformsakramen").hide();
+                me = $(this);
+                me.parents(".card-body").hide();
             });
         </script>
         <!-- END VIEW FORM SAKRAMEN -->

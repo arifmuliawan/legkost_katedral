@@ -32,9 +32,9 @@
                                         <div class="card-body">
                                             <h5 style="margin: 0px 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
                                             <button id="btnaddlist" type="button" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;">Add New</button>
+                                            <form method="POST">
                                             <div class="card-body" style="margin: 0px 24px;background: #D9D9D9;display: none;" id="formsakramen">
                                                 <div class="row">
-                                                    <form id="formaddsakramen" method="POST">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="form-label">JUDUL FORMULIR <font color="red">*</font></label>
@@ -52,9 +52,9 @@
                                                         &nbsp&nbsp&nbsp
                                                         <button id="btncancelformsakramen" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                                     </div>
-                                                    </form>
                                                 </div>
                                             </div> 
+                                            </form>
                                             <div class="card-body">
                                                 <div class="col-md-12">
                                                     <table style="width:100%">

@@ -34,6 +34,7 @@
                                             <button id="btnaddlist" type="button" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;">Add New</button>
                                             <div class="card-body" style="margin: 0px 24px;background: #D9D9D9;display: none;" id="formsakramen">
                                                 <div class="row">
+                                                    <form id="formaddsakramen" method="POST">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="form-label">JUDUL FORMULIR <font color="red">*</font></label>
@@ -51,6 +52,7 @@
                                                         &nbsp&nbsp&nbsp
                                                         <button id="btncancelformsakramen" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                                     </div>
+                                                    </form>
                                                 </div>
                                             </div> 
                                             <div class="card-body">
@@ -106,16 +108,16 @@
         <script>
             $("#btnaddlist").click(function()
             {
-                $("#formsakramen").show();
-                $("#formsakramen #btnsaveformsakramen").show();
-                $("#formsakramen #btncancelformsakramen").show();
+                $("#formsakramen #formaddsakramen").show();
+                $("#formsakramen #formaddsakramen #btnsaveformsakramen").show();
+                $("#formsakramen #formaddsakramen #btncancelformsakramen").show();
             });
 
             $("#formsakramen #btncancelformsakramen").click(function()
             {
-                $("#formsakramen").hide();
-                $("#formsakramen #btnsaveformsakramen").hide();
-                $("#formsakramen #btncancelformsakramen").hide();
+                $("#formsakramen #formaddsakramen").hide();
+                $("#formsakramen #formaddsakramen #btnsaveformsakramen").hide();
+                $("#formsakramen #formaddsakramen #btncancelformsakramen").hide();
             });
         </script>
         <!-- END ADD FORM SAKRAMEN -->

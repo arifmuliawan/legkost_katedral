@@ -5,7 +5,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 style="margin: 24px">fORM SAKRAMEN</h1>
+                            <h1 style="margin: 24px">FORM SAKRAMEN</h1>
                             <p style="margin: 24px;color: red;font-size: 14px;">KOLOM DENGAN TANDA * WAJIB DIISI</p>
                         </div>
                     </div>
@@ -31,7 +31,6 @@
                                     <!-- jquery validation -->
                                     <div class="card">
                                     <!-- /.card-header -->
-                                        <h1 style="margin: 24px"><?php echo $category_title ?></h1>
                                         <div class="card-body">
                                             
                                         </div>

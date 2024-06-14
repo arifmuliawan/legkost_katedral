@@ -32,7 +32,7 @@
                                         <div class="card-body">
                                             <h5 style="margin: 0px 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
                                             <button id="btnaddlist" type="button" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;">Add New</button>
-                                            <div class="card-body" style="margin: 0px 24px;background: #D9D9D9;" id="formsakramen" style="display: none;">
+                                            <div class="card-body" style="margin: 0px 24px;background: #D9D9D9;display: none;" id="formsakramen">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">

@@ -49,9 +49,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <button id="btnsaveformsakramen" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;">SAVE</button>
+                                                        <button id="btnsaveformsakramen" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE</button>
                                                         &nbsp&nbsp&nbsp
-                                                        <button id="btncancelformsakramen" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;display: none;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
+                                                        <button id="btncancelformsakramen" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                                     </div>
                                                 </div>
                                                 </form>

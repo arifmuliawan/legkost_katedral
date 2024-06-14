@@ -288,13 +288,13 @@ if(isset($_FILES['upload_kscheduleimg']))
 
 if(isset($_POST['add_sakramen']))
 {
-    print_r($_POST);
-    exit();
     $categoryid     = $_POST['categoryid'];
     $title          = $_POST['title'];
     $link           = $_POST['link'];
     $query_sort     = mysqli_query($con,"SELECT * from `sakramen_list` WHERE categoryid='$categoryid' AND visible!='D' order by sortid DESC LIMIT 1")or die (mysqli_error($con));
     $sum_sort       = mysqli_num_rows($query_sort);
+    print_r($_POST);
+    exit();
     if($sum_sort<=0)
     {
         $last_sort      = 0;

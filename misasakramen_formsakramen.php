@@ -28,7 +28,11 @@
                             <!-- left column -->
                                 <!-- HANDLE MISA SCHEDULE --->
                                 <div class="col-md-12">
-                                    <h5 style="margin: 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 style="margin: 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
+                                        </div>
+                                    </div>        
                                 </div>
                             </div>
                             <!-- /HANDLE MISA SCHEDULE --->

@@ -24,7 +24,6 @@
                     <!-- Main content -->
                     <section class="content">
                         <div class="container-fluid">
-                            <h1 style="margin: 24px"><?php echo $category_title ?></h1>
                             <div class="row">
                             <!-- left column -->
                                 <!-- HANDLE MISA SCHEDULE --->
@@ -32,7 +31,7 @@
                                     <!-- jquery validation -->
                                     <div class="card">
                                     <!-- /.card-header -->
-                                    <!--<form action="" method="post" enctype="multipart/form-data">-->
+                                        <h1 style="margin: 24px"><?php echo $category_title ?></h1>
                                         <div class="card-body">
                                             
                                         </div>

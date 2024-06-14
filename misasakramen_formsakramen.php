@@ -28,13 +28,7 @@
                             <!-- left column -->
                                 <!-- HANDLE MISA SCHEDULE --->
                                 <div class="col-md-12">
-                                    <!-- jquery validation -->
-                                    <div class="card">
-                                    <!-- /.card-header -->
-                                        <div class="card-body">
-                                            
-                                        </div>
-                                    </div>
+                                    <h5 style="margin: 24px;color: #88A8D4;">MISA MINGGUAN</h5>
                                 </div>
                             </div>
                             <!-- /HANDLE MISA SCHEDULE --->

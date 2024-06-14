@@ -56,15 +56,37 @@
                                             <div class="card-body">
                                                 <div class="col-md-12">
                                                     <table style="width:100%">
-                                                        <tr>
-                                                            <td style="width: 80%;background: #D9D9D9;"> &nbsp&nbsp&nbsp&nbsp Formulir Pendaftaran Perkawinan </td>
-                                                            <td style="width: 20%;"> 
-                                                                &nbsp&nbsp&nbsp&nbsp
-                                                                <button type="button" class="btn" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit" style="color: #fff;"></i></button>
-                                                                &nbsp&nbsp&nbsp
-                                                                <button type="button" class="btn" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash" style="color: #fff;"></i></button>
-                                                            </td>
-                                                        </tr>
+                                                        <?php
+                                                        $query_list = mysqli_query($con,"SELECT * FROM `sakramen_list` WHERE categoryid='$category_id' AND visible='Y' order by sortid");
+                                                        $sum_list   = mysqli_num_rows($query_list);
+                                                        if($sum_list>0)
+                                                        {
+                                                            $i=1;
+                                                            while($data_list=mysqli_fetch_array($query_list))
+                                                            {
+                                                                if ($i % 2 == 0)
+                                                                {
+                                                                    $clr_row = "background-color: #D9D9D9";
+                                                                }
+                                                                else
+                                                                {
+                                                                    $clr_row = "background-color: #ffffff;";
+                                                                }
+                                                        ?>    
+                                                                <tr>
+                                                                    <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp Formulir Pendaftaran Perkawinan </td>
+                                                                    <td style="width: 20%;"> 
+                                                                        &nbsp&nbsp&nbsp&nbsp
+                                                                        <button type="button" class="btn" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit" style="color: #fff;"></i></button>
+                                                                        &nbsp&nbsp&nbsp
+                                                                        <button type="button" class="btn" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash" style="color: #fff;"></i></button>
+                                                                    </td>
+                                                                </tr>
+                                                        <?php
+                                                                $i++;
+                                                            }
+                                                        }
+                                                        ?>            
                                                     </table>
                                                 </div>
                                             </div>   

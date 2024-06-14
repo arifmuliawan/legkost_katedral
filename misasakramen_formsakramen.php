@@ -151,7 +151,7 @@
                         else
                         {
                             notifmodal(data.error_message,'success');
-                            setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, 3000);
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
                         }
                         console.log(data,status);
                     }

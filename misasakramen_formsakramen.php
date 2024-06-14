@@ -70,6 +70,15 @@
             $("#btnaddlist").click(function()
             {
                 $("#formsakramen").show();
+                $("#formsakramen #btnsaveformsakramen").show();
+                $("#formsakramen #btncancelformsakramen").show();
+            });
+
+            $("#formsakramen #btncancelformsakramen").click(function()
+            {
+                $("#formsakramen").hide();
+                $("#formsakramen #btnsaveformsakramen").hide();
+                $("#formsakramen #btncancelformsakramen").hide();
             });
         </script>
         <!-- END ADD FORM SAKRAMEN -->

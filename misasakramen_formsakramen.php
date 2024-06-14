@@ -107,11 +107,13 @@
         </div> 
         <!-- START VIEW FORM SAKRAMEN -->
         <script>
-            $("#btnaddlist").click(function()
+            $(".btn-sm").click(function()
             {
-                $("#formsakramen").show();
-                $("#formsakramen #btnsaveformsakramen").show();
-                $("#formsakramen #btncancelformsakramen").show();
+                me = $(this);
+                me.siblings().show();
+                //$("#formsakramen").show();
+                //$("#formsakramen #btnsaveformsakramen").show();
+                //$("#formsakramen #btncancelformsakramen").show();
             });
 
             $("#formsakramen #btncancelformsakramen").click(function()

@@ -64,5 +64,12 @@
                 }
             }
             ?>            
-             
         </div> 
+        <!-- START ADD FORM SAKRAMEN -->
+        <script>
+            $("#btnaddlist").click(function()
+            {
+                $("#formsakramen").show();
+            });
+        </script>
+        <!-- END ADD FORM SAKRAMEN -->

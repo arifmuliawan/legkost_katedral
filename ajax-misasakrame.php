@@ -310,16 +310,14 @@ if(isset($_POST['add_sakramen']))
         http_response_code(410);
         $response_json       = array(
             'error_status'   => 1,
-            'error_message'  => 'Penambahan data gagal disimpan',
-            'kregis_img'     => $base_assets.$file_db_image
+            'error_message'  => 'Penambahan data gagal disimpan'
         );
     }
     else
     {
         $response_json       = array(
             'error_status'   => 0,
-            'error_message'  => 'Penambahan data telah berhasil disimpan',
-            'kregis_img'     => $base_assets.$file_db_image
+            'error_message'  => 'Penambahan data telah berhasil disimpan'
         );
     }    
 }    

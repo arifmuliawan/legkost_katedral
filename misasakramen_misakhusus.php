@@ -94,7 +94,7 @@ else
                                         </div>
                                     </div>
                                     <div class="col-md-12" style="text-align:right">
-                                        <button id="btnsubmitpublish" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button></a>
+                                        <button id="btnsubmitpublish" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
                                     </div>
                                 </div>
                                 </form>

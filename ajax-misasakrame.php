@@ -306,7 +306,7 @@ if(isset($_POST['add_sakramen']))
         $last_sort      = $data_sort['sortid'];
         $new_sort       = $last_sort+1;
     }
-    $insert_sakramen    = mysqli_query($con,"INSERT INTO `sakramen_list`(`sortid`, `title`, `link`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$new_sort','$title','$link','Y','$user','$now','$user','$now')")or die (mysqli_error($con));
+    $insert_sakramen    = mysqli_query($con,"INSERT INTO `sakramen_list`(`sortid`, `categoryid`, `title`, `link`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$new_sort','$categoryid','$title','$link','Y','$user','$now','$user','$now')")or die (mysqli_error($con));
     if($insert_sakramen!=1)
     {
         http_response_code(410);

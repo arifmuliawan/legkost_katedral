@@ -57,8 +57,9 @@
                                                 <div class="col-md-12">
                                                     <table style="width:100%">
                                                         <tr>
-                                                            <td style="width: 80%;"> &nbsp&nbsp&nbsp&nbsp Formulir Pendaftaran Perkawinan </td>
+                                                            <td style="width: 80%;background: #D9D9D9;"> &nbsp&nbsp&nbsp&nbsp Formulir Pendaftaran Perkawinan </td>
                                                             <td style="width: 20%;"> 
+                                                                &nbsp&nbsp&nbsp&nbsp
                                                                 <button type="button" class="btn" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit"></i></button>
                                                                 &nbsp&nbsp&nbsp
                                                                 <button type="button" class="btn" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash"></i></button>

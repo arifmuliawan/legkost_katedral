@@ -134,11 +134,10 @@
                 me      = $(this);
                 row     = me.closest("tr");
                 nextrow = row.next();
-                $("<tr class='editor'><td colspan=2>UHUY</td></tr>").insertBefore(nextrow);
-                /*if ($('.editor').length < 1) 
+                if ($('.editor').length < 1) 
                 {
                     $("<tr class='editor'><td colspan=2>UHUY</td></tr>").insertBefore(nextrow)
-                }*/
+                }
             });
         </script>
         <!-- END VIEW FORM SAKRAMEN -->

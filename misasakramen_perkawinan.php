@@ -47,7 +47,6 @@
                                             ?>
                                             <div class="card-body" style="margin: 0px 24px;background: #D9D9D9;display: none;"  id="formsakramen">
                                                 <form method="POST">
-                                                <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">

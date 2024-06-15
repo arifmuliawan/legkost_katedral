@@ -99,8 +99,6 @@
                                                         $jd         = $category_duration-7;
                                                         $pub_end    = date('Y-m-d', strtotime("-$jd days"));
                                                         $pub_start  = date('Y-m-d', strtotime("-6 days",strtotime($pub_end)));
-                                                        echo "$pub_start | $pub_end";
-                                                        /*
                                                         $query_list = mysqli_query($con,"SELECT * FROM `perkawinan_list` WHERE visible='Y' AND (pengumuman >= '$pub_start' AND pengumuman<= '$pub_end')")or die (mysqli_error($con));
                                                         $sum_list   = mysqli_num_rows($query_list);
                                                         if($sum_list>0)
@@ -153,8 +151,7 @@
                                                         <?php
                                                                 $i++;
                                                             }
-                                                        } 
-                                                        */      
+                                                        }      
                                                         ?>            
                                                     </table>
                                                 </div>

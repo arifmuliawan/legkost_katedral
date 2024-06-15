@@ -327,7 +327,34 @@ if(isset($_POST['delete_sakramen']))
     $categoryid     = $_POST['categoryid'];
     $id             = $_POST['id'];
     $sortid         = $_POST['sortid'];
-    $delete_sakramen= mysqli_query($con,"DELETE FROM `sakramen_list` WHERE ")
+    $delete_sakramen= mysqli_query($con,"DELETE FROM `sakramen_list` WHERE id='$id' AND categoryid='$categoryid'")or die (mysqli_error($con));
+    if($delete_sakramen!=1)
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Data gagal dihapus'
+        );
+    }
+    else
+    {
+        $query_sakramen = mysqli_query($con,"SELECT * FROM `sakramen_list` WHERE categoryid='$categoryid' AND sortid>$sortid")or die (mysqli_error($con));
+        $sum_sakramen   = mysqli_num_rows($query_sakramen);
+        if($sum_sakramen>0)
+        {
+            while($data_sakramen=mysqli_fetch_array($query_sakramen))
+            {
+                $id_sakramen        = $data_sakramen['id'];
+                $sortid_sakramen    = $data_sakramen['sortid'];
+                $newsort_sakramen   = $sortid-1;
+                $update_sakramen    = mysqli_query($con,"UPDATE `sakramen_list` SET sortid='$newsort' WHERE id='$id_sakramen' AND categoryid='$categoryid'")or die (mysqli_error($con));
+            }
+        }
+        $response_json       = array(
+            'error_status'   => 0,
+            'error_message'  => 'Data telah berhasil dihapus'
+        );
+    }
 }    
 
 header("Content-type: application/json; charset=utf-8");

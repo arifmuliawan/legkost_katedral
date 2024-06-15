@@ -75,16 +75,19 @@
                                                                 {
                                                                     $clr_row = "background-color: #ffffff;";
                                                                 }
+                                                                $sakramen_id    = $data_list['id'];
                                                                 $sakramen_title = $data_list['title'];
                                                                 $sakramen_link  = $data_list['link'];
                                                         ?>    
+                                                                <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
+                                                                <input type="hidden" name="id" value="<?php echo $sakramen_id ?>">
                                                                 <tr>
                                                                     <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $sakramen_title ?> </td>
                                                                     <td style="width: 20%;"> 
                                                                         &nbsp&nbsp&nbsp&nbsp
                                                                         <button type="button" class="btn-edit" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit" style="color: #fff;"></i></button>
                                                                         &nbsp&nbsp&nbsp
-                                                                        <button type="button" class="btn" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash" style="color: #fff;"></i></button>
+                                                                        <button type="button" class="btn-delete" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash" style="color: #fff;"></i></button>
                                                                     </td>
                                                                 </tr>
                                                         <?php
@@ -144,7 +147,7 @@
                 me      = $(this);
                 form    = me.closest("form");
                 var catid_data  = form.find("input[name=categoryid]").val();
-                var title_data  = form.find("input[name=title]").val();
+                var id_data     = form.find("input[name=id]").val();
                 var link_data   = form.find("input[name=link]").val();
                 if(title_data=="" || link_data=="")
                 {
@@ -168,7 +171,7 @@
                         else
                         {
                             notifmodal(data.error_message,'success');
-                            //setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
                         }
                         console.log(data,status);
                     }
@@ -177,3 +180,35 @@
             }); 
         </script>
         <!-- END PROCESS FORM SAKRAMEN -->
+
+        <!-- START DELETE LIST SAKRAMEN -->
+        <script>
+            $(".btn-delete").click(function()
+            {
+                me      = $(this);
+                form    = me.closest("form");
+                var catid_data  = form.find("input[name=categoryid]").val();
+                var id_data     = form.find("input[name=id]").val();
+                $.post('ajax-misasakrame.php',
+                {
+                    categoryid:catid_data,
+                    id:id_data,
+                    delete_sakramen:true
+                },
+                function(data,status)
+                {
+                    if(data.error_status=='1')
+                    {
+                        notifmodal(data.error_message,'failed');
+                    }
+                    else
+                    {
+                        notifmodal(data.error_message,'success');
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
+                    }
+                    console.log(data,status);
+                }
+                );   
+            }); 
+        </script>
+        <!-- END DELETE LIST SAKRAMEN -->

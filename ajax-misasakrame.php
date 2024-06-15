@@ -347,7 +347,7 @@ if(isset($_POST['delete_sakramen']))
                 $id_sakramen        = $data_sakramen['id'];
                 $sortid_sakramen    = $data_sakramen['sortid'];
                 $newsort_sakramen   = $sortid-1;
-                $update_sakramen    = mysqli_query($con,"UPDATE `sakramen_list` SET sortid='$newsort' WHERE id='$id_sakramen' AND categoryid='$categoryid'")or die (mysqli_error($con));
+                $update_sakramen    = mysqli_query($con,"UPDATE `sakramen_list` SET sortid='$newsort_sakramen' WHERE id='$id_sakramen' AND categoryid='$categoryid'")or die (mysqli_error($con));
             }
         }
         $response_json       = array(

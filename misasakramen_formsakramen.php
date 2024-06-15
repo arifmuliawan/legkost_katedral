@@ -189,7 +189,7 @@
                 row             = me.closest("tr");
                 var catid_data  = row.find("input[name=categoryid]").val();
                 var id_data     = row.find("input[name=id]").val();
-                alert(catid_data);
+                alert(id_data);
                 /*
                 $.post('ajax-misasakrame.php',
                 {

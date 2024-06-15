@@ -210,8 +210,8 @@
                     }
                     console.log(data,status);
                 }
-                */    
-                );   
+                   
+                );*/    
             }); 
         </script>
         <!-- END DELETE LIST SAKRAMEN -->

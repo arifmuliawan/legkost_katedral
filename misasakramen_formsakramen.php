@@ -247,7 +247,7 @@
             });  
             $("#btncanceldetailsakramen").click(function()
             {  
-                $("#modaldetailsakramen").hide();
+                setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; });
             });     
         </script> 
         <!-- END SAVE DATA DETAIL SAKRAMEN LIST -->

@@ -256,6 +256,7 @@
                 form    = me.closest("form");
                 var catid_data  = form.find("input[name=categoryid]").val();
                 var id_data     = form.find("input[name=id]").val();
+                var title_data  = form.find("input[name=title]").val();
                 var link_data   = form.find("input[name=link]").val();
                 if(title_data=="" || link_data=="")
                 {

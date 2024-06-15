@@ -14,5 +14,35 @@
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-                       
+            <?php
+            $query_category = mysqli_query($con,"SELECT * FROM `perkawinan_category` WHERE visible='Y' order by sortid")or die (mysqli_error($con));
+            $sum_category   = mysqli_num_rows($query_category);
+            if($sum_category>0)
+            {
+                while($data_category=mysqli_fetch_array($query_category))
+                {
+                    $category_id    = $data_category['id'];
+                    $category_title = $data_category['title'];
+            ?>
+                    <!-- Main content -->
+                    <section class="content">
+                        <div class="container-fluid">
+                            <div class="row">
+                            <!-- left column -->
+                                <!-- HANDLE MISA SCHEDULE --->
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 style="margin: 0px 24px;color: #88A8D4;"><?php echo $category_title ?></h5>   
+                                        </div>
+                                    </div>        
+                                </div>
+                            </div>
+                            <!-- /HANDLE MISA SCHEDULE --->
+                        </div>
+                    </section> 
+            <?php
+                }
+            }
+            ?>  
         </div> 

@@ -134,11 +134,10 @@
                 me      = $(this);
                 row     = me.closest("tr");
                 nextrow = row.next();
-                $("<tr class='editor'><td colspan=2>UHUY</td></tr>").insertBefore(nextrow);
-                /*if ($('.editor').length < 1) 
+                if ($('.editor').length < 1) 
                 {
                     $("<tr class='editor'><td colspan=2>UHUY</td></tr>").insertBefore(nextrow)
-                }*/
+                }
             });
         </script>
         <!-- END VIEW FORM SAKRAMEN -->
@@ -151,7 +150,6 @@
                 form    = me.closest("form");
                 var catid_data  = form.find("input[name=categoryid]").val();
                 var id_data     = form.find("input[name=id]").val();
-                var title_data  = form.find("input[name=title]").val();
                 var link_data   = form.find("input[name=link]").val();
                 if(title_data=="" || link_data=="")
                 {

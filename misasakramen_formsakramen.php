@@ -185,10 +185,12 @@
         <script>
             $(".btn-delete").click(function()
             {
-                me      = $(this);
-                form    = me.closest("form");
-                var catid_data  = form.find("input[name=categoryid]").val();
-                var id_data     = form.find("input[name=id]").val();
+                me              = $(this);
+                row             = me.closest("tr");
+                var catid_data  = row.find("input[name=categoryid]").val();
+                var id_data     = row.find("input[name=id]").val();
+                alert(catid_data);
+                /*
                 $.post('ajax-misasakrame.php',
                 {
                     categoryid:catid_data,
@@ -208,6 +210,7 @@
                     }
                     console.log(data,status);
                 }
+                */    
                 );   
             }); 
         </script>

@@ -76,7 +76,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="form-label">TANGGAL PENGUMUMAN <font color="red">*</font></label>
-                                                            <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" value="<?php echo $publish_start ?>" id="dp1" required>
+                                                            <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" id="dp1">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6"> </div>

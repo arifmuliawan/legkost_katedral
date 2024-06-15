@@ -76,12 +76,14 @@
                                                                     $clr_row = "background-color: #ffffff;";
                                                                 }
                                                                 $sakramen_id    = $data_list['id'];
+                                                                $sakramen_sortid= $data_list['sortid'];
                                                                 $sakramen_title = $data_list['title'];
                                                                 $sakramen_link  = $data_list['link'];
                                                         ?>    
                                                                 <tr>
                                                                     <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
                                                                     <input type="hidden" name="id" value="<?php echo $sakramen_id ?>">
+                                                                    <input type="hidden" name="sortid" value="<?php echo $sakramen_sortid ?>">
                                                                     <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $sakramen_title ?> </td>
                                                                     <td style="width: 20%;"> 
                                                                         &nbsp&nbsp&nbsp&nbsp
@@ -189,10 +191,12 @@
                 row             = me.closest("tr");
                 var catid_data  = row.find("input[name=categoryid]").val();
                 var id_data     = row.find("input[name=id]").val();
+                var sortid_data = row.find("input[name=sortid]").val();
                 $.post('ajax-misasakrame.php',
                     {
                         categoryid:catid_data,
                         id:id_data,
+                        sortid:sortid_data,
                         delete_sakramen:true
                     },
                     function(data,status)

@@ -21,9 +21,10 @@
             {
                 while($data_category=mysqli_fetch_array($query_category))
                 {
-                    $category_id    = $data_category['id'];
-                    $category_sortid= $data_category['sortid'];
-                    $category_title = $data_category['title'];
+                    $category_id        = $data_category['id'];
+                    $category_sortid    = $data_category['sortid'];
+                    $category_title     = $data_category['title'];
+                    $category_duration  = $data_category['duration'];
             ?>
                     <!-- Main content -->
                     <section class="content">
@@ -90,7 +91,68 @@
                                                     </div>
                                                 </div>
                                                 </form>
-                                            </div>      
+                                            </div> 
+                                            <div class="card-body">
+                                                <div class="col-md-12">
+                                                    <table style="width:100%">
+                                                        <?php
+                                                        $jd         = $category_duration-7;
+                                                        $pub_start  = date('Y-m-d', strtotime("+$jd days"));
+                                                        $pub_end    = date($pub_start, strtotime("+7 days"));
+                                                        echo "$pub_start | $pub_end";
+                                                        /*
+                                                        $query_list = mysqli_query($con,"SELECT * FROM `perkawinan_list` WHERE categoryid='$category_id' AND visible='Y' order by sortid ASC")or die (mysqli_error($con));
+                                                        $sum_list   = mysqli_num_rows($query_list);
+                                                        if($sum_list>0)
+                                                        {
+                                                            $i=1;
+                                                            while($data_list=mysqli_fetch_array($query_list))
+                                                            {
+                                                                if ($i % 2 == 0)
+                                                                {
+                                                                    $clr_row = "background-color: #D9D9D9";
+                                                                }
+                                                                else
+                                                                {
+                                                                    $clr_row = "background-color: #ffffff;";
+                                                                }
+                                                                $sakramen_id    = $data_list['id'];
+                                                                $sakramen_sortid= $data_list['sortid'];
+                                                                $sakramen_title = $data_list['title'];
+                                                                $sakramen_link  = $data_list['link'];
+                                                                $sakramen_json      = array(
+                                                                    'categoryid_sakramen'   => $category_id,
+                                                                    'category_sakramen'     => $category_title,
+                                                                    'id_sakramen'           => $sakramen_id,
+                                                                    'title_sakramen'        => $sakramen_title,
+                                                                    'link_sakramen'         => $sakramen_link                                  
+                                                                );
+                                                        ?>    
+                                                                <tr style="line-height: 50px;">
+                                                                    <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
+                                                                    <input type="hidden" name="id" value="<?php echo $sakramen_id ?>">
+                                                                    <input type="hidden" name="sortid" value="<?php echo $sakramen_sortid ?>">
+                                                                    <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $sakramen_title ?> </td>
+                                                                    <td style="width: 20%;"> 
+                                                                        &nbsp&nbsp&nbsp&nbsp
+                                                                        <button type="button" class="btnedit" title="Edit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" data-toggle="modal" data-target="#modaldetailsakramen" data-sakramen='<?php echo json_encode($sakramen_json) ?>'>
+                                                                            <i class="fa fa-edit" style="color: #fff;"></i>
+                                                                        </button>
+                                                                        &nbsp&nbsp&nbsp
+                                                                        <button type="button" class="btn-delete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
+                                                                            <i class="fa fa-trash" style="color: #fff;"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                        <?php
+                                                                $i++;
+                                                            }
+                                                        }
+                                                        */    
+                                                        ?>            
+                                                    </table>
+                                                </div>
+                                            </div>     
                                         </div>
                                     </div>        
                                 </div>

@@ -112,42 +112,7 @@
             }
             ?>            
         </div> 
-        <!-- START MODAL FORM DETAIL SAKRAMEN -->
-        <div class="modal fade" id="modaldetailsakramen" style="pointer-events: none;">
-            <div class="modal-dialog" style="max-width: 800px;">
-                <div class="modal-content">
-                    <div class="modal-body" style="padding: 40px;">
-                        <div class="card-body">
-                            <form id="formeditsakramen">
-                                <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">JUDUL FORMULIR <font color="red">*</font></label>
-                                            <input type="text" class="form-control" name='title' placeholder="Type something here....">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">LINK FORMULIR <font color="red">*</font></label>
-                                            <input type="text" class="form-control" name='link' placeholder="Type something here....">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="button" class="btn-save" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE</button>
-                                        &nbsp&nbsp&nbsp
-                                        <button type="button" class="btn-cancel" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>    
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        <!-- END MODAL FORM DETAIL SAKRAMEN -->
+        
         <!-- START VIEW FORM SAKRAMEN -->
         <script>
             $(".btn-sm").click(function()

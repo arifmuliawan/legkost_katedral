@@ -132,12 +132,14 @@
             $(".btn-edit").click(function()
             {
                 me      = $(this);
+                me.closest(".card-body").show();
+                /*
                 row     = me.closest(".list");
                 nextrow = row.next();
                 if ($('.editor').length < 1) 
                 {
                     $("<tr class='editor'><td colspan=2>UHUY</td></tr>").insertBefore(nextrow)
-                }
+                }*/
             });
         </script>
         <!-- END VIEW FORM SAKRAMEN -->

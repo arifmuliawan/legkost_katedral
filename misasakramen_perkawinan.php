@@ -119,3 +119,49 @@
             });
         </script>
         <!-- END VIEW FORM PERKAWINAN -->
+        
+        <!-- START ADD PERKAWINAN -->
+        <script>
+            $(".btn-save").click(function()
+            {
+                me      = $(this);
+                form    = me.closest("form");
+                var nama_pria_data      = form.find("input[name=nama_pria]").val();
+                var paroki_pria_data    = form.find("input[name=paroki_pria]").val();
+                var nama_wanita_data    = form.find("input[name=nama_wanita]").val();
+                var paroki_wanita_data  = form.find("input[name=paroki_wanita]").val();
+                var publish_start_data  = form.find("#dp1").val();
+                alert(publish_start_data);
+                /*
+                if(nama_pria_data=="" || paroki_pria_data=="" || nama_wanita_data=="" || paroki_wanita_data=="" || publish_start_data=="")
+                {
+                    notifmodal('Mohon lengkapi data','failed');
+                }
+                else
+                {
+                    $.post('ajax-misasakrame.php',
+                    {
+                        categoryid:catid_data,
+                        title:title_data,
+                        link:link_data,
+                        add_sakramen:true
+                    },
+                    function(data,status)
+                    {
+                        if(data.error_status=='1')
+                        {
+                            notifmodal(data.error_message,'failed');
+                        }
+                        else
+                        {
+                            notifmodal(data.error_message,'success');
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
+                        }
+                        console.log(data,status);
+                    }
+                    );
+                }  
+                */      
+            }); 
+        </script>
+        <!-- END ADD PERKAWINAN -->

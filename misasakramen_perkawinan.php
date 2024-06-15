@@ -22,6 +22,7 @@
                 while($data_category=mysqli_fetch_array($query_category))
                 {
                     $category_id    = $data_category['id'];
+                    $category_sortid= $data_category['sortid'];
                     $category_title = $data_category['title'];
             ?>
                     <!-- Main content -->
@@ -33,7 +34,17 @@
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 style="margin: 0px 24px;color: #88A8D4;"><?php echo $category_title ?></h5>   
+                                            <h5 style="margin: 0px 24px;color: #88A8D4;"><?php echo $category_title ?></h5>
+                                            <?php
+                                            if($category_sortid==0)
+                                            {
+                                            ?>     
+                                                <button id="btnaddlist" type="button" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
+                                                    Add New
+                                                </button>
+                                            <?php
+                                            }
+                                            ?>      
                                         </div>
                                     </div>        
                                 </div>

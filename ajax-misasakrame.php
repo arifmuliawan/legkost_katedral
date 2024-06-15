@@ -324,7 +324,10 @@ if(isset($_POST['add_sakramen']))
 
 if(isset($_POST['delete_sakramen']))
 {
-    print_r($_POST);
+    $categoryid     = $_POST['categoryid'];
+    $id             = $_POST['id'];
+    $sortid         = $_POST['sortid'];
+    $delete_sakramen= mysqli_query($con,"DELETE FROM `sakramen_list` WHERE ")
 }    
 
 header("Content-type: application/json; charset=utf-8");

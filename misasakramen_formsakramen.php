@@ -222,7 +222,7 @@
                 {
                     $.post('ajax-misasakrame.php',
                     {
-                        catetgoryid_sakramen:$("#modaldetailsakramen input[name=categoryid]").val(),
+                        categoryid_sakramen:$("#modaldetailsakramen input[name=categoryid]").val(),
                         id_sakramen:$("#modaldetailsakramen input[name=id]").val(),
                         title_sakramen:$("#modaldetailsakramen input[name=title]").val(),
                         link_sakramen:$("#modaldetailsakramen input[name=link]").val(),

@@ -4,7 +4,7 @@
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <h1 style="margin: 24px">PENGUMUMAN PERKAWINAN</h1>
                             <p style="margin: 24px;color: red;font-size: 14px;">KOLOM DENGAN TANDA * WAJIB DIISI</p>
                             <p style="margin: 24px;font-size: 14px;">

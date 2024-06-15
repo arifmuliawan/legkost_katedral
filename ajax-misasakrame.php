@@ -379,7 +379,37 @@ if(isset($_POST['delete_sakramen']))
             'error_message'  => 'Data telah berhasil dihapus'
         );
     }
-}    
+}  
+
+if(isset($_POST['add_perkawinan']))
+{
+    $nama_pria          = $_POST['nama_pria'];
+    $paroki_pria        = $_POST['paroki_pria'];
+    $nama_wanita        = $_POST['nama_wanita'];
+    $paroki_wanita      = $_POST['paroki_wanita'];
+    $input_publish_start= $_POST['publish_start'];
+    $exp_publish_start  = explode("/",$input_publish_start);
+    $ds                 = $exp_publish_start[0];
+    $ms                 = $exp_publish_start[1];
+    $ys                 = $exp_publish_start[2];
+    $publish_start      = $ys.'-'.$ms.'-'.$ds;
+    $insert_perkawinan  = mysqli_query($con,"INSERT INTO `perkawinan_list`(`nama_pria`, `paroki_pria`, `nama_wanita`, `paroki_wanita`, `pengumuman`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$nama_pria','$paroki_pria','$nama_wanita','$paroki_wanita','$publish_start','Y','$user','$now','$user','$now')")or die (mysqli_error($con));
+    if($update_sakramen!=1)
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Perubahan data gagal disimpan'
+        );
+    }
+    else
+    {
+        $response_json       = array(
+            'error_status'   => 0,
+            'error_message'  => 'Perubahan data berhasil disimpan'
+        );
+    }
+}
 
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);

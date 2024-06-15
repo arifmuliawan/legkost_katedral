@@ -394,7 +394,7 @@ if(isset($_POST['add_perkawinan']))
     $ys                 = $exp_publish_start[2];
     $publish_start      = $ys.'-'.$ms.'-'.$ds;
     $insert_perkawinan  = mysqli_query($con,"INSERT INTO `perkawinan_list`(`nama_pria`, `paroki_pria`, `nama_wanita`, `paroki_wanita`, `pengumuman`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$nama_pria','$paroki_pria','$nama_wanita','$paroki_wanita','$publish_start','Y','$user','$now','$user','$now')")or die (mysqli_error($con));
-    if($update_sakramen!=1)
+    if($insert_perkawinan!=1)
     {
         http_response_code(410);
         $response_json       = array(

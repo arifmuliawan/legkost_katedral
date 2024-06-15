@@ -322,6 +322,30 @@ if(isset($_POST['add_sakramen']))
     }    
 } 
 
+if(isset($_POST['edit_sakramen']))
+{
+    $categoryid     = $_POST['categoryid_sakramen'];
+    $id             = $_POST['id_sakramen'];
+    $title          = $_POST['title_sakramen'];
+    $link           = $_POST['link_sakramen'];
+    $update_sakramen= mysqli_query($con,"UPDATE `sakramen_list` SET title='$title', link='$link', update_by='$user', update_date='$now' WHERE categoryid='$categoryid' AND id='$id'")or die (mysqli_error($con));
+    if($update_sakramen!=1)
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Perubahan data gagal disimpan'
+        );
+    }
+    else
+    {
+        $response_json       = array(
+            'error_status'   => 0,
+            'error_message'  => 'Perubahan data berhasil disimpan'
+        );
+    }
+}    
+
 if(isset($_POST['delete_sakramen']))
 {
     $categoryid     = $_POST['categoryid'];

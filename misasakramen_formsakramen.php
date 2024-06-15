@@ -189,29 +189,26 @@
                 row             = me.closest("tr");
                 var catid_data  = row.find("input[name=categoryid]").val();
                 var id_data     = row.find("input[name=id]").val();
-                alert(catid_data);
-                /*
                 $.post('ajax-misasakrame.php',
-                {
-                    categoryid:catid_data,
-                    id:id_data,
-                    delete_sakramen:true
-                },
-                function(data,status)
-                {
-                    if(data.error_status=='1')
                     {
-                        notifmodal(data.error_message,'failed');
-                    }
-                    else
+                        categoryid:catid_data,
+                        id:id_data,
+                        delete_sakramen:true
+                    },
+                    function(data,status)
                     {
-                        notifmodal(data.error_message,'success');
-                        setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
-                    }
-                    console.log(data,status);
-                }
-                   
-                );*/    
+                        if(data.error_status=='1')
+                        {
+                            notifmodal(data.error_message,'failed');
+                        }
+                        else
+                        {
+                            notifmodal(data.error_message,'success');
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
+                        }
+                        console.log(data,status);
+                    }   
+                );    
             }); 
         </script>
         <!-- END DELETE LIST SAKRAMEN -->

@@ -131,8 +131,6 @@
                 var nama_wanita_data    = form.find("input[name=nama_wanita]").val();
                 var paroki_wanita_data  = form.find("input[name=paroki_wanita]").val();
                 var publish_start_data  = form.find("#dp1").val();
-                alert(publish_start_data);
-                /*
                 if(nama_pria_data=="" || paroki_pria_data=="" || nama_wanita_data=="" || paroki_wanita_data=="" || publish_start_data=="")
                 {
                     notifmodal('Mohon lengkapi data','failed');
@@ -160,8 +158,7 @@
                         console.log(data,status);
                     }
                     );
-                }  
-                */      
+                }       
             }); 
         </script>
         <!-- END ADD PERKAWINAN -->

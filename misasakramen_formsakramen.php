@@ -80,7 +80,7 @@
                                                                 $sakramen_title = $data_list['title'];
                                                                 $sakramen_link  = $data_list['link'];
                                                         ?>    
-                                                                <tr>
+                                                                <tr class="list">
                                                                     <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
                                                                     <input type="hidden" name="id" value="<?php echo $sakramen_id ?>">
                                                                     <input type="hidden" name="sortid" value="<?php echo $sakramen_sortid ?>">
@@ -132,7 +132,7 @@
             $(".btn-edit").click(function()
             {
                 me      = $(this);
-                row     = me.closest(".tr");
+                row     = me.closest(".list");
                 nextrow = row.next();
                 if ($('.editor').length < 1) 
                 {

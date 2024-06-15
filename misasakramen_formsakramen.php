@@ -79,9 +79,9 @@
                                                                 $sakramen_title = $data_list['title'];
                                                                 $sakramen_link  = $data_list['link'];
                                                         ?>    
-                                                                <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
-                                                                <input type="hidden" name="id" value="<?php echo $sakramen_id ?>">
                                                                 <tr>
+                                                                    <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
+                                                                    <input type="hidden" name="id" value="<?php echo $sakramen_id ?>">
                                                                     <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $sakramen_title ?> </td>
                                                                     <td style="width: 20%;"> 
                                                                         &nbsp&nbsp&nbsp&nbsp

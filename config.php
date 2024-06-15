@@ -10,6 +10,7 @@ $my_password= "4PPYUD2Zk!";
 $my_db		= "u256116329_katedral"; 	
 $domain		= $_SERVER['HTTP_HOST']; 	
 $now        = date('Y-m-d H:i:s');
+$dtnow      = date('Y-m-d');
 if($domain=='localhost')
 {
 	$domain_url = 'localhost'; 

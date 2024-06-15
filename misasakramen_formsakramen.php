@@ -80,7 +80,7 @@
                                                                 $sakramen_title = $data_list['title'];
                                                                 $sakramen_link  = $data_list['link'];
                                                         ?>    
-                                                                <tr class="list">
+                                                                <tr>
                                                                     <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
                                                                     <input type="hidden" name="id" value="<?php echo $sakramen_id ?>">
                                                                     <input type="hidden" name="sortid" value="<?php echo $sakramen_sortid ?>">
@@ -91,29 +91,29 @@
                                                                         &nbsp&nbsp&nbsp
                                                                         <button type="button" class="btn-delete" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash" style="color: #fff;"></i></button>
                                                                     </td>
+                                                                    <form method="POST">
+                                                                    <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">JUDUL FORMULIR <font color="red">*</font></label>
+                                                                                <input type="text" class="form-control" name='title' placeholder="Type something here....">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label class="form-label">LINK FORMULIR <font color="red">*</font></label>
+                                                                                <input type="text" class="form-control" name='link' placeholder="Type something here....">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <button type="button" class="btn-save" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE</button>
+                                                                            &nbsp&nbsp&nbsp
+                                                                            <button type="button" class="btn-cancel" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    </form>
                                                                 </tr>
-                                                                <form method="POST">
-                                                                <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">JUDUL FORMULIR <font color="red">*</font></label>
-                                                                            <input type="text" class="form-control" name='title' placeholder="Type something here....">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">LINK FORMULIR <font color="red">*</font></label>
-                                                                            <input type="text" class="form-control" name='link' placeholder="Type something here....">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-12">
-                                                                        <button type="button" class="btn-save" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE</button>
-                                                                        &nbsp&nbsp&nbsp
-                                                                        <button type="button" class="btn-cancel" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
-                                                                    </div>
-                                                                </div>
-                                                                </form>
                                                         <?php
                                                                 $i++;
                                                             }
@@ -154,8 +154,7 @@
             $(".btn-edit").click(function()
             {
                 me      = $(this);
-                row     = me.closest(".list");
-                row.siblings().show();
+                me.siblings(".row").show();
                 /*
                 row     = me.closest(".list");
                 nextrow = row.next();

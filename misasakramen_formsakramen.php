@@ -87,7 +87,7 @@
                                                                     <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $sakramen_title ?> </td>
                                                                     <td style="width: 20%;"> 
                                                                         &nbsp&nbsp&nbsp&nbsp
-                                                                        <button type="button" class="btn-edit" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit" style="color: #fff;"></i></button>
+                                                                        <button type="button" class="btn" title="Edit" style="background-color:#88A8D4;" data-toggle="modal" data-target="#modaldetailparoki" data-paroki='<?php echo json_encode($paroki_json) ?>'><i class="fa fa-edit" style="color: #fff;"></i></button>
                                                                         &nbsp&nbsp&nbsp
                                                                         <button type="button" class="btn-delete" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash" style="color: #fff;"></i></button>
                                                                     </td>

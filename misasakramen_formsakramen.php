@@ -132,7 +132,7 @@
             $(".btn-edit").click(function()
             {
                 me      = $(this);
-                row     = me.closest("tr");
+                row     = me.closest(".tr");
                 nextrow = row.next();
                 if ($('.editor').length < 1) 
                 {

@@ -99,9 +99,7 @@
                                                         $jd         = $category_duration-7;
                                                         $pub_start  = date('Y-m-d', strtotime("+$jd days"));
                                                         $pub_end    = date('Y-m-d', strtotime("+6 days",strtotime($pub_start)));
-                                                        echo "$pub_start | $pub_end";
-                                                        /*
-                                                        $query_list = mysqli_query($con,"SELECT * FROM `perkawinan_list` WHERE categoryid='$category_id' AND visible='Y' order by sortid ASC")or die (mysqli_error($con));
+                                                        $query_list = mysqli_query($con,"SELECT * FROM `perkawinan_list` WHERE visible='Y' AND (pengumuman >= $pub_start AND pengumuman<= $pub_end)")or die (mysqli_error($con));
                                                         $sum_list   = mysqli_num_rows($query_list);
                                                         if($sum_list>0)
                                                         {
@@ -116,26 +114,32 @@
                                                                 {
                                                                     $clr_row = "background-color: #ffffff;";
                                                                 }
-                                                                $sakramen_id    = $data_list['id'];
-                                                                $sakramen_sortid= $data_list['sortid'];
-                                                                $sakramen_title = $data_list['title'];
-                                                                $sakramen_link  = $data_list['link'];
-                                                                $sakramen_json      = array(
-                                                                    'categoryid_sakramen'   => $category_id,
-                                                                    'category_sakramen'     => $category_title,
-                                                                    'id_sakramen'           => $sakramen_id,
-                                                                    'title_sakramen'        => $sakramen_title,
-                                                                    'link_sakramen'         => $sakramen_link                                  
+                                                                $perkawinan_id      = $data_list['id'];
+                                                                $perkawinan_pria    = $data_list['nama_pria'];
+                                                                $perkawinan_ppria   = $data_list['paroki_pria'];
+                                                                $perkawinan_wanita  = $data_list['nama_wanita'];
+                                                                $perkawinan_pwanita = $data_list['paroki_wanita'];
+                                                                $publish_data       = $data_list['pengumuman'];
+                                                                $exp_publish  = explode("-",$publish_data);
+                                                                $ds                 = $exp_publish[2];
+                                                                $ms                 = $exp_publish[1];
+                                                                $ys                 = $exp_publish[0];
+                                                                $perkawinan_publish = $ds.'/'.$ms.'/'.$ys;
+                                                                $perkawinan_json    = array(
+                                                                    'id_perkawinan'   => $perkawinan_id,
+                                                                    'pria_perkawinan' => $perkawinan_pria,
+                                                                    'ppria_perkawinan'=> $perkawinan_ppria,
+                                                                    'wanita_perkawinan' => $perkawinan_wanita,
+                                                                    'pwanita_perkawinan'=> $perkawinan_pwanita,
+                                                                    'publish_perkawinan'=> $perkawinan_publish                                  
                                                                 );
                                                         ?>    
                                                                 <tr style="line-height: 50px;">
-                                                                    <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
-                                                                    <input type="hidden" name="id" value="<?php echo $sakramen_id ?>">
-                                                                    <input type="hidden" name="sortid" value="<?php echo $sakramen_sortid ?>">
-                                                                    <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $sakramen_title ?> </td>
+                                                                    <input type="hidden" name="id" value="<?php echo $perkawinan_id ?>">
+                                                                    <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $perkawinan_pria." & ".$perkawinan_wanita ?> </td>
                                                                     <td style="width: 20%;"> 
                                                                         &nbsp&nbsp&nbsp&nbsp
-                                                                        <button type="button" class="btnedit" title="Edit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" data-toggle="modal" data-target="#modaldetailsakramen" data-sakramen='<?php echo json_encode($sakramen_json) ?>'>
+                                                                        <button type="button" class="btnedit" title="Edit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" data-toggle="modal" data-target="#modaldetailperkawinan" data-perkawinan='<?php echo json_encode($perkawinan_json) ?>'>
                                                                             <i class="fa fa-edit" style="color: #fff;"></i>
                                                                         </button>
                                                                         &nbsp&nbsp&nbsp

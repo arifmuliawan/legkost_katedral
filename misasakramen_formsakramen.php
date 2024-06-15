@@ -244,7 +244,11 @@
                     }
                     );
                 }    
-            });   
+            });  
+            $("#btncanceldetailsakramen").click(function()
+            {  
+                $("#modaldetailsakramen").hide();
+            }     
         </script> 
         <!-- END SAVE DATA DETAIL SAKRAMEN LIST -->
 

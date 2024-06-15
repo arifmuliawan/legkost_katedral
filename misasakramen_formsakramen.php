@@ -233,12 +233,11 @@
                         if(data.error_status==1)
                         {
                             toastr['error'](data.error_message);
-                            var delay = 3000;
                         }
                         else
                         {
                             toastr['success'](data.error_message);
-                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; });
                         }
                         console.log(data,status);
                     }

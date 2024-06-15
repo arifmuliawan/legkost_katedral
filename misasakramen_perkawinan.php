@@ -139,10 +139,12 @@
                 {
                     $.post('ajax-misasakrame.php',
                     {
-                        categoryid:catid_data,
-                        title:title_data,
-                        link:link_data,
-                        add_sakramen:true
+                        nama_pria:nama_pria_data,
+                        paroki_pria:paroki_pria_data,
+                        nama_wanita:nama_wanita_data,
+                        paroki_wanita:paroki_wanita_data,
+                        publish_start:publish_start_data,
+                        add_perkawinan:true
                     },
                     function(data,status)
                     {
@@ -153,7 +155,7 @@
                         else
                         {
                             notifmodal(data.error_message,'success');
-                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan'; }, 3000);
                         }
                         console.log(data,status);
                     }

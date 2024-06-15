@@ -98,7 +98,7 @@
                                                         <?php
                                                         $jd         = $category_duration-7;
                                                         $pub_start  = date('Y-m-d', strtotime("+$jd days"));
-                                                        $pub_end    = date($pub_start, strtotime("+7 days"));
+                                                        $pub_end    = date('Y-m-d', strtotime("+7 days"),strtotime($pub_start));
                                                         echo "$pub_start | $pub_end";
                                                         /*
                                                         $query_list = mysqli_query($con,"SELECT * FROM `perkawinan_list` WHERE categoryid='$category_id' AND visible='Y' order by sortid ASC")or die (mysqli_error($con));

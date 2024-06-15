@@ -44,7 +44,54 @@
                                                 </button>
                                             <?php
                                             }
-                                            ?>      
+                                            ?>
+                                            <div class="card-body" style="margin: 0px 24px;background: #D9D9D9;display: none;"  id="formsakramen">
+                                                <form method="POST">
+                                                <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">NAMA MEMPELAI PRIA <font color="red">*</font></label>
+                                                            <input type="text" class="form-control" name='nama_pria' placeholder="Type something here....">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">ASAL PAROKI <font color="red">*</font></label>
+                                                            <input type="text" class="form-control" name='paroki_pria' placeholder="Type something here....">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">NAMA MEMPELAI WANITA <font color="red">*</font></label>
+                                                            <input type="text" class="form-control" name='nama_wanita' placeholder="Type something here....">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">ASAL PAROKI <font color="red">*</font></label>
+                                                            <input type="text" class="form-control" name='paroki_wanita' placeholder="Type something here....">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">TANGGAL PENGUMUMAN <font color="red">*</font></label>
+                                                            <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" value="<?php echo $publish_start ?>" id="dp1" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6"> </div>
+                                                    <div class="col-md-12">
+                                                        <button type="button" class="btn-save" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
+                                                            SAVE
+                                                        </button>
+                                                        &nbsp&nbsp&nbsp
+                                                        <button type="button" class="btn-cancel" style="margin: 24px;background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" onclick="return confirm('Are you sure you want to cancel this process ?')">
+                                                            CANCEL
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                </form>
+                                            </div>      
                                         </div>
                                     </div>        
                                 </div>
@@ -57,3 +104,19 @@
             }
             ?>  
         </div> 
+
+        <!-- START VIEW FORM PERKAWINAN -->
+        <script>
+            $(".btn-sm").click(function()
+            {
+                me = $(this);
+                me.siblings().show();
+            });
+
+            $(".btn-cancel").click(function()
+            {
+                me = $(this);
+                me.closest(".card-body").hide();
+            });
+        </script>
+        <!-- END VIEW FORM PERKAWINAN -->

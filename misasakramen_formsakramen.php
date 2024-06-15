@@ -148,9 +148,9 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <button type="button" class="btn-save" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE</button>
+                                        <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" id="btnsavedetailsakramen">SAVE</button>
                                         &nbsp&nbsp&nbsp
-                                        <button type="button" class="btn-cancel" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
+                                        <button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;" id="btncanceldetailsakramen" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
                                     </div>
                                 </div>
                             </form>
@@ -206,6 +206,47 @@
             });
         </script>
         <!-- END DATA DETAIL SAKRAMEN LIST -->
+        
+        <!-- START SAVE DATA DETAIL SAKRAMEN LIST -->
+        <script>
+            $("#btnsavedetailsakramen").click(function()
+            {
+                var title_sakramen = $("#modaldetailsakramen input[name=title]").val();
+                var link_sakramen  = $("#modaldetailsakramen input[name=link]").val();
+                if(title_sakramen=="" || link_sakramen=="")
+                {
+                    toastr['error']("Mohon lengkapi data");
+                    var delay = 3000;
+                } 
+                else
+                {
+                    $.post('ajax-misasakramen.php',
+                    {
+                        catetgoryid_sakramen:$("#modaldetailsakramen input[name=categoryid]").val(),
+                        id_sakramen:$("#modaldetailsakramen input[name=id]").val(),
+                        title_sakramen:$("#modaldetailsakramen input[name=title]").val(),
+                        link_sakramen:$("#modaldetailsakramen input[name=link]").val(),
+                        edit_sakramen:true
+                    },
+                    function(data,status)
+                    {
+                        if(data.error_status==1)
+                        {
+                            toastr['error'](data.error_message);
+                            var delay = 3000;
+                        }
+                        else
+                        {
+                            toastr['success'](data.error_message);
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
+                        }
+                        console.log(data,status);
+                    }
+                    );
+                }    
+            });   
+        </script> 
+        <!-- END SAVE DATA DETAIL SAKRAMEN LIST -->
 
         <!-- START PROCESS FORM SAKRAMEN -->
         <script>

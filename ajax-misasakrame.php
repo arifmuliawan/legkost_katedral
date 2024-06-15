@@ -320,6 +320,11 @@ if(isset($_POST['add_sakramen']))
             'error_message'  => 'Penambahan data telah berhasil disimpan'
         );
     }    
+} 
+
+if(isset($_POST['delete_sakramen']))
+{
+    print_r($_POST);
 }    
 
 header("Content-type: application/json; charset=utf-8");

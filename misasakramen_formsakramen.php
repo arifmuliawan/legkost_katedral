@@ -79,6 +79,13 @@
                                                                 $sakramen_sortid= $data_list['sortid'];
                                                                 $sakramen_title = $data_list['title'];
                                                                 $sakramen_link  = $data_list['link'];
+                                                                $sakramen_json      = array(
+                                                                    'categoryid_sakramen'   => $category_id,
+                                                                    'category_sakramen'     => $category_title,
+                                                                    'id_sakramen'           => $sakramen_id,
+                                                                    'title_sakramen'        => $sakramen_title,
+                                                                    'link_sakramen'         => $sakramen_link                                  
+                                                                );
                                                         ?>    
                                                                 <tr>
                                                                     <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
@@ -87,7 +94,7 @@
                                                                     <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $sakramen_title ?> </td>
                                                                     <td style="width: 20%;"> 
                                                                         &nbsp&nbsp&nbsp&nbsp
-                                                                        <button type="button" class="btn" title="Edit" style="background-color:#88A8D4;" data-toggle="modal" data-target="#modaldetailsakramen"><i class="fa fa-edit" style="color: #fff;"></i></button>
+                                                                        <button type="button" class="btnedit" title="Edit" style="background-color:#88A8D4;" data-toggle="modal" data-target="#modaldetailsakramen" data-sakramen='<?php echo json_encode($sakramen_json) ?>'><i class="fa fa-edit" style="color: #fff;"></i></button>
                                                                         &nbsp&nbsp&nbsp
                                                                         <button type="button" class="btn-delete" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash" style="color: #fff;"></i></button>
                                                                     </td>
@@ -119,8 +126,14 @@
                     <div class="modal-body" style="padding: 40px;">
                         <div class="card-body">
                             <form id="formeditsakramen">
-                                <input type="hidden" name="categoryid" value="<?php echo $category_id ?>">
+                                <input type="hidden" name="categoryid">
+                                <input type="hidden" name="id">
                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name='category' placeholder="Type something here....">
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label">JUDUL FORMULIR <font color="red">*</font></label>
@@ -177,6 +190,21 @@
             });
         </script>
         <!-- END VIEW FORM SAKRAMEN -->
+
+        <!-- START DATA DETAIL SAKRAMEN LIST -->
+        <script>
+            $(document).on("click", ".btnedit", function () {
+                var me      = $(this);
+                var data    = me.attr('data-sakramen');
+                var jdata   = JSON.parse(data);
+                $("#modaldetailsakramen input[name=categoryid]").val( jdata.categoryid_sakramen);
+                $("#modaldetailsakramen input[name=id]").val( jdata.id_sakramen);
+                $("#modaldetailsakramen input[name=category]").val( jdata.category_sakramen);
+                $("#modaldetailsakramen input[name=title]").val( jdata.title_sakramen);
+                $("#modaldetailsakramen input[name=link]").val( jdata.link_sakramen);    
+            });
+        </script>
+        <!-- END DATA DETAIL SAKRAMEN LIST -->
 
         <!-- START PROCESS FORM SAKRAMEN -->
         <script>

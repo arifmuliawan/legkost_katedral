@@ -87,7 +87,7 @@
                                                                     <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $sakramen_title ?> </td>
                                                                     <td style="width: 20%;"> 
                                                                         &nbsp&nbsp&nbsp&nbsp
-                                                                        <button type="button" class="btn-edit" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit" style="color: #fff;"></i></button>
+                                                                        <button type="button" class="btn" title="Edit" style="background-color:#88A8D4;" data-toggle="modal" data-target="#modaldetailsakramen" data-paroki=''><i class="fa fa-edit" style="color: #fff;"></i></button>
                                                                         &nbsp&nbsp&nbsp
                                                                         <button type="button" class="btn-delete" title="Delete" style="background-color:#E90000;"><i class="fa fa-trash" style="color: #fff;"></i></button>
                                                                     </td>
@@ -112,6 +112,81 @@
             }
             ?>            
         </div> 
+        <!-- START MODAL FORM DETAIL SAKRAMEN -->
+        <div class="modal fade" id="modaldetailsakramen" style="pointer-events: none;">
+            <div class="modal-dialog" style="max-width: 800px;">
+                <div class="modal-content">
+                    <div class="modal-body" style="padding: 40px;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card-body">    
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>FOTO PENGURUS <font color='red'>*</font></label> <br>
+                                                    (500 x 500 px) JPG/JPEG/PNG
+                                                </div>
+                                                <img src="" id="detail_photo_paroki" width="300px">
+                                                <input type="hidden" name="id_paroki">
+                                                <input type="hidden" name="delete_photo_paroki">
+                                                <button id="btndeletephotoparoki" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                                <form id="formdetailparoki">
+                                                    <input type="hidden" name="id_paroki">
+                                                    <div id="photo_paroki" class="dropzone">
+                                                        <div class="dz-message">
+                                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                            <b>.JPG  .JPEG  .PNG</b><br>
+                                                            Drop files to upload <br>
+                                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                                        </div>
+                                                    </div>
+                                                    <button id="btnupdatephotoparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 15px;">SAVE</button>
+                                                </form>  
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <input type="hidden" name="id_paroki">
+                                                                <input type="hidden" name="edit_paroki">
+                                                                <label class="form-label">NAMA <font color='red'>*</font></label>
+                                                                <input type="text" name="name_paroki" class="form-control" placeholder="Type something here....">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label class="form-label">JABATAN <font color='red'>*</font></label>
+                                                                <input type="text" name="position_paroki" class="form-control" placeholder="Type something here....">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <table border=0 width="100%">
+                                                                <tr>
+                                                                    <td style="text-align: right;">
+                                                                        <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
+                                                                        &nbsp&nbsp
+                                                                        <button id="btnupdatedetailparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                                                    </td> 
+                                                                </tr>
+                                                            </table>
+                                                        </div>             
+                                                    </div>
+                                                </div>   
+                                            </div>      
+                                        </div>
+                                    </div>   
+                                </div> 
+                            </div>     
+                        </div>    
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- END MODAL FORM DETAIL SAKRAMEN -->
         <!-- START VIEW FORM SAKRAMEN -->
         <script>
             $(".btn-sm").click(function()
@@ -136,7 +211,8 @@
                 nextrow = row.next();
                 if ($('.editor').length < 1) 
                 {
-                    $("<tr class='editor'><td colspan=2>UHUY</td></tr>").insertBefore(nextrow)
+                    $("
+                        <tr class='editor'><td colspan=2>UHUY</td></tr>").insertBefore(nextrow)
                 }
             });
         </script>

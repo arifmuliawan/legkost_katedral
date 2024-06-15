@@ -75,9 +75,11 @@
                                                                 {
                                                                     $clr_row = "background-color: #ffffff;";
                                                                 }
+                                                                $sakramen_title = $data_list['title'];
+                                                                $sakramen_link  = $data_list['link'];
                                                         ?>    
                                                                 <tr>
-                                                                    <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp Formulir Pendaftaran Perkawinan </td>
+                                                                    <td style="width: 80%;<?php echo $clr_row ?>"> &nbsp&nbsp&nbsp&nbsp <?php echo $sakramen_title ?> </td>
                                                                     <td style="width: 20%;"> 
                                                                         &nbsp&nbsp&nbsp&nbsp
                                                                         <button type="button" class="btn-edit" title="Edit" style="background-color:#88A8D4;"><i class="fa fa-edit" style="color: #fff;"></i></button>

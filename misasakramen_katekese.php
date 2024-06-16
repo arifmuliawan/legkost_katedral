@@ -92,31 +92,28 @@
                             </div>     
                         </div>
                         <div class="col-md-8" style="flex: unset;margin-left: 50px;"></div>
-                        <div class="col-md-10" style="flex: unset;margin-left: 50px;">
+                        <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">JUDUL KATEKESE<font color="red">*</font></label>
                                 <input type="text" class="form-control" name='title' placeholder="Type something here....">
                             </div>     
                         </div>
-                        <div class="col-md-2" style="flex: unset;margin-left: 50px;"></div>
-                        <div class="col-md-10" style="flex: unset;margin-left: 50px;">
+                        <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">DESKRIPSI SINGKAT<font color="red">*</font></label>
                                 <input type="text" class="form-control" name='highlight' placeholder="Type something here....">
                             </div>     
                         </div>
-                        <div class="col-md-2" style="flex: unset;margin-left: 50px;"></div>
-                        <div class="col-md-10" style="flex: unset;margin-left: 50px;">
+                        <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">ISI KATEKESE<font color="red">*</font></label>
                                 <textarea class="ckeditor" id="editordesc" name="editordesc" placeholder="Type something here...." style="margin-top: 0px; margin-bottom: 0px; height: 400px;" > </textarea>
                             </div>     
                         </div>
-                        <div class="col-md-2" style="flex: unset;margin-left: 50px;"></div>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;text-align:left">
                             <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">CANCEL</button>
                         </div>
-                        <div class="col-md-6" style="flex: unset;margin-left: 50px;text-align:right">
+                        <div class="col-md-6" style="flex: unset;margin-left: 125px;text-align:right">
                             <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO DRAFT</button>
                             &nbsp&nbsp&nbsp
                             <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO PUBLISH</button>

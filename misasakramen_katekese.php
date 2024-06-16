@@ -110,7 +110,7 @@
                             </div>     
                         </div>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;text-align:left">
-                            <button id="btncancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;">CANCEL</button>
+                            <button id="btncancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
                         </div>
                         <div class="col-md-6" style="flex: unset;margin-left: 125px;text-align:right">
                             <button id="btnsavedraft" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO DRAFT</button>

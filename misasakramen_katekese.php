@@ -68,6 +68,23 @@
                             </div>     
                         </div>
                         <div class="col-md-8" style="flex: unset;margin-left: 50px;"></div>
+                        <div class="col-md-8" style="flex: unset;margin-left: 50px;">
+                            <div class="form-group">
+                                <label class="form-label">BANNER<font color="red">*</font></label><br>
+                                <font size="3">(900 x 450 px) JPG/JPEG/PNG</font>
+                                <br><br>
+                                <div id="uploadbanner" class="dropzone">
+                                    <div class="dz-message">
+                                        <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                        <b>.JPG  .JPEG  .PNG</b><br>
+                                        Drop files to upload <br>
+                                        or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                    </div>
+                                </div>
+                                <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
+                            </div>     
+                        </div>
+                        <div class="col-md-4" style="flex: unset;margin-left: 50px;"></div>
                     </div>    
                 </div> 
             </section>           

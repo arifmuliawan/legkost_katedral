@@ -328,4 +328,13 @@
                 }
             });
         </script> 
-        <!-- END DROPZONE UPLOAD BANNER -->    
+        <!-- END DROPZONE UPLOAD BANNER --> 
+         
+        <!-- START CANCEL FORM -->
+        <script>
+            $("#btncancel").click(function()
+            {
+                setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
+            });
+        </script>
+        <!-- END CANCEL FORM -->

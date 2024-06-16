@@ -84,7 +84,6 @@
                                 <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
                             </div>     
                         </div>
-                        <div class="col-md-4" style="flex: unset;margin-left: 50px;"></div>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">TANGGAL KATEKESE<font color="red">*</font></label>

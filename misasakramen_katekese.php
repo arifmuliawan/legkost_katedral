@@ -24,14 +24,14 @@
                         <div class="col-md-12">
                             <table width="100%">
                                 <tr>
-                                    <td width="25%">
-                                        <img src="https://placehold.co/250" width="50%">
+                                    <td width="20%">
+                                        <img src="https://placehold.co/250" width="80%">
                                     </td> 
-                                    <td width="50%">
+                                    <td width="65%">
                                         27 Agustus 2024 <br>
                                         <h5> katekese sakramen penguatan </h5>
                                     </td>
-                                    <td width="25%">
+                                    <td width="15%">
                                         <button type="button" class="btnedit" title="Edit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" data-toggle="modal" data-target="#modaldetailperkawinan" data-perkawinan='<?php echo json_encode($perkawinan_json) ?>'>
                                             <i class="fa fa-edit" style="color: #fff;"></i>
                                         </button>

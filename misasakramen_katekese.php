@@ -16,7 +16,12 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12" style="text-align:right">
-                            <button type="button" id="btnformkatekese" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
+                            <?php
+                            $katekese_json    = array(
+                                'id_katekese' => 0
+                            );    
+                            ?>    
+                            <button type="button" id="btnformkatekese" data-katekese='<?php echo json_encode($katekese_json) ?>' class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
                                 Add New
                             </button>
                         </div>
@@ -56,6 +61,8 @@
                                 <label class="form-label">THUMBNAIL <font color="red">*</font></label><br>
                                 <font size="3">(250 x 250 px) JPG/JPEG/PNG</font>
                                 <br><br>
+                                <img id="thumb_img"><br>
+                                <button id="btnreplacethumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                 <div id="uploadthumb" class="dropzone">
                                     <div class="dz-message">
                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
@@ -126,8 +133,35 @@
         <script>
             $("#katekeselist #btnformkatekese").click(function()
             {
-                $("#katekeselist").hide();
-                $("#katekeseform").show();
+                var data    = me.attr('data-perkawinan');
+                var jdata   = JSON.parse(data);
+                if(jdata.id_katekese==0)
+                {
+                    $("#katekeselist").hide();
+                    $("#katekeseform").show();
+                }   
+                else
+                {
+                    $.post('ajax-misasakrame.php',
+                    {
+                        id:jdata.id_katekese,
+                        detail_katekese:true
+                    },
+                    function(data,status)
+                    {
+                        if(data.error_status==1)
+                        {
+                            toastr['error'](data.error_message);
+                        }
+                        else
+                        {
+                            $("#katekeselist").hide();
+                            $("#katekeseform").show();
+                        }
+                        console.log(data,status);
+                    }
+                    );
+                } 
             });
         </script>
         <!-- END ACTIVE FORM KATEKESE -->
@@ -141,3 +175,80 @@
             });
         </script>
         <!-- END CANCEL FORM KATEKESE -->
+
+        <!-- START DROPZONE UPLOAD THUMBNAIL -->
+        <script type="text/javascript">  
+            Dropzone.autoDiscover = false;
+            myDropzone = new Dropzone('#katekeseform div#uploadthumb', 
+            {
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 1,
+                paramName: 'upload_thumbnail',
+                clickable: true,
+                thumbnailWidth:150,
+                thumbnailHeight:150,
+                acceptedFiles: "image/jpeg,image/png,image/jpg",
+                url: 'ajax-misasakrame.php',
+                init: function () {
+
+                    var myDropzone = this;
+                    // Update selector to match your button
+                    $("#katekeseform #btnuploadthumb").click(function (e) {
+                        e.preventDefault();
+                        myDropzone.processQueue();
+                        return false;
+                    });
+
+                    this.on('sending', function (file, xhr, formData) {
+                        // Append all form inputs to the formData Dropzone will POST
+                        var data = $("#katekeseform").serializeArray();
+                        $.each(data, function (key, el) {
+                            formData.append(el.name, el.value);
+                        });
+                        console.log(formData);
+
+                    });
+                },
+                error: function (file, response){
+                    if ($.type(response) === "string")
+                        var message = response; //dropzone sends it's own error messages in string
+                    else
+                        var message = response.message;
+                    file.previewElement.classList.add("dz-error");
+                    _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
+                    _results = [];
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i];
+                        _results.push(node.textContent = message);
+                    }
+                    if(response.error_status==1)
+                    {
+                        notifmodal(response.error_message,'failed');
+                    }
+                    console.log(data,status);
+                    return _results;
+                },
+                successmultiple: function (file, response) {
+                    if(response.error_status==0)
+                    {
+                        notifmodal(response.error_message,'success');
+                        $("#katekeseform #uploadthumb").hide();
+                        $("#katekeseform #btnuploadthumb").hide();
+                        $("#formdetail #kregis_img").attr('src', response.kregis_img).show();
+                        $("#formdetail #btndeletekregisimg").show();
+                    }
+                },
+                completemultiple: function (file, response) {
+                    console.log(file, response, "completemultiple");
+                    //$modal.modal("show");
+                },
+                reset: function () {
+                    console.log("resetFiles");
+                    this.removeAllFiles(true);
+                }
+            });
+        </script> 
+        <!-- END DROPZONE UPLOAD REGISTER -->

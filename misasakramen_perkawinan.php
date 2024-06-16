@@ -301,7 +301,7 @@
                 $("#modaldetailperkawinan input[name=paroki_pria]").val( jdata.ppria_perkawinan);
                 $("#modaldetailperkawinan input[name=nama_wanita]").val( jdata.wanita_perkawinan);
                 $("#modaldetailperkawinan input[name=paroki_wanita]").val( jdata.pwanita_perkawinan);
-                $("#modaldetailperkawinan input[name=publish_start]").val( jdata.publish_perkawinan);
+                $("#modaldetailperkawinan #dp1").val( jdata.publish_perkawinan);
             });
         </script>
         <!-- END DATA DETAIL PERKAWINAN LIST -->

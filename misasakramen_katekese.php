@@ -140,6 +140,8 @@
                 {
                     $("#katekeselist").hide();
                     $("#katekeseform").show();
+                    $("#katekeseform #thumb_img").hide();
+                    $("#katekeseform #btnreplacethumb").hide();
                 }   
                 else
                 {

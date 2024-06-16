@@ -47,7 +47,7 @@
                 </div> 
             </section> 
             <!-- Main content -->
-            <section class="content" id="katekeseform" style="display:;margin-right: 50px;">
+            <section class="content" id="katekeseform" style="display:none;margin-right: 50px;">
                 <div class="container-fluid">
                     <div class="row">
                         <!-- left column -->

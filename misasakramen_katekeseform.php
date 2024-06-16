@@ -10,8 +10,49 @@
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
+            <?php
+            if($id!=0)
+            {
+                $query_katekese = mysqli_query($con,"SELECT * FROM katekese WHERE id='$id'")or die (mysqli_error($con));
+                $sum_katekese   = mysqli_num_rows($query_katekese);
+                if($sum_katekese==0)
+                {
+                    echo "Data Tidak Ditemukan";
+                    exit();
+                }
+                else
+                {
+                    $data_katekese  = mysqli_fetch_array($query_katekese);
+                    $thumb_img      = $data_katekese['thumb_img'];
+                    $banner_img     = $data_katekese['banner_img'];
+                    $data_publish   = $data_katekese['publish_date'];
+                    $exp_publish    = explode("-",$publish_data);
+                    $ds             = $exp_publish[2];
+                    $ms             = $exp_publish[1];
+                    $ys             = $exp_publish[0];
+                    $publish_date   = $ds.'/'.$ms.'/'.$ys;
+                    $title          = $data_katekese['title'];
+                    $highlight      = $data_katekese['highlight'];
+                    $description    = $data_katekese['description'];
+                }
+            }
+            else
+            {
+                $thumb_img      = "";
+                $banner_img     = "";
+                $data_publish   = "";
+                $exp_publish    = "";
+                $ds             = "";
+                $ms             = "";
+                $ys             = "";
+                $publish_date   = "";
+                $title          = "";
+                $highlight      = "";
+                $description    = "";
+            }
+            ?> 
             <!-- Main content -->
-            <section class="content" id="katekeseform" style="display:none;margin-right: 50px;">
+            <section class="content" id="katekeseform" style="margin-right: 50px;">
                 <div class="container-fluid">
                     <div class="row">
                         <!-- left column -->
@@ -20,7 +61,7 @@
                                 <label class="form-label">THUMBNAIL <font color="red">*</font></label><br>
                                 <font size="3">(250 x 250 px) JPG/JPEG/PNG</font>
                                 <br><br>
-                                <img id="thumb_img"><br>
+                                <img id="thumb_img" src="<?php echo $base_assets.$thumb_img ?>"><br>
                                 <button id="btnreplacethumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                 <div id="uploadthumb" class="dropzone">
                                     <div class="dz-message">
@@ -39,7 +80,7 @@
                                 <label class="form-label">BANNER<font color="red">*</font></label><br>
                                 <font size="3">(900 x 450 px) JPG/JPEG/PNG</font>
                                 <br><br>
-                                <img id="banner_img"><br>
+                                <img id="banner_img" <?php echo $base_assets.$banner_img ?>><br>
                                 <button id="btnreplacebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                 <div id="uploadbanner" class="dropzone">
                                     <div class="dz-message">
@@ -55,26 +96,26 @@
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">TANGGAL KATEKESE<font color="red">*</font></label>
-                                <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" id="dp1">
+                                <input type="text" class="form-control" name='publist_date' placeholder="dd/mm/yyyy" id="dp1" value="<?php echo $publish_date ?>">
                             </div>     
                         </div>
                         <div class="col-md-8" style="flex: unset;margin-left: 50px;"></div>
                         <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">JUDUL KATEKESE<font color="red">*</font></label>
-                                <input type="text" class="form-control" name='title' placeholder="Type something here....">
+                                <input type="text" class="form-control" name='title' placeholder="Type something here...." value="<?php echo $title ?>">
                             </div>     
                         </div>
                         <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">DESKRIPSI SINGKAT<font color="red">*</font></label>
-                                <input type="text" class="form-control" name='highlight' placeholder="Type something here....">
+                                <input type="text" class="form-control" name='highlight' placeholder="Type something here...." value="<?php echo $highlight ?>">
                             </div>     
                         </div>
                         <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">ISI KATEKESE<font color="red">*</font></label>
-                                <textarea class="ckeditor" id="editordesc" name="editordesc" placeholder="Type something here...." style="margin-top: 0px; margin-bottom: 0px; height: 400px;" > </textarea>
+                                <textarea class="ckeditor" id="editordesc" name="editordesc" placeholder="Type something here...." style="margin-top: 0px; margin-bottom: 0px; height: 400px;" > <?php echo $description ?> </textarea>
                             </div>     
                         </div>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;text-align:left">

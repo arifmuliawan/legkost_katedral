@@ -133,7 +133,7 @@
         <script>
             $("#katekeselist #btnformkatekese").click(function()
             {
-                var data    = me.attr('data-perkawinan');
+                var data    = me.attr('data-katekese');
                 var jdata   = JSON.parse(data);
                 if(jdata.id_katekese==0)
                 {

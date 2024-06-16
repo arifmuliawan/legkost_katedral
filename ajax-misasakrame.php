@@ -500,6 +500,64 @@ if(isset($_FILES['katekese_thumbnail']))
     }
 }
 
+if(isset($_FILES['katekese_banner']))
+{
+    if($_FILES['katekese_banner']['name'][0]!='')
+    {
+        $ekstensi_diperbolehkan = array('png','jpg','jpeg');
+        $nama_image             = $_FILES['katekese_banner']['name'][0];
+        $x_image                = explode('.', $nama_image);
+        $ekstensi_image         = strtolower(end($x_image));
+        $ukuran_image           = $_FILES['katekese_banner']['size'][0];
+        $file_tmp_image         = $_FILES['katekese_banner']['tmp_name'][0];
+        $file_directory_image   = "assets/dist/img/katekese/".$nama_image;
+        $file_db_image          = "dist/img/katekese/".$nama_image;
+        $image_info             = getimagesize($file_tmp_image);
+        $image_width            = $image_info[0];
+        $image_height           = $image_info[1];
+        if(file_exists("assets/dist/img/katekese/".$nama_image))
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Nama file sudah digunakan, silahkan upload kembali dengan nama file berbeda'
+            );
+        }
+        else
+        {
+            if(($image_width<='245' && $image_width>='255') && ($image_height<='245' && $image_height>='255'))
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (250 X 250)'
+                );
+            }
+            else
+            {
+                $upload_file   = @move_uploaded_file($file_tmp_image, $file_directory_image);
+                if($upload_file===false)
+                {
+                    http_response_code(410);
+                        $response_json       = array(
+                        'error_status'   => 1,
+                        'error_message'  => 'Gambar gagal di upload ke server'
+                    );
+                    return;
+                }
+                else
+                {
+                    $response_json       = array(
+                        'error_status'   => 0,
+                        'error_message'  => 'Penambahan data telah berhasil disimpan',
+                        'banner_img'     => $base_assets.$file_db_image
+                    );
+                }    
+            }    
+        }    
+    }
+}
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

@@ -25,7 +25,7 @@
                             <table width="100%">
                                 <tr>
                                     <td width="25%">
-                                        <img src="https://placehold.co/250" width="100%">
+                                        <img src="https://placehold.co/250" width="50%">
                                     </td> 
                                     <td width="50%">
                                         27 Agustus 2024 <br>

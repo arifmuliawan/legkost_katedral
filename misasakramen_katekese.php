@@ -51,7 +51,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <!-- left column -->
-                        <div class="col-md-12" style="flex: unset;margin-left: 50px;">
+                        <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">THUMBNAIL <font color="red">*</font></label>
                                 <div id="uploadthumb" class="dropzone">
@@ -65,6 +65,7 @@
                                 <button id="btnuploadthumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
                             </div>     
                         </div>
+                        <div class="col-md-8" style="flex: unset;margin-left: 50px;"></div>
                     </div>    
                 </div> 
             </section>           

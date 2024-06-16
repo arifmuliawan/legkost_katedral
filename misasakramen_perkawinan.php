@@ -310,3 +310,53 @@
             });
         </script>
         <!-- END DATA DETAIL PERKAWINAN LIST -->
+
+        <!-- START SAVE DATA DETAIL PERKAWINAN LIST -->
+        <script>
+            $("#btnsavedetailperkawinan").click(function()
+            {
+                var id_data             = $("#modaldetailperkawinan input[name=id]").val();
+                var nama_pria_data      = $("#modaldetailperkawinan input[name=nama_pria]").val();
+                var paroki_pria_data    = $("#modaldetailperkawinan input[name=paroki_pria]").val();
+                var nama_wanita_data    = $("#modaldetailperkawinan input[name=nama_wanita]").val();
+                var paroki_wanita_data  = $("#modaldetailperkawinan input[name=paroki_wanita]").val();
+                var publish_start_data  = $("#modaldetailperkawinan #dp1").val();
+                if(nama_pria_data=="" || paroki_pria_data=="" || nama_wanita_data=="" || paroki_wanita_data=="" || publish_start_data=="")
+                {
+                    toastr['error']("Mohon lengkapi data");
+                    var delay = 3000;
+                } 
+                else
+                {
+                    $.post('ajax-misasakrame.php',
+                    {
+                        id:id_data,
+                        nama_pria:nama_pria_data,
+                        paroki_pria:paroki_pria_data,
+                        nama_wanita:nama_wanita_data,
+                        paroki_wanita:paroki_wanita_data,
+                        publish_start:publish_start_data,
+                        edit_perkawinan:true
+                    },
+                    function(data,status)
+                    {
+                        if(data.error_status==1)
+                        {
+                            toastr['error'](data.error_message);
+                        }
+                        else
+                        {
+                            toastr['success'](data.error_message);
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan'; });
+                        }
+                        console.log(data,status);
+                    }
+                    );
+                }    
+            });  
+            $("#btncanceldetailsakramen").click(function()
+            {  
+                setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan'; });
+            });     
+        </script> 
+        <!-- END SAVE DATA DETAIL PERKAWINAN LIST -->

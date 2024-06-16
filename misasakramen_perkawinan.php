@@ -143,7 +143,7 @@
                                                                             <i class="fa fa-edit" style="color: #fff;"></i>
                                                                         </button>
                                                                         &nbsp&nbsp&nbsp
-                                                                        <button type="button" class="btn-delete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
+                                                                        <button type="button" class="btndelete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
                                                                             <i class="fa fa-trash" style="color: #fff;"></i>
                                                                         </button>
                                                                     </td>
@@ -289,3 +289,19 @@
             }); 
         </script>
         <!-- END ADD PERKAWINAN -->
+
+        <!-- START DATA DETAIL PERKAWINAN LIST -->
+        <script>
+            $(document).on("click", ".btnedit", function () {
+                var me      = $(this);
+                var data    = me.attr('data-perkawinan');
+                var jdata   = JSON.parse(data);
+                $("#modaldetailperkawinan input[name=id]").val( jdata.id_perkawinan);
+                $("#modaldetailperkawinan input[name=nama_pria]").val( jdata.pria_perkawinan);
+                $("#modaldetailperkawinan input[name=paroki_pria]").val( jdata.ppria_perkawinan);
+                $("#modaldetailperkawinan input[name=nama_wanita]").val( jdata.wanita_perkawinan);
+                $("#modaldetailperkawinan input[name=paroki_wanita]").val( jdata.pwanita_perkawinan);
+                $("#modaldetailperkawinan input[name=publish_start]").val( jdata.publish_perkawinan);
+            });
+        </script>
+        <!-- END DATA DETAIL PERKAWINAN LIST -->

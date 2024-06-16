@@ -61,17 +61,40 @@
                                 <label class="form-label">THUMBNAIL <font color="red">*</font></label><br>
                                 <font size="3">(250 x 250 px) JPG/JPEG/PNG</font>
                                 <br><br>
-                                <img id="thumb_img" src="<?php echo $base_assets.$thumb_img ?>"><br>
-                                <button id="btnreplacethumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
-                                <div id="uploadthumb" class="dropzone">
-                                    <div class="dz-message">
-                                        <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
-                                        <b>.JPG  .JPEG  .PNG</b><br>
-                                        Drop files to upload <br>
-                                        or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                <?php
+                                if($thumb_img!="")
+                                {
+                                ?>    
+                                    <img id="thumb_img" src="<?php echo $base_assets.$thumb_img ?>"><br>
+                                    <button id="btnreplacethumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
+                                    <div id="uploadthumb" class="dropzone" style="display:none">
+                                        <div class="dz-message">
+                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                            <b>.JPG  .JPEG  .PNG</b><br>
+                                            Drop files to upload <br>
+                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                        </div>
                                     </div>
-                                </div>
-                                <button id="btnuploadthumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
+                                    <button id="btnuploadthumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display:none">UPLOAD</button>
+                                <?php
+                                }
+                                else
+                                {
+                                ?>    
+                                    <img id="thumb_img"><br>
+                                    <button id="btnreplacethumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display:none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
+                                    <div id="uploadthumb" class="dropzone">
+                                        <div class="dz-message">
+                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                            <b>.JPG  .JPEG  .PNG</b><br>
+                                            Drop files to upload <br>
+                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                        </div>
+                                    </div>
+                                    <button id="btnuploadthumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
+                                <?php
+                                }
+                                ?>    
                             </div>     
                         </div>
                         <div class="col-md-8" style="flex: unset;margin-left: 50px;"></div>
@@ -80,17 +103,40 @@
                                 <label class="form-label">BANNER<font color="red">*</font></label><br>
                                 <font size="3">(900 x 450 px) JPG/JPEG/PNG</font>
                                 <br><br>
-                                <img id="banner_img" <?php echo $base_assets.$banner_img ?>><br>
-                                <button id="btnreplacebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
-                                <div id="uploadbanner" class="dropzone">
-                                    <div class="dz-message">
-                                        <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
-                                        <b>.JPG  .JPEG  .PNG</b><br>
-                                        Drop files to upload <br>
-                                        or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                <?php
+                                if($banner_img!="")
+                                {
+                                ?>    
+                                    <img id="banner_img" src="<?php echo $base_assets.$banner_img ?>"><br>
+                                    <button id="btnreplacebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
+                                    <div id="uploadbanner" class="dropzone" style="display:none">
+                                        <div class="dz-message">
+                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                            <b>.JPG  .JPEG  .PNG</b><br>
+                                            Drop files to upload <br>
+                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                        </div>
                                     </div>
-                                </div>
-                                <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
+                                    <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display:none">UPLOAD</button>
+                                <?php
+                                }
+                                else
+                                {
+                                ?>
+                                    <img id="banner_img"><br>
+                                    <button id="btnreplacebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display:none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
+                                    <div id="uploadbanner" class="dropzone">
+                                        <div class="dz-message">
+                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                            <b>.JPG  .JPEG  .PNG</b><br>
+                                            Drop files to upload <br>
+                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                        </div>
+                                    </div>
+                                    <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
+                                <?php
+                                }
+                                ?>
                             </div>     
                         </div>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">

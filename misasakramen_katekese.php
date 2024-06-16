@@ -16,7 +16,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12" style="text-align:right">
-                            <a href="index.php?p=misasakramen_katekeseform">
+                            <a href="index.php?p=misasakramen_katekeseform&id=0">
                             <button type="button" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
                                 Add New
                             </button>

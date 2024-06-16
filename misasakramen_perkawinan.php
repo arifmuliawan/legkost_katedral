@@ -205,7 +205,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label">TANGGAL PENGUMUMAN <font color="red">*</font></label>
-                                            <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" id="dp1">
+                                            <input type="text" class="form-control" name='publist_start' placeholder="dd/mm/yyyy" id="dp2">
                                         </div>
                                     </div>
                                     <div class="col-md-6"> </div>
@@ -301,7 +301,7 @@
                 $("#modaldetailperkawinan input[name=paroki_pria]").val( jdata.ppria_perkawinan);
                 $("#modaldetailperkawinan input[name=nama_wanita]").val( jdata.wanita_perkawinan);
                 $("#modaldetailperkawinan input[name=paroki_wanita]").val( jdata.pwanita_perkawinan);
-                $("#modaldetailperkawinan #dp1").val( jdata.publish_perkawinan);
+                $("#modaldetailperkawinan #dp2").val( jdata.publish_perkawinan);
             });
 
             $("#btncanceldetailperkawinan").click(function()
@@ -320,7 +320,7 @@
                 var paroki_pria_data    = $("#modaldetailperkawinan input[name=paroki_pria]").val();
                 var nama_wanita_data    = $("#modaldetailperkawinan input[name=nama_wanita]").val();
                 var paroki_wanita_data  = $("#modaldetailperkawinan input[name=paroki_wanita]").val();
-                var publish_start_data  = $("#modaldetailperkawinan #dp1").val();
+                var publish_start_data  = $("#modaldetailperkawinan #dp2").val();
                 if(nama_pria_data=="" || paroki_pria_data=="" || nama_wanita_data=="" || paroki_wanita_data=="" || publish_start_data=="")
                 {
                     toastr['error']("Mohon lengkapi data");

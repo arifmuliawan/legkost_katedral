@@ -210,11 +210,11 @@
                                     </div>
                                     <div class="col-md-6"> </div>
                                     <div class="col-md-12">
-                                        <button type="button" class="btn-save" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
+                                        <button type="button" class="btn-save" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" id="btnsavedetailperkawinan">
                                             SAVE
                                         </button>
                                         &nbsp&nbsp&nbsp
-                                        <button type="button" class="btn-cancel" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" onclick="return confirm('Are you sure you want to cancel this process ?')">
+                                        <button type="button" class="btn-cancel" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" id="btncanceldetailperkawinan" onclick="return confirm('Are you sure you want to cancel this process ?')">
                                             CANCEL
                                         </button>
                                     </div>
@@ -302,6 +302,11 @@
                 $("#modaldetailperkawinan input[name=nama_wanita]").val( jdata.wanita_perkawinan);
                 $("#modaldetailperkawinan input[name=paroki_wanita]").val( jdata.pwanita_perkawinan);
                 $("#modaldetailperkawinan #dp1").val( jdata.publish_perkawinan);
+            });
+
+            $("#btncanceldetailperkawinan").click(function()
+            {  
+                setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan'; });
             });
         </script>
         <!-- END DATA DETAIL PERKAWINAN LIST -->

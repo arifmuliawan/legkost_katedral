@@ -80,6 +80,8 @@
                                 <label class="form-label">BANNER<font color="red">*</font></label><br>
                                 <font size="3">(900 x 450 px) JPG/JPEG/PNG</font>
                                 <br><br>
+                                <img id="banner_img"><br>
+                                <button id="btnreplacebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                 <div id="uploadbanner" class="dropzone">
                                     <div class="dz-message">
                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
@@ -238,8 +240,6 @@
                     if(response.error_status==0)
                     {
                         notifmodal(response.error_message,'success');
-                        $("#katekeselist").hide();
-                        $("#katekeseform").show();
                         $("#katekeseform #uploadthumb").hide();
                         $("#katekeseform #btnuploadthumb").hide();
                         $("#katekeseform #thumb_img").attr('src', response.thumb_img).show();
@@ -256,4 +256,81 @@
                 }
             });
         </script> 
-        <!-- END DROPZONE UPLOAD REGISTER -->
+        <!-- END DROPZONE UPLOAD THUMBNAIL -->
+
+        <!-- START DROPZONE UPLOAD BANNER -->
+        <script type="text/javascript">  
+            Dropzone.autoDiscover = false;
+            myDropzone2 = new Dropzone('#katekeseform div#uploadbanner', 
+            {
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 1,
+                paramName: 'katekese_banner',
+                clickable: true,
+                thumbnailWidth:150,
+                thumbnailHeight:150,
+                acceptedFiles: "image/jpeg,image/png,image/jpg",
+                url: 'ajax-misasakrame.php',
+                init: function () {
+
+                    var myDropzone2 = this;
+                    // Update selector to match your button
+                    $("#katekeseform #btnuploadbanner").click(function (e) {
+                        e.preventDefault();
+                        myDropzone2.processQueue();
+                        return false;
+                    });
+
+                    this.on('sending', function (file, xhr, formData) {
+                        // Append all form inputs to the formData Dropzone will POST
+                        var data = $("#katekeseform").serializeArray();
+                        $.each(data, function (key, el) {
+                            formData.append(el.name, el.value);
+                        });
+                        console.log(formData);
+
+                    });
+                },
+                error: function (file, response){
+                    if ($.type(response) === "string")
+                        var message = response; //dropzone sends it's own error messages in string
+                    else
+                        var message = response.message;
+                    file.previewElement.classList.add("dz-error");
+                    _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
+                    _results = [];
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i];
+                        _results.push(node.textContent = message);
+                    }
+                    if(response.error_status==1)
+                    {
+                        notifmodal(response.error_message,'failed');
+                    }
+                    console.log(data,status);
+                    return _results;
+                },
+                successmultiple: function (file, response) {
+                    if(response.error_status==0)
+                    {
+                        notifmodal(response.error_message,'success');
+                        $("#katekeseform #uploadbanner").hide();
+                        $("#katekeseform #btnuploadbanner").hide();
+                        $("#katekeseform #banner_img").attr('src', response.banner_img).show();
+                        $("#katekeseform #btnreplacebanner").show();
+                    }
+                },
+                completemultiple: function (file, response) {
+                    console.log(file, response, "completemultiple");
+                    //$modal.modal("show");
+                },
+                reset: function () {
+                    console.log("resetFiles");
+                    this.removeAllFiles(true);
+                }
+            });
+        </script> 
+        <!-- END DROPZONE UPLOAD BANNER -->

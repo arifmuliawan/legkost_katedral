@@ -21,7 +21,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <!-- left column -->
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <table width="100%">
                                 <tr>
                                     <td width="20%">

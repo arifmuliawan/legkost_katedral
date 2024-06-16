@@ -189,7 +189,7 @@
                 uploadMultiple: true,
                 parallelUploads: 100,
                 maxFiles: 1,
-                paramName: 'upload_thumbnail',
+                paramName: 'katekese_thumbnail',
                 clickable: true,
                 thumbnailWidth:150,
                 thumbnailHeight:150,
@@ -238,10 +238,12 @@
                     if(response.error_status==0)
                     {
                         notifmodal(response.error_message,'success');
+                        $("#katekeselist").hide();
+                        $("#katekeseform").show();
                         $("#katekeseform #uploadthumb").hide();
                         $("#katekeseform #btnuploadthumb").hide();
-                        $("#formdetail #kregis_img").attr('src', response.kregis_img).show();
-                        $("#formdetail #btndeletekregisimg").show();
+                        $("#katekeseform #thumb_img").attr('src', response.thumb_img).show();
+                        $("#katekeseform #btnreplacethumb").show();
                     }
                 },
                 completemultiple: function (file, response) {

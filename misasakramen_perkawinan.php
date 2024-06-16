@@ -347,7 +347,7 @@
                         else
                         {
                             toastr['success'](data.error_message);
-                            setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan'; });
+                            //setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan'; });
                         }
                         console.log(data,status);
                     }

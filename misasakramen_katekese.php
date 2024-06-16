@@ -54,8 +54,8 @@
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">THUMBNAIL <font color="red">*</font></label><br>
-                                <font size="7">(250 x 250 px) JPG/JPEG/PNG</font>
-                                <br>
+                                <font size="3">(250 x 250 px) JPG/JPEG/PNG</font>
+                                <br><br>
                                 <div id="uploadthumb" class="dropzone">
                                     <div class="dz-message">
                                         <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>

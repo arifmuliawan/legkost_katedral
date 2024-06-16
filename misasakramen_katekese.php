@@ -110,12 +110,12 @@
                             </div>     
                         </div>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;text-align:left">
-                            <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">CANCEL</button>
+                            <button id="btncancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;">CANCEL</button>
                         </div>
                         <div class="col-md-6" style="flex: unset;margin-left: 125px;text-align:right">
-                            <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO DRAFT</button>
+                            <button id="btnsavedraft" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO DRAFT</button>
                             &nbsp&nbsp&nbsp
-                            <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO PUBLISH</button>
+                            <button id="btnsavepublish" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO PUBLISH</button>
                         </div>
                     </div>    
                 </div> 
@@ -131,3 +131,13 @@
             });
         </script>
         <!-- END ACTIVE FORM KATEKESE -->
+        
+        <!-- START CANCEL FORM KATEKESE -->
+        <script>
+            $("#katekeseform #btncancel").click(function()
+            {
+                $("#katekeselist").show();
+                $("#katekeseform").hide();
+            });
+        </script>
+        <!-- END CANCEL FORM KATEKESE -->

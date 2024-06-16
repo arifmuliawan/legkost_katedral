@@ -53,8 +53,8 @@
                         <!-- left column -->
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
-                                <label class="form-label">THUMBNAIL <font color="red">*</font></label>
-                                <font>(250 x 250 px) JPG/JPEG/PNG</font>
+                                <label class="form-label">THUMBNAIL <font color="red">*</font></label><br>
+                                <font size="7">(250 x 250 px) JPG/JPEG/PNG</font>
                                 <br>
                                 <div id="uploadthumb" class="dropzone">
                                     <div class="dz-message">

@@ -206,7 +206,7 @@
                 <h3><b>Anda memiliki perubahan yang belum tersimpan</b></h3>
                 <br>
                 <p> Apabila anda meninggalkan halaman sekarang, perubahan anda akan hilang. Apakah anda ingin menyimpan sebelum meninggalkan halaman? </p>
-                <br><br>
+                <br>
                 <table width="100%">
                     <tr>
                         <td width="25%"> 

@@ -88,7 +88,7 @@
                                                 <form id="checkgo" method="post" style="margin-left: 12px;">
                                                     <input type="hidden" name="id" value="<?php echo $id_katekese ?>" id="id<?php echo $id_katekese ?>">
                                                     <input type="hidden" name="tbname" value="katekese" id="tbname<?php echo $id_katekese ?>">
-                                                    <h4> <?php echo $name_status ?> </h4>
+                                                    <h5 style="text-align: center;color: #7C7C7C;"> <?php echo $name_status ?> </h5>
                                                     <div class="button r" id="button-1">
                                                         <input type="checkbox" onchange="doThis<?php echo $id_katekese ?>(this)" name="wegeb" id="wegep<?php echo $id_katekese ?>" value="<?php echo $value_status ?>" class="checkbox" <?php echo $check_status ?>/>
                                                         <div class="knobs"></div>

@@ -197,12 +197,13 @@
                                             $gallery_json   = array(
                                                 'id_gallery'     => $id_gallery,
                                                 'sortid_gallery' => $sortid_gallery,
-                                                'acaraid_gallery'=> $acaraid_gallery
+                                                'acaraid_gallery'=> $acaraid_gallery,
+                                                'img_gallery'    => $img_gallery   
                                             );
                                     ?>
                                             <div class="col-md-4">
                                                 <img id="gallery_img" src="<?php echo $base_assets.$img_gallery ?>" width="100%">
-                                                <button id="btnuploadgallery" data-gallery='<?php echo json_encode($gallery_json) ?>' type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;">DELETE</button>
+                                                <button class="btndeletegallery" data-gallery='<?php echo json_encode($gallery_json) ?>' type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;">DELETE</button>
                                             </div>
                                     <?php
                                         }
@@ -667,3 +668,38 @@
             });
         </script> 
         <!-- END DROPZONE UPLOAD THUMBNAIL -->
+
+        <script>
+        $(document).on("click", ".btndeletegallery", function () {
+            var me              = $(this);
+            var data            = me.attr('data-gallery');
+            var jdata           = JSON.parse(data);
+            var id_data         = jdata.id_gallery;
+            var sortid_data     = jdata.sortid_gallery;
+            var acaraid_data    = jdata.acaraid_gallery;
+            var img_data        = jdata.img_gallery;
+            alert(id_data);
+            /*
+            $.post('ajax-misasakrame.php',
+            {
+                id:id_data,
+                thumb:thumb_data,
+                banner:banner_data,
+                delete_katekese:true
+            },
+            function(data,status)
+            {
+                if(data.error_status==1)
+                {
+                    notifmodal(data.error_message,'failed');
+                }
+                else
+                {
+                    notifmodal(data.error_message,'success');
+                    setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';},3000);
+                }
+                console.log(data,status);
+            });
+            */
+        });        
+        </script>

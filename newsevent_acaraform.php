@@ -172,6 +172,10 @@
                                 <textarea class="ckeditor" id="editordesc" name="editordesc" placeholder="Type something here...." style="margin-top: 0px; margin-bottom: 0px; height: 400px;" > <?php echo $description ?> </textarea>
                             </div>     
                         </div>
+                        <?php
+                        if($id!=0)
+                        {
+                        ?>    
                         <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">GALERI FOTO</label>
@@ -218,6 +222,9 @@
                                 </div>
                             </div>    
                         </div>
+                        <?php
+                        }
+                        ?>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;text-align:left">
                             <button id="btncancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
                         </div>

@@ -525,7 +525,7 @@ if(isset($_FILES['katekese_banner']))
         }
         else
         {
-            if(($image_width<='895' && $image_width>='905') && ($image_height<='445' && $image_height>='455'))
+            if(($image_width>='895' && $image_width<='905') && ($image_height>='445' && $image_height<='455'))
             {
                 $upload_file   = @move_uploaded_file($file_tmp_image, $file_directory_image);
                 if($upload_file===false)

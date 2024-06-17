@@ -230,7 +230,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
-                <img src="ssets/dist/img/icon_failed.png" style="width: 70px;">
+                <img src="assets/dist/img/icon_failed.png" style="width: 70px;">
                 <h3><b>Artikel tidak dapat di-publish, data belum lengkap</b></h3>
                 <br>
                 <p> Mohon melengkapi seluruh kolom dengan tanda * sebelum mem-publish artikel. </p>

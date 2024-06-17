@@ -210,12 +210,12 @@
                 <table width="100%">
                     <tr>
                         <td width="25%"> 
-                            <button id="btncancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
+                            <button id="btnmodalcancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
                         </td>
                         <td width="75%" style="text-align:right"> 
-                            <button id="btnsavedraft" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;">DISCARD</button>
+                            <button id="btnmodaldiscard" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;">DISCARD</button>
                             &nbsp&nbsp&nbsp
-                            <button id="btnsavepublish" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE</button>
+                            <button id="btnmodalsave" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE</button>
                         </td>
                     </tr>
                 </table>        

@@ -558,7 +558,7 @@ if(isset($_FILES['katekese_banner']))
     }
 }
 
-if(isset($_FILES['draf_katekese']))
+if(isset($_POST['draf_katekese']))
 {
     $thumb_img      = $_POST['thumb_img'];
     $banner_img     = $_POST['banner_img'];

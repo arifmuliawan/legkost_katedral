@@ -175,6 +175,8 @@
                         <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">GALERI FOTO</label>
+                                <br>
+                                <font size="3">(700 x 360 px) JPG/JPEG/PNG</font>
                                 <div class="row">
                                     <?php
                                     $query_gallery  = mysqli_query($con,"SELECT * FROM acara_galeri WHERE id='$id' order by sortid ASC")or die (mysqli_error($con));
@@ -602,7 +604,7 @@
                 thumbnailWidth:150,
                 thumbnailHeight:150,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
-                url: 'ajax-newsevent.php',
+                url: 'ajax-newsevent.php?aid=<?php echo $id ?>',
                 init: function () {
 
                     var myDropzone3 = this;

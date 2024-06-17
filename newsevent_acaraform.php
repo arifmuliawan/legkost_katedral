@@ -149,14 +149,14 @@
                         </div>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
-                                <label class="form-label">TANGGAL acara<font color="red">*</font></label>
+                                <label class="form-label">TANGGAL ACARA<font color="red">*</font></label>
                                 <input type="text" class="form-control" name='publist' placeholder="dd/mm/yyyy" id="dp1" value="<?php echo $publish_date ?>">
                             </div>     
                         </div>
                         <div class="col-md-8" style="flex: unset;margin-left: 50px;"></div>
                         <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
-                                <label class="form-label">JUDUL acara<font color="red">*</font></label>
+                                <label class="form-label">JUDUL ACARA<font color="red">*</font></label>
                                 <input type="text" class="form-control" name='title' placeholder="Type something here...." value="<?php echo $title ?>">
                             </div>     
                         </div>
@@ -207,7 +207,7 @@
                 thumbnailWidth:150,
                 thumbnailHeight:150,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
-                url: 'ajax-misasakrame.php',
+                url: 'ajax-newsevent.php',
                 init: function () {
 
                     var myDropzone = this;
@@ -309,7 +309,7 @@
                 thumbnailWidth:150,
                 thumbnailHeight:150,
                 acceptedFiles: "image/jpeg,image/png,image/jpg",
-                url: 'ajax-misasakrame.php',
+                url: 'ajax-newsevent.php',
                 init: function () {
 
                     var myDropzone2 = this;
@@ -407,7 +407,7 @@
                 var title_data      = $("#acaraform input[name=title]").val();
                 var highlight_data  = $("#acaraform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
-                $.post('ajax-misasakrame.php',
+                $.post('ajax-newsevent.php',
                 {
                     id:id_data,
                     thumb_img:thumb_data,
@@ -463,7 +463,7 @@
                 var highlight_data  = $("#acaraform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
                 //alert(id_data);
-                $.post('ajax-misasakrame.php',
+                $.post('ajax-newsevent.php',
                 {
                     id:id_data,
                     thumb_img:thumb_data,
@@ -514,7 +514,7 @@
                 }
                 else
                 {
-                    $.post('ajax-misasakrame.php',
+                    $.post('ajax-newsevent.php',
                     {
                         id:id_data,
                         thumb_img:thumb_data,

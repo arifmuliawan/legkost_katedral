@@ -680,7 +680,7 @@
             var sortid_data     = jdata.sortid_gallery;
             var acaraid_data    = jdata.acaraid_gallery;
             var img_data        = jdata.img_gallery;
-            $.post('ajax-misasakrame.php',
+            $.post('ajax-newsevent.php',
             {
                 id:id_data,
                 sortid:sortid_data,

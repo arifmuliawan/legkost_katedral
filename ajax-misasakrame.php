@@ -671,7 +671,7 @@ if(isset($_POST['delete_katekese']))
     $id         = $_POST['id'];
     $thumb_img  = explode($base_url,$_POST['thumb']);
     $banner_img = explode($base_url,$_POST['banner']);
-    print_r($thumb_img);
+    print_r($thumb_img[1]);
     exit();
     if($id!=0)
     {

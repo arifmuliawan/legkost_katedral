@@ -28,8 +28,17 @@
                         $sum_list   = mysqli_num_rows($query_list);
                         if($sum_list>0)
                         {
+                            $i=1;
                             while($data_list=mysqli_fetch_array($query_list))
                             {
+                                if ($i % 2 == 0)
+                                {
+                                    $clr_row = "background-color: #ffffff;";
+                                }
+                                else
+                                {
+                                    $clr_row = "background-color: #D9D9D9;";
+                                }
                                 $id_katekese            = $data_list['id'];
                                 $thumb_katekese         = $data_list['thumb_img'];
                                 if($thumb_katekese=="")
@@ -65,7 +74,7 @@
                                     $name_status   = 'DRAFT';
                                 }
                         ?>
-                                <div class="col-md-12" style="flex: unset;margin-left: 50px;">
+                                <div class="col-md-12" style="flex: unset;margin-left: 50px;margin-bottom: 15px;">
                                     <table width="100%">
                                         <tr>
                                             <td width="20%">
@@ -141,6 +150,7 @@
                                     </table>           
                                 </div>
                         <?php
+                                $i++;
                             }
                         }
                         ?>

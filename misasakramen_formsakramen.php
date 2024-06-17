@@ -247,7 +247,7 @@
                         else
                         {
                             toastr['success'](data.error_message);
-                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; });
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; },3000);
                         }
                         console.log(data,status);
                     }

@@ -360,16 +360,33 @@
         </script> 
         <!-- END DROPZONE UPLOAD BANNER --> 
 
-        <!-- START SAVE TO DRAFT FORM -->
+        <!-- START REPLACE BANNER -->
         <script>
-            $("#btncancel").click(function()
+            $("#katekeseform #btnreplacebanner").click(function()
             {
-                setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
+                $("#katekeseform #uploadbanner").show();
+                $("#katekeseform #btnuploadbanner").show();
+                $("#katekeseform #btncancelbanner").show();
+                $("#katekeseform #btnreplacebanner").hide();
+                $("#katekeseform #banner_img").hide();
             });
         </script>
-        <!-- END CANCEL FORM -->
+        <!-- END REPLACE THUMBNAIL -->
+        
+        <!-- START CANCEL REPLACE BANNER -->
+        <script>
+            $("#katekeseform #btncancelbanner").click(function()
+            {
+                $("#katekeseform #uploadbanner").hide();
+                $("#katekeseform #btnuploadbanner").hide();
+                $("#katekeseform #btncancelbanner").hide();
+                $("#katekeseform #btnreplacebanner").show();
+                $("#katekeseform #banner_img").show();
+            });
+        </script>
+        <!-- END CANCEL REPLACE BANNER -->
          
-        <!-- START CANCEL FORM -->
+        <!-- START SAVE TO DRAFT FORM -->
         <script>
             $("#btnsavedraft").click(function()
             {
@@ -403,6 +420,15 @@
                         console.log(data,status);
                     }
                     );
+            });
+        </script>
+        <!-- END SAVE TO DRAFT FORM -->
+
+        <!-- START CANCEL FORM -->
+        <script>
+            $("#btncancel").click(function()
+            {
+                setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
             });
         </script>
         <!-- END CANCEL FORM -->

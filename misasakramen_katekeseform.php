@@ -418,7 +418,7 @@
                     else
                     {
                         notifmodal(data.error_message,'success');
-                        setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';3000});
                     }
                     console.log(data,status);
                 }

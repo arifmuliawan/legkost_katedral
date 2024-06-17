@@ -307,7 +307,7 @@ else
                         else
                         {
                             notifmodal(data.error_message,'success');
-                            //setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, delay);
+                            //setTimeout(function(){ window.location ='index.php?p=misasakramen_misakhusus'; }, 3000);
                         }
                         console.log(data,status);
                     }

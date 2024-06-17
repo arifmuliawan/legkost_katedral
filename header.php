@@ -233,7 +233,7 @@
                 <img src="assets/dist/img/icon_failed.png" style="width: 70px;">
                 <h3><b>Artikel tidak dapat di-publish, data belum lengkap</b></h3>
                 <br>
-                <p> Mohon melengkapi seluruh kolom dengan tanda * sebelum mem-publish artikel. </p>
+                <p> Mohon melengkapi seluruh kolom dengan tanda <font color="red">*</font> sebelum mem-publish artikel. </p>
                 <br>
                 <button id="btnmodalclose" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CLOSE</button>      
             </div>

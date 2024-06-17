@@ -37,7 +37,7 @@
                                 }
                                 else
                                 {
-                                    $clr_row = "background-color: #D9D9D9;";
+                                    $clr_row = "background-color: #CDCDCD54;";
                                 }
                                 $id_katekese            = $data_list['id'];
                                 $thumb_katekese         = $data_list['thumb_img'];

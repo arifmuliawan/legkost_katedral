@@ -686,8 +686,8 @@ if(isset($_POST['delete_katekese']))
         }
         else
         {
-            unlink($thumb_img);
-            unlink($banner_img);
+            unlink($thumb_img[1]);
+            unlink($banner_img[1]);
             $response_json       = array(
                 'error_status'   => 0,
                 'error_message'  => 'Data berhasil dihapus'

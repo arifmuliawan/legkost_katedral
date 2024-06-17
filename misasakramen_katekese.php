@@ -51,7 +51,7 @@
                                 $title_katekese         = $data_list['title'];
                                 $highlight_katekese     = $data_list['highlight'];
                                 $description_katekese   = $data_list['description'];
-                                $status_katekese        = $data_list['status'];
+                                $status_katekese        = $data_list['visible'];
                                 if($status_katekese=='P')
                                 {
                                     $check_status  = '';

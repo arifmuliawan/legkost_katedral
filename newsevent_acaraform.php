@@ -193,7 +193,7 @@
                                                 'acaraid_gallery'=> $acaraid_gallery
                                             );
                                     ?>
-                                            <div class="col-md-4" style="flex: unset;margin-left: 50px;">
+                                            <div class="col-md-4">
                                                 <img id="gallery_img" src="<?php echo $img_gallery ?>">
                                                 <button id="btnuploadgallery" data-gallery='<?php echo json_encode($gallery_json) ?>' type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;">DELETE</button>
                                             </div>
@@ -201,7 +201,7 @@
                                         }
                                     }
                                     ?>
-                                    <div class="col-md-4" style="flex: unset;margin-left: 50px;">
+                                    <div class="col-md-4">
                                         <div id="uploadgallery" class="dropzone">
                                             <div class="dz-message">
                                                 <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>

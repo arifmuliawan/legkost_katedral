@@ -396,38 +396,30 @@
                 var title_data      = $("#katekeseform input[name=title]").val();
                 var highlight_data  = $("#katekeseform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
-                //alert(banner_data);
-                if(thumb_data=="" || banner_data=="")
+                $.post('ajax-misasakrame.php',
                 {
-                    notifmodal('Mohon lengkapi thumbnail atau banner dahulu','failed');
-                }
-                else
+                    thumb_img:thumb_data,
+                    banner_img:banner_data,
+                    publish:publish_data,
+                    title:title_data,
+                    highlight:highlight_data,
+                    description:desc_data,
+                    draf_katekese:true
+                },
+                function(data,status)
                 {
-                    $.post('ajax-misasakrame.php',
+                    if(data.error_status==1)
                     {
-                        thumb_img:thumb_data,
-                        banner_img:banner_data,
-                        publish:publish_data,
-                        title:title_data,
-                        highlight:highlight_data,
-                        description:desc_data,
-                        draf_katekese:true
-                    },
-                    function(data,status)
-                    {
-                        if(data.error_status==1)
-                        {
-                            notifmodal(data.error_message,'failed');
-                        }
-                        else
-                        {
-                            notifmodal(data.error_message,'success');
-                            setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
-                        }
-                        console.log(data,status);
+                        notifmodal(data.error_message,'failed');
                     }
-                    );
-                }    
+                    else
+                    {
+                        notifmodal(data.error_message,'success');
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
+                    }
+                    console.log(data,status);
+                }
+                );
             });
         </script>
         <!-- END SAVE TO DRAFT FORM -->
@@ -436,6 +428,7 @@
         <script>
             $("#btncancel").click(function()
             {
+                
                 setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
             });
         </script>

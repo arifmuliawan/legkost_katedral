@@ -66,7 +66,7 @@
                                 if($thumb_img!="")
                                 {
                                 ?>    
-                                    <img id="thumb_img" src="<?php echo $base_assets.$thumb_img ?>"><br>
+                                    <img id="thumb_img" src="<?php echo $thumb_img ?>"><br>
                                     <button id="btnreplacethumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                     <div id="uploadthumb" class="dropzone" style="display:none">
                                         <div class="dz-message">
@@ -110,7 +110,7 @@
                                 if($banner_img!="")
                                 {
                                 ?>    
-                                    <img id="banner_img" src="<?php echo $base_assets.$banner_img ?>"><br>
+                                    <img id="banner_img" src="<?php echo $banner_img ?>"><br>
                                     <button id="btnreplacebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                     <div id="uploadbanner" class="dropzone" style="display:none">
                                         <div class="dz-message">

@@ -610,7 +610,61 @@ if(isset($_POST['draf_katekese']))
             );
         }
     }
-}    
+}
+
+if(isset($_POST['publish_katekese']))
+{
+    $id             = $_POST['id'];
+    $thumb_img      = $_POST['thumb_img'];
+    $banner_img     = $_POST['banner_img'];
+    $publish_data   = $_POST['publish'];
+    $exp_publish    = explode("/",$publish_data);
+    $ds             = $exp_publish[0];
+    $ms             = $exp_publish[1];
+    $ys             = $exp_publish[2];
+    $publish        = $ys.'-'.$ms.'-'.$ds;
+    $title          = $_POST['title'];
+    $highlight      = $_POST['highlight'];
+    $description    = $_POST['description'];
+    if($id==0)
+    {
+        $insert_publish    = mysqli_query($con,"INSERT INTO `katekese`(`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$highlight','$description','$publish','$thumb_img','$banner_img','P','$user','$now','$user','$now')")or die (mysqli_error($con));
+        if($insert_publish!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Penambahan data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Penambahan data telah berhasil disimpan'
+            );
+        }
+    }
+    else
+    {
+        $update_publish    = mysqli_query($con,"UPDATE `katekese` SET `title`='$title',`highlight`='$highlight',`description`='$description',`publish_date`='$publish',`thumb_img`='$thumb_img', `banner_img`='$banner_img',`visible`='P',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+        if($update_publish!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Perubahan data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Perubahan data telah berhasil disimpan'
+            );
+        }
+    }
+}
 
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);

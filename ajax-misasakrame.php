@@ -551,7 +551,7 @@ if(isset($_FILES['katekese_banner']))
                 http_response_code(410);
                 $response_json       = array(
                     'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (250 X 250)'
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (900 X 450)'
                 );   
             }    
         }    

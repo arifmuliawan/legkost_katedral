@@ -172,6 +172,46 @@
                                 <textarea class="ckeditor" id="editordesc" name="editordesc" placeholder="Type something here...." style="margin-top: 0px; margin-bottom: 0px; height: 400px;" > <?php echo $description ?> </textarea>
                             </div>     
                         </div>
+                        <div class="col-md-12" style="flex: unset;margin-left: 50px;">
+                            <div class="row">
+                                <?php
+                                $query_gallery  = mysqli_query($con,"SELECT * FROM acara_galeri WHERE id='$id' order by sortid ASC")or die (mysqli_error($con));
+                                $sum_gallery    = mysqli_num_rows($query_gallery);
+                                if($sum_gallery>0)
+                                {
+                                    while($data_gallery=mysqli_fetch_array($query_gallery))
+                                    {
+                                        $id_gallery     = $data_gallery['id'];
+                                        $sortid_gallery = $data_gallery['sortid'];
+                                        $acaraid_gallery= $data_gallery['acaraid'];
+                                        $img_gallery    = $data_gallery['img'];
+                                        $gallery_json   = array(
+                                            'id_gallery'     => $id_gallery,
+                                            'sortid_gallery' => $sortid_gallery,
+                                            'acaraid_gallery'=> $acaraid_gallery
+                                        );
+                                ?>
+                                        <div class="col-md-4">
+                                            <img id="gallery_img" src="<?php echo $img_gallery ?>">
+                                            <button id="btnuploadgallery" data-gallery='<?php echo json_encode($gallery_json) ?>' type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;">DELETE</button>
+                                        </div>
+                                <?php
+                                    }
+                                }
+                                ?>
+                                <div class="col-md-4">
+                                    <div id="uploadgallery" class="dropzone">
+                                        <div class="dz-message">
+                                            <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                            <b>.JPG  .JPEG  .PNG</b><br>
+                                            Drop files to upload <br>
+                                            or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                        </div>
+                                    </div>
+                                    <button id="btnuploadgallery" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
+                                </div>
+                            </row>
+                        </div>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;text-align:left">
                             <button id="btncancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
                         </div>

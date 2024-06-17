@@ -196,7 +196,7 @@
                                             );
                                     ?>
                                             <div class="col-md-4">
-                                                <img id="gallery_img" src="<?php echo $img_gallery ?>">
+                                                <img id="gallery_img" src="<?php echo $base_assets.$img_gallery ?>">
                                                 <button id="btnuploadgallery" data-gallery='<?php echo json_encode($gallery_json) ?>' type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;">DELETE</button>
                                             </div>
                                     <?php

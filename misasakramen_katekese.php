@@ -152,6 +152,6 @@
         <script>
         $("#notifpublishmodal #btnmodalclose").click(function()
         {
-            $("#notifpublishmodal").modal("hide");
+            setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
         });
         </script>

@@ -446,7 +446,41 @@
 
             $("#notifcancelmodal #btnmodalsave").click(function()
             {
-                $("#notifcancelmodal").modal("hide");
+                var id_data         = $("#katekeseform input[name=katekeseid]").val();
+                var thumb_data      = document.getElementById("thumb_img").src;
+                var banner_data     = document.getElementById("banner_img").src;
+                var publish_data    = $("#katekeseform #dp1").val();
+                var title_data      = $("#katekeseform input[name=title]").val();
+                var highlight_data  = $("#katekeseform input[name=highlight]").val();
+                var desc_data       = CKEDITOR.instances['editordesc'].getData();
+                alert($id_data);
+                /*
+                $.post('ajax-misasakrame.php',
+                {
+                    id:id_data,
+                    thumb_img:thumb_data,
+                    banner_img:banner_data,
+                    publish:publish_data,
+                    title:title_data,
+                    highlight:highlight_data,
+                    description:desc_data,
+                    draf_katekese:true
+                },
+                function(data,status)
+                {
+                    if(data.error_status==1)
+                    {
+                        notifmodal(data.error_message,'failed');
+                    }
+                    else
+                    {
+                        notifmodal(data.error_message,'success');
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';3000});
+                    }
+                    console.log(data,status);
+                }
+                );
+                */
             });
         </script>
         <!-- END CANCEL FORM -->

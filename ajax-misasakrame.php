@@ -571,7 +571,7 @@ if(isset($_POST['draf_katekese']))
     $title          = $_POST['title'];
     $highlight      = $_POST['highlight'];
     $description    = $_POST['description'];
-    $insert_draf    = mysqli_query($con,"INSERT INTO `katekese`(`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `status`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$highlight','$description','$publish','$thumb_img','$banner_img','D','$user','$now','$user','$now')")or die (mysqli_error($con));
+    $insert_draf    = mysqli_query($con,"INSERT INTO `katekese`(`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$highlight','$description','$publish','$thumb_img','$banner_img','D','$user','$now','$user','$now')")or die (mysqli_error($con));
     if($insert_draf!=1)
     {
         http_response_code(410);

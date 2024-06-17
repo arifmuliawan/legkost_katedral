@@ -116,7 +116,6 @@
                                                     if(wegeb=="P" && (thumb=="" || banner=="" || title=="" || highlight=="" || description==""))
                                                     {
                                                         notifmodal('Data belum lengkap, harap lengkapi data terlebih dahulu','failed');
-                                                        document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb == 'D'
                                                         //setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';10000});  
                                                     }
                                                     else

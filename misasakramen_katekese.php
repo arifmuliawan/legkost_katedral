@@ -106,7 +106,8 @@
                                                         url : "change_visible.php",
                                                         data : info,
                                                         success: function(){
-                                                            document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb == 'P'?'D':'P'  
+                                                            document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb == 'P'?'D':'P'
+                                                            setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });  
                                                         },
                                                         error: function(){
                                                             document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb

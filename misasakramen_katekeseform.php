@@ -54,6 +54,7 @@
             <!-- Main content -->
             <!--<form methode="POST">-->  
             <section class="content" id="katekeseform" style="margin-right: 50px;">
+                <input type="hidden" name="katekeseid" value="<?php echo $id ?>">
                 <div class="container-fluid">
                     <div class="row">
                         <!-- left column -->
@@ -390,6 +391,7 @@
         <script>
             $("#katekeseform #btnsavedraft").click(function()
             {
+                var id_data         = $("#katekeseform input[name=katekeseid]").val();
                 var thumb_data      = document.getElementById("thumb_img").src;
                 var banner_data     = document.getElementById("banner_img").src;
                 var publish_data    = $("#katekeseform #dp1").val();
@@ -398,6 +400,7 @@
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
                 $.post('ajax-misasakrame.php',
                 {
+                    id:id_data,
                     thumb_img:thumb_data,
                     banner_img:banner_data,
                     publish:publish_data,

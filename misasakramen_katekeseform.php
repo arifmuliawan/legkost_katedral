@@ -52,11 +52,11 @@
             }
             ?> 
             <!-- Main content -->
+            <form methode="POST">  
             <section class="content" id="katekeseform" style="margin-right: 50px;">
                 <div class="container-fluid">
                     <div class="row">
                         <!-- left column -->
-                        <form methode="POST"> 
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">THUMBNAIL <font color="red">*</font></label><br>
@@ -177,10 +177,10 @@
                             &nbsp&nbsp&nbsp
                             <button id="btnsavepublish" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO PUBLISH</button>
                         </div>
-                        </form>
                     </div>    
                 </div> 
             </section>
+            </form>
         </div>
         <!-- START DROPZONE UPLOAD THUMBNAIL -->
         <script type="text/javascript">  

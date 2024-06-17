@@ -177,7 +177,7 @@
                                 <label class="form-label">GALERI FOTO</label>
                                 <br>
                                 <font size="3">(700 x 360 px) JPG/JPEG/PNG</font>
-                                <br>
+                                <br><br>
                                 <div class="row">
                                     <?php
                                     $query_gallery  = mysqli_query($con,"SELECT * FROM `acara_galeri` WHERE acaraid='$id' order by sortid ASC")or die (mysqli_error($con));

@@ -394,7 +394,7 @@
             {
                 var thumb_data      = document.getElementById("thumb_img").src;
                 var banner_data     = document.getElementById("banner_img").src;
-                var publish_data    = $("#katekeseform input[name=publish]").val();
+                var publish_data    = $("#modaldetailperkawinan #dp1").val();
                 var title_data      = $("#katekeseform input[name=title]").val();
                 var highlight_data  = $("#katekeseform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();

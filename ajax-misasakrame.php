@@ -669,8 +669,10 @@ if(isset($_POST['publish_katekese']))
 if(isset($_POST['delete_katekese']))
 {
     $id         = $_POST['id'];
-    $thumb_img  = $_POST['thumb'];
-    $banner_img = $_POST['banner'];
+    $thumb_img  = explode($base_url,$_POST['thumb']);
+    $banner_img = explode($base_url,$_POST['banner']);
+    print_r($thumb_img);
+    exit();
     if($id!=0)
     {
         $delete_katekese    = mysqli_query($con,"DELETE FROM `katekese` WHERE id='$id'")or die (mysqli_error($con));

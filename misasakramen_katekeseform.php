@@ -34,6 +34,7 @@
                     $title          = $data_katekese['title'];
                     $highlight      = $data_katekese['highlight'];
                     $description    = $data_katekese['description'];
+                    $status         = $data_katekese['visible'];
                 }
             }
             else
@@ -49,6 +50,7 @@
                 $title          = "";
                 $highlight      = "";
                 $description    = "";
+                $status         = "";
             }
             ?> 
             <!-- Main content -->
@@ -78,7 +80,7 @@
                                         </div>
                                     </div>
                                     <button id="btnuploadthumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display:none">UPLOAD</button>
-                                    <button id="btncancelthumb" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;" onclick="return confirm('Are you sure you want to cancel upload ?')">CANCEL</button>
+                                    <button id="btncancelthumb" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;display:none" onclick="return confirm('Are you sure you want to cancel upload ?')">CANCEL</button>
                                 <?php
                                 }
                                 else
@@ -174,8 +176,15 @@
                             <button id="btncancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
                         </div>
                         <div class="col-md-6" style="flex: unset;margin-left: 125px;text-align:right">
-                            <button id="btnsavedraft" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO DRAFT</button>
-                            &nbsp&nbsp&nbsp
+                            <?php
+                            if($status!='P')
+                            {
+                            ?>    
+                                <button id="btnsavedraft" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO DRAFT</button>
+                                &nbsp&nbsp&nbsp
+                            <?php
+                            }
+                            ?>    
                             <button id="btnsavepublish" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">SAVE TO PUBLISH</button>
                         </div>
                     </div>    

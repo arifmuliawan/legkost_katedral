@@ -382,7 +382,7 @@
                     else
                     {
                         notifmodal(data.error_message,'success');
-                        setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan';},3000);
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan';},1000);
                     }
                     console.log(data,status);
                 });

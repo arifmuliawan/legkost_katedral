@@ -243,7 +243,6 @@
                         $("#katekeseform #btnuploadthumb").hide();
                         $("#katekeseform #thumb_img").attr('src', response.thumb_img).show();
                         $("#katekeseform #btnreplacethumb").show();
-                        $("#katekeseform #btncancelthumb").show();
                     }
                 },
                 completemultiple: function (file, response) {

@@ -467,15 +467,7 @@ if(isset($_FILES['katekese_thumbnail']))
         }
         else
         {
-            if(($image_width<='245' && $image_width>='255') && ($image_height<='245' && $image_height>='255'))
-            {
-                http_response_code(410);
-                $response_json       = array(
-                    'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (250 X 250)'
-                );
-            }
-            else
+            if(($image_width>='245' && $image_width<='255') && ($image_height>='245' && $image_height<='255'))
             {
                 $upload_file   = @move_uploaded_file($file_tmp_image, $file_directory_image);
                 if($upload_file===false)
@@ -494,7 +486,15 @@ if(isset($_FILES['katekese_thumbnail']))
                         'error_message'  => 'Penambahan data telah berhasil disimpan',
                         'thumb_img'     => $base_assets.$file_db_image
                     );
-                }    
+                } 
+            }
+            else
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (250 X 250)'
+                );   
             }    
         }    
     }
@@ -525,7 +525,7 @@ if(isset($_FILES['katekese_banner']))
         }
         else
         {
-            if(($image_width<='245' && $image_width>='255') && ($image_height<='245' && $image_height>='255'))
+            if(($image_width<='895' && $image_width>='905') && ($image_height<='445' && $image_height>='455'))
             {
                 http_response_code(410);
                 $response_json       = array(

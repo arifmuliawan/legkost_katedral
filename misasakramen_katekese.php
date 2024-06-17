@@ -56,11 +56,13 @@
                                 {
                                     $check_status  = '';
                                     $value_status  = 'D';
+                                    $name_status   = 'PUBLISH';
                                 }
                                 else
                                 {
                                     $check_status  = 'checked';
                                     $value_status  = 'P';
+                                    $name_status   = 'DRAFT';
                                 }
                         ?>
                                 <div class="col-md-12" style="flex: unset;margin-left: 50px;">
@@ -86,6 +88,7 @@
                                                 <form id="checkgo" method="post" style="margin-left: 12px;">
                                                     <input type="hidden" name="id" value="<?php echo $id_katekese ?>" id="id<?php echo $id_katekese ?>">
                                                     <input type="hidden" name="tbname" value="katekese" id="tbname<?php echo $id_katekese ?>">
+                                                    <h4> <?php echo $name_status ?> </h4>
                                                     <div class="button r" id="button-1">
                                                         <input type="checkbox" onchange="doThis<?php echo $id_katekese ?>(this)" name="wegeb" id="wegep<?php echo $id_katekese ?>" value="<?php echo $value_status ?>" class="checkbox" <?php echo $check_status ?>/>
                                                         <div class="knobs"></div>

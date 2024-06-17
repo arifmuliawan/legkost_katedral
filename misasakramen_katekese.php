@@ -112,6 +112,8 @@
                                                     var highlight   = document.getElementById("highlight<?php echo $id_katekese ?>").value
                                                     var description = document.getElementById("description<?php echo $id_katekese ?>").value
                                                     var info        = {wegeb: wegeb,id: id,tbname: tbname};
+                                                    alert(thumb);
+                                                    /*
                                                     if(wegeb=='P' && (thumb=="" || banner=="" || title=="" || highlight=="" || description==""))
                                                     {
                                                         notifmodal('Data belum lengkap, harap lengkapi data terlebih dahulu','failed');
@@ -129,6 +131,7 @@
                                                         }
                                                         });
                                                         return false;
+                                                    */    
                                                     }       
                                                 </script>
                                             </td> 

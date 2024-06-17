@@ -212,8 +212,6 @@
                                         <div id="uploadgallery" class="dropzone" style="height:160px">
                                             <div class="dz-message">
                                                 <i class="fa fa-plus" style="font-size: 50px;"></i>
-                                                <br>
-                                                <b>.JPG  .JPEG  .PNG</b>
                                             </div>
                                         </div>
                                         <button id="btnuploadgallery" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>

@@ -527,14 +527,6 @@ if(isset($_FILES['katekese_banner']))
         {
             if(($image_width<='895' && $image_width>='905') && ($image_height<='445' && $image_height>='455'))
             {
-                http_response_code(410);
-                $response_json       = array(
-                    'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (250 X 250)'
-                );
-            }
-            else
-            {
                 $upload_file   = @move_uploaded_file($file_tmp_image, $file_directory_image);
                 if($upload_file===false)
                 {
@@ -552,7 +544,15 @@ if(isset($_FILES['katekese_banner']))
                         'error_message'  => 'Penambahan data telah berhasil disimpan',
                         'banner_img'     => $base_assets.$file_db_image
                     );
-                }    
+                } 
+            }
+            else
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (250 X 250)'
+                );   
             }    
         }    
     }

@@ -272,7 +272,7 @@
         
         <!-- START CANCEL REPLACE THUMBNAIL -->
         <script>
-            $("#katekeseform #btnreplacebanner").click(function()
+            $("#katekeseform #btnreplacethumb").click(function()
             {
                 $("#katekeseform #uploadthumb").hide();
                 $("#katekeseform #btnuploadthumb").hide();

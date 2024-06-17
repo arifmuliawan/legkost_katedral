@@ -349,7 +349,30 @@
                 var title_data      = $("#btnsavedraft input[name=title]").val();
                 var highlight_data  = $("#btnsavedraft input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
-                alert(thumb_data);
+                $.post('ajax-misasakrame.php',
+                    {
+                        thumb_img:thumb_data,
+                        banner_img:banner_data,
+                        publish:publish,
+                        title:title_data,
+                        highlight:highlight_data,
+                        description:desc_data,
+                        draf_katekese:true
+                    },
+                    function(data,status)
+                    {
+                        if(data.error_status==1)
+                        {
+                            toastr['error'](data.error_message);
+                        }
+                        else
+                        {
+                            toastr['success'](data.error_message);
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
+                        }
+                        console.log(data,status);
+                    }
+                    );
             });
         </script>
         <!-- END CANCEL FORM -->

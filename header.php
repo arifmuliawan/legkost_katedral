@@ -203,8 +203,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
-                <h5>Anda memiliki perubahan yang belum tersimpan</h5>
-                <p> Apabila anda meninggalkan halaman sekarang, perubahan anda akan hilang. Apakah anda ingin menyimpan sebelum meninggalkan halaman? <p>
+                <h3><b>Anda memiliki perubahan yang belum tersimpan</b></h3>
+                <p> Apabila anda meninggalkan halaman sekarang, perubahan anda akan hilang. Apakah anda ingin menyimpan sebelum meninggalkan halaman? </p>
                 <br><br>
                 <table width="100%">
                     <tr>

@@ -673,8 +673,6 @@ if(isset($_POST['delete_katekese']))
     $banner_data    = explode($base_url,$_POST['banner']);
     $thumb_img      = str_replace("%20"," ",$thumb_data[1]);
     $banner_img     = str_replace("%20"," ",$banner_data[1]);
-    unlink($thumb_img);
-    exit();
     if($id!=0)
     {
         $delete_katekese    = mysqli_query($con,"DELETE FROM `katekese` WHERE id='$id'")or die (mysqli_error($con));
@@ -688,8 +686,8 @@ if(isset($_POST['delete_katekese']))
         }
         else
         {
-            unlink($thumb_img);
-            unlink($banner_img);
+            //unlink($thumb_img);
+            //unlink($banner_img);
             $response_json       = array(
                 'error_status'   => 0,
                 'error_message'  => 'Data berhasil dihapus'

@@ -453,7 +453,7 @@
                 var title_data      = $("#katekeseform input[name=title]").val();
                 var highlight_data  = $("#katekeseform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
-                alert($id_data);
+                alert(id_data);
                 /*
                 $.post('ajax-misasakrame.php',
                 {

@@ -442,6 +442,38 @@ if(isset($_POST['edit_perkawinan']))
     }
 }
 
+if(isset($_POST['delete_perkawinan']))
+{
+    $id             = $_POST['id'];
+    if($id!=0)
+    {
+        $delete_perkawinan    = mysqli_query($con,"DELETE FROM `perkawinan_list` WHERE id='$id'")or die (mysqli_error($con));
+        if($delete_perkawinan!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Data gagal dihapus'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Data berhasil dihapus'
+            );
+        }
+    }
+    else
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Data tidak ditemukan'
+        );
+    }
+}
+
 if(isset($_FILES['katekese_thumbnail']))
 {
     if($_FILES['katekese_thumbnail']['name'][0]!='')
@@ -686,8 +718,8 @@ if(isset($_POST['delete_katekese']))
         }
         else
         {
-            //unlink($thumb_img);
-            //unlink($banner_img);
+            unlink($thumb_img);
+            unlink($banner_img);
             $response_json       = array(
                 'error_status'   => 0,
                 'error_message'  => 'Data berhasil dihapus'

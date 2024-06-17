@@ -396,7 +396,15 @@
                 var title_data      = $("#katekeseform input[name=title]").val();
                 var highlight_data  = $("#katekeseform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
-                $.post('ajax-misasakrame.php',
+                alert(publish_data);
+                /*
+                if(thumb_data=="https://katedralcms.legkostproject.com/index.php?p=misasakramen_katekeseform" || banner_data=="https://katedralcms.legkostproject.com/index.php?p=misasakramen_katekeseform")
+                {
+                    notifmodal('Mohon lengkapi thumbnail atau banner dahulu','failed');
+                }
+                else
+                {
+                    $.post('ajax-misasakrame.php',
                     {
                         thumb_img:thumb_data,
                         banner_img:banner_data,
@@ -419,7 +427,8 @@
                         }
                         console.log(data,status);
                     }
-                    );
+                }
+                */    
             });
         </script>
         <!-- END SAVE TO DRAFT FORM -->

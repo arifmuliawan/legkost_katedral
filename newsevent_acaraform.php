@@ -149,14 +149,14 @@
                         </div>
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
-                                <label class="form-label">TANGGAL ACARA<font color="red">*</font></label>
+                                <label class="form-label">TANGGAL BERITA<font color="red">*</font></label>
                                 <input type="text" class="form-control" name='publist' placeholder="dd/mm/yyyy" id="dp1" value="<?php echo $publish_date ?>">
                             </div>     
                         </div>
                         <div class="col-md-8" style="flex: unset;margin-left: 50px;"></div>
                         <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
-                                <label class="form-label">JUDUL ACARA<font color="red">*</font></label>
+                                <label class="form-label">JUDUL BERITA<font color="red">*</font></label>
                                 <input type="text" class="form-control" name='title' placeholder="Type something here...." value="<?php echo $title ?>">
                             </div>     
                         </div>
@@ -168,7 +168,7 @@
                         </div>
                         <div class="col-md-12" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
-                                <label class="form-label">ISI acara<font color="red">*</font></label>
+                                <label class="form-label">ISI BERITA<font color="red">*</font></label>
                                 <textarea class="ckeditor" id="editordesc" name="editordesc" placeholder="Type something here...." style="margin-top: 0px; margin-bottom: 0px; height: 400px;" > <?php echo $description ?> </textarea>
                             </div>     
                         </div>

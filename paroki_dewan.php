@@ -718,14 +718,15 @@
                 {
                     if(data.error_status==1)
                     {
-                        toastr['error'](data.error_message);
+                        notifmodal(data.error_message,'failed');
+                        //toastr['error'](data.error_message);
                         var delay = 3000;
                     }
                     else
                     {
-                        toastr['success'](data.error_message);
-                        var delay = 3000;
-                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                        notifmodal(data.error_message,'success');
+                        //toastr['success'](data.error_message);
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, 3000);
                     }
                     console.log(data,status);
                 }

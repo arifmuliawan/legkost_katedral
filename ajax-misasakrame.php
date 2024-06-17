@@ -558,6 +558,37 @@ if(isset($_FILES['katekese_banner']))
     }
 }
 
+if(isset($_FILES['add_katekese']))
+{
+    $thumb_img      = $_POST['thumb_img'];
+    $banner_img     = $_POST['banner_img'];
+    $publish_data   = $_POST['publish'];
+    $exp_publish    = explode("/",$publish_data);
+    $ds             = $exp_publish[0];
+    $ms             = $exp_publish[1];
+    $ys             = $exp_publish[2];
+    $publish        = $ys.'-'.$ms.'-'.$ds;
+    $title          = $_POST['title'];
+    $highlight      = $_POST['highlight'];
+    $description    = $_POST['description'];
+    $insert_draf    = mysqli_query($con,"INSERT INTO `katekese`(`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `status`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$highlight','$description','$publish','$thumb_img','$banner_img','D','$user','$now','$user','$now')")or die (mysqli_error($con));
+    if($insert_draf!=1)
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Penambahan data gagal disimpan'
+        );
+    }
+    else
+    {
+        $response_json       = array(
+            'error_status'   => 0,
+            'error_message'  => 'Penambahan data telah berhasil disimpan'
+        );
+    }
+}    
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

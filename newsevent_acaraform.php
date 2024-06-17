@@ -586,3 +586,76 @@
             });
         </script>
         <!-- END SAVE TO DRAFT FORM -->
+
+        <!-- START DROPZONE UPLOAD GALLERY -->
+        <script type="text/javascript">  
+            Dropzone.autoDiscover = false;
+            myDropzone3 = new Dropzone('#acaraform div#uploadgallery', 
+            {
+                addRemoveLinks: true,
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 1,
+                paramName: 'acara_gallery',
+                clickable: true,
+                thumbnailWidth:150,
+                thumbnailHeight:150,
+                acceptedFiles: "image/jpeg,image/png,image/jpg",
+                url: 'ajax-newsevent.php',
+                init: function () {
+
+                    var myDropzone3 = this;
+                    // Update selector to match your button
+                    $("#acaraform #btnuploadgallery").click(function (e) {
+                        e.preventDefault();
+                        myDropzone3.processQueue();
+                        return false;
+                    });
+
+                    this.on('sending', function (file, xhr, formData) {
+                        // Append all form inputs to the formData Dropzone will POST
+                        var data = $("#acaraform").serializeArray();
+                        $.each(data, function (key, el) {
+                            formData.append(el.name, el.value);
+                        });
+                        console.log(formData);
+
+                    });
+                },
+                error: function (file, response){
+                    if ($.type(response) === "string")
+                        var message = response; //dropzone sends it's own error messages in string
+                    else
+                        var message = response.message;
+                    file.previewElement.classList.add("dz-error");
+                    _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
+                    _results = [];
+                    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                        node = _ref[_i];
+                        _results.push(node.textContent = message);
+                    }
+                    if(response.error_status==1)
+                    {
+                        notifmodal(response.error_message,'failed');
+                    }
+                    console.log(data,status);
+                    return _results;
+                },
+                successmultiple: function (file, response) {
+                    if(response.error_status==0)
+                    {
+                        setTimeout(function(){ window.location ='index.php?p=newsevent_acaraform&id=<?php echo $id ?>';},3000);
+                    }
+                },
+                completemultiple: function (file, response) {
+                    console.log(file, response, "completemultiple");
+                    //$modal.modal("show");
+                },
+                reset: function () {
+                    console.log("resetFiles");
+                    this.removeAllFiles(true);
+                }
+            });
+        </script> 
+        <!-- END DROPZONE UPLOAD THUMBNAIL -->

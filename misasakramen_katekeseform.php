@@ -371,7 +371,7 @@
                 $("#katekeseform #banner_img").hide();
             });
         </script>
-        <!-- END REPLACE THUMBNAIL -->
+        <!-- END REPLACE BANNER -->
         
         <!-- START CANCEL REPLACE BANNER -->
         <script>

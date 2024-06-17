@@ -116,7 +116,7 @@
                                                     {
                                                         notifmodal('Data belum lengkap, harap lengkapi data terlebih dahulu','failed');
                                                     }
-                                                    alert(wegep);
+                                                    alert(wegeb);
                                                     /*  
                                                     $.ajax({
                                                         type : "POST",

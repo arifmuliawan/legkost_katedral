@@ -76,6 +76,7 @@
                                         </div>
                                     </div>
                                     <button id="btnuploadthumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display:none">UPLOAD</button>
+                                    <button id="btncancelthumb" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;" onclick="return confirm('Are you sure you want to cancel upload ?')">CANCEL</button>
                                 <?php
                                 }
                                 else
@@ -92,6 +93,7 @@
                                         </div>
                                     </div>
                                     <button id="btnuploadthumb" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
+                                    <button id="btncancelthumb" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;display:none" onclick="return confirm('Are you sure you want to cancel upload ?')">CANCEL</button>
                                 <?php
                                 }
                                 ?>    
@@ -118,6 +120,7 @@
                                         </div>
                                     </div>
                                     <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display:none">UPLOAD</button>
+                                    <button id="btncancelbanner" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;display:none" onclick="return confirm('Are you sure you want to cancel upload ?')">CANCEL</button>
                                 <?php
                                 }
                                 else
@@ -134,6 +137,7 @@
                                         </div>
                                     </div>
                                     <button id="btnuploadbanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>
+                                    <button id="btncancelbanner" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;display:none" onclick="return confirm('Are you sure you want to cancel upload ?')">CANCEL</button>
                                 <?php
                                 }
                                 ?>
@@ -252,6 +256,32 @@
             });
         </script> 
         <!-- END DROPZONE UPLOAD THUMBNAIL -->
+
+        <!-- START REPLACE THUMBNAIL -->
+        <script>
+            $("#katekeseform #btnreplacethumb").click(function()
+            {
+                $("#katekeseform #uploadthumb").show();
+                $("#formdetail #btnuploadthumb").show();
+                $("#formdetail #btncancelthumb").show();
+                $("#formdetail #btnreplacethumb").hide();
+                $("#formdetail #thumb_img").hide();
+            });
+        </script>
+        <!-- END REPLACE THUMBNAIL -->
+        
+        <!-- START CANCEL REPLACE THUMBNAIL -->
+        <script>
+            $("#katekeseform #btnreplacebanner").click(function()
+            {
+                $("#katekeseform #uploadthumb").hide();
+                $("#formdetail #btnuploadthumb").hide();
+                $("#formdetail #btncancelthumb").hide();
+                $("#formdetail #btnreplacethumb").show();
+                $("#formdetail #thumb_img").show();
+            });
+        </script>
+        <!-- END CANCEL REPLACE THUMBNAIL -->
 
         <!-- START DROPZONE UPLOAD BANNER -->
         <script type="text/javascript">  

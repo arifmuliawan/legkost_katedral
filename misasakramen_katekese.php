@@ -31,7 +31,7 @@
                             while($data_list=mysqli_fetch_array($query_list))
                             {
                                 $id_katekese            = $data_list['id'];
-                                $thumb_katekese         = $data_list['thumnb_img'];
+                                $thumb_katekese         = $data_list['thumb_img'];
                                 if($thumb_katekese=="")
                                 {
                                     $thumbimg_katekese  = "https://placehold.co/250";

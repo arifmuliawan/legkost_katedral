@@ -88,7 +88,7 @@
                                                 <form id="checkgo" method="post" style="margin-left: 12px;">
                                                     <input type="hidden" name="id" value="<?php echo $id_katekese ?>" id="id<?php echo $id_katekese ?>">
                                                     <input type="hidden" name="tbname" value="katekese" id="tbname<?php echo $id_katekese ?>">
-                                                    <input type="hidden" name="thumb" value="" id="thumb<?php echo $id_katekese ?>">
+                                                    <input type="hidden" name="thumb" value="<?php echo $thumb_katekese ?>" id="thumb<?php echo $id_katekese ?>">
                                                     <input type="hidden" name="banner" value="<?php echo $bannerimg_katekese ?>" id="banner<?php echo $id_katekese ?>">
                                                     <input type="hidden" name="title" value="<?php echo $title_katekese ?>" id="title<?php echo $id_katekese ?>">
                                                     <input type="hidden" name="highlight" value="<?php echo $highlight_katekese ?>" id="highlight<?php echo $id_katekese ?>">
@@ -116,9 +116,8 @@
                                                     {
                                                         notifmodal('Data belum lengkap, harap lengkapi data terlebih dahulu','failed');
                                                     }
-                                                    alert(thumb);
+                                                    alert(wegep);
                                                     /*  
-                                                    <?php echo $thumb_katekese ?>  
                                                     $.ajax({
                                                         type : "POST",
                                                         url : "change_visible.php",

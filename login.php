@@ -70,7 +70,7 @@ if(isset($_POST['submit']))
                         {
                             $data_menu  = mysqli_fetch_array($query_menu);
                             $file_menu  = $data_menu['file'];
-                            header("location: index.php?p=".$file_menu);
+                            header("location: index.php?p=paroki_dewan");
                             break;
                         }    
                     }

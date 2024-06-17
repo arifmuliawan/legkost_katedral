@@ -560,6 +560,7 @@ if(isset($_FILES['katekese_banner']))
 
 if(isset($_POST['draf_katekese']))
 {
+    $id             = $_POST['id'];
     $thumb_img      = $_POST['thumb_img'];
     $banner_img     = $_POST['banner_img'];
     $publish_data   = $_POST['publish'];
@@ -571,21 +572,43 @@ if(isset($_POST['draf_katekese']))
     $title          = $_POST['title'];
     $highlight      = $_POST['highlight'];
     $description    = $_POST['description'];
-    $insert_draf    = mysqli_query($con,"INSERT INTO `katekese`(`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$highlight','$description','$publish','$thumb_img','$banner_img','D','$user','$now','$user','$now')")or die (mysqli_error($con));
-    if($insert_draf!=1)
+    if($id==0)
     {
-        http_response_code(410);
-        $response_json       = array(
-            'error_status'   => 1,
-            'error_message'  => 'Penambahan data gagal disimpan'
-        );
+        $insert_draf    = mysqli_query($con,"INSERT INTO `katekese`(`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$highlight','$description','$publish','$thumb_img','$banner_img','D','$user','$now','$user','$now')")or die (mysqli_error($con));
+        if($insert_draf!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Penambahan data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Penambahan data telah berhasil disimpan'
+            );
+        }
     }
     else
     {
-        $response_json       = array(
-            'error_status'   => 0,
-            'error_message'  => 'Penambahan data telah berhasil disimpan'
-        );
+        $update_draf    = mysqli_query($con,"UPDATE `katekese` SET `title`='$title',`highlight`='$highlight',`description`='$description',`publish_date`='$publish',`thumb_img`='$thumb_img', `banner_img`='$banner_img',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+        if($update_draf!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Perubahan data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Perubahan data telah berhasil disimpan'
+            );
+        }
     }
 }    
 

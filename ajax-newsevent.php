@@ -266,6 +266,90 @@ if(isset($_POST['delete_acara']))
     }
 } 
 
+if(isset($_FILES['acara_gallery']))
+{
+    $aid    = $_GET['aid'];
+    if($_FILES['acara_gallery']['name'][0]!='')
+    {
+        $ekstensi_diperbolehkan = array('png','jpg','jpeg');
+        $nama_image             = $_FILES['acara_gallery']['name'][0];
+        $x_image                = explode('.', $nama_image);
+        $ekstensi_image         = strtolower(end($x_image));
+        $ukuran_image           = $_FILES['acara_gallery']['size'][0];
+        $file_tmp_image         = $_FILES['acara_gallery']['tmp_name'][0];
+        $file_directory_image   = "assets/dist/img/news/".$nama_image;
+        $file_db_image          = "dist/img/news/".$nama_image;
+        $image_info             = getimagesize($file_tmp_image);
+        $image_width            = $image_info[0];
+        $image_height           = $image_info[1];
+        if(file_exists("assets/dist/img/news/".$nama_image))
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Nama file sudah digunakan, silahkan upload kembali dengan nama file berbeda'
+            );
+        }
+        else
+        {
+            if(($image_width>='695' && $image_width<='705') && ($image_height>='355' && $image_height<='365'))
+            {
+                $upload_file   = @move_uploaded_file($file_tmp_image, $file_directory_image);
+                if($upload_file===false)
+                {
+                    http_response_code(410);
+                        $response_json       = array(
+                        'error_status'   => 1,
+                        'error_message'  => 'Gambar gagal di upload ke server'
+                    );
+                    return;
+                }
+                else
+                {
+                    $query_sort     = mysqli_query($con,"SELECT * from `acara_galeri` WHERE acaraid='$aid' order by sortid DESC LIMIT 1")or die (mysqli_error($con));
+                    $sum_sort       = mysqli_num_rows($query_sort);
+                    if($sum_sort<=0)
+                    {
+                        $last_sort      = 0;
+                        $new_sort       = $last_sort;
+                    }
+                    else
+                    {
+                        $data_sort      = mysqli_fetch_array($query_sort);
+                        $last_sort      = $data_sort['sortid'];
+                        $new_sort       = $last_sort+1;
+                    }
+                    $insert_gallery     = mysqli_query($con,"INSERT INTO `acara_galeri`(`sortid`, `acaraid`, `img`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$new_sort','$aid','$file_db_image','$user','$now','$user','$now')") or die (mysqli_error($con));
+                    if($insert_gallery!=1)
+                    {
+                        unlink($file_directory_image);
+                        http_response_code(410);
+                            $response_json   = array(
+                            'error_status'   => 1,
+                            'error_message'  => 'Gambar gagal di upload ke server'
+                        );
+                    }
+                    else
+                    {
+                        $response_json       = array(
+                            'error_status'   => 0,
+                            'error_message'  => 'Penambahan data telah berhasil disimpan'
+                        );
+                    }    
+                } 
+            }
+            else
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (700 X 360)'
+                );   
+            }    
+        }    
+    }
+}
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

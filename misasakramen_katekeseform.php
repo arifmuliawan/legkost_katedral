@@ -396,7 +396,7 @@
                 var title_data      = $("#katekeseform input[name=title]").val();
                 var highlight_data  = $("#katekeseform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
-                alert(publish_data);
+                alert(thumb_data);
                 /*
                 if(thumb_data=="https://katedralcms.legkostproject.com/index.php?p=misasakramen_katekeseform" || banner_data=="https://katedralcms.legkostproject.com/index.php?p=misasakramen_katekeseform")
                 {

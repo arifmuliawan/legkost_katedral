@@ -680,14 +680,13 @@
             var sortid_data     = jdata.sortid_gallery;
             var acaraid_data    = jdata.acaraid_gallery;
             var img_data        = jdata.img_gallery;
-            alert(img_data);
-            /*
             $.post('ajax-misasakrame.php',
             {
                 id:id_data,
-                thumb:thumb_data,
-                banner:banner_data,
-                delete_katekese:true
+                sortid:sortid_data,
+                acaraid:acaraid_data,
+                img:img_data,
+                delete_gallery:true
             },
             function(data,status)
             {
@@ -702,6 +701,5 @@
                 }
                 console.log(data,status);
             });
-            */
         });        
         </script>

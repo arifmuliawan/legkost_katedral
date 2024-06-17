@@ -45,7 +45,7 @@
                                 $exp_publish            = explode("-",$publish_data);
                                 $ds                     = $exp_publish[2];
                                 $ms                     = $exp_publish[1];
-                                $ms_id                  = changemonth_id($ms)
+                                $ms_id                  = changemonth_id($ms);
                                 $ys                     = $exp_publish[0];
                                 $publish_katekese       = $ds.' '.$ms_id.' '.$ys;
                                 $title_katekese         = $data_list['title'];

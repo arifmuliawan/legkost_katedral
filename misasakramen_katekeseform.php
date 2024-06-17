@@ -142,7 +142,7 @@
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">TANGGAL KATEKESE<font color="red">*</font></label>
-                                <input type="text" class="form-control" name='publist_date' placeholder="dd/mm/yyyy" id="dp1" value="<?php echo $publish_date ?>">
+                                <input type="text" class="form-control" name='publist' placeholder="dd/mm/yyyy" id="dp1" value="<?php echo $publish_date ?>">
                             </div>     
                         </div>
                         <div class="col-md-8" style="flex: unset;margin-left: 50px;"></div>
@@ -329,12 +329,27 @@
             });
         </script> 
         <!-- END DROPZONE UPLOAD BANNER --> 
-         
-        <!-- START CANCEL FORM -->
+
+        <!-- START SAVE TO DRAFT FORM -->
         <script>
             $("#btncancel").click(function()
             {
                 setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
+            });
+        </script>
+        <!-- END CANCEL FORM -->
+         
+        <!-- START CANCEL FORM -->
+        <script>
+            $("#btnsavedraft").click(function()
+            {
+                var thumb_data      = document.getElementById("thumb_img").src;
+                var banner_data     = document.getElementById("banner_img").src;
+                var publish_data    = $("#btnsavedraft input[name=publish]").val();
+                var title_data      = $("#btnsavedraft input[name=title]").val();
+                var highlight_data  = $("#btnsavedraft input[name=highlight]").val();
+                var desc_data       = CKEDITOR.instances['editordesc'].getData();
+                alert(thumb_data);
             });
         </script>
         <!-- END CANCEL FORM -->

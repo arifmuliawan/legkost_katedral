@@ -143,7 +143,7 @@
                                                                             <i class="fa fa-edit" style="color: #fff;"></i>
                                                                         </button>
                                                                         &nbsp&nbsp&nbsp
-                                                                        <button type="button" class="btndelete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
+                                                                        <button type="button" class="btndelete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" data-perkawinan='<?php echo json_encode($perkawinan_json) ?>'>
                                                                             <i class="fa fa-trash" style="color: #fff;"></i>
                                                                         </button>
                                                                     </td>
@@ -360,3 +360,32 @@
             });     
         </script> 
         <!-- END SAVE DATA DETAIL PERKAWINAN LIST -->
+
+        <!-- START DELETE PERKAWINAN LIST -->
+        <script>
+            $(document).on("click", ".btndelete", function () {
+                var me      = $(this);
+                var data    = me.attr('data-perkawinan');
+                var jdata   = JSON.parse(data);
+                var id_data = jdata.id_perkawinan;
+                $.post('ajax-misasakrame.php',
+                {
+                    id:id_data,
+                    delete_perkawinan:true
+                },
+                function(data,status)
+                {
+                    if(data.error_status==1)
+                    {
+                        notifmodal(data.error_message,'failed');
+                    }
+                    else
+                    {
+                        notifmodal(data.error_message,'success');
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan';},3000);
+                    }
+                    console.log(data,status);
+                });
+            });
+        </script>
+        <!-- END DELETE PERKAWINAN LIST -->

@@ -88,7 +88,13 @@
                                                 <form id="checkgo" method="post" style="margin-left: 12px;">
                                                     <input type="hidden" name="id" value="<?php echo $id_katekese ?>" id="id<?php echo $id_katekese ?>">
                                                     <input type="hidden" name="tbname" value="katekese" id="tbname<?php echo $id_katekese ?>">
-                                                    <h5 style="text-align: center;color: #7C7C7C;"> <?php echo $name_status ?> </h5>
+                                                    <input type="hidden" name="thumb" value="<?php echo $thumb_katekese ?>" id="thumb<?php echo $id_katekese ?>">
+                                                    <input type="hidden" name="banner" value="<?php echo $bannerimg_katekese ?>" id="banner<?php echo $id_katekese ?>">
+                                                    <input type="hidden" name="title" value="<?php echo $title_katekese ?>" id="title<?php echo $id_katekese ?>">
+                                                    <input type="hidden" name="highlight" value="<?php echo $highlight_katekese ?>" id="highlight<?php echo $id_katekese ?>">
+                                                    <input type="hidden" name="decription" value="<?php echo $description_katekese ?>" id="description<?php echo $id_katekese ?>">
+                                                    <input type="hidden" name="publish" value="<?php echo $publish_data ?>" id="publish<?php echo $id_katekese ?>">
+                                                    <font style="text-align: center;color: #7C7C7C;margin: 10px;"> <?php echo $name_status ?> </font>
                                                     <div class="button r" id="button-1">
                                                         <input type="checkbox" onchange="doThis<?php echo $id_katekese ?>(this)" name="wegeb" id="wegep<?php echo $id_katekese ?>" value="<?php echo $value_status ?>" class="checkbox" <?php echo $check_status ?>/>
                                                         <div class="knobs"></div>
@@ -97,10 +103,17 @@
                                                 </form>  
                                                 <script>
                                                     function doThis<?php echo $id_katekese ?>(checkbox){
-                                                    var wegeb   = document.getElementById("wegep<?php echo $id_katekese ?>").value
-                                                    var id      = document.getElementById("id<?php echo $id_katekese ?>").value
-                                                    var tbname  = document.getElementById("tbname<?php echo $id_katekese ?>").value
-                                                    var info    = {wegeb: wegeb,id: id,tbname: tbname};
+                                                    var wegeb       = document.getElementById("wegep<?php echo $id_katekese ?>").value
+                                                    var id          = document.getElementById("id<?php echo $id_katekese ?>").value
+                                                    var tbname      = document.getElementById("tbname<?php echo $id_katekese ?>").value
+                                                    var thumb       = document.getElementById("thumb<?php echo $id_katekese ?>").value
+                                                    var banner      = document.getElementById("banner<?php echo $id_katekese ?>").value
+                                                    var title       = document.getElementById("title<?php echo $id_katekese ?>").value
+                                                    var highlight   = document.getElementById("highlight<?php echo $id_katekese ?>").value
+                                                    var description = document.getElementById("description<?php echo $id_katekese ?>").value
+                                                    var info        = {wegeb: wegeb,id: id,tbname: tbname};
+                                                    alert(thumb);
+                                                    /*    
                                                     $.ajax({
                                                         type : "POST",
                                                         url : "change_visible.php",
@@ -114,7 +127,8 @@
                                                         }
                                                         });
                                                         return false;
-                                                    }   
+                                                    }  
+                                                    */     
                                                 </script>
                                             </td> 
                                         </tr>

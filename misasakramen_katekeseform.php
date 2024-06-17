@@ -426,7 +426,7 @@
 
         <!-- START CANCEL FORM -->
         <script>
-            $("#btncancel").click(function()
+            $("#katekeseform #btncancel").click(function()
             {
                 $("#notifcancelmodal").modal("show");
             });

@@ -203,7 +203,9 @@
                                     ?>
                                             <div class="col-md-4">
                                                 <img id="gallery_img" src="<?php echo $base_assets.$img_gallery ?>" width="100%">
-                                                <button class="btndeletegallery" data-gallery='<?php echo json_encode($gallery_json) ?>' type="button" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;">DELETE</button>
+                                                <button class="btndeletegallery" data-gallery='<?php echo json_encode($gallery_json) ?>' type="button" style="margin: 24px;background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
+                                                    DELETE
+                                                </button>
                                             </div>
                                     <?php
                                         }

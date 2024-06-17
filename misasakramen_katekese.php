@@ -113,24 +113,27 @@
                                                     var description = document.getElementById("description<?php echo $id_katekese ?>").value
                                                     var info        = {wegeb: wegeb,id: id,tbname: tbname};
                                                     //alert(wegeb);
-                                                    if(thumb=="" || banner=="" || title=="" || highlight=="" || description=="")
+                                                    if(wegeb=="P" && (thumb=="" || banner=="" || title=="" || highlight=="" || description==""))
                                                     {
                                                         notifmodal('Data belum lengkap, harap lengkapi data terlebih dahulu','failed');
                                                     }
-                                                    $.ajax({
-                                                        type : "POST",
-                                                        url : "change_visible.php",
-                                                        data : info,
-                                                        success: function(){
-                                                            document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb == 'P'?'D':'P'
-                                                            setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });  
-                                                        },
-                                                        error: function(){
-                                                            document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb
+                                                    else
+                                                    {
+                                                        $.ajax({
+                                                            type : "POST",
+                                                            url : "change_visible.php",
+                                                            data : info,
+                                                            success: function(){
+                                                                document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb == 'P'?'D':'P'
+                                                                setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });  
+                                                            },
+                                                            error: function(){
+                                                                document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb
+                                                            }
+                                                            });
+                                                            return false;
                                                         }
-                                                        });
-                                                        return false;
-                                                    }       
+                                                    }           
                                                 </script>
                                             </td> 
                                         </tr>

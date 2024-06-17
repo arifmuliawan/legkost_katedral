@@ -38,7 +38,7 @@
                                 }
                                 else
                                 {
-                                    $thumbimg_katekese  = $base_assets.$thumb_katekese;
+                                    $thumbimg_katekese  = $thumb_katekese;
                                 }
                                 $bannerimg_katekese     = $data_list['banner_img'];
                                 $publish_data           = $data_list['publish_date'];

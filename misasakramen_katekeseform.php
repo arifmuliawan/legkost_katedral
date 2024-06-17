@@ -243,6 +243,7 @@
                         $("#katekeseform #btnuploadthumb").hide();
                         $("#katekeseform #thumb_img").attr('src', response.thumb_img).show();
                         $("#katekeseform #btnreplacethumb").show();
+                        $("#katekeseform #btncancelthumb").show();
                     }
                 },
                 completemultiple: function (file, response) {
@@ -262,10 +263,10 @@
             $("#katekeseform #btnreplacethumb").click(function()
             {
                 $("#katekeseform #uploadthumb").show();
-                $("#formdetail #btnuploadthumb").show();
-                $("#formdetail #btncancelthumb").show();
-                $("#formdetail #btnreplacethumb").hide();
-                $("#formdetail #thumb_img").hide();
+                $("#katekeseform #btnuploadthumb").show();
+                $("#katekeseform #btncancelthumb").show();
+                $("#katekeseform #btnreplacethumb").hide();
+                $("#katekeseform #thumb_img").hide();
             });
         </script>
         <!-- END REPLACE THUMBNAIL -->
@@ -275,10 +276,10 @@
             $("#katekeseform #btnreplacebanner").click(function()
             {
                 $("#katekeseform #uploadthumb").hide();
-                $("#formdetail #btnuploadthumb").hide();
-                $("#formdetail #btncancelthumb").hide();
-                $("#formdetail #btnreplacethumb").show();
-                $("#formdetail #thumb_img").show();
+                $("#katekeseform #btnuploadthumb").hide();
+                $("#katekeseform #btncancelthumb").hide();
+                $("#katekeseform #btnreplacethumb").show();
+                $("#katekeseform #thumb_img").show();
             });
         </script>
         <!-- END CANCEL REPLACE THUMBNAIL -->

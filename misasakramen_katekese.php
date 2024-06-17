@@ -71,11 +71,11 @@
                                             <td width="20%">
                                                 <img src="<?php echo $thumbimg_katekese ?>" width="80%">
                                             </td> 
-                                            <td width="55%">
+                                            <td width="65%">
                                                 <?php echo $publish_katekese ?> <br>
                                                 <h4> <?php echo $title_katekese ?> </h4>
                                             </td>
-                                            <td width="25%" style="min-width: 130px;display: flex;align-items: center;justify-content: center;">
+                                            <td width="15%" style="min-width: 130px;display: flex;align-items: center;justify-content: center;">
                                                 <a href="index.php?p=misasakramen_katekeseform&id=<?php echo $id_katekese ?>">
                                                 <button type="button" class="btnedit" title="Edit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
                                                     <i class="fa fa-edit" style="color: #fff;"></i>

@@ -112,8 +112,13 @@
                                                     var highlight   = document.getElementById("highlight<?php echo $id_katekese ?>").value
                                                     var description = document.getElementById("description<?php echo $id_katekese ?>").value
                                                     var info        = {wegeb: wegeb,id: id,tbname: tbname};
+                                                    if(thumb=="")
+                                                    {
+                                                        notifmodal('Data belum lengkap, harap lengkapi data terlebih dahulu','failed');
+                                                    }
                                                     alert(thumb);
-                                                    /*    
+                                                    /*  
+                                                    <?php echo $thumb_katekese ?>  
                                                     $.ajax({
                                                         type : "POST",
                                                         url : "change_visible.php",

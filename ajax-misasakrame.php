@@ -668,10 +668,12 @@ if(isset($_POST['publish_katekese']))
 
 if(isset($_POST['delete_katekese']))
 {
-    $id         = $_POST['id'];
-    $thumb_img  = explode($base_url,$_POST['thumb']);
-    $banner_img = explode($base_url,$_POST['banner']);
-    unlink($banner_img[1]);
+    $id             = $_POST['id'];
+    $thumb_data     = explode($base_url,$_POST['thumb']);
+    $banner_data    = explode($base_url,$_POST['banner']);
+    $thumb_img      = str_replace("%20"," ",$thumb_data[1]);
+    $banner_img     = str_replace("%20"," ",$banner_data[1]);
+    unlink($thumb_img);
     exit();
     if($id!=0)
     {
@@ -686,8 +688,8 @@ if(isset($_POST['delete_katekese']))
         }
         else
         {
-            unlink($thumb_img[1]);
-            unlink($banner_img[1]);
+            unlink($thumb_img);
+            unlink($banner_img);
             $response_json       = array(
                 'error_status'   => 0,
                 'error_message'  => 'Data berhasil dihapus'

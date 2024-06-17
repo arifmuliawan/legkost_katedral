@@ -179,7 +179,7 @@
                                 <font size="3">(700 x 360 px) JPG/JPEG/PNG</font>
                                 <div class="row">
                                     <?php
-                                    $query_gallery  = mysqli_query($con,"SELECT * FROM acara_galeri WHERE id='$id' order by sortid ASC")or die (mysqli_error($con));
+                                    $query_gallery  = mysqli_query($con,"SELECT * FROM `acara_galeri` WHERE acaraid='$id' order by sortid ASC")or die (mysqli_error($con));
                                     $sum_gallery    = mysqli_num_rows($query_gallery);
                                     if($sum_gallery>0)
                                     {
@@ -647,6 +647,7 @@
                 successmultiple: function (file, response) {
                     if(response.error_status==0)
                     {
+                        notifmodal(data.error_message,'success');
                         setTimeout(function(){ window.location ='index.php?p=newsevent_acaraform&id=<?php echo $id ?>';},3000);
                     }
                 },

@@ -350,6 +350,64 @@ if(isset($_FILES['acara_gallery']))
     }
 }
 
+if(isset($_POST['delete_gallert']))
+{
+    $id             = $_POST['id'];
+    $sortid         = $_POST['sortid'];
+    $acaraid        = $_POST['acaraid'];
+    $img_data       = "assets/".$_POST['img'];
+    $gallery_img    = str_replace("%20"," ",$img_data);
+    if($id!=0)
+    {
+        $delete_gallery    = mysqli_query($con,"DELETE FROM `acara_galeri` WHERE id='$id' AND acaraid='$acaraid'")or die (mysqli_error($con));
+        if($delete_gallery!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Data gagal dihapus'
+            );
+        }
+        else
+        {
+            $query_gallery      = mysqli_query($con,"SELECT * FROM `acara_galeri` WHERE acaraid='$acaraid' AND sortid>$sortid")or die (mysqli_error($con));
+            $sum_gallery        = mysqli_num_rows($query_gallery);
+            if($sum_gallery>0)
+            {
+                while($data_gallery_oth   = mysqli_fetch_array($query_gallery))
+                {
+                    $id_gallery_oth     = $data_gallery_oth['id'];
+                    $acaraid_gallery_oth= $data_gallery_oth['acaraid'];
+                    $sortid_gallery_oth = $data_gallery_oth['sortid'];
+                    $new_sort           = $sortid_gallery_oth-1;
+                    $update_gallery_oth = mysqli_query($con,"UPDATE `acara_galeri` SET sortid='$new_sort' WHERE id='$id_gallery_oth' AND acaraid='$acaraid_gallery_oth'")or die (mysqli_error($con));
+                }
+                unlink($gallery_img);
+                $response_json       = array(
+                    'error_status'   => 0,
+                    'error_message'  => 'Data berhasil dihapus'
+                );
+            }
+            else
+            {
+                unlink($gallery_img);
+                $response_json       = array(
+                    'error_status'   => 0,
+                    'error_message'  => 'Data berhasil dihapus'
+                );
+            }
+        }
+    }
+    else
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Data tidak ditemukan'
+        );
+    }
+}
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

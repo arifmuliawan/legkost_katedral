@@ -350,7 +350,7 @@ if(isset($_FILES['acara_gallery']))
     }
 }
 
-if(isset($_POST['delete_gallert']))
+if(isset($_POST['delete_gallery']))
 {
     $id             = $_POST['id'];
     $sortid         = $_POST['sortid'];

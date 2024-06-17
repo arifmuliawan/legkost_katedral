@@ -397,7 +397,7 @@
                 var highlight_data  = $("#katekeseform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
                 //alert(banner_data);
-                if(thumb_data=="https://katedralcms.legkostproject.com/index.php?p=misasakramen_katekeseform" || banner_data=="https://katedralcms.legkostproject.com/index.php?p=misasakramen_katekeseform")
+                if(thumb_data=="" || banner_data=="")
                 {
                     notifmodal('Mohon lengkapi thumbnail atau banner dahulu','failed');
                 }

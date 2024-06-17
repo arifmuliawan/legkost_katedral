@@ -52,7 +52,7 @@
             }
             ?> 
             <!-- Main content -->
-            <form methode="POST">  
+            <!--<form methode="POST">-->  
             <section class="content" id="katekeseform" style="margin-right: 50px;">
                 <div class="container-fluid">
                     <div class="row">
@@ -180,7 +180,7 @@
                     </div>    
                 </div> 
             </section>
-            </form>
+            <!--</form>-->
         </div>
         <!-- START DROPZONE UPLOAD THUMBNAIL -->
         <script type="text/javascript">  
@@ -390,13 +390,13 @@
          
         <!-- START SAVE TO DRAFT FORM -->
         <script>
-            $("#btnsavedraft").click(function()
+            $("#katekeseform #btnsavedraft").click(function()
             {
                 var thumb_data      = document.getElementById("thumb_img").src;
                 var banner_data     = document.getElementById("banner_img").src;
-                var publish_data    = $("#btnsavedraft input[name=publish]").val();
-                var title_data      = $("#btnsavedraft input[name=title]").val();
-                var highlight_data  = $("#btnsavedraft input[name=highlight]").val();
+                var publish_data    = $("#katekeseform input[name=publish]").val();
+                var title_data      = $("#katekeseform input[name=title]").val();
+                var highlight_data  = $("#katekeseform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
                 $.post('ajax-misasakrame.php',
                     {

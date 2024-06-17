@@ -96,7 +96,7 @@
                                                 </button>
                                                 </a>
                                                 &nbsp&nbsp&nbsp
-                                                <button data-katekese='<?php echo json_encode($katekese_json) ?>' type="button" class="btndelete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;margin-top: 25px;">
+                                                <button data-katekese='<?php echo json_encode($katekese_json) ?>' type="button" class="btndelete" title="Delete" onclick="return confirm('Are you sure you want to delete this item ?')" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;margin-top: 25px;">
                                                     <i class="fa fa-trash" style="color: #fff;"></i>
                                                 </button>
                                                 <form id="checkgo" method="post" style="margin-left: 12px;">

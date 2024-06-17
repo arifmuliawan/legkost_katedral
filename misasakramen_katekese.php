@@ -116,7 +116,7 @@
                                                     if(wegeb=="P" && (thumb=="" || banner=="" || title=="" || highlight=="" || description==""))
                                                     {
                                                         notifmodal('Data belum lengkap, harap lengkapi data terlebih dahulu','failed');
-                                                        setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';5000 });  
+                                                        setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';5000});  
                                                     }
                                                     else
                                                     {

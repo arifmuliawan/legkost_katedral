@@ -63,7 +63,7 @@
                         <div class="col-md-4" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">THUMBNAIL <font color="red">*</font></label><br>
-                                <font size="3">(250 x 250 px) JPG/JPEG/PNG</font>
+                                <font size="3">(450 x 450 px) JPG/JPEG/PNG</font>
                                 <br><br>
                                 <?php
                                 if($thumb_img!="")
@@ -107,7 +107,7 @@
                         <div class="col-md-8" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">BANNER<font color="red">*</font></label><br>
-                                <font size="3">(900 x 450 px) JPG/JPEG/PNG</font>
+                                <font size="3">(850 x 450 px) JPG/JPEG/PNG</font>
                                 <br><br>
                                 <?php
                                 if($banner_img!="")

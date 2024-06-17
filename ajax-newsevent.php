@@ -55,7 +55,7 @@ if(isset($_FILES['acara_thumbnail']))
                 http_response_code(410);
                 $response_json       = array(
                     'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (250 X 250)'
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (450 X 450)'
                 );   
             }    
         }    
@@ -113,7 +113,7 @@ if(isset($_FILES['acara_banner']))
                 http_response_code(410);
                 $response_json       = array(
                     'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (900 X 450)'
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (850 X 450)'
                 );   
             }    
         }    

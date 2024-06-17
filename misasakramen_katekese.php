@@ -113,7 +113,7 @@
                                                     var description = document.getElementById("description<?php echo $id_katekese ?>").value
                                                     var info        = {wegeb: wegeb,id: id,tbname: tbname};
                                                     //alert(wegeb);
-                                                    if(wegeb=="P" && (thumb=="" || banner=="" || title=="" || highlight=="" || description==""))
+                                                    if(thumb=="" || banner=="" || title=="" || highlight=="" || description=="")
                                                     {
                                                         notifmodal('Data belum lengkap, harap lengkapi data terlebih dahulu','failed');
                                                     }

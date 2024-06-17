@@ -74,7 +74,9 @@
                                     $name_status   = 'DRAFT';
                                 }
                                 $katekese_json    = array(
-                                    'id_katekese'   => $id_katekese
+                                    'id_katekese'       => $id_katekese,
+                                    'thumb_katekese'    => $thumb_katekese,
+                                    'banner_katekese'   => $bannerimg_katekese
                                 );    
                         ?>
                                 <div class="col-md-12" style="flex: unset;margin-left: 50px;margin-bottom: 15px;<?php echo $clr_row ?>">
@@ -169,15 +171,18 @@
         });
 
         $(document).on("click", ".btndelete", function () {
-            var me      = $(this);
-            var data    = me.attr('data-katekese');
-            var jdata   = JSON.parse(data);
-            var id_data = jdata.id_katekese;
-            alert(id_data);
-            /*
+            var me          = $(this);
+            var data        = me.attr('data-katekese');
+            var jdata       = JSON.parse(data);
+            var id_data     = jdata.id_katekese;
+            var thumb_data  = jdata.thumb_katekese;
+            var banner_data = jdata.banner_katekese;
+            //alert(id_data);
             $.post('ajax-misasakrame.php',
             {
                 id:id_data,
+                thumb:thumb_data,
+                banner:banner_data,
                 delete_katekese:true
             },
             function(data,status)
@@ -189,10 +194,9 @@
                 else
                 {
                     notifmodal(data.error_message,'success');
-                    setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';6000});
+                    //setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';6000});
                 }
                 console.log(data,status);
             });
-            */
         });        
         </script>

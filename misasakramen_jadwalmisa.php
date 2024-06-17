@@ -167,10 +167,10 @@ if(isset($_POST['updateschedule']))
                                                                                 </select>
                                                                                 :
                                                                                 <select class="form-control" style="width: 25%;display: unset;" name="sch_min[]">
-                                                                                    <option <?php if($sch_hour=='00') { echo 'SELECTED';} ?> value="00">00</option>
-                                                                                    <option <?php if($sch_hour=='15') { echo 'SELECTED';} ?> value="15">15</option>
-                                                                                    <option <?php if($sch_hour=='30') { echo 'SELECTED';} ?> value="30">30</option>
-                                                                                    <option <?php if($sch_hour=='45') { echo 'SELECTED';} ?> value="45">45</option>
+                                                                                    <option <?php if($sch_min=='00') { echo 'SELECTED';} ?> value="00">00</option>
+                                                                                    <option <?php if($sch_min=='15') { echo 'SELECTED';} ?> value="15">15</option>
+                                                                                    <option <?php if($sch_min=='30') { echo 'SELECTED';} ?> value="30">30</option>
+                                                                                    <option <?php if($sch_min=='45') { echo 'SELECTED';} ?> value="45">45</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td style="border: unset;vertical-align: middle;">  

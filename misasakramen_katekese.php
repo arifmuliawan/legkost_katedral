@@ -73,6 +73,9 @@
                                     $value_status  = 'P';
                                     $name_status   = 'DRAFT';
                                 }
+                                $katekese_json    = array(
+                                    'id_katekese'   => $id_katekese
+                                );    
                         ?>
                                 <div class="col-md-12" style="flex: unset;margin-left: 50px;margin-bottom: 15px;<?php echo $clr_row ?>">
                                     <table width="100%">
@@ -91,7 +94,7 @@
                                                 </button>
                                                 </a>
                                                 &nbsp&nbsp&nbsp
-                                                <button type="button" class="btndelete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;margin-top: 25px;">
+                                                <button data-katekese='<?php echo json_encode($katekese_json) ?>' type="button" class="btndelete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;margin-top: 25px;">
                                                     <i class="fa fa-trash" style="color: #fff;"></i>
                                                 </button>
                                                 <form id="checkgo" method="post" style="margin-left: 12px;">
@@ -164,4 +167,32 @@
         {
             setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
         });
+
+        $(document).on("click", ".btndelete", function () {
+            var me      = $(this);
+            var data    = me.attr('data-katekese');
+            var jdata   = JSON.parse(data);
+            var id_data = jdata.id_katekese;
+            alert(id_data);
+            /*
+            $.post('ajax-misasakrame.php',
+            {
+                id:id_data,
+                delete_katekese:true
+            },
+            function(data,status)
+            {
+                if(data.error_status==1)
+                {
+                    notifmodal(data.error_message,'failed');
+                }
+                else
+                {
+                    notifmodal(data.error_message,'success');
+                    setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';6000});
+                }
+                console.log(data,status);
+            });
+            */
+        });        
         </script>

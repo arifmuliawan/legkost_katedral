@@ -130,7 +130,7 @@
                                                     if(wegeb=="P" && (thumb=="" || banner=="" || title=="" || highlight=="" || description==""))
                                                     {
                                                         $("#notifpublishmodal").modal("show");
-                                                        //setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';10000});  
+                                                        setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';},3000);  
                                                     }
                                                     else
                                                     {
@@ -140,7 +140,7 @@
                                                             data : info,
                                                             success: function(){
                                                                 document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb == 'P'?'D':'P'
-                                                                setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });  
+                                                                setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';});  
                                                             },
                                                             error: function(){
                                                                 document.getElementById("wegep<?php echo $id_katekese ?>").value = wegeb
@@ -167,7 +167,7 @@
         <script>
         $("#notifpublishmodal #btnmodalclose").click(function()
         {
-            setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
+            setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';});
         });
 
         $(document).on("click", ".btndelete", function () {
@@ -194,7 +194,7 @@
                 else
                 {
                     notifmodal(data.error_message,'success');
-                    setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';6000});
+                    setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';},3000);
                 }
                 console.log(data,status);
             });

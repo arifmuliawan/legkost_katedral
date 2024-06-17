@@ -485,6 +485,11 @@
 
         <!-- START SAVE TO PUBLISH FORM -->
         <script>
+            $("#notifpublishmodal #btnmodalclose").click(function()
+            {
+                $("#notifpublishmodal").modal("hide");
+            });
+
             $("#katekeseform #btnsavepublish").click(function()
             {
                 var id_data         = $("#katekeseform input[name=katekeseid]").val();

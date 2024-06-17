@@ -417,11 +417,11 @@
                     {
                         if(data.error_status==1)
                         {
-                            toastr['error'](data.error_message);
+                            notifmodal(data.error_message,'failed');
                         }
                         else
                         {
-                            toastr['success'](data.error_message);
+                            notifmodal(data.error_message,'success');
                             setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
                         }
                         console.log(data,status);

@@ -211,7 +211,7 @@
                                     <div class="col-md-4">
                                         <div id="uploadgallery" class="dropzone" style="height:160px">
                                             <div class="dz-message">
-                                                <i class="fa fa-plus" style="color: #fff;"></i>
+                                                <i class="fa fa-plus"></i>
                                                 <b>.JPG  .JPEG  .PNG</b><br>
                                             </div>
                                         </div>

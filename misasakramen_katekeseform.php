@@ -396,8 +396,7 @@
                 var title_data      = $("#katekeseform input[name=title]").val();
                 var highlight_data  = $("#katekeseform input[name=highlight]").val();
                 var desc_data       = CKEDITOR.instances['editordesc'].getData();
-                alert(banner_data);
-                /*
+                //alert(banner_data);
                 if(thumb_data=="https://katedralcms.legkostproject.com/index.php?p=misasakramen_katekeseform" || banner_data=="https://katedralcms.legkostproject.com/index.php?p=misasakramen_katekeseform")
                 {
                     notifmodal('Mohon lengkapi thumbnail atau banner dahulu','failed');
@@ -427,8 +426,8 @@
                         }
                         console.log(data,status);
                     }
-                }
-                */    
+                    );
+                }    
             });
         </script>
         <!-- END SAVE TO DRAFT FORM -->

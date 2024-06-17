@@ -240,7 +240,6 @@
                 successmultiple: function (file, response) {
                     if(response.error_status==0)
                     {
-                        notifmodal(response.error_message,'success');
                         $("#katekeseform #uploadthumb").hide();
                         $("#katekeseform #btnuploadthumb").hide();
                         $("#katekeseform #thumb_img").attr('src', response.thumb_img).show();
@@ -343,7 +342,6 @@
                 successmultiple: function (file, response) {
                     if(response.error_status==0)
                     {
-                        notifmodal(response.error_message,'success');
                         $("#katekeseform #uploadbanner").hide();
                         $("#katekeseform #btnuploadbanner").hide();
                         $("#katekeseform #banner_img").attr('src', response.banner_img).show();

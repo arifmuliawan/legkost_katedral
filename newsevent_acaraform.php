@@ -209,12 +209,10 @@
                                     }
                                     ?>
                                     <div class="col-md-4">
-                                        <div id="uploadgallery" class="dropzone">
+                                        <div id="uploadgallery" class="dropzone" style="height:160px">
                                             <div class="dz-message">
-                                                <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                <i class="fa fa-plus" style="color: #fff;"></i>
                                                 <b>.JPG  .JPEG  .PNG</b><br>
-                                                Drop files to upload <br>
-                                                or <font color='#88A8D4'><b>Browse Files...</b></font>
                                             </div>
                                         </div>
                                         <button id="btnuploadgallery" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">UPLOAD</button>

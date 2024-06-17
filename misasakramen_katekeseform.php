@@ -428,8 +428,22 @@
         <script>
             $("#btncancel").click(function()
             {
-                
+                $("#notifcancelmodal").modal("show");
+            });
+
+            $("#notifcancelmodal #btnmodalcancel").click(function()
+            {
+                $("#notifcancelmodal").modal("hide");
+            });
+
+            $("#notifcancelmodal #btnmodaldiscard").click(function()
+            {
                 setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; });
+            });
+
+            $("#notifcancelmodal #btnmodalsave").click(function()
+            {
+                $("#notifcancelmodal").modal("hide");
             });
         </script>
         <!-- END CANCEL FORM -->

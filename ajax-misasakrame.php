@@ -666,6 +666,42 @@ if(isset($_POST['publish_katekese']))
     }
 }
 
+if(isset($_POST['delete_katekese']))
+{
+    $id         = $_POST['id'];
+    $thumb_img  = $_POST['thumb'];
+    $banner_img = $_POST['banner'];
+    if($id!=0)
+    {
+        $delete_katekese    = mysqli_query($con,"DELETE FROM `katekese` WHERE id='$id'")or die (mysqli_error($con));
+        if($delete_katekese!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Data gagal dihapus'
+            );
+        }
+        else
+        {
+            unlink($thumb_img);
+            unlink($banner_img);
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Data berhasil dihapus'
+            );
+        }
+    }
+    else
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Data tidak ditemukan'
+        );
+    }
+}    
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

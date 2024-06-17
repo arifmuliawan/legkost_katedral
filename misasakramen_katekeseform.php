@@ -25,7 +25,7 @@
                     $data_katekese  = mysqli_fetch_array($query_katekese);
                     $thumb_img      = $data_katekese['thumb_img'];
                     $banner_img     = $data_katekese['banner_img'];
-                    $data_publish   = $data_katekese['publish_date'];
+                    $publish_data   = $data_katekese['publish_date'];
                     $exp_publish    = explode("-",$publish_data);
                     $ds             = $exp_publish[2];
                     $ms             = $exp_publish[1];

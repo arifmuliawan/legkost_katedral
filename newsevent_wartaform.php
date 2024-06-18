@@ -67,7 +67,7 @@
                                 <font size="3">(max 100mB) PDF</font>
                                 <br><br>
                                 <?php
-                                if($doc_data!="" || $doc_data!=" ")
+                                if($doc_data!="" && $doc_data!=" ")
                                 {
                                 ?>    
                                     <?php echo $doc_data ?>

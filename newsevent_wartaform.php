@@ -49,13 +49,13 @@
                 <div class="container-fluid">
                     <div class="row">
                         <!-- left column -->
-                        <div class="col-md-6" style="flex: unset;margin-left: 50px;">
+                        <div class="col-md-5" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">TANGGAL WARTA<font color="red">*</font></label>
                                 <input type="text" class="form-control" name='publist' placeholder="dd/mm/yyyy" id="dp1" value="<?php echo $publish_date ?>">
                             </div>     
                         </div>
-                        <div class="col-md-6" style="flex: unset;margin-left: 50px;">
+                        <div class="col-md-5" style="flex: unset;margin-left: 50px;">
                             <div class="form-group">
                                 <label class="form-label">JUDUL WARTA<font color="red">*</font></label>
                                 <input type="text" class="form-control" name='title' placeholder="Type something here...." value="<?php echo $title ?>">
@@ -87,7 +87,7 @@
                                 else
                                 {
                                 ?>    
-                                    <div id="doc_data"><br>
+                                    <div id="doc_data"></div><br>
                                     <button id="btnreplacedoc" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display:none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                     <div id="uploaddoc" class="dropzone">
                                         <div class="dz-message">

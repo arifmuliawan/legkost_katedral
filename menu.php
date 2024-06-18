@@ -115,7 +115,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                                                     else
                                                     {
                                                         $act_submenu = "";
-                                                        $act_bgclr   = "";
+                                                        $act_bgclr   = 'style="color: #fff;"';
                                                         $act_icon    = "far fa-circle nav-icon";
                                                     }
                                                     ?>

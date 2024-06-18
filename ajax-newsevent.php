@@ -482,8 +482,6 @@ if(isset($_POST['draf_warta']))
 
 if(isset($_FILES['warta_doc']))
 {
-    print_r($_FILES);
-    exit();
     $id_warta   = $_POST['id'];
     if($_FILES['warta_doc']['name'][0]!='')
     {

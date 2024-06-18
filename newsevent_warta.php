@@ -88,6 +88,7 @@
                                                     <input type="hidden" name="id" value="<?php echo $id_warta ?>" id="id<?php echo $id_warta ?>">
                                                     <input type="hidden" name="tbname" value="warta" id="tbname<?php echo $id_warta ?>">
                                                     <input type="hidden" name="doc" value="<?php echo $doc_warta ?>" id="doc<?php echo $id_warta ?>">
+                                                    <input type="hidden" name="title" value="<?php echo $title_warta ?>" id="title<?php echo $id_warta ?>">
                                                     <input type="hidden" name="publish" value="<?php echo $publish_data ?>" id="publish<?php echo $id_warta ?>">
                                                     <font style="text-align: center;color: #7C7C7C;margin: 10px;"> <?php echo $name_status ?> </font>
                                                     <div class="button r" id="button-1">
@@ -102,9 +103,10 @@
                                                     var id          = document.getElementById("id<?php echo $id_warta ?>").value
                                                     var tbname      = document.getElementById("tbname<?php echo $id_warta ?>").value
                                                     var doc         = document.getElementById("doc<?php echo $id_warta ?>").value
+                                                    var title       = document.getElementById("doc<?php echo $title_warta ?>").value
                                                     var info        = {wegeb: wegeb,id: id,tbname: tbname};
                                                     //alert(wegeb);
-                                                    if(wegeb=="P" && doc=="")
+                                                    if(wegeb=="P" && (title=="" || doc==""))
                                                     {
                                                         $("#notifpublishmodal").modal("show");
                                                         setTimeout(function(){ window.location ='index.php?p=newsevent_warta';},3000);  

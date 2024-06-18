@@ -492,9 +492,6 @@ if(isset($_FILES['warta_doc']))
         $file_tmp_image         = $_FILES['warta_doc']['tmp_name'][0];
         $file_directory_image   = "assets/dist/img/warta/".$nama_image;
         $file_db_image          = "dist/img/warta/".$nama_image;
-        $image_info             = getimagesize($file_tmp_image);
-        $image_width            = $image_info[0];
-        $image_height           = $image_info[1];
         if(file_exists("assets/dist/img/warta/".$nama_image))
         {
             http_response_code(410);
@@ -505,7 +502,7 @@ if(isset($_FILES['warta_doc']))
         }
         else
         {
-            if($ukuran_image>='100000000')
+            if($ukuran_image<='100000000')
             {
                 $upload_file   = @move_uploaded_file($file_tmp_image, $file_directory_image);
                 if($upload_file===false)

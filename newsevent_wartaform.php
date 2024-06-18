@@ -235,7 +235,6 @@
                 var publish_data    = $("#wartaform #dp1").val();
                 var title_data      = $("#wartaform input[name=title]").val();
                 alert(doc_data);
-                /*
                 $.post('ajax-newsevent.php',
                 {
                     id:id_data,
@@ -258,7 +257,6 @@
                     console.log(data,status);
                 }
                 );
-                */
             });
         </script>
         <!-- END SAVE TO DRAFT FORM -->

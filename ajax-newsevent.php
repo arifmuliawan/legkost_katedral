@@ -522,24 +522,11 @@ if(isset($_FILES['warta_doc']))
                 }
                 else
                 {
-                    $update_warta     = mysqli_query($con,"UPDATE `warta` SET doc='$file_db_image',update_by='$user',update_date='$now'") or die (mysqli_error($con));
-                    if($pdate_warta!=1)
-                    {
-                        unlink($file_directory_image);
-                        http_response_code(410);
-                            $response_json   = array(
-                            'error_status'   => 1,
-                            'error_message'  => 'Document gagal di upload ke server'
-                        );
-                    }
-                    else
-                    {
-                        $response_json       = array(
-                            'error_status'   => 0,
-                            'error_message'  => 'Penambahan data telah berhasil disimpan',
-                            'doc_data'       => $base_assets.$file_db_image
-                        );
-                    }    
+                    $response_json       = array(
+                        'error_status'   => 0,
+                        'error_message'  => 'Penambahan data telah berhasil disimpan',
+                        'doc_data'       => $base_assets.$file_db_image
+                    );   
                 } 
             }
             else

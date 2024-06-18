@@ -78,7 +78,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                                 {
                                     $drop_com   = "menu-is-opening menu-open";
                                     $disp_com   = "block";
-                                    $bold_com   = 'style="background-color: unset;box-shadow: unset;font-weight: bold;color: #fff;"';
+                                    $bold_com   = 'style="color: #fff;background-color: unset;box-shadow: unset;font-weight: bold;color: #fff;"';
                                 }
                                 else
                                 {

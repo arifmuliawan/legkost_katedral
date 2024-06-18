@@ -231,7 +231,7 @@
             $("#wartaform #btnsavedraft").click(function()
             {
                 var id_data         = $("#wartaform input[name=wartaid]").val();
-                var doc_data        = document.getElementById("doc_data").src;
+                var doc_data        = " ";
                 var publish_data    = $("#wartaform #dp1").val();
                 var title_data      = $("#wartaform input[name=title]").val();
                 $.post('ajax-newsevent.php',

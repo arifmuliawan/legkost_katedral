@@ -482,7 +482,6 @@ if(isset($_POST['draf_warta']))
 
 if(isset($_FILES['warta_doc']))
 {
-    $id_warta   = $_POST['id'];
     if($_FILES['warta_doc']['name'][0]!='')
     {
         $ekstensi_diperbolehkan = array('pdf');
@@ -490,7 +489,7 @@ if(isset($_FILES['warta_doc']))
         $x_image                = explode('.', $nama_image);
         $ekstensi_image         = strtolower(end($x_image));
         $ukuran_image           = $_FILES['warta_doc']['size'][0];
-        $file_tmp_image         = $_FILES['warta_docy']['tmp_name'][0];
+        $file_tmp_image         = $_FILES['warta_doc']['tmp_name'][0];
         $file_directory_image   = "assets/dist/img/warta/".$nama_image;
         $file_db_image          = "dist/img/warta/".$nama_image;
         $image_info             = getimagesize($file_tmp_image);

@@ -208,7 +208,7 @@
                 $("#wartaform #btnuploaddoc").show();
                 $("#wartaform #btncanceldoc").show();
                 $("#wartaform #btnreplacedoc").hide();
-                $("#wartaform #thumb_img").hide();
+                $("#wartaform #doc_data").hide();
             });
         </script>
         <!-- END REPLACE PDF WARTA -->
@@ -221,7 +221,7 @@
                 $("#wartaform #btnuploaddoc").hide();
                 $("#wartaform #btncanceldoc").hide();
                 $("#wartaform #btnreplacedoc").show();
-                $("#wartaform #thumb_img").show();
+                $("#wartaform #doc_data").show();
             });
         </script>
         <!-- END CANCEL REPLACE PDF WARTA -->

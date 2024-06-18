@@ -320,7 +320,7 @@
             $("#wartaform #btnsavepublish").click(function()
             {
                 var id_data         = $("#wartaform input[name=wartaid]").val();
-                var doc_data        = " ";
+                var doc_data        = document.getElementById("doc_data").src;
                 var publish_data    = $("#wartaform #dp1").val();
                 var title_data      = $("#wartaform input[name=title]").val();
                 if(doc_data=="" || doc_data==" " || publish_data=="" || title_data=="")

@@ -13,7 +13,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
     <div class="wrapper">
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#88A8D4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#88A8D4;position: fixed;">
             <!-- Brand Logo -->
             <a href="index.php" class="brand-link">
                 <center>

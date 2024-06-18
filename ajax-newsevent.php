@@ -574,7 +574,7 @@ if(isset($_POST['publish_warta']))
     }
     else
     {
-        $update_publish    = mysqli_query($con,"UPDATE `acara` SET `title`='$title',`publish_date`='$publish',`doc`='$doc_data',`visible`='P',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+        $update_publish    = mysqli_query($con,"UPDATE `warta` SET `title`='$title',`publish_date`='$publish',`doc`='$doc_data',`visible`='P',`update_by`='$user',`update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
         if($update_publish!=1)
         {
             http_response_code(410);

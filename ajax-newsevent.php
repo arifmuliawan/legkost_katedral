@@ -480,6 +480,12 @@ if(isset($_POST['draf_warta']))
     }
 }
 
+if(isset($_FILES['warta_doc']))
+{
+    print_r($_FILES);
+    exit();
+}    
+
 if(isset($_POST['publish_warta']))
 {
     $id             = $_POST['id'];

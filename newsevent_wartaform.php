@@ -231,9 +231,11 @@
             $("#wartaform #btnsavedraft").click(function()
             {
                 var id_data         = $("#wartaform input[name=wartaid]").val();
-                var doc_data        = " ";
+                var doc_data        = document.getElementById("doc_data").src;
                 var publish_data    = $("#wartaform #dp1").val();
                 var title_data      = $("#wartaform input[name=title]").val();
+                alert(doc_data);
+                /*
                 $.post('ajax-newsevent.php',
                 {
                     id:id_data,
@@ -256,6 +258,7 @@
                     console.log(data,status);
                 }
                 );
+                */
             });
         </script>
         <!-- END SAVE TO DRAFT FORM -->

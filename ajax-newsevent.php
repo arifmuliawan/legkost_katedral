@@ -127,7 +127,7 @@ if(isset($_POST['draf_acara']))
     $banner_img     = $_POST['banner_img'];
     if($_POST['publish']=="")
     {
-        $publish_data   = "00/00/0000";
+        $publish_data   = "01/01/2000";
     }
     else
     {
@@ -188,7 +188,7 @@ if(isset($_POST['publish_acara']))
     $banner_img     = $_POST['banner_img'];
     if($_POST['publish']=="")
     {
-        $publish_data   = "00/00/0000";
+        $publish_data   = "01/01/2000";
     }
     else
     {
@@ -428,7 +428,7 @@ if(isset($_POST['draf_warta']))
     $doc_data       = $_POST['doc_data'];
     if($_POST['publish']=="")
     {
-        $publish_data   = "00/00/0000";
+        $publish_data   = "01/01/2000";
     }
     else
     {
@@ -486,7 +486,7 @@ if(isset($_POST['publish_warta']))
     $doc_data       = $_POST['doc_data'];
     if($_POST['publish']=="")
     {
-        $publish_data   = "00/00/0000";
+        $publish_data   = "01/01/2000";
     }
     else
     {

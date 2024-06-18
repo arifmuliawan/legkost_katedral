@@ -125,7 +125,14 @@ if(isset($_POST['draf_acara']))
     $id             = $_POST['id'];
     $thumb_img      = $_POST['thumb_img'];
     $banner_img     = $_POST['banner_img'];
-    $publish_data   = $_POST['publish'];
+    if($_POST['publish']=="")
+    {
+        $publish_data   = "00/00/0000";
+    }
+    else
+    {
+        $publish_data   = $_POST['publish'];
+    }
     $exp_publish    = explode("/",$publish_data);
     $ds             = $exp_publish[0];
     $ms             = $exp_publish[1];
@@ -179,7 +186,14 @@ if(isset($_POST['publish_acara']))
     $id             = $_POST['id'];
     $thumb_img      = $_POST['thumb_img'];
     $banner_img     = $_POST['banner_img'];
-    $publish_data   = $_POST['publish'];
+    if($_POST['publish']=="")
+    {
+        $publish_data   = "00/00/0000";
+    }
+    else
+    {
+        $publish_data   = $_POST['publish'];
+    }
     $exp_publish    = explode("/",$publish_data);
     $ds             = $exp_publish[0];
     $ms             = $exp_publish[1];
@@ -412,7 +426,14 @@ if(isset($_POST['draf_warta']))
 {
     $id             = $_POST['id'];
     $doc_data       = $_POST['doc_data'];
-    $publish_data   = $_POST['publish'];
+    if($_POST['publish']=="")
+    {
+        $publish_data   = "00/00/0000";
+    }
+    else
+    {
+        $publish_data   = $_POST['publish'];
+    }
     $exp_publish    = explode("/",$publish_data);
     $ds             = $exp_publish[0];
     $ms             = $exp_publish[1];
@@ -463,7 +484,14 @@ if(isset($_POST['publish_warta']))
 {
     $id             = $_POST['id'];
     $doc_data       = $_POST['doc_data'];
-    $publish_data   = $_POST['publish'];
+    if($_POST['publish']=="")
+    {
+        $publish_data   = "00/00/0000";
+    }
+    else
+    {
+        $publish_data   = $_POST['publish'];
+    }
     $exp_publish    = explode("/",$publish_data);
     $ds             = $exp_publish[0];
     $ms             = $exp_publish[1];

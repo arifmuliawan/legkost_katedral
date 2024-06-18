@@ -5,7 +5,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-12">
-                            <h1 style="margin: 24px">ACARA & BERITA</h1>
+                            <h1 style="margin: 24px">WARTA GEREJA</h1>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->

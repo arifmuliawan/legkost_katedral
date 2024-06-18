@@ -103,7 +103,7 @@
                                                     var id          = document.getElementById("id<?php echo $id_warta ?>").value
                                                     var tbname      = document.getElementById("tbname<?php echo $id_warta ?>").value
                                                     var doc         = document.getElementById("doc<?php echo $id_warta ?>").value
-                                                    var title       = document.getElementById("title<?php echo $title_warta ?>").value
+                                                    var title       = document.getElementById("title<?php echo $id_warta ?>").value
                                                     var info        = {wegeb: wegeb,id: id,tbname: tbname};
                                                     //alert(wegeb);
                                                     if(wegeb=="P" && (title=="" || doc==""))

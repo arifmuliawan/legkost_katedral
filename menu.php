@@ -24,7 +24,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
             </a>
 
             <!-- Sidebar -->
-            <div class="sidebar" style="height: 550px;">
+            <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
@@ -144,10 +144,4 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
-            <!-- /.sidebar -->
-            <footer style="position:fixed">
-                <div class="float-right d-none d-sm-block">
-                </div>
-                <strong>Developed By Designata Studio
-            </footer>
         </aside>

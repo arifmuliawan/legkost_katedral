@@ -68,7 +68,7 @@
                                 );    
                         ?>
                                 <div class="col-md-12" style="flex: unset;margin-left: 50px;margin-bottom: 15px;<?php echo $clr_row ?>">
-                                    <table width="100%">
+                                    <table width="100%" style="margin: 20px auto;">
                                         <tr>
                                             <td width="85%">
                                                 <?php echo $publish_warta ?> <br>

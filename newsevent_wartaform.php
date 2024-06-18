@@ -355,4 +355,4 @@
                 }    
             });
         </script>
-        <!-- END SAVE TO DRAFT FORM -->
+        <!-- END SAVE TO PUBLISH FORM -->

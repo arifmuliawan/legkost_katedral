@@ -184,6 +184,7 @@
                     {
                         $("#wartaform #uploaddoc").hide();
                         $("#wartaform #btnuploaddoc").hide();
+                        $("#wartaform #btncanceldoc").hide();
                         $("#wartaform #doc_data").attr('src', response.doc_data).show();
                         $("#wartaform #btnreplacedoc").show();
                     }

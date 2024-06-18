@@ -139,7 +139,7 @@
                 thumbnailWidth:150,
                 thumbnailHeight:150,
                 acceptedFiles: "application/pdf",
-                url: 'ajax-newsevent.php',
+                url: 'ajax-newsevent.php?id=<?php echo $id ?>',
                 init: function () {
 
                     var myDropzone = this;

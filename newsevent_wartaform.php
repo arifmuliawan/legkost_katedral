@@ -87,7 +87,7 @@
                                 else
                                 {
                                 ?>    
-                                    <div id="doc_data"></div><br>
+                                    <iframe id="doc_data" src="" style="width:500px; height:500px;display:none" frameborder="0"></iframe><br>
                                     <button id="btnreplacedoc" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;display:none" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                     <div id="uploaddoc" class="dropzone">
                                         <div class="dz-message">
@@ -184,7 +184,7 @@
                     {
                         $("#wartaform #uploaddoc").hide();
                         $("#wartaform #btnuploaddoc").hide();
-                        $("#wartaform #doc_data").attr('src', response.thumb_img).show();
+                        $("#wartaform #doc_data").attr('src', response.doc_data).show();
                         $("#wartaform #btnreplacedoc").show();
                     }
                 },

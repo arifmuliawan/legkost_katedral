@@ -484,6 +484,74 @@ if(isset($_FILES['warta_doc']))
 {
     print_r($_FILES);
     exit();
+    $id_warta   = $_POST['id'];
+    if($_FILES['warta_doc']['name'][0]!='')
+    {
+        $ekstensi_diperbolehkan = array('pdf');
+        $nama_image             = $_FILES['warta_doc']['name'][0];
+        $x_image                = explode('.', $nama_image);
+        $ekstensi_image         = strtolower(end($x_image));
+        $ukuran_image           = $_FILES['warta_doc']['size'][0];
+        $file_tmp_image         = $_FILES['warta_docy']['tmp_name'][0];
+        $file_directory_image   = "assets/dist/img/warta/".$nama_image;
+        $file_db_image          = "dist/img/warta/".$nama_image;
+        $image_info             = getimagesize($file_tmp_image);
+        $image_width            = $image_info[0];
+        $image_height           = $image_info[1];
+        if(file_exists("assets/dist/img/warta/".$nama_image))
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Nama file sudah digunakan, silahkan upload kembali dengan nama file berbeda'
+            );
+        }
+        else
+        {
+            if($ukuran_image>='100000000')
+            {
+                $upload_file   = @move_uploaded_file($file_tmp_image, $file_directory_image);
+                if($upload_file===false)
+                {
+                    http_response_code(410);
+                        $response_json       = array(
+                        'error_status'   => 1,
+                        'error_message'  => 'Document gagal di upload ke server'
+                    );
+                    return;
+                }
+                else
+                {
+                    $update_warta     = mysqli_query($con,"UPDATE `warta` SET doc='$file_db_image',update_by='$user',update_date='$now'") or die (mysqli_error($con));
+                    if($pdate_warta!=1)
+                    {
+                        unlink($file_directory_image);
+                        http_response_code(410);
+                            $response_json   = array(
+                            'error_status'   => 1,
+                            'error_message'  => 'Document gagal di upload ke server'
+                        );
+                    }
+                    else
+                    {
+                        $response_json       = array(
+                            'error_status'   => 0,
+                            'error_message'  => 'Penambahan data telah berhasil disimpan',
+                            'doc_data'       => $base_assets.$file_db_image
+                        );
+                    }    
+                } 
+            }
+            else
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Size Document maksimal 100MB'
+                );   
+            } 
+        }
+    }        
 }    
 
 if(isset($_POST['publish_warta']))

@@ -70,7 +70,7 @@
                                 if($doc_data!="" && $doc_data!=" ")
                                 {
                                 ?>    
-                                    <iframe id="doc_data" src="<?php echo $doc_data ?>" style="width:500px; height:500px;display:none" frameborder="0"></iframe><br>
+                                    <iframe id="doc_data" src="<?php echo $doc_data ?>" style="width:500px; height:500px" frameborder="0"></iframe><br>
                                     <button id="btnreplacedoc" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" onclick="return confirm('Are you sure you want to replace this item ?')">REPLACE</button>
                                     <div id="uploaddoc" class="dropzone" style="display:none">
                                         <div class="dz-message">

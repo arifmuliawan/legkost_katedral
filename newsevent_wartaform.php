@@ -323,7 +323,7 @@
                 var doc_data        = " ";
                 var publish_data    = $("#wartaform #dp1").val();
                 var title_data      = $("#wartaform input[name=title]").val();
-                if((doc_data=="" && doc_data==" ") || publish_data=="" || title_data=="")
+                if(doc_data=="" || doc_data==" " || publish_data=="" || title_data=="")
                 {
                     $("#notifpublishmodal").modal("show");
                 }

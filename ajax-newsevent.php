@@ -408,6 +408,143 @@ if(isset($_POST['delete_gallery']))
     }
 }
 
+if(isset($_POST['draf_warta']))
+{
+    $id             = $_POST['id'];
+    $doc_data       = $_POST['doc_data'];
+    $publish_data   = $_POST['publish'];
+    $exp_publish    = explode("/",$publish_data);
+    $ds             = $exp_publish[0];
+    $ms             = $exp_publish[1];
+    $ys             = $exp_publish[2];
+    $publish        = $ys.'-'.$ms.'-'.$ds;
+    $title          = $_POST['title'];
+    if($id==0)
+    {
+        $insert_draf    = mysqli_query($con,"INSERT INTO `warta`(`title`, `publish_date`, `doc`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$publish','$doc_data','D','$user','$now','$user','$now')")or die (mysqli_error($con));
+        if($insert_draf!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Penambahan data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Penambahan data telah berhasil disimpan'
+            );
+        }
+    }
+    else
+    {
+        $update_draf    = mysqli_query($con,"UPDATE `warta` SET `title`='$title',`publish_date`='$publish',`doc`='$doc_data',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+        if($update_draf!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Perubahan data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Perubahan data telah berhasil disimpan'
+            );
+        }
+    }
+}
+
+if(isset($_POST['publish_warta']))
+{
+    $id             = $_POST['id'];
+    $doc_data       = $_POST['doc_data'];
+    $publish_data   = $_POST['publish'];
+    $exp_publish    = explode("/",$publish_data);
+    $ds             = $exp_publish[0];
+    $ms             = $exp_publish[1];
+    $ys             = $exp_publish[2];
+    $publish        = $ys.'-'.$ms.'-'.$ds;
+    $title          = $_POST['title'];
+    if($id==0)
+    {
+        $insert_publish    = mysqli_query($con,"INSERT INTO `warta`(`title`, `publish_date`, `doc`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$publish','$doc_data','P','$user','$now','$user','$now')")or die (mysqli_error($con));
+        if($insert_publish!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Penambahan data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Penambahan data telah berhasil disimpan'
+            );
+        }
+    }
+    else
+    {
+        $update_publish    = mysqli_query($con,"UPDATE `acara` SET `title`='$title',`publish_date`='$publish',`doc`='$doc_data',`visible`='P',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+        if($update_publish!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Perubahan data gagal disimpan'
+            );
+        }
+        else
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Perubahan data telah berhasil disimpan'
+            );
+        }
+    }
+}
+
+if(isset($_POST['delete_warta']))
+{
+    $id             = $_POST['id'];
+    $doc_data       = explode($base_url,$_POST['doc_data']);
+    $doc            = str_replace("%20"," ",$doc_data[1]);
+    if($id!=0)
+    {
+        $delete_warta    = mysqli_query($con,"DELETE FROM `warta` WHERE id='$id'")or die (mysqli_error($con));
+        if($delete_warta!=1)
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Data gagal dihapus'
+            );
+        }
+        else
+        {
+            unlink($doc);
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Data berhasil dihapus'
+            );
+        }
+    }
+    else
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Data tidak ditemukan'
+        );
+    }
+} 
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

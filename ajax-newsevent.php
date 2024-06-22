@@ -596,8 +596,16 @@ if(isset($_POST['publish_warta']))
 if(isset($_POST['delete_warta']))
 {
     $id             = $_POST['id'];
-    $doc_data       = explode($base_url,$_POST['doc_data']);
-    $doc            = str_replace("%20"," ",$doc_data[1]);
+    $doc_list       = $_POST['doc'];
+    if($doc_list!="")
+    {
+        $doc_data   = explode($base_url,$_POST['doc']);
+        $doc        = str_replace("%20"," ",$doc_data[1]);
+    }
+    else
+    {
+        $doc        = "";
+    }
     if($id!=0)
     {
         $delete_warta    = mysqli_query($con,"DELETE FROM `warta` WHERE id='$id'")or die (mysqli_error($con));
@@ -611,7 +619,10 @@ if(isset($_POST['delete_warta']))
         }
         else
         {
-            unlink($doc);
+            if($doc!="")
+            {
+                unlink($doc);
+            }    
             $response_json       = array(
                 'error_status'   => 0,
                 'error_message'  => 'Data berhasil dihapus'

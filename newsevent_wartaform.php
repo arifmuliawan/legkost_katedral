@@ -232,9 +232,17 @@
             $("#wartaform #btnsavedraft").click(function()
             {
                 var id_data         = $("#wartaform input[name=wartaid]").val();
-                var doc_data        = document.getElementById("doc_data").src;
+                var doc_list        = document.getElementById("doc_data").src;
                 var publish_data    = $("#wartaform #dp1").val();
                 var title_data      = $("#wartaform input[name=title]").val();
+                if (strpos(doc_list,'.php') !== false) 
+                {
+                    var doc_data    = doc_list;
+                }
+                else
+                {
+                    var doc_data    = "";
+                }
                 alert(doc_data);
                 /*
                 $.post('ajax-newsevent.php',

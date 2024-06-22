@@ -243,8 +243,6 @@
                 {
                     var doc_data    = "";
                 }
-                alert(doc_data);
-                /*
                 $.post('ajax-newsevent.php',
                 {
                     id:id_data,
@@ -267,7 +265,6 @@
                     console.log(data,status);
                 }
                 );
-                */
             });
         </script>
         <!-- END SAVE TO DRAFT FORM -->

@@ -142,3 +142,34 @@
                 </div> 
             </section>           
         </div>
+
+        <!-- START DELETE WARTA LIST -->
+        <script>
+            $(document).on("click", ".btndelete", function () {
+                var me      = $(this);
+                var data    = me.attr('data-warta');
+                var jdata   = JSON.parse(data);
+                var id_data = jdata.id_warta;
+                var doc_data= jdata.doc_warta;
+                $.post('ajax-misasakrame.php',
+                {
+                    id:id_data,
+                    doc:doc_data
+                    delete_warta:true
+                },
+                function(data,status)
+                {
+                    if(data.error_status==1)
+                    {
+                        notifmodal(data.error_message,'failed');
+                    }
+                    else
+                    {
+                        notifmodal(data.error_message,'success');
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan';},1000);
+                    }
+                    console.log(data,status);
+                });
+            });
+        </script>
+        <!-- END DELETE PERKAWINAN LIST -->

@@ -139,11 +139,13 @@ if(isset($_POST['draf_acara']))
     $ys             = $exp_publish[2];
     $publish        = $ys.'-'.$ms.'-'.$ds;
     $title          = $_POST['title'];
+    $slug_karakter  = preg_replace('/[^a-zA-Z0-9 ]/', '', $title);
+    $slug           = strtolower(str_replace(" ","-",$slug_karakter));
     $highlight      = $_POST['highlight'];
     $description    = $_POST['description'];
     if($id==0)
     {
-        $insert_draf    = mysqli_query($con,"INSERT INTO `acara`(`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$highlight','$description','$publish','$thumb_img','$banner_img','D','$user','$now','$user','$now')")or die (mysqli_error($con));
+        $insert_draf    = mysqli_query($con,"INSERT INTO `acara`(`slug`,`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$slug','$title','$highlight','$description','$publish','$thumb_img','$banner_img','D','$user','$now','$user','$now')")or die (mysqli_error($con));
         if($insert_draf!=1)
         {
             http_response_code(410);
@@ -162,7 +164,7 @@ if(isset($_POST['draf_acara']))
     }
     else
     {
-        $update_draf    = mysqli_query($con,"UPDATE `acara` SET `title`='$title',`highlight`='$highlight',`description`='$description',`publish_date`='$publish',`thumb_img`='$thumb_img', `banner_img`='$banner_img',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+        $update_draf    = mysqli_query($con,"UPDATE `acara` SET `slug`='$slug',`title`='$title',`highlight`='$highlight',`description`='$description',`publish_date`='$publish',`thumb_img`='$thumb_img', `banner_img`='$banner_img',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
         if($update_draf!=1)
         {
             http_response_code(410);
@@ -200,11 +202,13 @@ if(isset($_POST['publish_acara']))
     $ys             = $exp_publish[2];
     $publish        = $ys.'-'.$ms.'-'.$ds;
     $title          = $_POST['title'];
+    $slug_karakter  = preg_replace('/[^a-zA-Z0-9 ]/', '', $title);
+    $slug           = strtolower(str_replace(" ","-",$slug_karakter));
     $highlight      = $_POST['highlight'];
     $description    = $_POST['description'];
     if($id==0)
     {
-        $insert_publish    = mysqli_query($con,"INSERT INTO `acara`(`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$highlight','$description','$publish','$thumb_img','$banner_img','P','$user','$now','$user','$now')")or die (mysqli_error($con));
+        $insert_publish    = mysqli_query($con,"INSERT INTO `acara`(`slug`,`title`, `highlight`, `description`, `publish_date`, `thumb_img`, `banner_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$slug','$title','$highlight','$description','$publish','$thumb_img','$banner_img','P','$user','$now','$user','$now')")or die (mysqli_error($con));
         if($insert_publish!=1)
         {
             http_response_code(410);
@@ -223,7 +227,7 @@ if(isset($_POST['publish_acara']))
     }
     else
     {
-        $update_publish    = mysqli_query($con,"UPDATE `acara` SET `title`='$title',`highlight`='$highlight',`description`='$description',`publish_date`='$publish',`thumb_img`='$thumb_img', `banner_img`='$banner_img',`visible`='P',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+        $update_publish    = mysqli_query($con,"UPDATE `acara` SET `slug`='$slug',`title`='$title',`highlight`='$highlight',`description`='$description',`publish_date`='$publish',`thumb_img`='$thumb_img', `banner_img`='$banner_img',`visible`='P',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
         if($update_publish!=1)
         {
             http_response_code(410);
@@ -440,9 +444,11 @@ if(isset($_POST['draf_warta']))
     $ys             = $exp_publish[2];
     $publish        = $ys.'-'.$ms.'-'.$ds;
     $title          = $_POST['title'];
+    $slug_karakter  = preg_replace('/[^a-zA-Z0-9 ]/', '', $title);
+    $slug           = strtolower(str_replace(" ","-",$slug_karakter));
     if($id==0)
     {
-        $insert_draf    = mysqli_query($con,"INSERT INTO `warta`(`title`, `publish_date`, `doc`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$publish','$doc_data','D','$user','$now','$user','$now')")or die (mysqli_error($con));
+        $insert_draf    = mysqli_query($con,"INSERT INTO `warta`(`slug`,`title`, `publish_date`, `doc`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$slug','$title','$publish','$doc_data','D','$user','$now','$user','$now')")or die (mysqli_error($con));
         if($insert_draf!=1)
         {
             http_response_code(410);
@@ -461,7 +467,7 @@ if(isset($_POST['draf_warta']))
     }
     else
     {
-        $update_draf    = mysqli_query($con,"UPDATE `warta` SET `title`='$title',`publish_date`='$publish',`doc`='$doc_data',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+        $update_draf    = mysqli_query($con,"UPDATE `warta` SET `slug`='$slug',`title`='$title',`publish_date`='$publish',`doc`='$doc_data',`update_by`='$user', `update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
         if($update_draf!=1)
         {
             http_response_code(410);
@@ -553,9 +559,11 @@ if(isset($_POST['publish_warta']))
     $ys             = $exp_publish[2];
     $publish        = $ys.'-'.$ms.'-'.$ds;
     $title          = $_POST['title'];
+    $slug_karakter  = preg_replace('/[^a-zA-Z0-9 ]/', '', $title);
+    $slug           = strtolower(str_replace(" ","-",$slug_karakter));
     if($id==0)
     {
-        $insert_publish    = mysqli_query($con,"INSERT INTO `warta`(`title`, `publish_date`, `doc`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$title','$publish','$doc_data','P','$user','$now','$user','$now')")or die (mysqli_error($con));
+        $insert_publish    = mysqli_query($con,"INSERT INTO `warta`(`slug``,title`, `publish_date`, `doc`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$slug','$title','$publish','$doc_data','P','$user','$now','$user','$now')")or die (mysqli_error($con));
         if($insert_publish!=1)
         {
             http_response_code(410);
@@ -574,7 +582,7 @@ if(isset($_POST['publish_warta']))
     }
     else
     {
-        $update_publish    = mysqli_query($con,"UPDATE `warta` SET `title`='$title',`publish_date`='$publish',`doc`='$doc_data',`visible`='P',`update_by`='$user',`update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+        $update_publish    = mysqli_query($con,"UPDATE `warta` SET `slug`='$slug',`title`='$title',`publish_date`='$publish',`doc`='$doc_data',`visible`='P',`update_by`='$user',`update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
         if($update_publish!=1)
         {
             http_response_code(410);

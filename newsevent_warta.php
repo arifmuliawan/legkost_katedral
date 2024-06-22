@@ -154,7 +154,7 @@
                 $.post('ajax-newsevent.php',
                 {
                     id:id_data,
-                    doc:doc_data
+                    doc:doc_data,
                     delete_warta:true
                 },
                 function(data,status)

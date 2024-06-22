@@ -151,7 +151,7 @@
                 var jdata   = JSON.parse(data);
                 var id_data = jdata.id_warta;
                 var doc_data= jdata.doc_warta;
-                $.post('ajax-misasakrame.php',
+                $.post('ajax-newsevent.php',
                 {
                     id:id_data,
                     doc:doc_data
@@ -166,7 +166,7 @@
                     else
                     {
                         notifmodal(data.error_message,'success');
-                        setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan';},1000);
+                        setTimeout(function(){ window.location ='index.php?p=newsevent_warta';},1000);
                     }
                     console.log(data,status);
                 });

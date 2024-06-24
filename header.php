@@ -147,7 +147,7 @@
 
         #button-1 .checkbox:checked + .knobs:before {
         content: "OFF";
-        left: 42px;
+        /*left: 42px;*/
         background-color: #fff;
         }
 

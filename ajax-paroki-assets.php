@@ -421,7 +421,7 @@ if(isset($_POST['edit_paroki']))
 
 if(isset($_POST['delete_paroki']))
 {
-    $id_paroki           = $_POST['id_paroki'];
+    $id_paroki      = $_POST['id_paroki'];
     $select_paroki  = mysqli_query($con,"SELECT * FROM paroki_staff WHERE id='$id_paroki' AND visible='Y'") or die (mysqli_error($con));
     $sum_paroki     = mysqli_num_rows($select_paroki);
     if($sum_paroki<=0)

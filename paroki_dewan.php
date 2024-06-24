@@ -852,7 +852,7 @@
                 let inputs = document.querySelectorAll('.parokicheckbox');
 
                 for (let i = 0; i < inputs.length; i++) {
-                    inputs[i].checked = true;
+                    inputs[i].checked = false;
                 }
             }
 

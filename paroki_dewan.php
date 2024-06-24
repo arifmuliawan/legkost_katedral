@@ -333,6 +333,7 @@
 
             $("#notifwarning #btnmodalok").click(function()
             {
+                $("#notifwarning").modal("hide");
                 $.post('ajax-paroki-assets.php',
                 {
                     delete_banner:$("#formbanner input[name=deletebanner]").val()

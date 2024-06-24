@@ -46,10 +46,8 @@ if(isset($_FILES['bannerparoki']))
                 {
                     $exp_path   = explode("/",$img_banner);
                     $name_banner= end($exp_path);
-                    //unlink("assets/dist/img/paroki/".$name_banner);
+                    unlink("assets/dist/img/paroki/".$name_banner);
                 }
-                print_r($name_banner);
-                exit();
                 $upload_file    = @move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 if($upload_file===false)
                 {

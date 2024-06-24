@@ -146,7 +146,7 @@
                                             $photo_data         = $data_paroki['url_img'];
                                             if($photo_data!="")
                                             {
-                                                $photo_paroki   = $base_assets."".$photo_data;
+                                                $photo_paroki   = $base_assets."".str_replace(" ", "%20",$photo_data);
                                             }
                                             else
                                             {

@@ -147,7 +147,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
             </div>
 
             <!-- Sidebar -->
-            <div class="sidebar-footer">
-                <strong>Developed By Designata Studio</strong>
+            <div class="sidebar-footer" style="text-align: center;">
+                <strong style="color: #fff;">Developed By Designata Studio</strong>
             </div>
         </aside>

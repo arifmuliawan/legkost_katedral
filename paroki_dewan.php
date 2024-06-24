@@ -814,3 +814,9 @@
             }
         </script>
         <!-- START CHANGE SORT DEWAN PAROKI -->
+
+        <!-- START CLEAR CHECKBOX -->
+        <script type="text/javascript">
+            $(".parokicheckbox").attr("checked", false);
+        </script>
+        <!-- END CLEAR CHECKBOX -->

@@ -817,9 +817,9 @@
 
         <!-- START CLEAR CHECKBOX -->
         <script type="text/javascript">
-            $("#btnclearselected").click(function()
+            $("#list-paroki #btnclearselected").click(function()
             {
-                $(".parokicheckbox").attr("checked", false);
+                $("#list-paroki .parokicheckbox").attr("checked", false);
             });    
         </script>
         <!-- END CLEAR CHECKBOX -->

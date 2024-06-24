@@ -736,6 +736,7 @@
             });   
         </script> 
         <!-- END UPDATE DATA PAROKI LIST -->
+        
         <!-- START DELETE DATA PAROKI LIST -->
         <script>
             $("#list-paroki #btndeleteparoki").click(function()

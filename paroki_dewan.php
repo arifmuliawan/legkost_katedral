@@ -47,7 +47,7 @@
                                     <form id="formbanner">
                                         <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
                                         <input type="hidden" name="deletebanner" value="<?php echo 'assets/'.$banner_paroki_assets; ?>">
-                                        <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                        <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;">DELETE</button>
                                     </form>    
                                 <?php
                                 }
@@ -321,6 +321,16 @@
         <script>
             $("#btndeletebanner").click(function()
             {
+                notifmodal('Apakah anda yakin untuk menghapus data?','warning');
+            });
+            
+            $("#notifwarning #btnmodalcancel").click(function()
+            {
+                $("#notifwarning").modal("hide");
+            });
+
+            $("#notifinfo #btnmodalok").click(function()
+            {
                 $.post('ajax-paroki-assets.php',
                 {
                     delete_banner:$("#formbanner input[name=deletebanner]").val()
@@ -342,7 +352,7 @@
                     console.log(data,status);
                 }
                 );
-            });   
+            });    
         </script>  
         <!-- END DELETE BANNER PAROKI -->
         <!-- START DROPZONE UPLOAD BANNER PAROKI -->

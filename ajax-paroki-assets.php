@@ -39,7 +39,18 @@ if(isset($_FILES['bannerparoki']))
             }
             else
             {
-                $upload_file   = @move_uploaded_file($file_tmp_banner, $file_directory_banner);
+                $query_banner   = mysqli_query($con,"SELECT * FROM paroki_asset WHERE id='1' AND code='1'") or die (mysqli_error($con));
+                $data_banner    = mysqli_fetch_array($query_banner);
+                $img_banner     = $data_banner['url_img'];
+                print_r($img_banner);
+                exit();
+                if($img_banner!="") 
+                {
+                    $exp_path   = explode("/",$img_banner);
+                    $name_banner= end($exp_path);
+                    unlink("assets/dist/img/paroki/".$name_banner);
+                }
+                $upload_file    = @move_uploaded_file($file_tmp_banner, $file_directory_banner);
                 if($upload_file===false)
                 {
                     http_response_code(410);

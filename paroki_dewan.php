@@ -439,7 +439,7 @@
                     {
                         notifmodal(response.error_message,'success');
                         var delay = 2000;
-                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
                         /*$("#formuploadbanner #upload_banner").hide();
                         $("#formuploadbanner #btnsavebanner").hide();
                         $("#formbanner #imgbanner").attr('src', response.banner).show();

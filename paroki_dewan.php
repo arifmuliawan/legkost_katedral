@@ -336,6 +336,7 @@
                     <img src="assets/dist/img/icon_warning.png" style="width: 70px;">
                         <br><br>
                         <h5> Apakah anda yakin untuk menghapus data ?</h5>
+                        <input type="hidden" name="id_paroki">
                         <table width="100%">
                             <tr>
                                 <td width="25%"> 
@@ -741,6 +742,10 @@
         <script>
             $("#list-paroki #btndeleteparoki").click(function()
             {
+                var me2      = $(this);
+                var data2    = me2.attr('data-paroki-2');
+                var jdata2   = JSON.parse(data2);
+                $("#notifwarningdeleteparoki input[name=id_paroki]").val( jdata.id_paroki);
                 $("#notifwarningdeleteparoki").modal("show");
             });
             
@@ -751,12 +756,14 @@
 
             $("#notifwarningdeleteparoki #btnmodalok").click(function()
             {
+                /*
                 var me2      = $(this);
                 var data2    = me2.attr('data-paroki-2');
                 var jdata2   = JSON.parse(data2);
+                */
                 $.post('ajax-paroki-assets.php',
                 {
-                    id_paroki:jdata2.id_paroki,
+                    id_paroki:$("#notifwarningdeleteparoki input[name=id_paroki]").val(),
                     delete_paroki:true
                 },
                 function(data,status)

@@ -741,6 +741,9 @@
         <script>
             $("#list-paroki #btndeleteparoki").click(function()
             {
+                var me2      = $(this);
+                var data2    = me2.attr('data-paroki-2');
+                var jdata2   = JSON.parse(data2);
                 $("#notifwarningdeleteparoki").modal("show");
             });
             

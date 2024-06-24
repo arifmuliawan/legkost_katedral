@@ -105,10 +105,6 @@
                     icon = 'assets/dist/img/icon_failed.png';
                     break;
 
-                case 'warning':
-                    icon = 'assets/dist/img/icon_warning.png';
-                    break;    
-            
                 default:
                     icon = 'assets/dist/img/icon_success.png';
                     break;

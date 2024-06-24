@@ -144,4 +144,9 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar-footer">
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
         </aside>

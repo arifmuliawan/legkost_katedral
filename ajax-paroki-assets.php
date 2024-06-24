@@ -9,7 +9,7 @@ if(isset($_FILES['bannerparoki']))
     if($_FILES['bannerparoki']['name']!='')
     {
         $ekstensi_diperbolehkan  = array('png','jpg','jpeg');
-        $nama_banner             = $_FILES['bannerparoki']['name'][0];
+        $nama_banner             = str_replace(" ", "-",$_FILES['bannerparoki']['name'][0]);
         $x_banner                = explode('.', $nama_banner);
         $ekstensi_banner         = strtolower(end($x_banner));
         $ukuran_banner           = $_FILES['bannerparoki']['size'][0];
@@ -45,8 +45,7 @@ if(isset($_FILES['bannerparoki']))
                 if($img_banner!="") 
                 {
                     $exp_path   = explode("/",$img_banner);
-                    $end_path   = end($exp_path);
-                    $name_banner= str_replace(" ","\\",$end_path);
+                    $name_banner= end($exp_path);
                     unlink("assets/dist/img/paroki/".$name_banner);
                 }
                 $upload_file    = @move_uploaded_file($file_tmp_banner, $file_directory_banner);

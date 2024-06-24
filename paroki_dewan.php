@@ -821,7 +821,7 @@
             $("#modaldetailparoki #btnreplacephotoparoki").click(function()
             {
                 alert("replace photo");
-            }
+            });
         </script>
         <!-- END REPLACE PHOTO PAROKI -->
 

@@ -47,6 +47,18 @@
                                     <form id="formbanner">
                                         <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
                                         <button id="btnreplacebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">REPLACE</button>
+                                        <div id="uploadbanner" class="dropzone" style="display:none">
+                                            <div class="dz-message">
+                                                <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
+                                                <b>.JPG  .JPEG  .PNG</b><br>
+                                                Drop files to upload <br>
+                                                or <font color='#88A8D4'><b>Browse Files...</b></font>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <button id="btnsavebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display:none">SAVE</button>
+                                        &nbsp&nbsp&nbsp&nbsp&nbsp
+                                        <button id="btncancelbanner" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;display:none">CANCEL</button>
                                     </form>    
                                 <?php
                                 }
@@ -64,8 +76,6 @@
                                         </div>
                                         <br>
                                         <button id="btnsavebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
-                                        &nbsp&nbsp&nbsp&nbsp&nbsp
-                                        <button id="btncancelbanner" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;display:none">CANCEL</button>
                                     </form>
                                 <?php
                                 }
@@ -347,9 +357,9 @@
         <script>
             $("#formbanner #btnreplacebanner").click(function()
             {
-                $("#formuploadbanner #uploadbanner").show();
-                $("#formuploadbanner #btncancelbanner").show();
-                $("#formuploadbanner #btnsavebanner").show();
+                $("#formbanner #uploadbanner").show();
+                $("#formbanner #btncancelbanner").show();
+                $("#formbanner #btnsavebanner").show();
                 $("#formbanner #imgbanner").hide();
                 $("#formbanner #btnreplacebanner").hide();
             });
@@ -358,11 +368,11 @@
         
         <!-- START CANCEL REPLACE BANNER -->
         <script>
-            $("#formuploadbanner #btncancelbanner").click(function()
+            $("#formbanner #btncancelbanner").click(function()
             {
-                $("#formuploadbanner #uploadbanner").hide();
-                $("#formuploadbanner #btncancelbanner").hide();
-                $("#formuploadbanner #btnsavebanner").hide();
+                $("#formbanner #uploadbanner").hide();
+                $("#formbanner #btncancelbanner").hide();
+                $("#formbanner #btnsavebanner").hide();
                 $("#formbanner #imgbanner").show();
                 $("#formbanner #btnreplacebanner").show();
             });

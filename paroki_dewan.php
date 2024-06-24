@@ -583,6 +583,7 @@
                 {
                     $("#modaldetailparoki #detail_photo_paroki").hide();
                     $("#modaldetailparoki #btndeletephotoparoki").hide();
+                    $("#modaldetailparoki #btncancelphotoparoki").hide();
                     $("#modaldetailparoki #photo_paroki").show();
                     $("#modaldetailparoki #btnupdatephotoparoki").show();
                 }    

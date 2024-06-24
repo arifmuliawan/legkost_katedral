@@ -81,6 +81,8 @@ if(isset($_FILES['bannerparoki']))
 if(isset($_POST['delete_banner']))
 {
     $file_directory_banner = $_POST['delete_banner'];
+    print_r($file_directory_banner);
+    exit();
     $delete_banner       = mysqli_query($con,"UPDATE paroki_asset SET url_img='',update_by='$user',update_date='$now' WHERE id='1' AND code='1'") or die (mysqli_error($con));
     if($delete_banner!=1)
     {

@@ -575,18 +575,6 @@
         <script>
             $("#btndeletephotoparoki").click(function()
             {
-                $("#notifwarning").find(".modal-content h5").html('Apakah anda yakin untuk hapus data?');
-                $("#notifwarning").find(".modal-content img").attr('src','assets/dist/img/icon_warning.png');
-                $("#notifwarning").modal("show");
-            });
-            
-            $("#notifwarning #btnmodalcancel").click(function()
-            {
-                $("#notifwarning").modal("hide");
-            });
-
-            $("#notifwarning #btnmodalok").click(function()
-            {
                 $.post('ajax-paroki-assets.php',
                 {
                     id_paroki:$("#modaldetailparoki input[name=id_paroki]").val(),
@@ -730,6 +718,18 @@
         <!-- START DELETE DATA PAROKI LIST -->
         <script>
             $("#list-paroki #btndeleteparoki").click(function()
+            {
+                $("#notifwarning").find(".modal-content h5").html('Apakah anda yakin untuk hapus data?');
+                $("#notifwarning").find(".modal-content img").attr('src','assets/dist/img/icon_warning.png');
+                $("#notifwarning").modal("show");
+            });
+            
+            $("#notifwarning #btnmodalcancel").click(function()
+            {
+                $("#notifwarning").modal("hide");
+            });
+
+            $("#notifwarning #btnmodalok").click(function()
             {
                 var me2      = $(this);
                 var data2    = me2.attr('data-paroki-2');

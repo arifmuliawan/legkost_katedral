@@ -272,7 +272,8 @@
                                                 <img src="" id="detail_photo_paroki" width="300px">
                                                 <input type="hidden" name="id_paroki">
                                                 <input type="hidden" name="delete_photo_paroki">
-                                                <button id="btndeletephotoparoki" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>
+                                                <!--<button id="btndeletephotoparoki" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;" onclick="return confirm('Are you sure you want to delete this item ?')">DELETE</button>-->
+                                                <button id="btnreplacephotoparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 15px;">REPLACE</button>
                                                 <form id="formdetailparoki">
                                                     <input type="hidden" name="id_paroki">
                                                     <div id="photo_paroki" class="dropzone">
@@ -814,6 +815,15 @@
             }
         </script>
         <!-- START CHANGE SORT DEWAN PAROKI -->
+
+        <!-- START REPLACE PHOTO PAROKI -->
+        <script>
+            $("#modaldetailparoki #btnreplacephotoparoki").click(function()
+            {
+                alert("replace photo");
+            }
+        </script>
+        <!-- END REPLACE PHOTO PAROKI -->
 
         <!-- START CLEAR CHECKBOX -->
         <script>

@@ -130,7 +130,7 @@
                                                     if(wegeb=="P" && (thumb=="" || banner=="" || title=="" || highlight=="" || description==""))
                                                     {
                                                         $("#notifpublishmodal").modal("show");
-                                                        setTimeout(function(){ window.location ='index.php?p=newsevent_acara';},3000);  
+                                                        //setTimeout(function(){ window.location ='index.php?p=newsevent_acara';},3000);  
                                                     }
                                                     else
                                                     {

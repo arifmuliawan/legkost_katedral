@@ -46,8 +46,7 @@
                                 ?>    
                                     <form id="formbanner">
                                         <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
-                                        <input type="hidden" name="deletebanner" value="<?php echo 'assets/'.$banner_paroki_assets; ?>">
-                                        <button id="btndeletebanner" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;">DELETE</button>
+                                        <button id="btnreplacebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">REPLACE</button>
                                     </form>    
                                 <?php
                                 }
@@ -64,6 +63,8 @@
                                             </div>
                                         </div>
                                         <br>
+                                        <button id="btncancelbanner" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;display:none">CANCEL</button>
+                                        &nbsp&nbsp&nbsp&nbsp&nbsp
                                         <button id="btnsavebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                     </form>
                                 <?php
@@ -317,47 +318,57 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- END MODAL FORM DETAIL PAROKI -->
-        <!-- START DELETE BANNER PAROKI -->
-        <script>
-            $("#btndeletebanner").click(function()
-            {
-                $("#notifwarning").find(".modal-content h5").html('Apakah anda yakin untuk hapus data?');
-                $("#notifwarning").find(".modal-content img").attr('src','assets/dist/img/icon_warning.png');
-                $("#notifwarning").modal("show");
-            });
-            
-            $("#notifwarning #btnmodalcancel").click(function()
-            {
-                $("#notifwarning").modal("hide");
-            });
+        <!-- START MODAL WARNING DELETE PAROKI -->
+        <div class="modal fade" id="notifwarningdeleteparoki">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                    <img src="assets/dist/img/icon_warning.png" style="width: 70px;">
+                        <br><br>
+                        <h5> Apakah anda yakin untuk menghapus data ?</h5>
+                        <table width="100%">
+                            <tr>
+                                <td width="25%"> 
+                                    <button id="btnmodalcancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
+                                </td>
+                                <td width="75%" style="text-align:right"> 
+                                    <button id="btnmodalok" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">OK</button>
+                                </td>
+                            </tr>
+                        </table>     
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
 
-            $("#notifwarning #btnmodalok").click(function()
+        <!-- START REPLACE BANNER -->
+        <script>
+            $("#formbanner #btnreplacebanner").click(function()
             {
-                $("#notifwarning").modal("hide");
-                $.post('ajax-paroki-assets.php',
-                {
-                    delete_banner:$("#formbanner input[name=deletebanner]").val()
-                },
-                function(data,status)
-                {
-                    if(data.error_status=='1')
-                    {
-                        notifmodal(data.error_message,'failed');
-                        var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);    
-                    }
-                    else
-                    {
-                        notifmodal(data.error_message,'success');
-                        var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
-                    }
-                    console.log(data,status);
-                }
-                );
-            });    
-        </script>  
-        <!-- END DELETE BANNER PAROKI -->
+                $("#formuploadbanner #uploadbanner").show();
+                $("#formuploadbanner #btncancelbanner").show();
+                $("#formuploadbanner #btnsavebanner").show();
+                $("#formbanner #imgbanner").hide();
+                $("#formbanner #btnreplacebanner").hide();
+            });
+        </script>
+        <!-- END REPLACE BANNER -->
+        
+        <!-- START CANCEL REPLACE BANNER -->
+        <script>
+            $("#formuploadbanner #btncancelbanner").click(function()
+            {
+                $("#formuploadbanner #uploadbanner").hide();
+                $("#formuploadbanner #btncancelbanner").hide();
+                $("#formuploadbanner #btnsavebanner").hide();
+                $("#formbanner #imgbanner").show();
+                $("#formbanner #btnreplacebanner").show();
+            });
+        </script>
+        <!-- END CANCEL REPLACE BANNER -->
+
         <!-- START DROPZONE UPLOAD BANNER PAROKI -->
         <script type="text/javascript">  
             Dropzone.autoDiscover = false;

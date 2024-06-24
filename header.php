@@ -162,6 +162,7 @@
 
         #button-1 .knobs:before
         {
+            transition: 0.3s ease all;
             left:40px;
         }
 

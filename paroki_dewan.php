@@ -63,9 +63,9 @@
                                             </div>
                                         </div>
                                         <br>
-                                        <button id="btncancelbanner" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;display:none">CANCEL</button>
-                                        &nbsp&nbsp&nbsp&nbsp&nbsp
                                         <button id="btnsavebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
+                                        &nbsp&nbsp&nbsp&nbsp&nbsp
+                                        <button id="btncancelbanner" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;display:none">CANCEL</button>
                                     </form>
                                 <?php
                                 }

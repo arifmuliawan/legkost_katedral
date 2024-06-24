@@ -847,7 +847,7 @@
         <script>
             $("#list-paroki #btnclearselected").click(function()
             {
-                $("#list-paroki .parokicheckbox").attr("checked", false);
+                alert("CLEAR SELECTED");
             });    
         </script>
         <!-- END CLEAR CHECKBOX -->

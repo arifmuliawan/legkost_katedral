@@ -58,7 +58,7 @@
                                         <br>
                                         <button id="btnsavebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display:none">SAVE</button>
                                         &nbsp&nbsp&nbsp&nbsp&nbsp
-                                        <button id="btncancelbanner" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;display:none">CANCEL</button>
+                                        <button id="btncancelbanner" type="button" class="btn" style="background-color: rgb(233, 0, 0); color: rgb(255, 255, 255); font-weight: bold; margin: 15px 0px;display:none">CANCEL</button>
                                     </form>    
                                 <?php
                                 }

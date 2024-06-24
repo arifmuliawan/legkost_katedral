@@ -820,7 +820,10 @@
         <script>
             $("#modaldetailparoki #btnreplacephotoparoki").click(function()
             {
-                alert("replace photo");
+                $("#modaldetailparoki #detail_photo_paroki").hide();
+                $("#modaldetailparoki #btndeletephotoparoki").hide();
+                $("#formdetailparoki #photo_paroki").show();
+                $("#modaldetailparoki #btnupdatephotoparoki").show();
             });
         </script>
         <!-- END REPLACE PHOTO PAROKI -->

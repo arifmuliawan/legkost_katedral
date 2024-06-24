@@ -331,7 +331,7 @@
                 $("#notifwarning").modal("hide");
             });
 
-            $("#notifinfo #btnmodalok").click(function()
+            $("#notifwarning #btnmodalok").click(function()
             {
                 $.post('ajax-paroki-assets.php',
                 {

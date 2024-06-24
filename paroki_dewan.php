@@ -123,7 +123,7 @@
                                             <tr>
                                                 <td width="50%" style="text-align: left;">
                                                     <button type="button" class="btn" style="background-color:#9C9C9C;color: #ffffff;font-weight: bold;">DELETE SELECTED</button>
-                                                    <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;">CLEAR SELECTION</button>
+                                                    <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;" id="btnclearselected">CLEAR SELECTION</button>
                                                 </td> 
                                                 <td width="50%" style="text-align: right;">
                                                     <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#modaladdparoki">ADD NEW</button>
@@ -817,6 +817,9 @@
 
         <!-- START CLEAR CHECKBOX -->
         <script type="text/javascript">
-            $(".parokicheckbox").attr("checked", false);
+            $("#btnclearselected").click(function()
+            {
+                $(".parokicheckbox").attr("checked", false);
+            });    
         </script>
         <!-- END CLEAR CHECKBOX -->

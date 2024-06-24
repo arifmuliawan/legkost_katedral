@@ -741,17 +741,15 @@
         <script>
             $("#list-paroki #btndeleteparoki").click(function()
             {
-                $("#notifwarning").find(".modal-content h5").html('Apakah anda yakin untuk hapus data?');
-                $("#notifwarning").find(".modal-content img").attr('src','assets/dist/img/icon_warning.png');
-                $("#notifwarning").modal("show");
+                $("#notifwarningdeleteparoki").modal("show");
             });
             
-            $("#notifwarning #btnmodalcancel").click(function()
+            $("#notifwarningdeleteparoki #btnmodalcancel").click(function()
             {
-                $("#notifwarning").modal("hide");
+                $("#notifwarningdeleteparoki").modal("hide");
             });
 
-            $("#notifwarning #btnmodalok").click(function()
+            $("#notifwarningdeleteparoki #btnmodalok").click(function()
             {
                 var me2      = $(this);
                 var data2    = me2.attr('data-paroki-2');

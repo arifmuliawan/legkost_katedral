@@ -343,13 +343,13 @@
                     {
                         notifmodal(data.error_message,'failed');
                         var delay = 2000;
-                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);    
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);    
                     }
                     else
                     {
                         notifmodal(data.error_message,'success');
                         var delay = 2000;
-                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
+                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, delay);
                     }
                     console.log(data,status);
                 }

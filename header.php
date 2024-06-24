@@ -242,29 +242,6 @@
     <!-- /.modal-dialog -->
 </div>
 
-<div class="modal fade" id="notifwarning">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
-            <img src="" style="width: 70px;">
-                <br><br>
-                <h5>  </h5>
-                <table width="100%">
-                    <tr>
-                        <td width="25%"> 
-                            <button id="btnmodalcancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
-                        </td>
-                        <td width="75%" style="text-align:right"> 
-                            <button id="btnmodalok" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">OK</button>
-                        </td>
-                    </tr>
-                </table>     
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
 <?php
     if(isset($form))
     {

@@ -147,7 +147,7 @@
 
         #button-1 .checkbox:checked + .knobs:before {
         content: "OFF";
-        /*left: 42px;*/
+        left: 42px;
         background-color: #fff;
         }
 
@@ -156,16 +156,10 @@
         }
 
         #button-1 .knobs,
+        #button-1 .knobs:before,
         #button-1 .layer {
         transition: 0.3s ease all;
         }
-
-        #button-1 .knobs:before
-        {
-            transition: 0.3s ease all;
-            left:40px;
-        }
-
         .switch label input[type="checkbox"]:checked + .lever {
             background-color: #DFDFDF;
         }

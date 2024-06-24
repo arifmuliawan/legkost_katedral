@@ -745,7 +745,7 @@
                 var me2      = $(this);
                 var data2    = me2.attr('data-paroki-2');
                 var jdata2   = JSON.parse(data2);
-                $("#notifwarningdeleteparoki input[name=id_paroki]").val( jdata.id_paroki);
+                $("#notifwarningdeleteparoki input[name=id_paroki]").val( jdata2.id_paroki);
                 $("#notifwarningdeleteparoki").modal("show");
             });
             

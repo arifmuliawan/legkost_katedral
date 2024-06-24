@@ -162,7 +162,7 @@
                                             <div class="col-md-3" id="<?php echo $sortid_paroki ?>" data-id="<?php echo $id_paroki ?>" data-sec="<?php echo $sortid_paroki ?>">
                                                 <div class="card bg-light d-flex flex-fill">
                                                     <div class="card-body pt-3">
-                                                        <input type="checkbox" class="parokicheckbox" name="parokicheckbox[]" value="<?php echo $id_paroki ?>">
+                                                        <input type="checkbox" class="parokicheckbox" name="parokicheckbox[]" value="<?php echo $id_paroki ?>" style="position: absolute;width: 30px;height: 30px;">
                                                         <img class="dataparoki" src=<?php echo $photo_paroki ?> width="100%" data-toggle="modal" data-target="#modaldetailparoki" data-paroki='<?php echo json_encode($paroki_json) ?>'>
                                                     </div>
                                                     <div class="card-footer" style="text-align:right">

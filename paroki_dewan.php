@@ -830,6 +830,19 @@
         </script>
         <!-- END REPLACE PHOTO PAROKI -->
 
+        <!-- START CANCEL REPLACE PHOTO PAROKI -->
+        <script>
+            $("#modaldetailparoki #btncancelphotoparoki").click(function()
+            {
+                $("#modaldetailparoki #detail_photo_paroki").show();
+                $("#modaldetailparoki #btnreplacephotoparoki").show();
+                $("#formdetailparoki #photo_paroki").hide();
+                $("#modaldetailparoki #btnupdatephotoparoki").hide();
+                $("#modaldetailparoki #btncancelphotoparoki").hide();
+            });
+        </script>
+        <!-- END CANCEL REPLACE PHOTO PAROKI -->
+
         <!-- START CLEAR CHECKBOX -->
         <script>
             $("#list-paroki #btnclearselected").click(function()

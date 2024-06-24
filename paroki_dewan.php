@@ -123,7 +123,7 @@
                                             <tr>
                                                 <td width="50%" style="text-align: left;">
                                                     <button type="button" class="btn" style="background-color:#9C9C9C;color: #ffffff;font-weight: bold;">DELETE SELECTED</button>
-                                                    <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;" id="btnclearselected">CLEAR SELECTION</button>
+                                                    <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;" onclick="checkAll()">CLEAR SELECTION</button>
                                                 </td> 
                                                 <td width="50%" style="text-align: right;">
                                                     <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#modaladdparoki">ADD NEW</button>
@@ -845,9 +845,16 @@
 
         <!-- START CLEAR CHECKBOX -->
         <script>
-            $("#list-paroki #btnclearselected").click(function()
-            {
-                alert("CLEAR SELECTED");
-            });    
+ 
+            // Create function of check/uncheck box
+            function checkAll() {
+
+                let inputs = document.querySelectorAll('.parokicheckbox');
+
+                for (let i = 0; i < inputs.length; i++) {
+                    inputs[i].checked = true;
+                }
+            }
+
         </script>
         <!-- END CLEAR CHECKBOX -->

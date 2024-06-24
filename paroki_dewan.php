@@ -778,7 +778,7 @@
                     {
                         notifmodal(data.error_message,'success');
                         //toastr['success'](data.error_message);
-                        setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, 3000);
+                        //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, 3000);
                     }
                     console.log(data,status);
                 }

@@ -172,7 +172,7 @@ if(isset($_FILES['add_paroki']))
         if($_FILES['add_paroki']['name'][0]!='')
         {
             $ekstensi_diperbolehkan = array('png','jpg','jpeg');
-            $nama_photo             = $_FILES['add_paroki']['name'][0];
+            $nama_photo             = str_replace(" ", "-",$_FILES['add_paroki']['name'][0]);
             $x_photo                = explode('.', $nama_photo);
             $ekstensi_photo         = strtolower(end($x_photo));
             $ukuran_photo           = $_FILES['add_paroki']['size'][0];
@@ -292,7 +292,7 @@ if(isset($_FILES['update_photo_paroki']))
     if($_FILES['update_photo_paroki']['name'][0]!='')
     {
         $ekstensi_diperbolehkan = array('png','jpg','jpeg');
-        $nama_photo             = $_FILES['update_photo_paroki']['name'][0];
+        $nama_photo             = str_replace(" ", "-",$_FILES['update_photo_paroki']['name'][0]);
         $x_photo                = explode('.', $nama_photo);
         $ekstensi_photo         = strtolower(end($x_photo));
         $ukuran_photo           = $_FILES['update_photo_paroki']['size'][0];

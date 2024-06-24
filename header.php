@@ -159,7 +159,6 @@
         #button-1 .knobs:before,
         #button-1 .layer {
         transition: 0.3s ease all;
-        left: 38px;
         }
         .switch label input[type="checkbox"]:checked + .lever {
             background-color: #DFDFDF;

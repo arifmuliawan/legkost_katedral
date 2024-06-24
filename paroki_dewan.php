@@ -321,7 +321,9 @@
         <script>
             $("#btndeletebanner").click(function()
             {
-                notifmodal('Apakah anda yakin untuk menghapus data?','warning');
+                $("#notifwarning").find(".modal-content h5").html(msg);
+                $("#notifwarning").find(".modal-content img").attr('src','assets/dist/img/icon_warning.png');
+                $("#notifwarning").modal("show");
             });
             
             $("#notifwarning #btnmodalcancel").click(function()

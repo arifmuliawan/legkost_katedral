@@ -285,6 +285,7 @@
                                                         </div>
                                                     </div>
                                                     <button id="btnupdatephotoparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin-top: 15px;">SAVE</button>
+                                                    <button id="btncancelphotoparoki" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin-top: 15px;margin-left:10px">CANCEL</button>
                                                 </form>  
                                             </div>
                                             <div class="col-md-6">
@@ -821,9 +822,10 @@
             $("#modaldetailparoki #btnreplacephotoparoki").click(function()
             {
                 $("#modaldetailparoki #detail_photo_paroki").hide();
-                $("#modaldetailparoki #btndeletephotoparoki").hide();
+                $("#modaldetailparoki #btnreplacephotoparoki").hide();
                 $("#formdetailparoki #photo_paroki").show();
                 $("#modaldetailparoki #btnupdatephotoparoki").show();
+                $("#modaldetailparoki #btncancelphotoparoki").show();
             });
         </script>
         <!-- END REPLACE PHOTO PAROKI -->

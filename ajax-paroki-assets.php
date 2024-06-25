@@ -461,7 +461,11 @@ if(isset($_GET['action']))
     {
         $paroki_arr = $_POST['paroki_id'];
         $paroki_exp = explode(',',$paroki_arr);
-        print_r($paroki_exp);
+        foreach($paroki_exp as $pid)
+        {
+            echo "$pid";
+            exit();
+        }
     }
 }    
 

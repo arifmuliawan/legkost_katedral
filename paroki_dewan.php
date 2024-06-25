@@ -871,8 +871,20 @@
                 }
                 else
                 {
-                    var selected_values = paroki.join(","); 
-                    alert(selected_values);
+                    WRN_PAROKI_DELETE = "Are you sure you want to delete "+(paroki.length>1?"these":"this")+" row?";  
+                    var checked = confirm(WRN_PAROKI_DELETE);  
+                    if(checked == true) {			
+                        var selected_values = paroki.join(","); 
+                        $.ajax({ 
+                            type: "POST",  
+                            url: "ajax-paroki-assets.php?action=delete_selected_paroki",  
+                            cache:false,  
+                            data: 'paroki_id='+selected_values,  
+                            success: function(response) {	
+                                alert(response);									
+                            }   
+                        });				
+                    }
                 }
             });    
         </script>

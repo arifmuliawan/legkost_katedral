@@ -871,7 +871,7 @@
                 }
                 else
                 {
-                    WRN_PAROKI_DELETE = "Are you sure you want to delete "+(paroki.length>1?"these":"this")+" row?";  
+                    WRN_PAROKI_DELETE = "Apakah anda ingin hapus data paroki ?";  
                     var checked = confirm(WRN_PAROKI_DELETE);  
                     if(checked == true) {			
                         var selected_values = paroki.join(","); 

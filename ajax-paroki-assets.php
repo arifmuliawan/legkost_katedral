@@ -459,7 +459,9 @@ if(isset($_GET['action']))
     $action = $_GET['action'];
     if($action=='delete_selected_paroki')
     {
-        print_r($_POST);
+        $paroki_arr = $_POST['paroki_id'];
+        $paroki_exp = explode(',',$paroki_arr);
+        print_r($paroki_exp);
     }
 }    
 

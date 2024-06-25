@@ -122,7 +122,7 @@
                                         <table border=0 width="100%">
                                             <tr>
                                                 <td width="50%" style="text-align: left;">
-                                                    <button type="button" class="btn" style="background-color:#9C9C9C;color: #ffffff;font-weight: bold;">DELETE SELECTED</button>
+                                                    <button type="button" class="btn" style="background-color:#9C9C9C;color: #ffffff;font-weight: bold;" id="delete_selected">DELETE SELECTED</button>
                                                     <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;border-color: #9C9C9C;margin-left: 20px;" onclick="clearAll()">CLEAR SELECTION</button>
                                                 </td> 
                                                 <td width="50%" style="text-align: right;">
@@ -162,7 +162,7 @@
                                             <div class="col-md-3" id="<?php echo $sortid_paroki ?>" data-id="<?php echo $id_paroki ?>" data-sec="<?php echo $sortid_paroki ?>">
                                                 <div class="card bg-light d-flex flex-fill">
                                                     <div class="card-body pt-3">
-                                                        <input type="checkbox" class="parokicheckbox" name="parokicheckbox[]" value="<?php echo $id_paroki ?>" style="position: absolute;width: 30px;height: 30px;">
+                                                        <input type="checkbox" class="parokicheckbox" name="parokicheckbox[]" data-paroki="<?php echo $id_paroki ?>" style="position: absolute;width: 30px;height: 30px;">
                                                         <img class="dataparoki" src=<?php echo $photo_paroki ?> width="100%" data-toggle="modal" data-target="#modaldetailparoki" data-paroki='<?php echo json_encode($paroki_json) ?>'>
                                                     </div>
                                                     <div class="card-footer" style="text-align:right">
@@ -856,5 +856,23 @@
                 }
             }
 
+        </script>
+        <!-- END CLEAR CHECKBOX -->
+
+        <!-- START DELETE CHECKBOX -->
+        <script>
+            $('#delete_selected').on('click', function(e) { 
+                var paroki = [];
+                $(".parokicheckbox:checked").each(function() {  
+                    paroki.push($(this).data('paroki'));
+                });	
+                if(paroki.length <=0)  {  
+                    alert("Please select records.");  
+                }
+                else
+                {
+                    alert("Selected");
+                }
+            });    
         </script>
         <!-- END CLEAR CHECKBOX -->

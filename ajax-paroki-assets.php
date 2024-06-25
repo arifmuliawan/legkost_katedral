@@ -463,9 +463,16 @@ if(isset($_GET['action']))
         $paroki_exp = explode(',',$paroki_arr);
         foreach($paroki_exp as $pid)
         {
-            echo "$pid";
-            exit();
+            $select_paroki  = mysqli_query($con,"SELECT * FROM paroki_staff WHERE id='$pid' AND visible='Y'") or die (mysqli_error($con));
+            $data_paroki    = mysqli_fetch_array($select_paroki);
+            $photo_paroki   = 'assets/'.$data_paroki['url_img'];
+            $delete_paroki  = mysqli_query($con,"DELETE FROM paroki_staff WHERE id='$id'") or die (mysqli_error($con));
+            unlink($photo_paroki);
         }
+        $response_json       = array(
+            'error_status'   => 0,
+            'error_message'  => 'Penghapusan data telah berhasil diproses'
+        );
     }
 }    
 

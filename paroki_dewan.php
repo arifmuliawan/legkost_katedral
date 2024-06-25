@@ -871,7 +871,8 @@
                 }
                 else
                 {
-                    alert("Selected");
+                    var selected_values = paroki.join(","); 
+                    alert(selected_values);
                 }
             });    
         </script>

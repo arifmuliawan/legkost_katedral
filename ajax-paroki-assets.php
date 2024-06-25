@@ -454,6 +454,15 @@ if(isset($_POST['delete_paroki']))
     }    
 }
 
+if(isset($_GET['action']))
+{
+    $action = $_GET['action'];
+    if($action=='delete_selected_paroki')
+    {
+        print_r($_POST);
+    }
+}    
+
 header("Content-type: application/json; charset=utf-8");
 echo json_encode($response_json);
 ?>

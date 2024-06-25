@@ -882,7 +882,7 @@
                             data: 'paroki_id='+selected_values,  
                             success: function(response) {	
                                 notifmodal(response.error_message,'success');
-                                setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, 3000);									
+                                //setTimeout(function(){ window.location ='index.php?p=paroki_dewan'; }, 3000);									
                             }   
                         });				
                     }

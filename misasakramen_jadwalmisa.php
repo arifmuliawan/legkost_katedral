@@ -139,7 +139,7 @@ if(isset($_POST['updateschedule']))
                                                                     ?>
                                                                         <tr style="<?php echo $clr_row ?>" class="tableid">
                                                                             <td style="border: unset;vertical-align: middle;">
-                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_hour[]">
+                                                                                <select class="form-control" style="width: 25%;display: unset;min-width: 60px" name="sch_hour[]">
                                                                                     <option <?php if($sch_hour=='00') { echo 'SELECTED';} ?> value="00">00</option>
                                                                                     <option <?php if($sch_hour=='01') { echo 'SELECTED';} ?> value="01">01</option>
                                                                                     <option <?php if($sch_hour=='02') { echo 'SELECTED';} ?> value="02">02</option>
@@ -166,7 +166,7 @@ if(isset($_POST['updateschedule']))
                                                                                     <option <?php if($sch_hour=='23') { echo 'SELECTED';} ?> value="23">23</option>
                                                                                 </select>
                                                                                 :
-                                                                                <select class="form-control" style="width: 25%;display: unset;" name="sch_min[]">
+                                                                                <select class="form-control" style="width: 25%;display: unset;min-width: 60px" name="sch_min[]">
                                                                                     <option <?php if($sch_min=='00') { echo 'SELECTED';} ?> value="00">00</option>
                                                                                     <option <?php if($sch_min=='15') { echo 'SELECTED';} ?> value="15">15</option>
                                                                                     <option <?php if($sch_min=='30') { echo 'SELECTED';} ?> value="30">30</option>

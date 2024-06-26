@@ -131,7 +131,7 @@
         content: "ON";
         position: absolute;
         top: 3px;
-        left: 4px;
+        left: 42px;
         width: 30px;
         height: 30px;
         color: #fff;
@@ -147,7 +147,7 @@
 
         #button-1 .checkbox:checked + .knobs:before {
         content: "OFF";
-        left: 42px;
+        left: 4px;
         background-color: #fff;
         }
 

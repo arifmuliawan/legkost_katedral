@@ -48,7 +48,7 @@
                                         <img src="<?php echo $banner_paroki ?>" id="imgbanner" style="width: 100%;">
                                         <button id="btnreplacebanner" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">REPLACE</button>
                                         <div id="uploadbanner" class="dropzone" style="display:none">
-                                            <div class="dz-message">
+                                            <div class="dz-message" style="display:block">
                                                 <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
                                                 <b>.JPG  .JPEG  .PNG</b><br>
                                                 Drop files to upload <br>
@@ -67,7 +67,7 @@
                                 ?>
                                     <form id="formuploadbanner">
                                         <div id="uploadbanner" class="dropzone">
-                                            <div class="dz-message">
+                                            <div class="dz-message" style="display:block">
                                                 <img src="<?php echo $base_assets ?>dist/img/icon_upload.png"><br><br>
                                                 <b>.JPG  .JPEG  .PNG</b><br>
                                                 Drop files to upload <br>

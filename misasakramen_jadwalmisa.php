@@ -294,13 +294,13 @@ if(isset($_POST['updateschedule']))
                 {
                     if(data.error_status==1)
                     {
-                        notifmodal(data.error_message,'failed');    
+                        toastr['error'](data.error_message);  
                         var delay = 2000;
                         setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
                     }
                     else
                     {
-                        notifmodal(data.error_message,'success');    
+                        toastr['success'](data.error_message);    
                         var delay = 2000;
                         setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
                     }

@@ -239,6 +239,34 @@ if(isset($_POST['updateschedule']))
                 </div>
             </section>  
         </div>   
+        <!-- START MODAL WARNING RESET SCHEDULE -->
+        <div class="modal fade" id="notifwarningresetschedule">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <input type='hidden' name='scheduleid'>
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                    <img src="assets/dist/img/icon_warning.png" style="width: 70px;">
+                        <br><br>
+                        <h5> Apakah anda yakin untuk reset data ?</h5>
+                        <input type="hidden" name="id_paroki">
+                        <table width="100%">
+                            <tr>
+                                <td width="25%"> 
+                                    <button id="btnmodalcancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
+                                </td>
+                                <td width="75%" style="text-align:right"> 
+                                    <button id="btnmodalok" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">OK</button>
+                                </td>
+                            </tr>
+                        </table>     
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- END MODAL WARNING RESET SCHEDULE -->
+
         <!-- START RESET SCHEDULE -->
         <script>
             $("#formschedule #btnresetschedule").click(function()
@@ -246,6 +274,8 @@ if(isset($_POST['updateschedule']))
                 var me      = $(this);
                 var data    = me.attr('data-schedule');
                 var jdata   = JSON.parse(data);
+                $("#notifwarningresetschedule input[name=scheduleid]").val(jdata2.scheduleid);
+                $("#notifwarningresetschedule").modal("show");
                 $.post('ajax-misasakrame.php',
                 {
                     scheduleid:jdata.scheduleid,
@@ -269,5 +299,36 @@ if(isset($_POST['updateschedule']))
                 }
                 );
             });   
+
+            $("#notifwarningresetschedule #btnmodalcancel").click(function()
+            {
+                $("#notifwarningresetschedule").modal("hide");
+            });
+
+            $("#notifwarningdeleteparoki #btnmodalok").click(function()
+            {
+                $.post('ajax-misasakrame.php',
+                {
+                    scheduleid:$("#notifwarningdeleteparoki input[name=scheduleid]").val(),
+                    reset_schedule_misa:true
+                },
+                function(data,status)
+                {
+                    if(data.error_status==1)
+                    {
+                        notifmodal(data.error_message,'failed');    
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
+                    }
+                    else
+                    {
+                        notifmodal(data.error_message,'success');    
+                        var delay = 2000;
+                        setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
+                    }
+                    console.log(data,status);
+                }
+                );
+            }); 
         </script>
         <!-- END RESET SCHEDULE -->

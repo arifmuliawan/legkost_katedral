@@ -276,28 +276,6 @@ if(isset($_POST['updateschedule']))
                 var jdata   = JSON.parse(data);
                 $("#notifwarningresetschedule input[name=scheduleid]").val(jdata.scheduleid);
                 $("#notifwarningresetschedule").modal("show");
-                $.post('ajax-misasakrame.php',
-                {
-                    scheduleid:jdata.scheduleid,
-                    reset_schedule_misa:true
-                },
-                function(data,status)
-                {
-                    if(data.error_status==1)
-                    {
-                        notifmodal(data.error_message,'failed');    
-                        var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
-                    }
-                    else
-                    {
-                        notifmodal(data.error_message,'success');    
-                        var delay = 2000;
-                        setTimeout(function(){ window.location ='index.php?p=misasakramen_jadwalmisa'; }, delay);
-                    }
-                    console.log(data,status);
-                }
-                );
             });   
 
             $("#notifwarningresetschedule #btnmodalcancel").click(function()

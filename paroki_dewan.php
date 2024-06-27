@@ -356,6 +356,7 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
+        <!-- END MODAL WARNING DELETE PAROKI -->
 
         <!-- START REPLACE BANNER -->
         <script>

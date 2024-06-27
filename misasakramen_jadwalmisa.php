@@ -274,7 +274,7 @@ if(isset($_POST['updateschedule']))
                 var me      = $(this);
                 var data    = me.attr('data-schedule');
                 var jdata   = JSON.parse(data);
-                $("#notifwarningresetschedule input[name=scheduleid]").val(jdata2.scheduleid);
+                $("#notifwarningresetschedule input[name=scheduleid]").val(jdata.scheduleid);
                 $("#notifwarningresetschedule").modal("show");
                 $.post('ajax-misasakrame.php',
                 {

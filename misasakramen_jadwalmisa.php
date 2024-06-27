@@ -194,9 +194,9 @@ if(isset($_POST['updateschedule']))
                                                             </tbody>
                                                         </table>  
                                                         <div style="margin:24px">
-                                                            <input type="submit" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" name="updateschedule" VALUE="SUBMIT">
+                                                            <input type="submit" class="btn-sm" style="margin: 24px;background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" name="updateschedule" VALUE="SUBMIT">
                                                             &nbsp&nbsp
-                                                            <button id="btnresetschedule" type="button" class="btn-sm" style="background-color:#E90000;color: #ffffff;font-weight: bold;" onclick="return confirm('Are you sure you want to reset schedule ?')" data-schedule='<?php echo json_encode($schedule_json) ?>'>RESET ALL</button></a>
+                                                            <button id="btnresetschedule" type="button" class="btn-sm" style="margin: 24px;background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" onclick="return confirm('Are you sure you want to reset schedule ?')" data-schedule='<?php echo json_encode($schedule_json) ?>'>RESET ALL</button></a>
                                                         </div> 
                                                         <!--
                                                         <script>

@@ -283,11 +283,11 @@ if(isset($_POST['updateschedule']))
                 $("#notifwarningresetschedule").modal("hide");
             });
 
-            $("#notifwarningdeleteparoki #btnmodalok").click(function()
+            $("#notifwarningresetschedule #btnmodalok").click(function()
             {
                 $.post('ajax-misasakrame.php',
                 {
-                    scheduleid:$("#notifwarningdeleteparoki input[name=scheduleid]").val(),
+                    scheduleid:$("#notifwarningresetschedule input[name=scheduleid]").val(),
                     reset_schedule_misa:true
                 },
                 function(data,status)

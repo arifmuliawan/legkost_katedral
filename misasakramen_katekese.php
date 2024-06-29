@@ -96,7 +96,7 @@
                                                 </button>
                                                 </a>
                                                 &nbsp&nbsp&nbsp
-                                                <button data-katekese='<?php echo json_encode($katekese_json) ?>' type="button" class="btndelete" title="Delete" onclick="return confirm('Are you sure you want to delete this item ?')" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;margin-top: 25px;">
+                                                <button data-katekese='<?php echo json_encode($katekese_json) ?>' type="button" class="btndelete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;margin-top: 25px;">
                                                     <i class="fa fa-trash" style="color: #fff;"></i>
                                                 </button>
                                                 <form id="checkgo" method="post" style="margin-left: 12px;">
@@ -163,6 +163,36 @@
                 </div> 
             </section>           
         </div>
+
+        <!-- START MODAL WARNING DELETE KATEKESE -->
+        <div class="modal fade" id="notifwarningdeletekatekese">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <input type='hidden' name='scheduleid'>
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                    <img src="assets/dist/img/icon_warning.png" style="width: 70px;">
+                        <br><br>
+                        <h5> Apakah anda yakin untuk hapus data ?</h5>
+                        <input type="hidden" name="id">
+                        <input type="hidden" name="thumb">
+                        <input type="hidden" name="banner">
+                        <table width="100%">
+                            <tr>
+                                <td width="25%"> 
+                                    <button id="btnmodalcancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
+                                </td>
+                                <td width="75%" style="text-align:right"> 
+                                    <button id="btnmodalok" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">OK</button>
+                                </td>
+                            </tr>
+                        </table>     
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- END MODAL WARNING DELETE KATEKESE -->
         
         <script>
         $("#notifpublishmodal #btnmodalclose").click(function()
@@ -177,26 +207,40 @@
             var id_data     = jdata.id_katekese;
             var thumb_data  = jdata.thumb_katekese;
             var banner_data = jdata.banner_katekese;
-            //alert(id_data);
+            $("#notifwarningdeletekatekese input[name=id]").val(id_data);
+            $("#notifwarningdeletekatekese input[name=thumb]").val(thumb_data);
+            $("#notifwarningdeletekatekese input[name=banner]").val(banner_data);
+            $("#notifwarningdeletekatekese").modal("show");
+        });    
+        
+        $("#notifwarningdeletekatekese #btnmodalcancel").click(function()
+        {
+            $("#notifwarningdeletekatekese").modal("hide");
+        });
+
+        $("#notifwarningdeletekatekese #btnmodalok").click(function()
+        {
             $.post('ajax-misasakrame.php',
             {
-                id:id_data,
-                thumb:thumb_data,
-                banner:banner_data,
+                id:$("#notifwarningdeletekatekese input[name=id]").val(),
+                thumb:$("#notifwarningdeletekatekese input[name=thumb]").val(),
+                banner:$("#notifwarningdeletekatekese input[name=banner]").val()
                 delete_katekese:true
             },
             function(data,status)
             {
-                if(data.error_status==1)
+                if(data.error_status=='1')
                 {
-                    notifmodal(data.error_message,'failed');
+                    toastr['error'](data.error_message);
+                    //notifmodal(data.error_message,'failed');
                 }
                 else
                 {
-                    notifmodal(data.error_message,'success');
-                    setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese';},3000);
+                    //notifmodal(data.error_message,'success');
+                    toastr['success'](data.error_message);
+                    setTimeout(function(){ window.location ='index.php?p=misasakramen_katekese'; }, 3000);
                 }
                 console.log(data,status);
             });
-        });        
+        });
         </script>

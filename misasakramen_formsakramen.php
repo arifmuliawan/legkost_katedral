@@ -160,7 +160,7 @@
                                     <div class="col-md-12">
                                         <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;" id="btnsavedetailsakramen">SAVE</button>
                                         &nbsp&nbsp&nbsp
-                                        <button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;" id="btncanceldetailsakramen" onclick="return confirm('Are you sure you want to cancel this process ?')">CANCEL</button>
+                                        <button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;margin: 15px 0px;" id="btncanceldetailsakramen">CANCEL</button>
                                     </div>
                                 </div>
                             </form>

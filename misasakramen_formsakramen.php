@@ -55,7 +55,7 @@
                                                             SAVE
                                                         </button>
                                                         &nbsp&nbsp&nbsp
-                                                        <button type="button" class="btn-cancel" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" onclick="return confirm('Are you sure you want to cancel this process ?')">
+                                                        <button type="button" class="btn-cancel" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">
                                                             CANCEL
                                                         </button>
                                                     </div>
@@ -173,8 +173,8 @@
         </div>
         <!-- END MODAL FORM DETAIL SAKRAMEN -->
 
-         <!-- START MODAL WARNING DELETE SAKRAMEN -->
-         <div class="modal fade" id="notifwarningdeletesakramen">
+        <!-- START MODAL WARNING DELETE SAKRAMEN -->
+        <div class="modal fade" id="notifwarningdeletesakramen">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <input type='hidden' name='scheduleid'>

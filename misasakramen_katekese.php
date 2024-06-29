@@ -224,7 +224,7 @@
             {
                 id:$("#notifwarningdeletekatekese input[name=id]").val(),
                 thumb:$("#notifwarningdeletekatekese input[name=thumb]").val(),
-                banner:$("#notifwarningdeletekatekese input[name=banner]").val()
+                banner:$("#notifwarningdeletekatekese input[name=banner]").val(),
                 delete_katekese:true
             },
             function(data,status)

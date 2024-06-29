@@ -94,7 +94,7 @@ else
                                         </div>
                                     </div>
                                     <div class="col-md-12" style="text-align:right">
-                                        <button id="btnsubmitpublish" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button>
+                                        <button id="btnsubmitpublish" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">SUBMIT</button>
                                     </div>
                                 </div>
                                 </form>
@@ -233,7 +233,7 @@ else
                                         
                                     </div>
                                     <div class="col-md-12" style="text-align:right">
-                                        <button id="btnsubmitdetail" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SUBMIT</button></a>
+                                        <button id="btnsubmitdetail" type="button" class="btn-sm" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;">SUBMIT</button></a>
                                     </div>
                                 </div>
                                 </form>

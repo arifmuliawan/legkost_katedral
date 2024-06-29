@@ -172,6 +172,36 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- END MODAL FORM DETAIL SAKRAMEN -->
+
+         <!-- START MODAL WARNING DELETE SAKRAMEN -->
+         <div class="modal fade" id="notifwarningdeletesakramen">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <input type='hidden' name='scheduleid'>
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                    <img src="assets/dist/img/icon_warning.png" style="width: 70px;">
+                        <br><br>
+                        <h5> Apakah anda yakin untuk hapus data ?</h5>
+                        <input type="hidden" name="categoryid">
+                        <input type="hidden" name="id">
+                        <input type="hidden" name="sortid">
+                        <table width="100%">
+                            <tr>
+                                <td width="25%"> 
+                                    <button id="btnmodalcancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
+                                </td>
+                                <td width="75%" style="text-align:right"> 
+                                    <button id="btnmodalok" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">OK</button>
+                                </td>
+                            </tr>
+                        </table>     
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- END MODAL WARNING DELETE SAKRAMEN -->
         <!-- START VIEW FORM SAKRAMEN -->
         <script>
             $(".btn-sm").click(function()
@@ -312,27 +342,42 @@
                 var catid_data  = row.find("input[name=categoryid]").val();
                 var id_data     = row.find("input[name=id]").val();
                 var sortid_data = row.find("input[name=sortid]").val();
+                $("#notifwarningdeletesakramen input[name=categoryid]").val(catid_data);
+                $("#notifwarningdeletesakramen input[name=id]").val(id_data);
+                $("#notifwarningdeletesakramen input[name=sortid]").val(sortid_data);
+                $("#notifwarningdeletesakramen").modal("show");    
+            }); 
+
+            $("#notifwarningdeletesakramen #btnmodalcancel").click(function()
+            {
+                $("#notifwarningdeletesakramen").modal("hide");
+            });
+
+            $("#notifwarningdeletesakramen #btnmodalok").click(function()
+            {
                 $.post('ajax-misasakrame.php',
                     {
-                        categoryid:catid_data,
-                        id:id_data,
-                        sortid:sortid_data,
+                        categoryid:$("#notifwarningdeletesakramen input[name=categoryid]").val(),
+                        id:$("#notifwarningdeletesakramen input[name=id]").val(),
+                        sortid:$("#notifwarningdeletesakramen input[name=sortid]").val(),
                         delete_sakramen:true
                     },
                     function(data,status)
                     {
                         if(data.error_status=='1')
                         {
-                            notifmodal(data.error_message,'failed');
+                            toastr['error'](data.error_message);
+                            //notifmodal(data.error_message,'failed');
                         }
                         else
                         {
-                            notifmodal(data.error_message,'success');
+                            //notifmodal(data.error_message,'success');
+                            toastr['success'](data.error_message);
                             setTimeout(function(){ window.location ='index.php?p=misasakramen_formsakramen'; }, 3000);
                         }
                         console.log(data,status);
                     }   
-                );    
+                );
             }); 
         </script>
         <!-- END DELETE LIST SAKRAMEN -->

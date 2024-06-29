@@ -214,7 +214,7 @@
                                             SAVE
                                         </button>
                                         &nbsp&nbsp&nbsp
-                                        <button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" id="btncanceldetailperkawinan" onclick="return confirm('Are you sure you want to cancel this process ?')">
+                                        <button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;" id="btncanceldetailperkawinan">
                                             CANCEL
                                         </button>
                                     </div>
@@ -228,6 +228,34 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- END MODAL FORM DETAIL PERKAWINAN -->
+
+        <!-- START MODAL WARNING DELETE PERKAWINAN -->
+        <div class="modal fade" id="notifwarningdeleteperkawinan">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <input type='hidden' name='scheduleid'>
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                    <img src="assets/dist/img/icon_warning.png" style="width: 70px;">
+                        <br><br>
+                        <h5> Apakah anda yakin untuk hapus data ?</h5>
+                        <input type="hidden" name="id">
+                        <table width="100%">
+                            <tr>
+                                <td width="25%"> 
+                                    <button id="btnmodalcancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
+                                </td>
+                                <td width="75%" style="text-align:right"> 
+                                    <button id="btnmodalok" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">OK</button>
+                                </td>
+                            </tr>
+                        </table>     
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- END MODAL WARNING DELETE PERKAWINAN -->
 
         <!-- START VIEW FORM PERKAWINAN -->
         <script>
@@ -354,7 +382,7 @@
                     );
                 }    
             });  
-            $("#btncanceldetailsakramen").click(function()
+            $("#btncanceldetailperkawinan").click(function()
             {  
                 setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan'; });
             });     
@@ -368,24 +396,38 @@
                 var data    = me.attr('data-perkawinan');
                 var jdata   = JSON.parse(data);
                 var id_data = jdata.id_perkawinan;
+                $("#notifwarningdeleteperkawinan input[name=id]").val(id_data);
+                $("#notifwarningdeleteperkawinan").modal("show");
+            });
+
+            $("#notifwarningdeleteperkawinan #btnmodalcancel").click(function()
+            {
+                $("#notifwarningdeleteperkawinan").modal("hide");
+            });
+
+            $("#notifwarningdeleteperkawinan #btnmodalok").click(function()
+            {
                 $.post('ajax-misasakrame.php',
                 {
-                    id:id_data,
-                    delete_perkawinan:true
-                },
-                function(data,status)
-                {
-                    if(data.error_status==1)
+                        id:$("#notifwarningdeleteperkawinan input[name=id]").val(),
+                        delete_perkawinan:true
+                    },
+                    function(data,status)
                     {
-                        notifmodal(data.error_message,'failed');
-                    }
-                    else
-                    {
-                        notifmodal(data.error_message,'success');
-                        setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan';},1000);
-                    }
-                    console.log(data,status);
-                });
+                        if(data.error_status=='1')
+                        {
+                            toastr['error'](data.error_message);
+                            //notifmodal(data.error_message,'failed');
+                        }
+                        else
+                        {
+                            //notifmodal(data.error_message,'success');
+                            toastr['success'](data.error_message);
+                            setTimeout(function(){ window.location ='index.php?p=misasakramen_perkawinan'; }, 3000);
+                        }
+                        console.log(data,status);
+                    }   
+                );
             });
         </script>
         <!-- END DELETE PERKAWINAN LIST -->

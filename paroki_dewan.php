@@ -907,11 +907,11 @@
             {
                 $("#list-paroki #delete_selected").css({
                 "background-color":"#E90000"
-                })
+                }).attr('disabled',false)
 
                 $("#list-paroki #clear_selected").css({
                 "background-color":"#88A8D4"
-                })
+                }).attr('disabled',false)
             }
         })
         </script>    

@@ -123,7 +123,7 @@
                                             <tr>
                                                 <td width="50%" style="text-align: left;">
                                                     <button type="button" class="btn" style="background-color:#9C9C9C;color: #ffffff;font-weight: bold;" id="delete_selected">DELETE SELECTED</button>
-                                                    <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;border-color: #9C9C9C;margin-left: 20px;" onclick="clearAll()">CLEAR SELECTION</button>
+                                                    <button type="button" class="btn" style="background-color:#ffffff;color: #9C9C9C;font-weight: bold;border-color: #9C9C9C;margin-left: 20px;" id="clear_selected" onclick="clearAll()">CLEAR SELECTION</button>
                                                 </td> 
                                                 <td width="50%" style="text-align: right;">
                                                     <button type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;" data-toggle="modal" data-target="#modaladdparoki">ADD NEW</button>
@@ -895,11 +895,19 @@
                 $("#list-paroki #delete_selected").css({
                     "background-color":"#9C9C9C"
                 }).attr('disabled',true)
+
+                $("#list-paroki #clear_selected").css({
+                    "background-color":"#ffffff"
+                }).attr('disabled',true)
             }
             else
             {
                 $("#list-paroki #delete_selected").css({
                 "background-color":"#E90000"
+                })
+
+                $("#list-paroki #clear_selected").css({
+                "background-color":"#88A8D4"
                 })
             }
         </script>

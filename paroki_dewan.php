@@ -889,7 +889,10 @@
                     }
                 }
             });    
-
+        </script>
+        <!-- END CLEAR CHECKBOX -->
+        <script>
+        $(".parokicheckbox").on('click', function(){
             if($(".parokicheckbox:checked").length==0)
             {
                 $("#list-paroki #delete_selected").css({
@@ -910,5 +913,5 @@
                 "background-color":"#88A8D4"
                 })
             }
-        </script>
-        <!-- END CLEAR CHECKBOX -->
+        })
+        </script>    

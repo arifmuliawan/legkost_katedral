@@ -890,7 +890,7 @@
                 }
             });    
 
-            if($(".parokicheckbox:checked").length<=0)
+            if($(".parokicheckbox:checked").length==0)
             {
                 $("#list-paroki #delete_selected").css({
                     "background-color":"#9C9C9C"

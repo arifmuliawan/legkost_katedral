@@ -900,18 +900,19 @@
                 }).attr('disabled',true)
 
                 $("#list-paroki #clear_selected").css({
-                    "background-color":"#ffffff"
+                    "background-color":"#ffffff",
+                    "color":"#9C9C9C"
                 }).attr('disabled',true)
             }
             else
             {
                 $("#list-paroki #delete_selected").css({
-                "background-color":"#E90000"
+                    "background-color":"#E90000"
                 }).attr('disabled',false)
 
                 $("#list-paroki #clear_selected").css({
-                "background-color":"#88A8D4",
-                "color":"#fff"
+                    "background-color":"#88A8D4",
+                    "color":"#fff"
                 }).attr('disabled',false)
             }
         })

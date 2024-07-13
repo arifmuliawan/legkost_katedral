@@ -911,8 +911,8 @@
                 }).attr('disabled',false)
 
                 $("#list-paroki #clear_selected").css({
-                    "background-color":"#88A8D4",
-                    "color":"#fff"
+                    "background-color":"#fff",
+                    "color":"#88A8D4"
                 }).attr('disabled',false)
             }
         })

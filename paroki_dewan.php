@@ -912,7 +912,8 @@
 
                 $("#list-paroki #clear_selected").css({
                     "background-color":"#fff",
-                    "color":"#88A8D4"
+                    "color":"#88A8D4",
+                    "border-color":"#88A8D4"
                 }).attr('disabled',false)
             }
         })

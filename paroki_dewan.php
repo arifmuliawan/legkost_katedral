@@ -855,6 +855,30 @@
                 for (let i = 0; i < inputs.length; i++) {
                     inputs[i].checked = false;
                 }
+
+                if($(".parokicheckbox:checked").length==0)
+                {
+                    $("#list-paroki #delete_selected").css({
+                        "background-color":"#9C9C9C"
+                    }).attr('disabled',true)
+
+                    $("#list-paroki #clear_selected").css({
+                        "background-color":"#ffffff",
+                        "color":"#9C9C9C"
+                    }).attr('disabled',true)
+                }
+                else
+                {
+                    $("#list-paroki #delete_selected").css({
+                        "background-color":"#E90000"
+                    }).attr('disabled',false)
+
+                    $("#list-paroki #clear_selected").css({
+                        "background-color":"#fff",
+                        "color":"#88A8D4",
+                        "border-color":"#88A8D4"
+                    }).attr('disabled',false)
+                }
             }
 
         </script>

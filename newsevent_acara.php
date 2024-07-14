@@ -15,10 +15,10 @@
             <section class="content" id="acaralist">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-12" style="text-align:right">
+                        <div class="col-sm-12" style="margin-left:24px">
                             <table width="100%">
                                 <tr>
-                                    <td>
+                                    <td align="left">
                                     = Berita Utama
                                     </td>
                                     <td align="right">

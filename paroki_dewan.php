@@ -309,7 +309,7 @@
                                                             <table border=0 width="100%">
                                                                 <tr>
                                                                     <td style="text-align: right;">
-                                                                        <button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button>
+                                                                        <button id="btncanceldetailparoki" type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button>
                                                                         &nbsp&nbsp
                                                                         <button id="btnupdatedetailparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                                                     </td> 
@@ -741,6 +741,15 @@
             });   
         </script> 
         <!-- END UPDATE DATA PAROKI LIST -->
+
+        <!-- START CANCEL DATA PAROKI LIST -->
+        <script>
+            $("#modaldetailparoki #btncanceldetailparoki").click(function()
+            {
+                $("#modaldetailparoki").hide();
+            });
+        </script>
+        <!-- END CANCEL DATA PAROKI LIST -->
         
         <!-- START DELETE DATA PAROKI LIST -->
         <script>

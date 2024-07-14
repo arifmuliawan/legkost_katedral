@@ -137,7 +137,19 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                         }    
                         ?>
                         <li class="nav-item" style="margin-top: 30px;">
-                            <a href="index.php?p=admin" class="nav-link" style="color:white">
+                            <?php
+                            if(preg_match("/admin/i", $page))
+                            {
+                                $act_menu    = "active";
+                                $act_bold    = "font-weight: bold;";
+                            }
+                            else
+                            {
+                                $act_menu    = "";
+                                $act_bold    = "";
+                            }
+                            ?>
+                            <a href="index.php?p=admin" class="nav-link <?php echo $act_menu ?>" style="background-color: unset;box-shadow: unset;color:#fff;<?php echo $act_bold ?>">
                                 <p> Admin Management </p>
                             </a>
                         </li>

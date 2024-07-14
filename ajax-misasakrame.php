@@ -168,15 +168,7 @@ if(isset($_FILES['upload_kregisimg']))
         }
         else
         {
-            if(($image_width<='190' && $image_width>='200') && ($image_height<='190' && $image_height>='200'))
-            {
-                http_response_code(410);
-                $response_json       = array(
-                    'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (195 X 195)'
-                );
-            }
-            else
+            if(($image_width>='190' && $image_width<='200') && ($image_height>='190' && $image_height<='200'))
             {
                 $upload_file   = @move_uploaded_file($file_tmp_image, $file_directory_image);
                 if($upload_file===false)
@@ -208,7 +200,15 @@ if(isset($_FILES['upload_kregisimg']))
                             'kregis_img'     => $base_assets.$file_db_image
                         );
                     }
-                }    
+                }
+            }
+            else
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (195 X 195)'
+                );   
             }    
         }    
     }
@@ -240,15 +240,7 @@ if(isset($_FILES['upload_kscheduleimg']))
         }
         else
         {
-            if(($image_width<='875' && $image_width>='885') && ($image_height<='1245' && $image_height>='1255'))
-            {
-                http_response_code(410);
-                $response_json       = array(
-                    'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (880 X 1250)'
-                );
-            }
-            else
+            if(($image_width>='875' && $image_width<='885') && ($image_height>='1245' && $image_height<='1255'))
             {
                 $upload_file   = @move_uploaded_file($file_tmp_image, $file_directory_image);
                 if($upload_file===false)
@@ -280,7 +272,15 @@ if(isset($_FILES['upload_kscheduleimg']))
                             'kregis_img'     => $base_assets.$file_db_image
                         );
                     }
-                }    
+                }
+            }
+            else
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (880 X 1250)'
+                );   
             }    
         }    
     }

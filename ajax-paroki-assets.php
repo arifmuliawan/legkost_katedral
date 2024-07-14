@@ -29,15 +29,7 @@ if(isset($_FILES['bannerparoki']))
         }
         else
         {
-            if(($banner_width<='1815' && $banner_width>='1825') && ($banner_height<='695' && $banner_height>='705'))
-            {
-                http_response_code(410);
-                $response_json       = array(
-                    'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (1820 X 600)'
-                );
-            }
-            else
+            if(($banner_width>='1815' && $banner_width<='1825') && ($banner_height>='695' && $banner_height<='705'))
             {
                 $query_banner   = mysqli_query($con,"SELECT * FROM paroki_asset WHERE id='1' AND code='1'") or die (mysqli_error($con));
                 $data_banner    = mysqli_fetch_array($query_banner);
@@ -81,7 +73,15 @@ if(isset($_FILES['bannerparoki']))
                             'banner'         => $new_banner   
                         );
                     }
-                }    
+                } 
+            }
+            else
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (1820 X 600)'
+                ); 
             }    
         }    
     }
@@ -192,15 +192,7 @@ if(isset($_FILES['add_paroki']))
             }
             else
             {
-                if(($photo_width<='495' && $photo_width>='505') && ($photo_height<='495' && $photo_height>='505'))
-                {
-                    http_response_code(410);
-                    $response_json       = array(
-                        'error_status'   => 1,
-                        'error_message'  => 'Resolusi Gambar Tidak Sesuai (500 X 500)'
-                    );
-                }
-                else
+                if(($photo_width>='495' && $photo_width<='505') && ($photo_height>='495' && $photo_height<='505'))
                 {
                     $upload_file   = @move_uploaded_file($file_tmp_photo, $file_directory_photo);
                     if($upload_file===false)
@@ -244,7 +236,15 @@ if(isset($_FILES['add_paroki']))
                                 'error_message'  => 'Penambahan data telah berhasil disimpan'
                             );
                         }
-                    }    
+                    } 
+                }
+                else
+                {
+                    http_response_code(410);
+                    $response_json       = array(
+                        'error_status'   => 1,
+                        'error_message'  => 'Resolusi Gambar Tidak Sesuai (500 X 500)'
+                    );
                 }    
             }    
         }
@@ -312,15 +312,7 @@ if(isset($_FILES['update_photo_paroki']))
         }
         else
         {
-            if(($photo_width<='495' && $photo_width>='505') && ($photo_height<='495' && $photo_height>='505'))
-            {
-                http_response_code(410);
-                $response_json       = array(
-                    'error_status'   => 1,
-                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (500 X 500)'
-                );
-            }
-            else
+            if(($photo_width>='495' && $photo_width<='505') && ($photo_height>='495' && $photo_height<='505'))
             {
                 $upload_file   = @move_uploaded_file($file_tmp_photo, $file_directory_photo);
                 if($upload_file===false)
@@ -352,7 +344,15 @@ if(isset($_FILES['update_photo_paroki']))
                             'new_photo'      => $base_assets.$file_db_photo
                         );
                     }
-                }    
+                }
+            }
+            else
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Resolusi Gambar Tidak Sesuai (500 X 500)'
+                );   
             }    
         }    
     }

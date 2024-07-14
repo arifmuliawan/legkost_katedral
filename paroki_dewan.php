@@ -115,7 +115,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-label">DAFTAR PENGURUS <font color='red'>*</font></label><br>
-                                                Pilih salah satu pengurus untuk mengubah detail.<br><br>     
+                                                Pilih salah satu pengurus untuk mengubah detail atau Drag and drop untuk mengubah urutan<br><br>     
                                             </div>
                                     </div>
                                     <div class="col-md-12">

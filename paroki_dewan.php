@@ -746,7 +746,7 @@
         <script>
             $("#modaldetailparoki #btncanceldetailparoki").click(function()
             {
-                $("#modaldetailparoki").hide();
+                $("#modaldetailparoki").modal('hide');
             });
         </script>
         <!-- END CANCEL DATA PAROKI LIST -->

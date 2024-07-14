@@ -136,8 +136,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                             }   
                         }    
                         ?>
-                        <br><br><br><br>
-                        <li class="nav-item">
+                        <li class="nav-item" style="margin-top: 40px;">
                             <a href="index.php?p=logout" class="nav-link" style="color:white">
                                 <p> Logout </p>
                             </a>

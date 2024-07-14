@@ -324,15 +324,12 @@
                 var me      = $(this);
                 var data    = me.attr('data-perkawinan');
                 var jdata   = JSON.parse(data);
-                alert(jdata.publish_perkawinan);
-                /*
                 $("#modaldetailperkawinan input[name=id]").val( jdata.id_perkawinan);
                 $("#modaldetailperkawinan input[name=nama_pria]").val( jdata.pria_perkawinan);
                 $("#modaldetailperkawinan input[name=paroki_pria]").val( jdata.ppria_perkawinan);
                 $("#modaldetailperkawinan input[name=nama_wanita]").val( jdata.wanita_perkawinan);
                 $("#modaldetailperkawinan input[name=paroki_wanita]").val( jdata.pwanita_perkawinan);
                 $("#modaldetailperkawinan #dp2").val( jdata.publish_perkawinan);
-                */
             });
 
             $("#btncanceldetailperkawinan").click(function()
@@ -352,8 +349,6 @@
                 var nama_wanita_data    = $("#modaldetailperkawinan input[name=nama_wanita]").val();
                 var paroki_wanita_data  = $("#modaldetailperkawinan input[name=paroki_wanita]").val();
                 var publish_start_data  = $("#modaldetailperkawinan #dp2").val();
-                alert(publish_start_data);
-                /*
                 if(nama_pria_data=="" || paroki_pria_data=="" || nama_wanita_data=="" || paroki_wanita_data=="" || publish_start_data=="")
                 {
                     toastr['error']("Mohon lengkapi data");
@@ -385,8 +380,7 @@
                         console.log(data,status);
                     }
                     );
-                }  
-                */      
+                }    
             });  
             $("#btncanceldetailperkawinan").click(function()
             {  

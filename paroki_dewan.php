@@ -309,7 +309,7 @@
                                                             <table border=0 width="100%">
                                                                 <tr>
                                                                     <td style="text-align: right;">
-                                                                        <a href="" onclick="return confirm('Are you sure you want to cancel ?')"><button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button></a>
+                                                                        <button type="button" class="btn" style="background-color:#E90000;color: #ffffff;font-weight: bold;">CANCEL</button>
                                                                         &nbsp&nbsp
                                                                         <button id="btnupdatedetailparoki" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;">SAVE</button>
                                                                     </td> 

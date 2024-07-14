@@ -266,8 +266,14 @@ if(isset($_POST['delete_acara']))
         }
         else
         {
-            unlink($thumb_img);
-            unlink($banner_img);
+            if($thumb_img!="")
+            {
+                unlink($thumb_img);
+            }
+            if($banner_img!="")
+            {
+                unlink($banner_img);
+            }    
             $response_json       = array(
                 'error_status'   => 0,
                 'error_message'  => 'Data berhasil dihapus'
@@ -340,7 +346,10 @@ if(isset($_FILES['acara_gallery']))
                     $insert_gallery     = mysqli_query($con,"INSERT INTO `acara_galeri`(`sortid`, `acaraid`, `img`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$new_sort','$aid','$file_db_image','$user','$now','$user','$now')") or die (mysqli_error($con));
                     if($insert_gallery!=1)
                     {
-                        unlink($file_directory_image);
+                        if($file_directory_image!="")
+                        {
+                            unlink($file_directory_image);
+                        }    
                         http_response_code(410);
                             $response_json   = array(
                             'error_status'   => 1,
@@ -400,7 +409,10 @@ if(isset($_POST['delete_gallery']))
                     $new_sort           = $sortid_gallery_oth-1;
                     $update_gallery_oth = mysqli_query($con,"UPDATE `acara_galeri` SET sortid='$new_sort' WHERE id='$id_gallery_oth' AND acaraid='$acaraid_gallery_oth'")or die (mysqli_error($con));
                 }
-                unlink($gallery_img);
+                if($gallery_img!="")
+                {
+                    unlink($gallery_img);
+                }
                 $response_json       = array(
                     'error_status'   => 0,
                     'error_message'  => 'Data berhasil dihapus'
@@ -408,7 +420,10 @@ if(isset($_POST['delete_gallery']))
             }
             else
             {
-                unlink($gallery_img);
+                if($gallery_img!="")
+                {
+                    unlink($gallery_img);
+                }
                 $response_json       = array(
                     'error_status'   => 0,
                     'error_message'  => 'Data berhasil dihapus'

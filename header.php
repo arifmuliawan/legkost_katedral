@@ -226,7 +226,7 @@
     <!-- /.modal-dialog -->
 </div>
 
-<div class="modal fade" id="notifpublishmodal">
+<div class="modal fade" id="notifpublishmodal" style="pointer-events: none;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">

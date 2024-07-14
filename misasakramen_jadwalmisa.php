@@ -92,6 +92,8 @@ if(isset($_POST['updateschedule']))
                                             $misa_category_name = $data_misa_category['name']; 
                                 ?>
                                             <div class="col-sm-12">
+                                            <div class="card">
+                                            <div class="card-body">
                                                 <h5 style="margin: 24px;color: #88A8D4;"><?php echo $misa_category_name ?></h5>
                                                 <?php
                                                 $query_misa_day = mysqli_query($con,"SELECT * FROM misa_schedule WHERE parentid='$misa_category_id' AND visible='Y'")or die (mysqli_error($con));
@@ -226,6 +228,8 @@ if(isset($_POST['updateschedule']))
                                                     }
                                                 }
                                                 ?>
+                                            </div>
+                                            </div>
                                             </div>
                                 <?php
                                         }

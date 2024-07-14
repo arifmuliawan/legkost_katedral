@@ -19,7 +19,7 @@
                             <table width="100%">
                                 <tr>
                                     <td align="left">
-                                    = Berita Utama
+                                        <img src="assets/dist/img/news_highlight_icon.png"> = Berita Utama
                                     </td>
                                     <td align="right">
                                         <a href="index.php?p=newsevent_acaraform&id=0">

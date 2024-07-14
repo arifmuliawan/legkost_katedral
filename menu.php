@@ -150,7 +150,7 @@ $query_menu = mysqli_query($con,"SELECT * from menu WHERE parentid='0' AND visib
                             }
                             ?>
                             <a href="index.php?p=admin" class="nav-link <?php echo $act_menu ?>" style="background-color: unset;box-shadow: unset;color:#fff;<?php echo $act_bold ?>">
-                                <p> Admin Management </p>
+                                <p> User Management </p>
                             </a>
                         </li>
                         <li class="nav-item">

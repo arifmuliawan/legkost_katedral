@@ -57,7 +57,10 @@ if(isset($_FILES['bannerparoki']))
                     //exit();
                     if($update_banner!=1)
                     {
-                        unlink($file_directory_banner);
+                        if($file_directory_banner!="")
+                        {
+                            unlink($file_directory_banner);
+                        }
                         http_response_code(410);
                             $response_json       = array(
                             'error_status'   => 1,
@@ -100,7 +103,10 @@ if(isset($_POST['delete_banner']))
     }
     else
     {
-        unlink($file_directory_banner);
+        if($file_directory_banner)
+        {
+            unlink($file_directory_banner);
+        }
         $response_json       = array(
             'error_status'   => 0,
             'error_message'  => 'Penghapusan data telah berhasil diproses'
@@ -222,7 +228,10 @@ if(isset($_FILES['add_paroki']))
                         $insert_paroki      = mysqli_query($con,"INSERT INTO `paroki_staff`(`sortid`, `name`, `position`, `url_img`, `visible`, `create_by`, `create_date`, `update_by`, `update_date`) VALUES ('$new_sort','$name_paroki','$position_paroki','$file_db_photo','Y','$user','$now','$user','$now')")or die (mysqli_error($con));
                         if($insert_paroki!=1)
                         {
-                            unlink($file_directory_photo);
+                            if($file_directory_photo!="")
+                            {
+                                unlink($file_directory_photo);
+                            }
                             http_response_code(410);
                                 $response_json   = array(
                                 'error_status'   => 1,
@@ -277,7 +286,10 @@ if(isset($_POST['delete_photo_paroki']))
         }
         else
         {
-            unlink($photo_paroki);
+            if($photo_paroki!="")
+            {
+                unlink($photo_paroki);
+            }
             $response_json       = array(
                 'error_status'   => 0,
                 'error_message'  => 'Photo berhasil dihapus'
@@ -329,7 +341,10 @@ if(isset($_FILES['update_photo_paroki']))
                     $update_photo_paroki     = mysqli_query($con,"UPDATE paroki_staff SET url_img='$file_db_photo' WHERE id='$id_paroki'")or die (mysqli_error($con));
                     if($update_photo_paroki!=1)
                     {
-                        unlink($file_directory_photo);
+                        if($file_directory_photo!="")
+                        {
+                            unlink($file_directory_photo);
+                        }
                         http_response_code(410);
                             $response_json   = array(
                             'error_status'   => 1,
@@ -445,7 +460,10 @@ if(isset($_POST['delete_paroki']))
         }
         else
         {
-            unlink($photo_paroki);
+            if($photo_paroki!="")
+            {
+                unlink($photo_paroki);
+            }
             $response_json       = array(
                 'error_status'   => 0,
                 'error_message'  => 'Penghapusan data telah berhasil diproses'
@@ -467,7 +485,10 @@ if(isset($_GET['action']))
             $data_paroki    = mysqli_fetch_array($select_paroki);
             $photo_paroki   = 'assets/'.$data_paroki['url_img'];
             $delete_paroki  = mysqli_query($con,"DELETE FROM paroki_staff WHERE id='$pid'") or die (mysqli_error($con));
-            unlink($photo_paroki);
+            if($photo_paroki!="")
+            {
+                unlink($photo_paroki);
+            }
         }
         $response_json       = array(
             'error_status'   => 0,

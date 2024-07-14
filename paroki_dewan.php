@@ -733,7 +733,7 @@
                     else
                     {
                         toastr['success'](data.error_message);
-                        var delay = 3000;
+                        $("#modaldetailparoki").modal('hide');
                     }
                     console.log(data,status);
                 }

@@ -324,7 +324,7 @@
                 var me      = $(this);
                 var data    = me.attr('data-perkawinan');
                 var jdata   = JSON.parse(data);
-                alert(jdata);
+                alert(jdata.publish_perkawinan);
                 /*
                 $("#modaldetailperkawinan input[name=id]").val( jdata.id_perkawinan);
                 $("#modaldetailperkawinan input[name=nama_pria]").val( jdata.pria_perkawinan);

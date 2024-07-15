@@ -441,7 +441,7 @@ if(isset($_POST['delete_gallery']))
     }
 }
 
-if(isset($_FILES['sethighlight_acara']))
+if(isset($_POST['sethighlight_acara']))
 {
     $id             = $_POST['id'];
     $stt            = $_POST['stt'];

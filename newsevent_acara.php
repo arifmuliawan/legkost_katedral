@@ -294,7 +294,9 @@
             .fail(function(xhr, status, error) 
             {
 
-                alert(JSON.stringify(xhr));
+                alert(JSON.stringify(xhr.responseJSON.error_message));
+
+                /*{"readyState":4,"responseText":"{\"error_status\":1,\"error_message\":\"Status Berita atau Acara sudah harus ter-publish\"}","responseJSON":{"error_status":1,"error_message":"Status Berita atau Acara sudah harus ter-publish"},"status":410,"statusText":"error"}*/
             });
         });
         </script>

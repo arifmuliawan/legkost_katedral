@@ -104,13 +104,13 @@
                                                 if($highlight_stt_acara==1)
                                                 {
                                                 ?>
-                                                    <img src="assets/dist/img/news_highlight_active_icon.png" style="padding: .375rem .75rem;margin-top: 25px;">
+                                                    <img src="assets/dist/img/news_highlight_active_icon.png" style="padding: .375rem .75rem;margin-top: 25px;" data-acara='<?php echo json_encode($acara_json) ?>' class="highlight">
                                                 <?php
                                                 }
                                                 else
                                                 {
                                                 ?>    
-                                                    <img src="assets/dist/img/news_highlight_icon.png" style="padding: .375rem .75rem;margin-top: 25px;">
+                                                    <img src="assets/dist/img/news_highlight_icon.png" style="padding: .375rem .75rem;margin-top: 25px;" data-acara='<?php echo json_encode($acara_json) ?>' class="highlight">
                                                 <?php
                                                 }
                                                 ?>
@@ -266,5 +266,15 @@
                 }
                 console.log(data,status);
             });
+        });
+        </script>
+
+        <script>
+        $(document).on("click", ".highlight", function () {
+            var me          = $(this);
+            var data        = me.attr('data-acara');
+            var jdata       = JSON.parse(data);
+            var id_data     = jdata.id_acara;
+            alert(id_data);
         });
         </script>

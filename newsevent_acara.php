@@ -287,9 +287,9 @@
                 visible:visible_data,
                 sethighlight_acara:true
             },
-            function(data,status)
+            function(response,status)
             {
-                alert(data);
+                alert(response);
                 /*
                 if(data.error_status=='1')
                 {

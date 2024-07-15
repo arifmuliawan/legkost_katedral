@@ -104,13 +104,13 @@
                                                 if($highlight_stt_acara==1)
                                                 {
                                                 ?>
-                                                    <img src="assets/dist/img/news_highlight_active_icon.png">
+                                                    <img src="assets/dist/img/news_highlight_active_icon.png" style="padding: .375rem .75rem;margin-top: 25px;">
                                                 <?php
                                                 }
                                                 else
                                                 {
                                                 ?>    
-                                                    <img src="assets/dist/img/news_highlight_icon.png">
+                                                    <img src="assets/dist/img/news_highlight_icon.png" style="padding: .375rem .75rem;margin-top: 25px;">
                                                 <?php
                                                 }
                                                 ?>

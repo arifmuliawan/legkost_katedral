@@ -286,22 +286,14 @@
                 stt:stt_data,
                 visible:visible_data,
                 sethighlight_acara:true
-            },
-            function(response,status)
+            })
+            .done(function(msg)
+            {  
+                alert("SUKSES");
+            })
+            .fail(function(xhr, status, error) 
             {
-                alert(response);
-                /*
-                if(data.error_status=='1')
-                {
-                    notifmodal(data.error_message,'failed');
-                }
-                else
-                {
-                    notifmodal(data.error_message,'success');
-                    setTimeout(function(){ window.location ='index.php?p=newsevent_acara'; }, 3000);
-                }
-                console.log(data,status);
-                */
+                alert("ERROR");
             });
         });
         </script>

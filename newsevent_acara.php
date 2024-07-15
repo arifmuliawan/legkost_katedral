@@ -82,13 +82,14 @@
                                     $value_status  = 'P';
                                     $name_status   = 'DRAFT';
                                 }
+                                $highlight_stt_acara    = $data_list['status'];
                                 $acara_json    = array(
                                     'id_acara'       => $id_acara,
                                     'thumb_acara'    => $thumb_acara,
                                     'banner_acara'   => $bannerimg_acara
                                 );    
                         ?>
-                                <div class="col-md-12" style="flex: unset;margin-left: 50px;margin-bottom: 15px;<?php echo $clr_row ?>">
+                                <div class="col-md-12" style="flex: unset;margin-left: 24px;margin-bottom: 15px;<?php echo $clr_row ?>">
                                     <table width="100%">
                                         <tr>
                                             <td width="20%">
@@ -99,10 +100,24 @@
                                                 <h4> <?php echo $title_acara ?> </h4>
                                             </td>
                                             <td width="15%" style="min-width: 130px;display: flex;align-items: center;justify-content: center;">
+                                                <?php
+                                                if($highlight_stt_acara==1)
+                                                {
+                                                ?>
+                                                    <img src="assets/dist/img/news_highlight_active_icon.png">
+                                                <?php
+                                                }
+                                                else
+                                                {
+                                                ?>    
+                                                    <img src="assets/dist/img/news_highlight_icon.png">
+                                                <?php
+                                                }
+                                                ?>
                                                 <a href="index.php?p=newsevent_acaraform&id=<?php echo $id_acara ?>">
-                                                <button type="button" class="btnedit" title="Edit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;margin-top: 25px;">
-                                                    <i class="fa fa-edit" style="color: #fff;"></i>
-                                                </button>
+                                                    <button type="button" class="btnedit" title="Edit" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;margin-top: 25px;">
+                                                        <i class="fa fa-edit" style="color: #fff;"></i>
+                                                    </button>
                                                 </a>
                                                 &nbsp&nbsp&nbsp
                                                 <button data-acara='<?php echo json_encode($acara_json) ?>' type="button" class="btndelete" title="Delete" style="background-color:#E90000;color: #ffffff;font-weight: bold;display: inline-block;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: unset;margin-top: 25px;">

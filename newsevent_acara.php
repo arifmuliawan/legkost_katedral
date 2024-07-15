@@ -293,7 +293,7 @@
             })
             .fail(function(xhr, status, error) 
             {
-                alert(status);
+                alert(error);
             });
         });
         </script>

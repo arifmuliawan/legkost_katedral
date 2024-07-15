@@ -289,6 +289,8 @@
             },
             function(data,status)
             {
+                alert(data);
+                /*
                 if(data.error_status=='1')
                 {
                     notifmodal(data.error_message,'failed');
@@ -299,6 +301,7 @@
                     setTimeout(function(){ window.location ='index.php?p=newsevent_acara'; }, 3000);
                 }
                 console.log(data,status);
+                */
             });
         });
         </script>

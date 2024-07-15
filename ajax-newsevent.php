@@ -456,7 +456,7 @@ if(isset($_POST['sethighlight_acara']))
     }
     if($visible=='P')
     {
-        $query_check_highlight  = mysqli_query($con,"SELECT * FROM `acara` WHERE status='1'");
+        $query_check_highlight  = mysqli_query($con,"SELECT * FROM `acara` WHERE status='1' AND id!='$id'");
         $sum_check_highlight    = mysqli_num_rows($query_check_highlight);
         if($sum_check_highlight>0)
         {

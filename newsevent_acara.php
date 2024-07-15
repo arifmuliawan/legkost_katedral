@@ -290,6 +290,7 @@
             .done(function(msg)
             {  
                 notifmodal(msg.error_message,'success');
+                setTimeout(function(){ window.location ='index.php?p=newsevent_acara'; }, 3000);
             })
             .fail(function(xhr, status, error) 
             {

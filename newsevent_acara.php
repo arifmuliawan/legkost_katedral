@@ -86,7 +86,8 @@
                                 $acara_json    = array(
                                     'id_acara'       => $id_acara,
                                     'thumb_acara'    => $thumb_acara,
-                                    'banner_acara'   => $bannerimg_acara
+                                    'banner_acara'   => $bannerimg_acara,
+                                    'stt_high'       => $highlight_stt_acara
                                 );    
                         ?>
                                 <div class="col-md-12" style="flex: unset;margin-left: 24px;margin-bottom: 15px;<?php echo $clr_row ?>">
@@ -275,6 +276,25 @@
             var data        = me.attr('data-acara');
             var jdata       = JSON.parse(data);
             var id_data     = jdata.id_acara;
-            alert(id_data);
+            var stt_data    = jdata.stt_high;
+            $.post('ajax-newsevent.php',
+            {
+                id:id_data,
+                stt:stt_data,
+                sethighlight_acara:true
+            },
+            function(data,status)
+            {
+                if(data.error_status=='1')
+                {
+                    notifmodal(data.error_message,'failed');
+                }
+                else
+                {
+                    notifmodal(data.error_message,'success');
+                    setTimeout(function(){ window.location ='index.php?p=newsevent_acara'; }, 3000);
+                }
+                console.log(data,status);
+            });
         });
         </script>

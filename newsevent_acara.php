@@ -293,7 +293,8 @@
             })
             .fail(function(xhr, status, error) 
             {
-                alert(xhr);
+
+                alert(JSON.stringify(xhr));
             });
         });
         </script>

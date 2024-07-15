@@ -441,6 +441,36 @@ if(isset($_POST['delete_gallery']))
     }
 }
 
+if(isset($_FILES['sethighlight_acara']))
+{
+    $id             = $_POST['id'];
+    $stt            = $_POST['stt'];
+    if($stt==0)
+    {
+        $new_stt    = 1;
+    }
+    else
+    {
+        $new_stt    = 0;
+    }
+    $update_stt_highlight   = mysqli_query($con,"UPDATE `status`='$new_stt',`update_by`='$user',`update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
+    if($update_stt_highlight==1)
+    {
+        $response_json       = array(
+            'error_status'   => 0,
+            'error_message'  => 'Perubahan data telah berhasil disimpan'
+        );
+    }
+    else
+    {
+        http_response_code(410);
+        $response_json       = array(
+            'error_status'   => 1,
+            'error_message'  => 'Perubahan data gagal disimpan'
+        );
+    }
+}    
+
 if(isset($_POST['draf_warta']))
 {
     $id             = $_POST['id'];

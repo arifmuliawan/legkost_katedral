@@ -87,6 +87,7 @@
                                     'id_acara'       => $id_acara,
                                     'thumb_acara'    => $thumb_acara,
                                     'banner_acara'   => $bannerimg_acara,
+                                    'visible_acara'  => $status_acara,
                                     'stt_high'       => $highlight_stt_acara
                                 );    
                         ?>
@@ -277,10 +278,12 @@
             var jdata       = JSON.parse(data);
             var id_data     = jdata.id_acara;
             var stt_data    = jdata.stt_high;
+            var visible_data= jdata.visible_acara;
             $.post('ajax-newsevent.php',
             {
                 id:id_data,
                 stt:stt_data,
+                visible:visible_data,
                 sethighlight_acara:true
             },
             function(data,status)

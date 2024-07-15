@@ -289,13 +289,11 @@
             })
             .done(function(msg)
             {  
-                alert(JSON.stringify(msg));
+                notifmodal(msg.error_message,'success');
             })
             .fail(function(xhr, status, error) 
             {
-
-                //alert(JSON.stringify(xhr.responseJSON.error_message));
-                notifmodal(JSON.stringify(xhr.responseJSON.error_message),'failed');
+                notifmodal(xhr.responseJSON.error_message,'failed');
                 /*{"readyState":4,"responseText":"{\"error_status\":1,\"error_message\":\"Status Berita atau Acara sudah harus ter-publish\"}","responseJSON":{"error_status":1,"error_message":"Status Berita atau Acara sudah harus ter-publish"},"status":410,"statusText":"error"}*/
             });
         });

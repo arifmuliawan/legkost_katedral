@@ -456,7 +456,7 @@ if(isset($_POST['sethighlight_acara']))
     }
     if($visible=='P')
     {
-        $update_stt_highlight   = mysqli_query($con,"UPDATE `status`='$new_stt',`update_by`='$user',`update_date`='$now' WHERE id='$id' AND `visible`='P'")or die (mysqli_error($con));
+        $update_stt_highlight   = mysqli_query($con,"UPDATE `acara` SET `status`='$new_stt',`update_by`='$user',`update_date`='$now' WHERE id='$id' AND `visible`='P'")or die (mysqli_error($con));
         if($update_stt_highlight==1)
         {
             $response_json       = array(

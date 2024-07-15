@@ -445,6 +445,7 @@ if(isset($_FILES['sethighlight_acara']))
 {
     $id             = $_POST['id'];
     $stt            = $_POST['stt'];
+    $visible        = $_POST['visible'];
     if($stt==0)
     {
         $new_stt    = 1;
@@ -453,22 +454,33 @@ if(isset($_FILES['sethighlight_acara']))
     {
         $new_stt    = 0;
     }
-    $update_stt_highlight   = mysqli_query($con,"UPDATE `status`='$new_stt',`update_by`='$user',`update_date`='$now' WHERE id='$id'")or die (mysqli_error($con));
-    if($update_stt_highlight==1)
+    if($visible=='P')
     {
-        $response_json       = array(
-            'error_status'   => 0,
-            'error_message'  => 'Perubahan data telah berhasil disimpan'
-        );
+        $update_stt_highlight   = mysqli_query($con,"UPDATE `status`='$new_stt',`update_by`='$user',`update_date`='$now' WHERE id='$id' AND `visible`='P'")or die (mysqli_error($con));
+        if($update_stt_highlight==1)
+        {
+            $response_json       = array(
+                'error_status'   => 0,
+                'error_message'  => 'Perubahan data telah berhasil disimpan'
+            );
+        }
+        else
+        {
+            http_response_code(410);
+            $response_json       = array(
+                'error_status'   => 1,
+                'error_message'  => 'Perubahan data gagal disimpan'
+            );
+        }
     }
     else
     {
         http_response_code(410);
         $response_json       = array(
             'error_status'   => 1,
-            'error_message'  => 'Perubahan data gagal disimpan'
+            'error_message'  => 'Status Berita atau Acara sudah harus ter-publish'
         );
-    }
+    }    
 }    
 
 if(isset($_POST['draf_warta']))

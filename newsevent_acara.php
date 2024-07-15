@@ -272,7 +272,8 @@
         </script>
 
         <script>
-        $(document).on("click", ".highlight", function () {
+        $("#acaralist .highlight").click(function()
+        {
             var me          = $(this);
             var data        = me.attr('data-acara');
             var jdata       = JSON.parse(data);

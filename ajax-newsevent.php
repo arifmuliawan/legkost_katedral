@@ -456,22 +456,35 @@ if(isset($_POST['sethighlight_acara']))
     }
     if($visible=='P')
     {
-        $update_stt_highlight   = mysqli_query($con,"UPDATE `acara` SET `status`='$new_stt',`update_by`='$user',`update_date`='$now' WHERE id='$id' AND `visible`='P'")or die (mysqli_error($con));
-        if($update_stt_highlight==1)
-        {
-            $response_json       = array(
-                'error_status'   => 0,
-                'error_message'  => 'Perubahan data telah berhasil disimpan'
-            );
-        }
-        else
+        $query_check_highlight  = mysqli_query($con,"SELECT * FROM `acara` WHERE status='1'");
+        $sum_check_highlight    = mysqli_num_rows($query_check_highlight);
+        if($sum_check_highlight>0)
         {
             http_response_code(410);
             $response_json       = array(
                 'error_status'   => 1,
-                'error_message'  => 'Perubahan data gagal disimpan'
+                'error_message'  => 'Perubahan data gagal, hanya diperbolehkan 1 highlight'
             );
         }
+        else
+        {
+            $update_stt_highlight   = mysqli_query($con,"UPDATE `acara` SET `status`='$new_stt',`update_by`='$user',`update_date`='$now' WHERE id='$id' AND `visible`='P'")or die (mysqli_error($con));
+            if($update_stt_highlight==1)
+            {
+                $response_json       = array(
+                    'error_status'   => 0,
+                    'error_message'  => 'Perubahan data telah berhasil disimpan'
+                );
+            }
+            else
+            {
+                http_response_code(410);
+                $response_json       = array(
+                    'error_status'   => 1,
+                    'error_message'  => 'Perubahan data gagal disimpan'
+                );
+            }
+        }    
     }
     else
     {

@@ -228,7 +228,7 @@
                     <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
                     <img src="assets/dist/img/icon_warning.png" style="width: 70px;">
                         <br><br>
-                        <h5> Berita utama akan berubah menjadi artikel ini, apakah Anda yakin ingin melakukan perubahan ?</h5>
+                        <h5> </h5>
                         <input type="hidden" name="id">
                         <input type="hidden" name="stt">
                         <input type="hidden" name="visible">
@@ -313,6 +313,14 @@
             $("#notifwarninghighlightacara input[name=id]").val(id_data);
             $("#notifwarninghighlightacara input[name=stt]").val(stt_data);
             $("#notifwarninghighlightacara input[name=visible]").val(visible_data);
+            if(stt_data==0)
+            {
+                $("#notifwarninghighlightacara").find(".modal-content h5").html("Berita utama akan berubah menjadi artikel ini, apakah Anda yakin ingin melakukan perubahan ?");
+            }
+            else
+            {
+                $("#notifwarninghighlightacara").find(".modal-content h5").html("Apakah anda akan Non-Active kan artikel ini sebagai berita utama ?");
+            }
             $("#notifwarninghighlightacara").modal("show");
         });
 
@@ -321,7 +329,6 @@
             $("#notifwarninghighlightacara").modal("hide");
         });
 
-        
         $("#notifwarninghighlightacara #btnmodalok").click(function()
         {
             $.post('ajax-newsevent.php',

@@ -321,6 +321,7 @@
             $("#notifwarninghighlightacara").modal("hide");
         });
 
+        
         $("#notifwarninghighlightacara #btnmodalok").click(function()
         {
             $.post('ajax-newsevent.php',

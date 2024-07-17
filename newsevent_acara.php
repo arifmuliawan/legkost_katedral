@@ -334,8 +334,8 @@
             $.post('ajax-newsevent.php',
             {
                 id:$("#notifwarninghighlightacara input[name=id]").val(),
-                thumb:$("#notifwarninghighlightacara input[name=stt]").val(),
-                banner:$("#nnotifwarninghighlightacara input[name=visible]").val(),
+                stt:$("#notifwarninghighlightacara input[name=stt]").val(),
+                visible:$("#nnotifwarninghighlightacara input[name=visible]").val(),
                 sethighlight_acara:true
             },
             function(data,status)

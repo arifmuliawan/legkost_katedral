@@ -220,6 +220,36 @@
         </div>
         <!-- END MODAL WARNING DELETE Acara -->
 
+         <!-- START MODAL WARNING SET HIGHLIGHT -->
+         <div class="modal fade" id="notifwarninghighlightacara">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <input type='hidden' name='scheduleid'>
+                    <div class="modal-body" style="text-align: center;vertical-align: middle;padding: 40px;">
+                    <img src="assets/dist/img/icon_warning.png" style="width: 70px;">
+                        <br><br>
+                        <h5> Berita utama akan berubah menjadi artikel ini, apakah Anda yakin ingin melakukan perubahan ?</h5>
+                        <input type="hidden" name="id">
+                        <input type="hidden" name="stt">
+                        <input type="hidden" name="visible">
+                        <table width="100%">
+                            <tr>
+                                <td width="25%"> 
+                                    <button id="btnmodalcancel" type="button" class="btn" style="background-color:#ffffff;color: #88A8D4;font-weight: bold;margin: 15px 0px;border-color: #88A8D4;">CANCEL</button>
+                                </td>
+                                <td width="75%" style="text-align:right"> 
+                                    <button id="btnmodalok" type="button" class="btn" style="background-color:#88A8D4;color: #ffffff;font-weight: bold;margin: 15px 0px;">OK</button>
+                                </td>
+                            </tr>
+                        </table>     
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- END MODAL WARNING SET HIGHLIGHT -->
+
         <script>
         $("#notifpublishmodal #btnmodalclose").click(function()
         {
@@ -280,22 +310,38 @@
             var id_data     = jdata.id_acara;
             var stt_data    = jdata.stt_high;
             var visible_data= jdata.visible_acara;
+            $("#notifwarninghighlightacara input[name=id]").val(id_data);
+            $("#notifwarninghighlightacara input[name=stt]").val(stt_data);
+            $("#notifwarninghighlightacara input[name=visible]").val(visible_data);
+            $("#notifwarninghighlightacara").modal("show");
+        });
+
+        $("#notifwarninghighlightacara #btnmodalcancel").click(function()
+        {
+            $("#notifwarninghighlightacara").modal("hide");
+        });
+
+        $("#notifwarninghighlightacara #btnmodalok").click(function()
+        {
             $.post('ajax-newsevent.php',
             {
-                id:id_data,
-                stt:stt_data,
-                visible:visible_data,
+                id:$("#notifwarninghighlightacara input[name=id]").val(),
+                thumb:$("#notifwarninghighlightacara input[name=stt]").val(),
+                banner:$("#nnotifwarninghighlightacara input[name=visible]").val(),
                 sethighlight_acara:true
-            })
-            .done(function(msg)
-            {  
-                notifmodal(msg.error_message,'success');
-                setTimeout(function(){ window.location ='index.php?p=newsevent_acara'; }, 3000);
-            })
-            .fail(function(xhr, status, error) 
+            },
+            function(data,status)
             {
-                notifmodal(xhr.responseJSON.error_message,'failed');
-                /*{"readyState":4,"responseText":"{\"error_status\":1,\"error_message\":\"Status Berita atau Acara sudah harus ter-publish\"}","responseJSON":{"error_status":1,"error_message":"Status Berita atau Acara sudah harus ter-publish"},"status":410,"statusText":"error"}*/
+                if(data.error_status=='1')
+                {
+                    toastr['error'](data.error_message);
+                }
+                else
+                {
+                    toastr['success'](data.error_message);
+                    setTimeout(function(){ window.location ='index.php?p=newsevent_acara'; }, 3000);
+                }
+                console.log(data,status);
             });
         });
         </script>
